@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 612633659}
+  smoothing: 0.1
 --- !u!1 &186139528
 GameObject:
   m_ObjectHideFlags: 0
@@ -12871,7 +12872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae84009fb4e7dc49a9c72030d707e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 250
 --- !u!50 &612633661
 Rigidbody2D:
   serializedVersion: 4

@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim; // player's Animatior
 
     [SerializeField]
-    private float speed; // Movement speed of player ~200 seems well paced
+    private float speed; // Movement speed of player ~250 seems well paced
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +26,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         // Get input and move player
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.deltaTime;
+        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed * Time.deltaTime;
 
         // Set animations for player's direction
         anim.SetFloat("moveX", rb.velocity.x);
@@ -39,5 +40,6 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
             anim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         }
+        
     }
 }
