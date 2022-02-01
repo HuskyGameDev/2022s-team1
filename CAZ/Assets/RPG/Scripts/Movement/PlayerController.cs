@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb; // player's Rigidbody2D
     private Animator anim; // player's Animatior
+    public GameObject interactIcon;
 
     [SerializeField]
     private float speed; // Movement speed of player ~250 seems well paced
