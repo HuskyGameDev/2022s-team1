@@ -7,11 +7,11 @@ public class CardDisplay : MonoBehaviour
 {
     public Card card;
 
-    public TextMesh nameText;
-    public TextMesh descriptionText;
+    public Text nameText;
+    public Text descriptionText;
     public Image artwork;
-    public TextMesh attackNumText;
-    public TextMesh defenseNumText;
+    public Text attackNumText;
+    public Text defenseNumText;
 
     /**
      * Updates a card's information in the game view during runtime
