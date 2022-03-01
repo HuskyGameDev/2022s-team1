@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DeckBuilderButtons : MonoBehaviour
 {
@@ -15,8 +16,10 @@ public class DeckBuilderButtons : MonoBehaviour
     {
         deckBuilderManager = FindObjectOfType<DeckBuilderManager>(); // get DeckBulderManager
         deck = FindObjectOfType<Deck>(); // get player's Deck
-        
+
     }
+
+    
 
     /*
      * Adds card to deck list, calls function to add card visually to deck builder 
@@ -56,5 +59,9 @@ public class DeckBuilderButtons : MonoBehaviour
     public void RemoveCardFromDeckList(Card card)
     {
         Destroy(transform.parent.gameObject); // Destroy CardInDeck from deck builder
+    }
+
+    public void DoneButton() {
+        SceneManager.LoadScene("CardScriptableObject");
     }
 }

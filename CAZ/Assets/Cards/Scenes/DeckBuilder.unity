@@ -2952,6 +2952,7 @@ GameObject:
   - component: {fileID: 245829217}
   - component: {fileID: 245829216}
   - component: {fileID: 245829215}
+  - component: {fileID: 245829218}
   m_Layer: 5
   m_Name: DoneButton
   m_TagString: Untagged
@@ -3022,7 +3023,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 245829216}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 245829218}
+        m_TargetAssemblyTypeName: DeckBuilderButtons, Assembly-CSharp
+        m_MethodName: DoneButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &245829216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3061,6 +3074,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245829213}
   m_CullTransparentMesh: 1
+--- !u!114 &245829218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245829213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5152849bb7fe0c542aa36e247b808f3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 1067866666}
+  InstanceCard: {fileID: 0}
 --- !u!1 &250729424
 GameObject:
   m_ObjectHideFlags: 0
@@ -12323,6 +12350,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 054d931086c778143ac364831421846c, type: 2}
   - {fileID: 11400000, guid: 44233fd2878e6634f9c63b3574c1b846, type: 2}
   - {fileID: 11400000, guid: bccf8e6c77f97a141b53bb74663e473a, type: 2}
+  limit: 20
 --- !u!1 &1092181476
 GameObject:
   m_ObjectHideFlags: 0

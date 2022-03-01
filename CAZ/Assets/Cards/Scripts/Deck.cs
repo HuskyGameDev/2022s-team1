@@ -6,6 +6,7 @@ public class Deck : MonoBehaviour
 {
 
     public List<Card> deck = new List<Card>();
+    public int limit;
 
     void Awake()
     {
