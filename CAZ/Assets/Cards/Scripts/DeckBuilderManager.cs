@@ -18,6 +18,9 @@ public class DeckBuilderManager : MonoBehaviour
         LoadDeck();
     }
 
+    /*
+     * Fills deck field UI with all cards currently in player's deck
+     */
     public void LoadDeck() {
 
         foreach (Card card in deck.deck) {
