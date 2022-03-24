@@ -10,10 +10,14 @@ using UnityEngine;
  *      2) This script is used in conjunction with the "DisplayCard" script in order to updade card's information fields during runtime.
  **/
 
+public enum Types { Creature, Effect, Boss }
+
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class Card : ScriptableObject
 {
     public new string name;     // Name of the card
+
+    public Types type;
 
     public string description;  // Description of the card
 

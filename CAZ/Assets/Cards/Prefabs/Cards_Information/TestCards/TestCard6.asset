@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: TestCard6
   m_EditorClassIdentifier: 
   name: Test Card 6
+  type: 0
   description: This is the Test Card 6
   art: {fileID: 21300000, guid: de7c0e769d34d9542bf7cd5c8af6f6f8, type: 3}
-  attack: 5
-  defense: 5
+  attack: 8
+  defense: 3
