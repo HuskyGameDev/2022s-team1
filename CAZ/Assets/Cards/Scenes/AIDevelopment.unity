@@ -1325,6 +1325,7 @@ MonoBehaviour:
   enemyEffectSlot: {fileID: 1212970026}
   enemy: {fileID: 750828078}
   player: {fileID: 1938791654}
+  cardPrefab: {fileID: 2473742285920798735, guid: 62f7d36554090bb41822dacb39fb4950, type: 3}
 --- !u!4 &1714119091
 Transform:
   m_ObjectHideFlags: 0

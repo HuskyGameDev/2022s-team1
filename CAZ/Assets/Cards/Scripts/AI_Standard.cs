@@ -96,6 +96,24 @@ public class AI_Standard : MonoBehaviour
         hand.Remove(card);
         manager.enemyField.Add(card);
         manager.enemyAvailableFieldSlots--;
+        RenderCard(card);
+    }
+
+    void RenderCard(Card card) {
+        GameObject newCard = Instantiate(manager.cardPrefab, manager.enemyFieldSlots[manager.enemyAvailableFieldSlots]);
+        newCard.GetComponent<CardDisplay>().card = card;
+        newCard.GetComponent<CardDisplay>().Display();
+    }
+
+    /**
+     * FOR VISUALS OF CARD GAME:
+     * NEED TO CHANGE: implementation of enemyField - change to List<GameObject> and reference Card2.0's card variable
+     * This will allow you to instantiate and destroy the correct card game object while still having access to card information.
+     * Might have to change other List<Card>'s to List<GameObject>'s as well.
+     * Big OOF but needs to be done
+     */
+    void EraseCard(GameObject cardObject) {
+        Destroy(cardObject);
     }
 
     int EvaluateFieldScore(Card card) {
@@ -212,6 +230,7 @@ public class AI_Standard : MonoBehaviour
 
         foreach (Card c in markedCards) {
             manager.enemyField.Remove(c);
+            manager.enemyAvailableFieldSlots++;
             Debug.Log(c.name + " fell to its wounds and was destroyed!");
             discarded.Add(c);
             Debug.Log(c.name + " was sent to the discard pile");

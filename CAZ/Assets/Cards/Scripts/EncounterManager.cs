@@ -28,6 +28,7 @@ public class EncounterManager : MonoBehaviour
 
     public AI_Standard enemy;
     public PlayerUnit player;
+    public GameObject cardPrefab;
 
     // Start is called before the first frame update
     void Start()

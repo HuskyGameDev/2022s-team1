@@ -16,7 +16,7 @@ public class CardDisplay : MonoBehaviour
     /**
      * Updates a card's information in the game view during runtime
      */
-    void Display()
+    public void Display()
     {
         nameText.text = card.name;
         descriptionText.text = card.description;
@@ -28,7 +28,7 @@ public class CardDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Display();
+        //Display();
     }
 
     
