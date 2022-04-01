@@ -13,7 +13,18 @@ public class EncounterManager : MonoBehaviour
     public int playerAvailableFieldSlots;
 
     public List<Card> playerField;
+    public List<Transform> playerFieldSlots;
+    //public Transform playerFieldSlot1;
+    //public Transform playerFieldSlot2;
+    //public Transform playerFieldSlot3;
+    public Transform playerEffectSlot;
+
     public List<Card> enemyField;
+    public List<Transform> enemyFieldSlots;
+    //public Transform enemyFieldSlot1;
+    //public Transform enemyFieldSlot2;
+    //public Transform enemyFieldSlot3;
+    public Transform enemyEffectSlot;
 
     public AI_Standard enemy;
     public PlayerUnit player;

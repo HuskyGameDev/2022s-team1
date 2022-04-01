@@ -26,6 +26,7 @@ public class AI_Standard : MonoBehaviour
     public List<Card> hand;
     public List<Card> discarded;
     public Card bestNextCard;
+    public List<Card> markedCards;
 
     public EncounterManager manager;
     public PlayerUnit player;
@@ -39,6 +40,7 @@ public class AI_Standard : MonoBehaviour
         PrintField();
         player.PrintField();
         PerformFieldTasks();
+        PrintField();
         player.PrintField();
     }
     void DrawCards()
@@ -129,49 +131,97 @@ public class AI_Standard : MonoBehaviour
         int tempAttackScore = 0;
         int attackScore = int.MaxValue;
         foreach (Card c in manager.enemyField) { // all creatures can attack
-            foreach (Card p in manager.playerField) { // check each creature in player field
-                Debug.Log("Checking if " + c.name + " can destroy " + p.name);
-                if (c.attack > p.defense) // if creature can destroy a player's creature
-                {
-                    Debug.Log(c.name + " can destroy " + p.name + " Checking if this is a good attack");
-                    tempAttackScore = c.attack - p.defense;
-                    if (tempAttackScore < attackScore)
-                    { // check to see if it is optimal
-                        attackScore = tempAttackScore;
-                        target = p; // select target
-                        Debug.Log(c.name + " has targeted " + p.name);
-                    }
-                    else {
-                        Debug.Log(c.name + " does not target " + p.name);
+            if (manager.playerField.Count > 0)
+            {
+                foreach (Card p in manager.playerField)
+                { // check each creature in player field
+                    Debug.Log("Checking if " + c.name + " can destroy " + p.name);
+                    if (c.attack >= p.defense) // if creature can destroy a player's creature
+                    {
+                        Debug.Log(c.name + " can destroy " + p.name + " Checking if this is a good attack");
+                        tempAttackScore = c.attack - p.defense;
+                        if (tempAttackScore < attackScore)
+                        { // check to see if it is optimal
+                            attackScore = tempAttackScore;
+                            target = p; // select target
+                            Debug.Log(c.name + " has targeted " + p.name);
+                        }
+                        else
+                        {
+                            Debug.Log(c.name + " does not target " + p.name);
+                        }
                     }
                 }
+                if (target != null)
+                {
+                    Debug.Log(c.name + " is attacking " + target.name);
+                    AttackAndDestroy(c, target); // destroy target card
+                    target = null;
+                    attackScore = int.MaxValue; // reset attackScore for next card
+                    continue;
+                }
+                else if (target == null)
+                {
+                    Debug.Log(c.name + " cannot attack any player cards this turn");
+                    attackScore = int.MaxValue; // reset attackScore for next card
+                    continue;
+                }
+                //attackScore = int.MaxValue; // reset attackScore for next card
             }
-            if (target != null)
-            {
-                Debug.Log(c.name + " is attacking " + target.name);
-                AttackAndDestroy(c, target); // destroy target card
-                target = null;
+            else {
+                Debug.Log(c.name + " attacks directly!");
+                DamagePlayer(c.attack);
             }
-            else if (target == null)
-            {
-                Debug.Log(c.name + " cannot attack any player cards this turn");
-            }
-            attackScore = int.MaxValue; // reset attackScore for next card
         }
+        DestroyMarkedCards();
     }
 
     void AttackAndDestroy(Card aggressor, Card receiver) {
 
-        if (aggressor.attack > receiver.defense) { // double check attack/defense values
+        if (aggressor.attack > receiver.defense)
+        { // double check attack/defense values
             manager.playerField.Remove(receiver); // remove from field
             Debug.Log(aggressor.name + " destroys " + receiver.name);
+
             manager.player.discarded.Add(receiver); // add to discard pile
             Debug.Log(receiver.name + " is sent to the discard pile");
+
+            int damageRemainder = aggressor.attack - receiver.defense;
+            DamagePlayer(damageRemainder);
         }
+        else if (aggressor.attack == receiver.defense) {
+            // Destroy defending card
+            manager.playerField.Remove(receiver); // remove from field
+            Debug.Log(aggressor.name + " destroys " + receiver.name);
+
+            manager.player.discarded.Add(receiver); // add to discard pile
+            Debug.Log(receiver.name + " is sent to the discard pile");
+
+            // Mark attacking card for destruction after attack phase
+            markedCards.Add(aggressor);
+            Debug.Log(aggressor.name + " was wounded in the attack!");
+        }
+        
     }
 
-    void TakeDamage() { 
-    
+    void DamagePlayer(int damage) {
+        manager.player.TakeDamage(damage);
+    }
+
+    void DestroyMarkedCards() {
+
+        foreach (Card c in markedCards) {
+            manager.enemyField.Remove(c);
+            Debug.Log(c.name + " fell to its wounds and was destroyed!");
+            discarded.Add(c);
+            Debug.Log(c.name + " was sent to the discard pile");
+        }
+        markedCards.Clear();
+    }
+
+    void TakeDamage(int damage) {
+        health -= damage;
+        Debug.Log("Enemy takes " + damage + " points of Damage! | Enemy's HP: " + health);
     }
 
     public void PrintHand() {

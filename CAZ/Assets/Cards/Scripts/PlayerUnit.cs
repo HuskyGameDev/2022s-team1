@@ -37,4 +37,10 @@ public class PlayerUnit : MonoBehaviour
             Debug.Log("\t" + manager.playerField[i].name);
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("Player takes " + damage + " points of Damage! | Player's HP: " + health);
+    }
 }
