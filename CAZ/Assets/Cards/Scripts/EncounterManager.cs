@@ -21,10 +21,12 @@ public class EncounterManager : MonoBehaviour
 
     public List<Card> enemyField;
     public List<Transform> enemyFieldSlots;
+    public List<int> enemyFieldSlotAvailability;
     //public Transform enemyFieldSlot1;
     //public Transform enemyFieldSlot2;
     //public Transform enemyFieldSlot3;
     public Transform enemyEffectSlot;
+    //public Dictionary<Transform, int> enemyFieldSlots;
 
     public AI_Standard enemy;
     public PlayerUnit player;
@@ -35,15 +37,17 @@ public class EncounterManager : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
-        StartBattle();
+        StartCoroutine(StartBattle());
     }
 
-    void StartBattle() {
+    IEnumerator StartBattle() {
         //Shuffle Decks
         //Flip Coin for first turn
         //Draw Cards for both player and enemy
 
         Debug.Log("Starting Battle");
+
+        yield return new WaitForSeconds(2f);
 
         state = BattleState.ENEMYTURN;
         EnemyTurn();
@@ -51,7 +55,7 @@ public class EncounterManager : MonoBehaviour
 
     void EnemyTurn() {
         // call enemy turn script
-        enemy.PlayTurn();
+        StartCoroutine(enemy.PlayTurn());
     }
 
     private void Update()

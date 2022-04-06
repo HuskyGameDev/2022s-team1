@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 0}
+  cardState: {fileID: 0}
   nameText: {fileID: 2473742285225233578}
   descriptionText: {fileID: 2473742285983466333}
   artwork: {fileID: 2473742286242019865}

@@ -12,16 +12,22 @@ using UnityEngine;
 
 public enum Types { Creature, Effect, Boss }
 
+public enum SummonState { SummonSick, BattleReady }
+
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class Card : ScriptableObject
 {
     public GameObject prefab;
 
     public GameObject cardObject;
+
+    public int fieldIndex;
     
     public new string name;     // Name of the card
 
     public Types type;
+
+    public SummonState summonSate;
 
     public string description;  // Description of the card
 

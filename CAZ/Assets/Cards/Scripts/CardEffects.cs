@@ -238,6 +238,7 @@ public class CardEffects : MonoBehaviour
                         targetCard = GetRandomCardOnField(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
                         manager.enemyField.Add(targetCard);
+                        manager.enemyAvailableFieldSlots--;
                         //render card
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
@@ -245,6 +246,7 @@ public class CardEffects : MonoBehaviour
                         targetCard = GetRandomCardOnField(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
                         manager.enemyField.Add(targetCard);
+                        manager.enemyAvailableFieldSlots--;
                         //render card
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
@@ -252,6 +254,7 @@ public class CardEffects : MonoBehaviour
                         targetCard = GetHighestAttack(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
                         manager.enemyField.Add(targetCard);
+                        manager.enemyAvailableFieldSlots--;
                         //render card
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
@@ -259,6 +262,7 @@ public class CardEffects : MonoBehaviour
                         targetCard = GetHighestAttack(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
                         manager.enemyField.Add(targetCard);
+                        manager.enemyAvailableFieldSlots--;
                         //render card
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
@@ -266,6 +270,7 @@ public class CardEffects : MonoBehaviour
                         targetCard = GetHighestDefense(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
                         manager.enemyField.Add(targetCard);
+                        manager.enemyAvailableFieldSlots--;
                         //render card
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
@@ -273,6 +278,7 @@ public class CardEffects : MonoBehaviour
                         targetCard = GetHighestDefense(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
                         manager.enemyField.Add(targetCard);
+                        manager.enemyAvailableFieldSlots--;
                         //render card
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;

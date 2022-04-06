@@ -28,6 +28,7 @@ public class AI_Standard : MonoBehaviour
     public List<Card> discarded;
     public Card bestNextCard;
     public List<Card> markedCards;
+    public List<Card> summonSickCreatures;
 
     public EncounterManager manager;
     public PlayerUnit player;
@@ -37,15 +38,21 @@ public class AI_Standard : MonoBehaviour
         maxHealth = health;
     }
 
-    public void PlayTurn() {
+    public IEnumerator PlayTurn() {
         PrintDeck();
+        yield return new WaitForSeconds(2f);
         DrawCards(); // Draw Cards
         PrintHand();
+        yield return new WaitForSeconds(2f);
         PrintDeck();
+        yield return new WaitForSeconds(2f);
         DetermineMove();
+        yield return new WaitForSeconds(2f);
         PrintField();
         player.PrintField();
+        yield return new WaitForSeconds(2f);
         PerformFieldTasks();
+        yield return new WaitForSeconds(2f);
         PrintField();
         player.PrintField();
     }
@@ -54,7 +61,7 @@ public class AI_Standard : MonoBehaviour
         Debug.Log("Drawing Cards...");
         //draw cards from deck, add to the hand until hand is full (max 3)
         while(hand.Count < 3) {
-            Card drawnCard = deck[deck.Count - 1];
+            Card drawnCard = Instantiate(deck[deck.Count - 1]);
             hand.Add(drawnCard);
             Debug.Log("Enemy Draws " + drawnCard.name);
             deck.RemoveAt(deck.Count - 1);
@@ -102,6 +109,7 @@ public class AI_Standard : MonoBehaviour
         hand.Remove(card);
         manager.enemyField.Add(card);
         manager.enemyAvailableFieldSlots--;
+        //card.summonState = SummonState.SummoningSickness;
         RenderCard(card);
     }
 
@@ -111,8 +119,15 @@ public class AI_Standard : MonoBehaviour
         newCard.GetComponent<CardDisplay>().card = card;
         newCard.GetComponent<CardDisplay>().Display();
         */
-
-        GameObject newCard = Instantiate(card.prefab, manager.enemyFieldSlots[manager.enemyAvailableFieldSlots]);
+        int freeIndex = 0;
+        for (int i = 0; i < manager.enemyFieldSlotAvailability.Count; i++) {
+            if (manager.enemyFieldSlotAvailability[i] == 0)
+                freeIndex = i;
+        }
+        
+        GameObject newCard = Instantiate(card.prefab, manager.enemyFieldSlots[freeIndex]);
+        manager.enemyFieldSlotAvailability[freeIndex] = 1;
+        card.fieldIndex = freeIndex;
         card.cardObject = newCard;
         card.cardObject.GetComponent<CardDisplay>().card = card;
         card.cardObject.GetComponent<CardDisplay>().Display();
@@ -138,16 +153,17 @@ public class AI_Standard : MonoBehaviour
         int FS = 0;
         FS += health;
         FS -= player.health;
-        foreach (Card c in manager.enemyField) { 
+        for (int i = 0; i < manager.enemyField.Count; i++) { 
             FS += 5;
-            FS += c.attack;
-            FS += c.defense;
+            FS += manager.enemyField[i].attack;
+            FS += manager.enemyField[i].defense;
         }
-        foreach (Card c in manager.playerField)
+        for (int i = 0; i < manager.playerField.Count; i++)
         {
+            
             FS -= 5;
-            FS -= c.attack;
-            FS -= c.defense;
+            FS -= manager.playerField[i].attack;
+            FS -= manager.playerField[i].defense;
         }
 
         FS += 5;
@@ -162,6 +178,8 @@ public class AI_Standard : MonoBehaviour
         Effects();
         Debug.Log("Enemy Starts Attack Round!!!");
         Attacks();
+        Debug.Log("Enemy Ends Attack Round!!!");
+        //CureSummonSickness();
     }
 
     void Effects() {
@@ -237,47 +255,55 @@ public class AI_Standard : MonoBehaviour
         Card target = null;
         int tempAttackScore = 0;
         int attackScore = int.MaxValue;
-        foreach (Card c in manager.enemyField) { // all creatures can attack
-            if (manager.playerField.Count > 0)
+        for(int i = 0; i < manager.enemyField.Count; i++) { // all creatures can attack
+            if (manager.playerField.Count > 0 && manager.enemyField[i].summonSate == SummonState.BattleReady)
             {
-                foreach (Card p in manager.playerField)
+                for(int j = 0; j < manager.playerField.Count; j++)
                 { // check each creature in player field
-                    Debug.Log("Checking if " + c.name + " can destroy " + p.name);
-                    if (c.attack >= p.defense) // if creature can destroy a player's creature
+                    Debug.Log("Checking if " + manager.enemyField[i].name + " can destroy " + manager.playerField[j].name);
+                    if (manager.enemyField[i].attack >= manager.playerField[j].defense) // if creature can destroy a player's creature
                     {
-                        Debug.Log(c.name + " can destroy " + p.name + " Checking if this is a good attack");
-                        tempAttackScore = c.attack - p.defense;
+                        Debug.Log(manager.enemyField[i].name + " can destroy " + manager.playerField[j].name + " Checking if this is a good attack");
+                        tempAttackScore = manager.enemyField[i].attack - manager.playerField[j].defense;
                         if (tempAttackScore < attackScore)
                         { // check to see if it is optimal
                             attackScore = tempAttackScore;
-                            target = p; // select target
-                            Debug.Log(c.name + " has targeted " + p.name);
+                            target = manager.playerField[j]; // select target
+                            Debug.Log(manager.enemyField[i].name + " has targeted " + manager.playerField[j].name);
                         }
                         else
                         {
-                            Debug.Log(c.name + " does not target " + p.name);
+                            Debug.Log(manager.enemyField[i].name + " does not target " + manager.playerField[j].name);
                         }
                     }
                 }
                 if (target != null)
                 {
-                    Debug.Log(c.name + " is attacking " + target.name);
-                    AttackAndDestroy(c, target); // destroy target card
+                    Debug.Log(manager.enemyField[i].name + " is attacking " + target.name);
+                    AttackAndDestroy(manager.enemyField[i], target); // destroy target card
                     target = null;
                     attackScore = int.MaxValue; // reset attackScore for next card
                     continue;
                 }
                 else if (target == null)
                 {
-                    Debug.Log(c.name + " cannot attack any player cards this turn");
+                    Debug.Log(manager.enemyField[i].name + " cannot attack any player cards this turn");
                     attackScore = int.MaxValue; // reset attackScore for next card
                     continue;
                 }
                 //attackScore = int.MaxValue; // reset attackScore for next card
             }
+            else if (manager.enemyField[i].summonSate == SummonState.BattleReady)
+            {
+                Debug.Log(manager.enemyField[i].name + " attacks directly!");
+                DamagePlayer(manager.enemyField[i].attack);
+            }
             else {
-                Debug.Log(c.name + " attacks directly!");
-                DamagePlayer(c.attack);
+                Debug.Log(manager.enemyField[i].name + " has summoning sickeness and cannot attack this round.");
+                //c.summonState = SummonState.BattleReady;
+                //summonSickCreatures.Add(manager.enemyField[i]);
+                //manager.enemyField[i].summonState = SummonState.BattleReady;
+                manager.enemyField[i].summonSate = SummonState.BattleReady;
             }
         }
         DestroyMarkedCards();
@@ -319,16 +345,27 @@ public class AI_Standard : MonoBehaviour
 
     public void DestroyMarkedCards() {
 
-        foreach (Card c in markedCards) {
-            manager.enemyField.Remove(c);
-            EraseCard(c);
+        for (int i =0; i < markedCards.Count; i++) {
+            manager.enemyField.Remove(markedCards[i]);
+            EraseCard(markedCards[i]);
             manager.enemyAvailableFieldSlots++;
-            Debug.Log(c.name + " fell to its wounds and was destroyed!");
-            discarded.Add(c);
-            Debug.Log(c.name + " was sent to the discard pile");
+            manager.enemyFieldSlotAvailability[markedCards[i].fieldIndex] = 0;
+            Debug.Log(markedCards[i].name + " fell to its wounds and was destroyed!");
+            discarded.Add(markedCards[i]);
+            Debug.Log(markedCards[i].name + " was sent to the discard pile");
         }
         markedCards.Clear();
     }
+
+    /*
+    public void CureSummonSickness() {
+        foreach (Card c in summonSickCreatures) {
+            Debug.Log(c.name + " is no longer summoning sick and is ready to fight!");
+            c.summonState = SummonState.BattleReady;
+        }
+        summonSickCreatures.Clear();
+    }
+    */
 
     void TakeDamage(int damage) {
         health -= damage;

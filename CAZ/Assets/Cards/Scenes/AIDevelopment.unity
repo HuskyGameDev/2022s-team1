@@ -298,7 +298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 68.00004, y: -89}
+  m_AnchoredPosition: {x: -50, y: -89}
   m_SizeDelta: {x: 0, y: -0.000030517578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223744757
@@ -624,14 +624,16 @@ MonoBehaviour:
   maxHealth: 0
   deck:
   - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
-  - {fileID: 11400000, guid: 44233fd2878e6634f9c63b3574c1b846, type: 2}
-  - {fileID: 11400000, guid: 054d931086c778143ac364831421846c, type: 2}
-  - {fileID: 11400000, guid: 03ba06a2757057846b8aa5c80f293ac6, type: 2}
-  - {fileID: 11400000, guid: 6075401738082d246a0bb3d856ad795d, type: 2}
+  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
+  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
+  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
+  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
+  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
   hand: []
   discarded: []
   bestNextCard: {fileID: 0}
   markedCards: []
+  summonSickCreatures: []
   manager: {fileID: 1714119090}
   player: {fileID: 1938791654}
 --- !u!4 &750828079
@@ -984,7 +986,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -51, y: -89}
+  m_AnchoredPosition: {x: 195, y: -89}
   m_SizeDelta: {x: 0, y: -0.000030517578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1550675427
@@ -1323,6 +1325,7 @@ MonoBehaviour:
   - {fileID: 223744756}
   - {fileID: 2093171521}
   - {fileID: 1550675426}
+  enemyFieldSlotAvailability: 000000000000000000000000
   enemyEffectSlot: {fileID: 1212970026}
   enemy: {fileID: 750828078}
   player: {fileID: 1938791654}
@@ -1674,7 +1677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 187.99997, y: -89}
+  m_AnchoredPosition: {x: 73, y: -89}
   m_SizeDelta: {x: 0, y: -0.000030517578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093171522
