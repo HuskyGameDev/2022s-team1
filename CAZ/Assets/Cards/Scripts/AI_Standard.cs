@@ -22,6 +22,7 @@ public class AI_Standard : MonoBehaviour
      */
 
     public int health;
+    public int maxHealth;
     public List<Card> deck;
     public List<Card> hand;
     public List<Card> discarded;
@@ -30,6 +31,11 @@ public class AI_Standard : MonoBehaviour
 
     public EncounterManager manager;
     public PlayerUnit player;
+
+    private void Awake()
+    {
+        maxHealth = health;
+    }
 
     public void PlayTurn() {
         PrintDeck();
@@ -43,7 +49,7 @@ public class AI_Standard : MonoBehaviour
         PrintField();
         player.PrintField();
     }
-    void DrawCards()
+    public void DrawCards()
     {
         Debug.Log("Drawing Cards...");
         //draw cards from deck, add to the hand until hand is full (max 3)
@@ -99,10 +105,20 @@ public class AI_Standard : MonoBehaviour
         RenderCard(card);
     }
 
-    void RenderCard(Card card) {
+    public void RenderCard(Card card) {
+        /*
         GameObject newCard = Instantiate(manager.cardPrefab, manager.enemyFieldSlots[manager.enemyAvailableFieldSlots]);
         newCard.GetComponent<CardDisplay>().card = card;
         newCard.GetComponent<CardDisplay>().Display();
+        */
+
+        GameObject newCard = Instantiate(card.prefab, manager.enemyFieldSlots[manager.enemyAvailableFieldSlots]);
+        card.cardObject = newCard;
+        card.cardObject.GetComponent<CardDisplay>().card = card;
+        card.cardObject.GetComponent<CardDisplay>().Display();
+
+        //newCard.GetComponent<CardDisplay>().card = card;
+        //newCard.GetComponent<CardDisplay>().Display();
     }
 
     /**
@@ -111,9 +127,11 @@ public class AI_Standard : MonoBehaviour
      * This will allow you to instantiate and destroy the correct card game object while still having access to card information.
      * Might have to change other List<Card>'s to List<GameObject>'s as well.
      * Big OOF but needs to be done
+     * 
+     * OR change card scriptable object to include card 2.0 prefab and draw from itself ???
      */
-    void EraseCard(GameObject cardObject) {
-        Destroy(cardObject);
+    public void EraseCard(Card card) {
+        Destroy(card.cardObject);
     }
 
     int EvaluateFieldScore(Card card) {
@@ -140,8 +158,79 @@ public class AI_Standard : MonoBehaviour
     }
 
     void PerformFieldTasks() {
+        Debug.Log("Enemy Starts Effect Round!!!");
+        Effects();
         Debug.Log("Enemy Starts Attack Round!!!");
         Attacks();
+    }
+
+    void Effects() {
+        //check if effect cards are in hand
+        string effectName;
+        foreach (Card c in hand) {
+            if (c.type == Types.Effect) {
+                effectName = c.name;
+                switch (effectName) {
+                    case "Healing Potion":
+                        //check if healing potion is valuable
+                        if (health < maxHealth - 5)
+                        {
+                            manager.effects.HealingPotion("Enemy");
+                        }
+                        break;
+                    case "Sleight of Hand":
+                        //check if sleight of hand is valuable
+                        if (deck.Count > 6 && hand.Count < 3)
+                        {
+                            manager.effects.SleightOfHand("Enemy");
+                        }
+                        break;
+                    case "Sacrifice":
+                        //check if sacrifice is valuable
+                        if (manager.enemyField.Count == 3 && manager.playerField.Count == 3)
+                        {
+                            manager.effects.Sacrifice("Enemy", 1);
+                        }
+                        break;
+                    case "Shadow Strike":
+                        if (manager.playerField.Count >= 1)
+                        {
+                            manager.effects.ShadowStrike("Enemy", 1);
+                        }
+                        break;
+                    //check if shadow strike is valuable
+                    case "Aggression":
+                        //check if aggression is valuable
+                        float aggroRand = Random.Range(1, 4);
+                        if (aggroRand == 3)
+                        {
+                            manager.effects.Aggression("Enemy", 1);
+                        }
+                        break;
+                    case "Revive":
+                        //check if revive is valuable
+                        if (discarded.Count > 0 && manager.enemyAvailableFieldSlots > 0)
+                        {
+                            manager.effects.Revive("Enemy", 1);
+                        }
+                        break;
+                    case "Shield":
+                        //check if shield is valuable
+                        float shieldRand = Random.Range(1, 4);
+                        if (shieldRand == 3)
+                        {
+                            manager.effects.Shield("Enemy", 1);
+                        }
+                        break;
+                    default:
+                        //effect not found
+                        Debug.Log("ERROR - Effect card not found");
+                        break;
+                }
+            }
+        }
+        //check if effect cards are valuable
+        //play effect cards
     }
 
     void Attacks() {
@@ -200,17 +289,19 @@ public class AI_Standard : MonoBehaviour
         { // double check attack/defense values
             manager.playerField.Remove(receiver); // remove from field
             Debug.Log(aggressor.name + " destroys " + receiver.name);
+            EraseCard(receiver);
 
             manager.player.discarded.Add(receiver); // add to discard pile
             Debug.Log(receiver.name + " is sent to the discard pile");
 
             int damageRemainder = aggressor.attack - receiver.defense;
-            DamagePlayer(damageRemainder);
+            //DamagePlayer(damageRemainder); // Uncomment if destroying creature deals damage
         }
         else if (aggressor.attack == receiver.defense) {
             // Destroy defending card
             manager.playerField.Remove(receiver); // remove from field
             Debug.Log(aggressor.name + " destroys " + receiver.name);
+            EraseCard(receiver);
 
             manager.player.discarded.Add(receiver); // add to discard pile
             Debug.Log(receiver.name + " is sent to the discard pile");
@@ -226,10 +317,11 @@ public class AI_Standard : MonoBehaviour
         manager.player.TakeDamage(damage);
     }
 
-    void DestroyMarkedCards() {
+    public void DestroyMarkedCards() {
 
         foreach (Card c in markedCards) {
             manager.enemyField.Remove(c);
+            EraseCard(c);
             manager.enemyAvailableFieldSlots++;
             Debug.Log(c.name + " fell to its wounds and was destroyed!");
             discarded.Add(c);

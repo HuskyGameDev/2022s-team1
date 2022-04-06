@@ -621,13 +621,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  maxHealth: 0
   deck:
   - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
   - {fileID: 11400000, guid: 44233fd2878e6634f9c63b3574c1b846, type: 2}
   - {fileID: 11400000, guid: 054d931086c778143ac364831421846c, type: 2}
-  - {fileID: 11400000, guid: 2f0d4347d94229944ae22ceb1898dc95, type: 2}
-  - {fileID: 11400000, guid: 72fef7a02007b6d48810f047032a9d5d, type: 2}
-  - {fileID: 11400000, guid: 010351fed8ef5ce429e2a1346751b76a, type: 2}
+  - {fileID: 11400000, guid: 03ba06a2757057846b8aa5c80f293ac6, type: 2}
+  - {fileID: 11400000, guid: 6075401738082d246a0bb3d856ad795d, type: 2}
   hand: []
   discarded: []
   bestNextCard: {fileID: 0}
@@ -1285,6 +1285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1714119091}
   - component: {fileID: 1714119090}
+  - component: {fileID: 1714119092}
   m_Layer: 0
   m_Name: EncounterManager
   m_TagString: Untagged
@@ -1325,6 +1326,7 @@ MonoBehaviour:
   enemyEffectSlot: {fileID: 1212970026}
   enemy: {fileID: 750828078}
   player: {fileID: 1938791654}
+  effects: {fileID: 1714119092}
   cardPrefab: {fileID: 2473742285920798735, guid: 62f7d36554090bb41822dacb39fb4950, type: 3}
 --- !u!4 &1714119091
 Transform:
@@ -1340,6 +1342,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714119092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714119089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678a2b4ea3ab0064fba7b7c8a073d4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1714119090}
+  healAmount: 5
+  aggressionAmount: 10
+  shieldAmount: 10
 --- !u!1 &1723740273
 GameObject:
   m_ObjectHideFlags: 0

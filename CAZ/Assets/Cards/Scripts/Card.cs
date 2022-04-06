@@ -15,6 +15,10 @@ public enum Types { Creature, Effect, Boss }
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class Card : ScriptableObject
 {
+    public GameObject prefab;
+
+    public GameObject cardObject;
+    
     public new string name;     // Name of the card
 
     public Types type;

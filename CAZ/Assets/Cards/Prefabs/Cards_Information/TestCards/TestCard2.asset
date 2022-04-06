@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f447ad0947079d4d9394cfb3e8d1435, type: 3}
   m_Name: TestCard2
   m_EditorClassIdentifier: 
+  prefab: {fileID: 2473742285920798735, guid: 62f7d36554090bb41822dacb39fb4950, type: 3}
+  cardObject: {fileID: 0}
   name: Test Card 2
+  type: 0
   description: This is the Test Card 2
   art: {fileID: 21300000, guid: 4ce74dfa85f91774b89cef40b41cee66, type: 3}
   attack: 10

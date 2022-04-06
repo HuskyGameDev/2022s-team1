@@ -28,6 +28,7 @@ public class EncounterManager : MonoBehaviour
 
     public AI_Standard enemy;
     public PlayerUnit player;
+    public CardEffects effects;
     public GameObject cardPrefab;
 
     // Start is called before the first frame update
@@ -51,5 +52,12 @@ public class EncounterManager : MonoBehaviour
     void EnemyTurn() {
         // call enemy turn script
         enemy.PlayTurn();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L)) {
+            EnemyTurn();
+        }
     }
 }
