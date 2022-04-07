@@ -25,6 +25,14 @@ public class CardDisplay : MonoBehaviour
         defenseNumText.text = card.defense.ToString();
     }
 
+    public void Project(Card c) {
+        nameText.text = c.name;
+        descriptionText.text = c.description;
+        artwork.sprite = c.art;
+        attackNumText.text = c.attack.ToString();
+        defenseNumText.text = c.defense.ToString();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

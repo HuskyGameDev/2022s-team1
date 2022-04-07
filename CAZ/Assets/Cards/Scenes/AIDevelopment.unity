@@ -784,10 +784,10 @@ MonoBehaviour:
   deck:
   - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
   - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
+  - {fileID: 11400000, guid: 6075401738082d246a0bb3d856ad795d, type: 2}
+  - {fileID: 11400000, guid: 98d7398f4f4a99944a94172d355506a1, type: 2}
   - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
-  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
-  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
-  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
+  - {fileID: 11400000, guid: 230ae1818f5f3554eadd3d3aa81fc734, type: 2}
   hand: []
   discarded: []
   bestNextCard: {fileID: 0}

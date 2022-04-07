@@ -10,7 +10,7 @@ public class DeckBuilderButtons : MonoBehaviour
     //Replace with reference to game manager
     public Deck deck; // Reference to player's deck
     private DeckBuilderManager deckBuilderManager; // Reference to the DeckBulderManager
-    public Card InstanceCard; // The Card to be added/removed
+    public Card InstanceCard; // The Card to be added/removed - info of card to be added/removed from deck
 
     private void Start()
     {
@@ -26,10 +26,17 @@ public class DeckBuilderButtons : MonoBehaviour
      */
     public void AddCard() {
         Debug.Log("Attempted to Add");
-        InstanceCard = GetComponentInParent<CardDisplay>().card; // set Instance Card
-        deck.deck.Add(InstanceCard); // Add card to deck list
-        AddCardToDeckList(InstanceCard); // Add card visually to deck builder
-        deckBuilderManager.deckScrollView.verticalNormalizedPosition = 1; // adjust scroll view to accomodate new entry
+        CardDex.CardEntry entry = deckBuilderManager.dex.cardDex.Find((x) => x.card.name == GetComponentInParent<CardDisplay>().card.name);
+        if (entry.isDiscovered)
+        {
+            InstanceCard = GetComponentInParent<CardDisplay>().card; // set Instance Card - get card info to add to deck
+            deck.deck.Add(InstanceCard); // Add card to deck list
+            AddCardToDeckList(InstanceCard); // Add card visually to deck builder
+            deckBuilderManager.deckScrollView.verticalNormalizedPosition = 1; // adjust scroll view to accomodate new entry
+        }
+        else {
+            Debug.Log("Failed to add, card not discovered");
+        }
     }
 
     /*
