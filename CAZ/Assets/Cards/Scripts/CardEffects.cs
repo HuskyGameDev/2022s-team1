@@ -28,7 +28,7 @@ public class CardEffects : MonoBehaviour
         {
             case "Enemy":
                 Debug.Log("Enemy used a sleight of hand!");
-                manager.enemy.DrawCards();
+                StartCoroutine(manager.enemy.DrawCards());
                 break;
             case "Player":
 

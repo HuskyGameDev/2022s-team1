@@ -41,7 +41,7 @@ public class AI_Standard : MonoBehaviour
     public IEnumerator PlayTurn() {
         PrintDeck();
         yield return new WaitForSeconds(2f);
-        DrawCards(); // Draw Cards
+        StartCoroutine(DrawCards()); // Draw Cards
         PrintHand();
         yield return new WaitForSeconds(2f);
         PrintDeck();
@@ -56,7 +56,7 @@ public class AI_Standard : MonoBehaviour
         PrintField();
         player.PrintField();
     }
-    public void DrawCards()
+    public IEnumerator DrawCards()
     {
         Debug.Log("Drawing Cards...");
         //draw cards from deck, add to the hand until hand is full (max 3)
@@ -65,6 +65,7 @@ public class AI_Standard : MonoBehaviour
             hand.Add(drawnCard);
             Debug.Log("Enemy Draws " + drawnCard.name);
             deck.RemoveAt(deck.Count - 1);
+            yield return new WaitForSeconds(1f);
         }
     }
 
