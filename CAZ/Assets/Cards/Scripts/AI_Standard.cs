@@ -161,18 +161,20 @@ public class AI_Standard : MonoBehaviour
         Destroy(card.cardObject);
     }
 
-    int EvaluateFieldScore(Card card) {
+
+    public virtual int EvaluateFieldScore(Card card) {
         int FS = 0;
         FS += health;
         FS -= player.health;
-        for (int i = 0; i < manager.enemyField.Count; i++) { 
+        for (int i = 0; i < manager.enemyField.Count; i++)
+        {
             FS += 5;
             FS += manager.enemyField[i].attack;
             FS += manager.enemyField[i].defense;
         }
         for (int i = 0; i < manager.playerField.Count; i++)
         {
-            
+
             FS -= 5;
             FS -= manager.playerField[i].attack;
             FS -= manager.playerField[i].defense;
@@ -197,7 +199,7 @@ public class AI_Standard : MonoBehaviour
         //CureSummonSickness();
     }
 
-    public IEnumerator Effects() {
+    public virtual IEnumerator Effects() {
         //check if effect cards are in hand
         string effectName;
         var handclone = new List<Card>(hand);
@@ -295,7 +297,7 @@ public class AI_Standard : MonoBehaviour
         //play effect cards
     }
 
-    IEnumerator Attacks() {
+    public virtual IEnumerator Attacks() {
         Card target = null;
         int tempAttackScore = 0;
         int attackScore = int.MaxValue;
@@ -354,7 +356,7 @@ public class AI_Standard : MonoBehaviour
         DestroyMarkedCards();
     }
 
-    void AttackAndDestroy(Card aggressor, Card receiver) {
+    public void AttackAndDestroy(Card aggressor, Card receiver) {
 
         if (aggressor.attack > receiver.defense)
         { // double check attack/defense values
@@ -384,7 +386,7 @@ public class AI_Standard : MonoBehaviour
         
     }
 
-    void DamagePlayer(int damage) {
+    public void DamagePlayer(int damage) {
         manager.player.TakeDamage(damage);
     }
 
