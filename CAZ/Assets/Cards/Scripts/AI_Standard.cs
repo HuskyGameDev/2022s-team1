@@ -46,15 +46,16 @@ public class AI_Standard : MonoBehaviour
         yield return new WaitForSeconds(2f);
         PrintDeck();
         yield return new WaitForSeconds(2f);
-        DetermineMove();
+        StartCoroutine(DetermineMove());
         yield return new WaitForSeconds(2f);
         PrintField();
         player.PrintField();
         yield return new WaitForSeconds(2f);
-        PerformFieldTasks();
+        yield return StartCoroutine(PerformFieldTasks());
         yield return new WaitForSeconds(2f);
         PrintField();
         player.PrintField();
+        Debug.Log("Enemy turn ended!");
     }
     public IEnumerator DrawCards()
     {
@@ -63,13 +64,14 @@ public class AI_Standard : MonoBehaviour
         while(hand.Count < 3) {
             Card drawnCard = Instantiate(deck[deck.Count - 1]);
             hand.Add(drawnCard);
+            manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
             Debug.Log("Enemy Draws " + drawnCard.name);
             deck.RemoveAt(deck.Count - 1);
             yield return new WaitForSeconds(1f);
         }
     }
 
-    void DetermineMove() {
+    IEnumerator DetermineMove() {
         int tempFS = 0; // store most recently calculated Field Score
         int maxFS = int.MinValue; // keep track of highest calculated Field Score
 
@@ -89,6 +91,7 @@ public class AI_Standard : MonoBehaviour
                     }
                 }
             }
+            yield return new WaitForSeconds(2f);
             PlayCard(bestNextCard);
             creatureInHand = CreatureInHand();
             maxFS = int.MinValue; // reset maxFS
@@ -108,10 +111,11 @@ public class AI_Standard : MonoBehaviour
     void PlayCard(Card card) {
         Debug.Log("Playing " + card.name + " onto the field.");
         hand.Remove(card);
+        manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
         manager.enemyField.Add(card);
         manager.enemyAvailableFieldSlots--;
         //card.summonState = SummonState.SummoningSickness;
-        RenderCard(card);
+        RenderCard(card); // relay visual info on cards on field
     }
 
     public void RenderCard(Card card) {
@@ -135,6 +139,13 @@ public class AI_Standard : MonoBehaviour
 
         //newCard.GetComponent<CardDisplay>().card = card;
         //newCard.GetComponent<CardDisplay>().Display();
+    }
+
+    public void RenderEffectCard(Card card) {
+        GameObject newCard = Instantiate(card.prefab, manager.enemyEffectSlot);
+        card.cardObject = newCard;
+        card.cardObject.GetComponent<CardDisplay>().card = card;
+        card.cardObject.GetComponent<CardDisplay>().Display();
     }
 
     /**
@@ -174,19 +185,23 @@ public class AI_Standard : MonoBehaviour
         return FS;
     }
 
-    void PerformFieldTasks() {
+    IEnumerator PerformFieldTasks() {
         Debug.Log("Enemy Starts Effect Round!!!");
-        Effects();
+        yield return new WaitForSeconds(2f);
+        yield return StartCoroutine(Effects());
         Debug.Log("Enemy Starts Attack Round!!!");
-        Attacks();
+        yield return new WaitForSeconds(2f);
+        yield return StartCoroutine(Attacks());
         Debug.Log("Enemy Ends Attack Round!!!");
+        yield return new WaitForSeconds(2f);
         //CureSummonSickness();
     }
 
-    void Effects() {
+    public IEnumerator Effects() {
         //check if effect cards are in hand
         string effectName;
-        foreach (Card c in hand) {
+        var handclone = new List<Card>(hand);
+        foreach (Card c in handclone) {
             if (c.type == Types.Effect) {
                 effectName = c.name;
                 switch (effectName) {
@@ -194,27 +209,43 @@ public class AI_Standard : MonoBehaviour
                         //check if healing potion is valuable
                         if (health < maxHealth - 5)
                         {
+                            hand.Remove(c);
+                            RenderEffectCard(c);
                             manager.effects.HealingPotion("Enemy");
+                            yield return new WaitForSeconds(3f);
+                            EraseCard(c);
                         }
                         break;
                     case "Sleight of Hand":
                         //check if sleight of hand is valuable
                         if (deck.Count > 6 && hand.Count < 3)
                         {
+                            hand.Remove(c);
+                            RenderEffectCard(c);
                             manager.effects.SleightOfHand("Enemy");
+                            yield return new WaitForSeconds(3f);
+                            EraseCard(c);
                         }
                         break;
                     case "Sacrifice":
                         //check if sacrifice is valuable
                         if (manager.enemyField.Count == 3 && manager.playerField.Count == 3)
                         {
+                            hand.Remove(c);
+                            RenderEffectCard(c);
                             manager.effects.Sacrifice("Enemy", 1);
+                            yield return new WaitForSeconds(3f);
+                            EraseCard(c);
                         }
                         break;
                     case "Shadow Strike":
                         if (manager.playerField.Count >= 1)
                         {
+                            hand.Remove(c);
+                            RenderEffectCard(c);
                             manager.effects.ShadowStrike("Enemy", 1);
+                            yield return new WaitForSeconds(3f);
+                            EraseCard(c);
                         }
                         break;
                     //check if shadow strike is valuable
@@ -223,14 +254,22 @@ public class AI_Standard : MonoBehaviour
                         float aggroRand = Random.Range(1, 4);
                         if (aggroRand == 3)
                         {
+                            hand.Remove(c);
+                            RenderEffectCard(c);
                             manager.effects.Aggression("Enemy", 1);
+                            yield return new WaitForSeconds(3f);
+                            EraseCard(c);
                         }
                         break;
                     case "Revive":
                         //check if revive is valuable
                         if (discarded.Count > 0 && manager.enemyAvailableFieldSlots > 0)
                         {
+                            hand.Remove(c);
+                            RenderEffectCard(c);
                             manager.effects.Revive("Enemy", 1);
+                            yield return new WaitForSeconds(3f);
+                            EraseCard(c);
                         }
                         break;
                     case "Shield":
@@ -238,7 +277,11 @@ public class AI_Standard : MonoBehaviour
                         float shieldRand = Random.Range(1, 4);
                         if (shieldRand == 3)
                         {
+                            hand.Remove(c);
+                            RenderEffectCard(c);
                             manager.effects.Shield("Enemy", 1);
+                            yield return new WaitForSeconds(3f);
+                            EraseCard(c);
                         }
                         break;
                     default:
@@ -252,11 +295,12 @@ public class AI_Standard : MonoBehaviour
         //play effect cards
     }
 
-    void Attacks() {
+    IEnumerator Attacks() {
         Card target = null;
         int tempAttackScore = 0;
         int attackScore = int.MaxValue;
         for(int i = 0; i < manager.enemyField.Count; i++) { // all creatures can attack
+            yield return new WaitForSeconds(3f);
             if (manager.playerField.Count > 0 && manager.enemyField[i].summonSate == SummonState.BattleReady)
             {
                 for(int j = 0; j < manager.playerField.Count; j++)

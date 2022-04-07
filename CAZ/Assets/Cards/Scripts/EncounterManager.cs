@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum BattleState { START, PLAYERTRUN, ENEMYTURN, WON, LOST}
 
@@ -26,6 +27,7 @@ public class EncounterManager : MonoBehaviour
     //public Transform enemyFieldSlot2;
     //public Transform enemyFieldSlot3;
     public Transform enemyEffectSlot;
+    public Text handNum;
     //public Dictionary<Transform, int> enemyFieldSlots;
 
     public AI_Standard enemy;
