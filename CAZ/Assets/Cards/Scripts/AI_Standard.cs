@@ -56,6 +56,7 @@ public class AI_Standard : MonoBehaviour
         PrintField();
         player.PrintField();
         Debug.Log("Enemy turn ended!");
+        StartCoroutine(manager.PlayerTurn());
     }
     public IEnumerator DrawCards()
     {
@@ -131,6 +132,8 @@ public class AI_Standard : MonoBehaviour
         }
         
         GameObject newCard = Instantiate(card.prefab, manager.enemyFieldSlots[freeIndex]);
+        newCard.transform.localScale = new Vector3(51, 40, 1);
+        newCard.GetComponent<Draggable>().owner = Draggable.Owner.ENEMY;
         manager.enemyFieldSlotAvailability[freeIndex] = 1;
         card.fieldIndex = freeIndex;
         card.cardObject = newCard;
@@ -143,6 +146,7 @@ public class AI_Standard : MonoBehaviour
 
     public void RenderEffectCard(Card card) {
         GameObject newCard = Instantiate(card.prefab, manager.enemyEffectSlot);
+        newCard.transform.localScale = new Vector3(51, 40, 1);
         card.cardObject = newCard;
         card.cardObject.GetComponent<CardDisplay>().card = card;
         card.cardObject.GetComponent<CardDisplay>().Display();
@@ -212,6 +216,7 @@ public class AI_Standard : MonoBehaviour
                         if (health < maxHealth - 5)
                         {
                             hand.Remove(c);
+                            manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
                             RenderEffectCard(c);
                             manager.effects.HealingPotion("Enemy");
                             yield return new WaitForSeconds(3f);
@@ -223,6 +228,7 @@ public class AI_Standard : MonoBehaviour
                         if (deck.Count > 6 && hand.Count < 3)
                         {
                             hand.Remove(c);
+                            manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
                             RenderEffectCard(c);
                             manager.effects.SleightOfHand("Enemy");
                             yield return new WaitForSeconds(3f);
@@ -234,6 +240,7 @@ public class AI_Standard : MonoBehaviour
                         if (manager.enemyField.Count == 3 && manager.playerField.Count == 3)
                         {
                             hand.Remove(c);
+                            manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
                             RenderEffectCard(c);
                             manager.effects.Sacrifice("Enemy", 1);
                             yield return new WaitForSeconds(3f);
@@ -244,6 +251,7 @@ public class AI_Standard : MonoBehaviour
                         if (manager.playerField.Count >= 1)
                         {
                             hand.Remove(c);
+                            manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
                             RenderEffectCard(c);
                             manager.effects.ShadowStrike("Enemy", 1);
                             yield return new WaitForSeconds(3f);
@@ -257,6 +265,7 @@ public class AI_Standard : MonoBehaviour
                         if (aggroRand == 3)
                         {
                             hand.Remove(c);
+                            manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
                             RenderEffectCard(c);
                             manager.effects.Aggression("Enemy", 1);
                             yield return new WaitForSeconds(3f);
@@ -268,6 +277,7 @@ public class AI_Standard : MonoBehaviour
                         if (discarded.Count > 0 && manager.enemyAvailableFieldSlots > 0)
                         {
                             hand.Remove(c);
+                            manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
                             RenderEffectCard(c);
                             manager.effects.Revive("Enemy", 1);
                             yield return new WaitForSeconds(3f);
@@ -280,6 +290,7 @@ public class AI_Standard : MonoBehaviour
                         if (shieldRand == 3)
                         {
                             hand.Remove(c);
+                            manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
                             RenderEffectCard(c);
                             manager.effects.Shield("Enemy", 1);
                             yield return new WaitForSeconds(3f);
@@ -362,6 +373,7 @@ public class AI_Standard : MonoBehaviour
         { // double check attack/defense values
             manager.playerField.Remove(receiver); // remove from field
             Debug.Log(aggressor.name + " destroys " + receiver.name);
+            manager.playerFieldSlots[receiver.fieldIndex].GetComponent<DropZone>().taken = false;
             EraseCard(receiver);
 
             manager.player.discarded.Add(receiver); // add to discard pile

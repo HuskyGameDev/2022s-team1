@@ -19,6 +19,7 @@ public class EncounterManager : MonoBehaviour
     //public Transform playerFieldSlot2;
     //public Transform playerFieldSlot3;
     public Transform playerEffectSlot;
+    public Text playerHPText;
 
     public List<Card> enemyField;
     public List<Transform> enemyFieldSlots;
@@ -28,10 +29,12 @@ public class EncounterManager : MonoBehaviour
     //public Transform enemyFieldSlot3;
     public Transform enemyEffectSlot;
     public Text handNum;
+    public Text enemyHPText;
     //public Dictionary<Transform, int> enemyFieldSlots;
 
     public AI_Standard enemy;
     public PlayerUnit player;
+    public Button indicator;
     public CardEffects effects;
     public GameObject cardPrefab;
 
@@ -39,6 +42,8 @@ public class EncounterManager : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
+        playerHPText.text = player.health.ToString();
+        enemyHPText.text = enemy.health.ToString();
         StartCoroutine(StartBattle());
     }
 
@@ -51,19 +56,32 @@ public class EncounterManager : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.ENEMYTURN;
-        EnemyTurn();
+        //Determine who goes first
+        StartCoroutine(PlayerTurn());
     }
 
-    void EnemyTurn() {
+    public void EnemyTurn() {
         // call enemy turn script
+        state = BattleState.ENEMYTURN;
+        indicator.GetComponentInChildren<Text>().text = "Enemy Turn";
         StartCoroutine(enemy.PlayTurn());
+    }
+
+    public IEnumerator PlayerTurn()
+    {
+        // call enemy turn script
+        state = BattleState.PLAYERTRUN;
+        indicator.GetComponentInChildren<Text>().text = "Your Turn";
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(player.PlayTurn());
     }
 
     private void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.L)) {
             EnemyTurn();
         }
+        */
     }
 }

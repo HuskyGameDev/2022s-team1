@@ -1,0 +1,1020 @@
+fileFormatVersion: 2
+guid: f9c020f8ae9197b4890abd4aa8602d1f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5637942990400892350
+    second: Gui16x16_0
+  - first:
+      213: -841091099357934619
+    second: Gui16x16_1
+  - first:
+      213: 3392503712999078424
+    second: Gui16x16_2
+  - first:
+      213: 6170570412290794355
+    second: Gui16x16_3
+  - first:
+      213: 232026761913122739
+    second: Gui16x16_4
+  - first:
+      213: 4751481828783776730
+    second: Gui16x16_5
+  - first:
+      213: 4931819191180200583
+    second: Gui16x16_6
+  - first:
+      213: -3020255904322771392
+    second: Gui16x16_7
+  - first:
+      213: -1350736569455038249
+    second: Gui16x16_8
+  - first:
+      213: -4465836292261124164
+    second: Gui16x16_9
+  - first:
+      213: -7895380953055582235
+    second: Gui16x16_10
+  - first:
+      213: 4353395032141339
+    second: Gui16x16_11
+  - first:
+      213: 7637488990659402191
+    second: Gui16x16_12
+  - first:
+      213: 6964231966751780744
+    second: Gui16x16_13
+  - first:
+      213: -6311413245016074581
+    second: Gui16x16_14
+  - first:
+      213: 5392879156722918606
+    second: Gui16x16_15
+  - first:
+      213: 8852720254043813718
+    second: Gui16x16_16
+  - first:
+      213: -4168432195489227333
+    second: Gui16x16_17
+  - first:
+      213: -2783530395676874284
+    second: Gui16x16_18
+  - first:
+      213: 7266932837455019526
+    second: Gui16x16_19
+  - first:
+      213: 4135584156282365625
+    second: Gui16x16_20
+  - first:
+      213: 8142358179454141456
+    second: Gui16x16_21
+  - first:
+      213: -5055124868170094050
+    second: Gui16x16_22
+  - first:
+      213: 4465518222903350305
+    second: Gui16x16_23
+  - first:
+      213: 6829543101781286195
+    second: Gui16x16_24
+  - first:
+      213: -7249250399277438009
+    second: Gui16x16_25
+  - first:
+      213: 8312559870614445522
+    second: Gui16x16_26
+  - first:
+      213: -3191698632817465157
+    second: Gui16x16_27
+  - first:
+      213: -2010341719884802038
+    second: Gui16x16_28
+  - first:
+      213: -6620011931618277012
+    second: Gui16x16_29
+  - first:
+      213: -2171070501021743423
+    second: Gui16x16_30
+  - first:
+      213: 7057755728838315428
+    second: Gui16x16_31
+  - first:
+      213: -4834895565420746438
+    second: Gui16x16_32
+  - first:
+      213: -7685106772005313546
+    second: Gui16x16_33
+  - first:
+      213: 1759552463404265974
+    second: Gui16x16_34
+  - first:
+      213: 2835273288880893697
+    second: Gui16x16_35
+  - first:
+      213: 2413071428679724287
+    second: Gui16x16_36
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gui16x16_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 148
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2425049a8b002c1b0800000000000000
+      internalID: -5637942990400892350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 152
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb0707f918d354f0800000000000000
+      internalID: -841091099357934619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 168
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81af0881728941f20800000000000000
+      internalID: 3392503712999078424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_3
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 180
+        width: 35
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373e02ec81542a550800000000000000
+      internalID: 6170570412290794355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_4
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 167
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf37325c13583300800000000000000
+      internalID: 232026761913122739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_5
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 164
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad361618c87a0f140800000000000000
+      internalID: 4751481828783776730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_6
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 164
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a00caac67517440800000000000000
+      internalID: 4931819191180200583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_7
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 164
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046a01cc145e516d0800000000000000
+      internalID: -3020255904322771392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_8
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 164
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0b0802f38314de0800000000000000
+      internalID: -1350736569455038249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb76abe9d892602c0800000000000000
+      internalID: -4465836292261124164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 148
+        width: 35
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7acbecad8fd6290800000000000000
+      internalID: -7895380953055582235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_11
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 135
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e2574c3677f0000800000000000000
+      internalID: 4353395032141339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 100
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9d53895cfcdf960800000000000000
+      internalID: 7637488990659402191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_13
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 116
+        width: 7
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88fe8af531ce5a060800000000000000
+      internalID: 6964231966751780744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_14
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 116
+        width: 7
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba61f1cc71b5968a0800000000000000
+      internalID: -6311413245016074581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_15
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 112
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4e315350b57da40800000000000000
+      internalID: 5392879156722918606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_16
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 133
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657ff26da2e2bda70800000000000000
+      internalID: 8852720254043813718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_17
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 132
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd1095e001c626c0800000000000000
+      internalID: -4168432195489227333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_18
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 132
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d96d285ad9ee59d0800000000000000
+      internalID: -2783530395676874284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_19
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 132
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60eb02fe9e459d460800000000000000
+      internalID: 7266932837455019526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_20
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 132
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6a1fdf0eb846930800000000000000
+      internalID: 4135584156282365625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 116
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0144c58cf977ff070800000000000000
+      internalID: 8142358179454141456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_22
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 119
+        width: 34
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a6a7137b698d9b0800000000000000
+      internalID: -5055124868170094050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_23
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 101
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12410361a25b8fd30800000000000000
+      internalID: 4465518222903350305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_24
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 97
+        width: 46
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d94ef344967ce50800000000000000
+      internalID: 6829543101781286195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_25
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cba5378b2d756b90800000000000000
+      internalID: -7249250399277438009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_26
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 55
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd142619252c5370800000000000000
+      internalID: 8312559870614445522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_27
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 55
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8a0d8f00fc4b3d0800000000000000
+      internalID: -3191698632817465157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_28
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 81
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a085e156bd4d914e0800000000000000
+      internalID: -2010341719884802038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_29
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c698b07f83ef024a0800000000000000
+      internalID: -6620011931618277012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_30
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 65
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c60544d1eeced1e0800000000000000
+      internalID: -2171070501021743423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_31
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 65
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4adc2e8117f22f160800000000000000
+      internalID: 7057755728838315428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_32
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 17
+        width: 4
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a392cf0891007ecb0800000000000000
+      internalID: -4834895565420746438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_33
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 32
+        width: 34
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3aca9bb14095590800000000000000
+      internalID: -7685106772005313546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_34
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 3
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1ffd894af2b6810800000000000000
+      internalID: 1759552463404265974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_35
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 37
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f26e8c80ae85720800000000000000
+      internalID: 2835273288880893697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gui16x16_36
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 9
+        width: 4
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc691ceda3fc7120800000000000000
+      internalID: 2413071428679724287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
