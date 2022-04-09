@@ -93,36 +93,42 @@ public class CardEffects : MonoBehaviour
                     case 1:
                         targetCard = GetRandomCardOnField(manager.playerField);
                         manager.playerField.Remove(targetCard); // remove from field
+                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;
                     case 2:
                         targetCard = GetRandomCardOnField(manager.playerField);
                         manager.playerField.Remove(targetCard); // remove from field
+                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;
                     case 3:
                         targetCard = GetHighestDefense(manager.playerField);
                         manager.playerField.Remove(targetCard); // remove from field
+                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;
                     case 4:
                         targetCard = GetHighestDefense(manager.playerField);
                         manager.playerField.Remove(targetCard); // remove from field
+                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;
                     case 5:
                         targetCard = GetHighestAttack(manager.playerField);
                         manager.playerField.Remove(targetCard); // remove from field
+                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;
                     case 6:
                         targetCard = GetHighestAttack(manager.playerField);
                         manager.playerField.Remove(targetCard); // remove from field
+                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;

@@ -11,6 +11,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     Vector2 posOffset;
     Canvas canvas;
     public Transform parentToReturnTo = null;
+    public bool placed = false;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (owner == Owner.PLAYER)
+        if (owner == Owner.PLAYER && !placed)
         {
             posOffset = eventData.position - (Vector2)this.transform.position;
 
@@ -28,13 +29,20 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
             GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
+        else if (owner == Owner.PLAYER && placed) { 
+            //start draw line
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (owner == Owner.PLAYER)
+        if (owner == Owner.PLAYER && !placed)
         {
             this.transform.position = eventData.position - posOffset;
+        }
+        else if (owner == Owner.PLAYER && placed)
+        {
+            //upadte line
         }
     }
 
@@ -44,6 +52,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             this.transform.SetParent(parentToReturnTo);
             GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (owner == Owner.PLAYER && placed)
+        {
+            //attack? - maybe done in dropZone
         }
     }
 }
