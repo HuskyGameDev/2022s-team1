@@ -9,6 +9,7 @@ public class PlayerUnit : MonoBehaviour
     public List<Card> hand;
     public List<Card> deck;
     public List<Card> discarded;
+    public List<Card> markedCards;
 
     public EncounterManager manager;
     public Transform handZone;
@@ -56,9 +57,85 @@ public class PlayerUnit : MonoBehaviour
         //newCard.GetComponent<CardDisplay>().Display();
     }
 
+    public void EraseCard(Card card)
+    {
+        Destroy(card.cardObject);
+    }
+
+    public void attack(Card playerCard, Card enemyCard) {
+        Debug.Log(playerCard.name + " attacks " + enemyCard.name + "!");
+
+        if (playerCard.attack > enemyCard.defense)
+        { // double check attack/defense values
+            manager.enemyField.Remove(enemyCard); // remove from field
+            Debug.Log(playerCard.name + " destroys " + enemyCard.name);
+            EraseCard(enemyCard);
+            manager.enemyAvailableFieldSlots++;
+            manager.enemyFieldSlotAvailability[enemyCard.fieldIndex] = 0;
+            manager.enemy.discarded.Add(enemyCard); // add to discard pile
+            Debug.Log(enemyCard.name + " is sent to the discard pile");
+
+            int damageRemainder = playerCard.attack - enemyCard.defense;
+            //manager.enemy.TakeDamage(damageRemainder); // Uncomment if destroying creature deals damage
+        }
+        else if (playerCard.attack == enemyCard.defense)
+        {
+            // Destroy defending card
+            manager.enemyField.Remove(enemyCard); // remove from field
+            Debug.Log(playerCard.name + " destroys " + enemyCard.name);
+            EraseCard(enemyCard);
+            manager.enemyAvailableFieldSlots++;
+            manager.enemyFieldSlotAvailability[enemyCard.fieldIndex] = 0;
+            manager.enemy.discarded.Add(enemyCard); // add to discard pile
+            Debug.Log(enemyCard.name + " is sent to the discard pile");
+
+            // Mark attacking card for destruction after attack phase
+            markedCards.Add(playerCard);
+            playerCard.cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(true);
+            Debug.Log(playerCard.name + " was wounded in the attack!");
+        }
+        else if (playerCard.attack < enemyCard.defense) {
+            Debug.Log(playerCard.name + " attacked and missed " + enemyCard.name);
+        }
+    }
+
+    public void DestroyMarkedCards()
+    {
+
+        for (int i = 0; i < markedCards.Count; i++)
+        {
+            manager.playerField.Remove(markedCards[i]);
+            //manager.enemyAvailableFieldSlots++;
+            //manager.enemyFieldSlotAvailability[markedCards[i].fieldIndex] = 0;
+            manager.playerFieldSlots[markedCards[i].fieldIndex].GetComponent<DropZone>().taken = false;
+            EraseCard(markedCards[i]);
+            Debug.Log(markedCards[i].name + " fell to its wounds and was destroyed!");
+            discarded.Add(markedCards[i]);
+            Debug.Log(markedCards[i].name + " was sent to the discard pile");
+        }
+        markedCards.Clear();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        manager.playerHPText.text = health.ToString();
+        Debug.Log("Player takes " + damage + " points of Damage! | Player's HP: " + health);
+    }
+
     public void EndTurn() {
         manager.indicator.GetComponentInChildren<Text>().text = "Ending Turn";
         manager.indicator.interactable = false;
+
+        foreach (Card c in manager.playerField) {
+            if (c.summonState == SummonState.SummonSick)
+            {
+                c.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+                c.summonState = SummonState.BattleReady;
+            }
+        }
+        DestroyMarkedCards();
+
         manager.EnemyTurn();
     }
 
@@ -91,10 +168,5 @@ public class PlayerUnit : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        manager.playerHPText.text = health.ToString();
-        Debug.Log("Player takes " + damage + " points of Damage! | Player's HP: " + health);
-    }
+    
 }

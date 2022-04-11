@@ -134,9 +134,12 @@ public class AI_Standard : MonoBehaviour
         GameObject newCard = Instantiate(card.prefab, manager.enemyFieldSlots[freeIndex]);
         newCard.transform.localScale = new Vector3(51, 40, 1);
         newCard.GetComponent<Draggable>().owner = Draggable.Owner.ENEMY;
+        newCard.GetComponent<Draggable>().placed = true;
         manager.enemyFieldSlotAvailability[freeIndex] = 1;
         card.fieldIndex = freeIndex;
         card.cardObject = newCard;
+        card.summonState = SummonState.SummonSick;
+        card.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(true);
         card.cardObject.GetComponent<CardDisplay>().card = card;
         card.cardObject.GetComponent<CardDisplay>().Display();
 
@@ -200,7 +203,7 @@ public class AI_Standard : MonoBehaviour
         yield return StartCoroutine(Attacks());
         Debug.Log("Enemy Ends Attack Round!!!");
         yield return new WaitForSeconds(2f);
-        //CureSummonSickness();
+        CureSummonSickness();
     }
 
     public virtual IEnumerator Effects() {
@@ -314,7 +317,7 @@ public class AI_Standard : MonoBehaviour
         int attackScore = int.MaxValue;
         for(int i = 0; i < manager.enemyField.Count; i++) { // all creatures can attack
             yield return new WaitForSeconds(3f);
-            if (manager.playerField.Count > 0 && manager.enemyField[i].summonSate == SummonState.BattleReady)
+            if (manager.playerField.Count > 0 && manager.enemyField[i].summonState == SummonState.BattleReady)
             {
                 for(int j = 0; j < manager.playerField.Count; j++)
                 { // check each creature in player field
@@ -351,7 +354,7 @@ public class AI_Standard : MonoBehaviour
                 }
                 //attackScore = int.MaxValue; // reset attackScore for next card
             }
-            else if (manager.enemyField[i].summonSate == SummonState.BattleReady)
+            else if (manager.enemyField[i].summonState == SummonState.BattleReady)
             {
                 Debug.Log(manager.enemyField[i].name + " attacks directly!");
                 DamagePlayer(manager.enemyField[i].attack);
@@ -361,7 +364,10 @@ public class AI_Standard : MonoBehaviour
                 //c.summonState = SummonState.BattleReady;
                 //summonSickCreatures.Add(manager.enemyField[i]);
                 //manager.enemyField[i].summonState = SummonState.BattleReady;
-                manager.enemyField[i].summonSate = SummonState.BattleReady;
+
+                //manager.enemyField[i].summonState = SummonState.BattleReady;
+                //manager.enemyField[i].cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+                
             }
         }
         DestroyMarkedCards();
@@ -386,6 +392,7 @@ public class AI_Standard : MonoBehaviour
             // Destroy defending card
             manager.playerField.Remove(receiver); // remove from field
             Debug.Log(aggressor.name + " destroys " + receiver.name);
+            manager.playerFieldSlots[receiver.fieldIndex].GetComponent<DropZone>().taken = false;
             EraseCard(receiver);
 
             manager.player.discarded.Add(receiver); // add to discard pile
@@ -393,6 +400,7 @@ public class AI_Standard : MonoBehaviour
 
             // Mark attacking card for destruction after attack phase
             markedCards.Add(aggressor);
+            aggressor.cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(true);
             Debug.Log(aggressor.name + " was wounded in the attack!");
         }
         
@@ -416,18 +424,20 @@ public class AI_Standard : MonoBehaviour
         markedCards.Clear();
     }
 
-    /*
+    
     public void CureSummonSickness() {
-        foreach (Card c in summonSickCreatures) {
+        foreach (Card c in manager.enemyField) {
             Debug.Log(c.name + " is no longer summoning sick and is ready to fight!");
             c.summonState = SummonState.BattleReady;
+            c.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
         }
-        summonSickCreatures.Clear();
+        //summonSickCreatures.Clear();
     }
-    */
+    
 
-    void TakeDamage(int damage) {
+    public void TakeDamage(int damage) {
         health -= damage;
+        manager.enemyHPText.text = health.ToString();
         Debug.Log("Enemy takes " + damage + " points of Damage! | Enemy's HP: " + health);
     }
 

@@ -246,6 +246,9 @@ public class CardEffects : MonoBehaviour
                         manager.enemyField.Add(targetCard);
                         manager.enemyAvailableFieldSlots--;
                         //render card
+                        manager.enemy.RenderCard(targetCard);
+                        targetCard.summonState = SummonState.BattleReady;
+                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 2:
@@ -254,6 +257,9 @@ public class CardEffects : MonoBehaviour
                         manager.enemyField.Add(targetCard);
                         manager.enemyAvailableFieldSlots--;
                         //render card
+                        manager.enemy.RenderCard(targetCard);
+                        targetCard.summonState = SummonState.BattleReady;
+                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 3:
@@ -262,6 +268,9 @@ public class CardEffects : MonoBehaviour
                         manager.enemyField.Add(targetCard);
                         manager.enemyAvailableFieldSlots--;
                         //render card
+                        manager.enemy.RenderCard(targetCard);
+                        targetCard.summonState = SummonState.BattleReady;
+                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 4:
@@ -270,6 +279,9 @@ public class CardEffects : MonoBehaviour
                         manager.enemyField.Add(targetCard);
                         manager.enemyAvailableFieldSlots--;
                         //render card
+                        manager.enemy.RenderCard(targetCard);
+                        targetCard.summonState = SummonState.BattleReady;
+                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 5:
@@ -278,6 +290,9 @@ public class CardEffects : MonoBehaviour
                         manager.enemyField.Add(targetCard);
                         manager.enemyAvailableFieldSlots--;
                         //render card
+                        manager.enemy.RenderCard(targetCard);
+                        targetCard.summonState = SummonState.BattleReady;
+                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 6:
@@ -286,6 +301,9 @@ public class CardEffects : MonoBehaviour
                         manager.enemyField.Add(targetCard);
                         manager.enemyAvailableFieldSlots--;
                         //render card
+                        manager.enemy.RenderCard(targetCard);
+                        targetCard.summonState = SummonState.BattleReady;
+                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                 }

@@ -37,6 +37,7 @@ public class EncounterManager : MonoBehaviour
     public Button indicator;
     public CardEffects effects;
     public GameObject cardPrefab;
+    public CursorController cursorController;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,11 @@ public class EncounterManager : MonoBehaviour
         // call enemy turn script
         state = BattleState.PLAYERTRUN;
         indicator.GetComponentInChildren<Text>().text = "Your Turn";
+
+        foreach (Card c in playerField) {
+            c.turnAction = TurnAction.NotUsed;
+        }
+
         yield return new WaitForSeconds(2f);
         StartCoroutine(player.PlayTurn());
     }

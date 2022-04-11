@@ -13,6 +13,10 @@ public class CardDisplay : MonoBehaviour
     public Text attackNumText;
     public Text defenseNumText;
 
+    public GameObject summonSickOverlay;
+    public GameObject attackSelectOverlay;
+    public GameObject playerSelectOverlay;
+
     /**
      * Updates a card's information in the game view during runtime
      */

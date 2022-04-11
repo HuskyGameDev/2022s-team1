@@ -12,7 +12,9 @@ using UnityEngine;
 
 public enum Types { Creature, Effect, Boss }
 
-public enum SummonState { SummonSick, BattleReady }
+public enum SummonState { NotPlayed, SummonSick, BattleReady }
+
+public enum TurnAction { NotUsed, Used }
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class Card : ScriptableObject
@@ -27,7 +29,9 @@ public class Card : ScriptableObject
 
     public Types type;
 
-    public SummonState summonSate;
+    public SummonState summonState;
+
+    public TurnAction turnAction;
 
     public string description;  // Description of the card
 

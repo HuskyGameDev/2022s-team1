@@ -35,7 +35,7 @@ public class AI_4_Offensive_Maximize : AI_Standard
         for (int i = 0; i < manager.enemyField.Count; i++)
         { // all creatures can attack
             yield return new WaitForSeconds(3f);
-            if (manager.playerField.Count > 0 && manager.enemyField[i].summonSate == SummonState.BattleReady)
+            if (manager.playerField.Count > 0 && manager.enemyField[i].summonState == SummonState.BattleReady)
             {
                 for (int j = 0; j < manager.playerField.Count; j++)
                 { // check each creature in player field
@@ -72,7 +72,7 @@ public class AI_4_Offensive_Maximize : AI_Standard
                 }
                 //attackScore = int.MaxValue; // reset attackScore for next card
             }
-            else if (manager.enemyField[i].summonSate == SummonState.BattleReady)
+            else if (manager.enemyField[i].summonState == SummonState.BattleReady)
             {
                 Debug.Log(manager.enemyField[i].name + " attacks directly!");
                 DamagePlayer(manager.enemyField[i].attack);
@@ -83,7 +83,7 @@ public class AI_4_Offensive_Maximize : AI_Standard
                 //c.summonState = SummonState.BattleReady;
                 //summonSickCreatures.Add(manager.enemyField[i]);
                 //manager.enemyField[i].summonState = SummonState.BattleReady;
-                manager.enemyField[i].summonSate = SummonState.BattleReady;
+                manager.enemyField[i].summonState = SummonState.BattleReady;
             }
         }
         DestroyMarkedCards();
