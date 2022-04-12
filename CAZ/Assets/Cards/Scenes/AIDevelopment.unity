@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 198677672}
   - component: {fileID: 198677671}
   m_Layer: 0
-  m_Name: DoneButton
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1611,8 +1611,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2083643305}
   m_HandleRect: {fileID: 2083643304}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0.2668689
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1760,103 +1760,6 @@ RectTransform:
   m_AnchoredPosition: {x: 948.4, y: 486}
   m_SizeDelta: {x: 799.99994, y: 449.99997}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &682188300
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2.2245
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 3.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798734, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2473742285920798735, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
-      propertyPath: m_Name
-      value: Card_Discarded
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
 --- !u!1 &701059736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,7 +1968,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &760060951
 GameObject:
@@ -2343,14 +2246,14 @@ MonoBehaviour:
       - m_Target: {fileID: 1117051062}
         m_TargetAssemblyTypeName: DiscardController, Assembly-CSharp
         m_MethodName: EnableDiscardView
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &879147588
 MonoBehaviour:
@@ -2497,6 +2400,7 @@ MonoBehaviour:
   discardView: {fileID: 85917078}
   discardContent: {fileID: 1440075638}
   cardInDiscard_Prefab: {fileID: 2473742285920798735, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
+  closeButton: {fileID: 1796938756}
 --- !u!4 &915437751
 Transform:
   m_ObjectHideFlags: 0
@@ -2509,7 +2413,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &925893175
 GameObject:
@@ -2562,7 +2466,7 @@ GameObject:
   - component: {fileID: 965867602}
   - component: {fileID: 965867601}
   m_Layer: 0
-  m_Name: DoneButtonText
+  m_Name: CloseButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2620,7 +2524,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Done
+  m_Text: Close
 --- !u!222 &965867602
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2679,7 +2583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &991349910
 SpriteRenderer:
@@ -2744,7 +2648,7 @@ GameObject:
   - component: {fileID: 1018618604}
   - component: {fileID: 1018618603}
   m_Layer: 0
-  m_Name: DoneButtonText
+  m_Name: CloseButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2802,7 +2706,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Done
+  m_Text: Close
 --- !u!222 &1018618604
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2918,6 +2822,7 @@ MonoBehaviour:
   discardView: {fileID: 1521473226}
   discardContent: {fileID: 1764295578}
   cardInDiscard_Prefab: {fileID: 2473742285920798735, guid: 86eaa3103c7a73d4d8ceb16874439500, type: 3}
+  closeButton: {fileID: 198677669}
 --- !u!4 &1117051063
 Transform:
   m_ObjectHideFlags: 0
@@ -2930,7 +2835,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158575513
 GameObject:
@@ -3660,7 +3565,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -8, y: -0.000030517578}
-  m_SizeDelta: {x: 252.81, y: 1252.45}
+  m_SizeDelta: {x: 252.81, y: 280}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1476368696
 GameObject:
@@ -4345,14 +4250,14 @@ MonoBehaviour:
       - m_Target: {fileID: 915437750}
         m_TargetAssemblyTypeName: DiscardController, Assembly-CSharp
         m_MethodName: EnableDiscardView
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1641596626
 MonoBehaviour:
@@ -4774,8 +4679,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2056572463}
   m_HandleRect: {fileID: 2056572462}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0.2668689
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4852,6 +4757,7 @@ MonoBehaviour:
   turnNum: 0
   enemyAvailableFieldSlots: 3
   playerAvailableFieldSlots: 3
+  activeEffect: 0
   playerField: []
   playerFieldSlots:
   - {fileID: 2002763449}
@@ -4873,7 +4779,7 @@ MonoBehaviour:
   indicator: {fileID: 510491651}
   effects: {fileID: 1714119092}
   cardPrefab: {fileID: 2473742285920798735, guid: 62f7d36554090bb41822dacb39fb4950, type: 3}
-  cursorController: {fileID: 0}
+  cursorController: {fileID: 991349908}
   enemyDiscardController: {fileID: 915437750}
   playerDiscardController: {fileID: 1117051062}
 --- !u!4 &1714119091
@@ -4888,7 +4794,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1714119092
 MonoBehaviour:
@@ -5026,7 +4932,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -8, y: -0.000030517578}
-  m_SizeDelta: {x: 252.81, y: 1252.45}
+  m_SizeDelta: {x: 252.81, y: 280}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1764295580
 MonoBehaviour:
@@ -5158,7 +5064,7 @@ GameObject:
   - component: {fileID: 1796938759}
   - component: {fileID: 1796938758}
   m_Layer: 0
-  m_Name: DoneButton
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5409,7 +5315,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2f0d4347d94229944ae22ceb1898dc95, type: 2}
   - {fileID: 11400000, guid: 72fef7a02007b6d48810f047032a9d5d, type: 2}
   - {fileID: 11400000, guid: 054d931086c778143ac364831421846c, type: 2}
-  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
+  - {fileID: 11400000, guid: 6075401738082d246a0bb3d856ad795d, type: 2}
   discarded: []
   markedCards: []
   manager: {fileID: 1714119090}
@@ -5426,7 +5332,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977848117
 GameObject:
@@ -5730,7 +5636,7 @@ RectTransform:
   m_Father: {fileID: 1036457602}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.73313105}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.99999994}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -5805,7 +5711,7 @@ RectTransform:
   m_Father: {fileID: 760060952}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.73313105}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.99999994}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}

@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: Test Card  5
 --- !u!1 &2473742285381596116
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 7378058251325298790}
   - component: {fileID: 3868495649318568973}
   - component: {fileID: 4124811187442364492}
+  - component: {fileID: -5439333254780567839}
   m_Layer: 5
   m_Name: Card_Discarded
   m_TagString: Untagged
@@ -386,6 +387,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &-5439333254780567839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473742285920798735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e987dbe4fc0697d4d9f497c4171bda49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2473742285942233387
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +705,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Description
+  m_Text: This is the Test Card 5
 --- !u!1 &2473742285984536101
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +860,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 4
 --- !u!1 &2473742286242019867
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +926,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a3880fcd9ea0e23459f156f03ac69707, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1236,7 +1249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 6
 --- !u!1 &2473742287219578898
 GameObject:
   m_ObjectHideFlags: 0

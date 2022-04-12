@@ -18,6 +18,7 @@ public class CardEffects : MonoBehaviour
                 break;
             case "Player":
                 manager.player.health = manager.player.health + healAmount;
+                Debug.Log("You used a health potion!");
                 break;
         }
     }
@@ -309,7 +310,9 @@ public class CardEffects : MonoBehaviour
                 }
                 break;
             case "Player":
-
+                Debug.Log("Opening discard pile for revive");
+                manager.playerDiscardController.EnableDiscardView(false);
+                
                 break;
         }
     }

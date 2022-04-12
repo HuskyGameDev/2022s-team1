@@ -69,11 +69,12 @@ public class PlayerUnit : MonoBehaviour
         { // double check attack/defense values
             manager.enemyField.Remove(enemyCard); // remove from field
             Debug.Log(playerCard.name + " destroys " + enemyCard.name);
-            EraseCard(enemyCard);
+            
             manager.enemyAvailableFieldSlots++;
             manager.enemyFieldSlotAvailability[enemyCard.fieldIndex] = 0;
             manager.enemy.discarded.Add(enemyCard); // add to discard pile
             manager.enemyDiscardController.addCardToContent(enemyCard);
+            EraseCard(enemyCard);
             Debug.Log(enemyCard.name + " is sent to the discard pile");
 
             int damageRemainder = playerCard.attack - enemyCard.defense;

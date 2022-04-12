@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public enum BattleState { START, PLAYERTRUN, ENEMYTURN, WON, LOST}
 
+public enum ActiveEffect { NONE, HEALING_POTION, SACRIFICE, SHADOW_STRIKE, SLEIGHT_OF_HAND, AGGRESSION, SHIELD, REVIVE }
 public class EncounterManager : MonoBehaviour
 {
 
@@ -12,6 +13,7 @@ public class EncounterManager : MonoBehaviour
     public int turnNum;
     public int enemyAvailableFieldSlots;
     public int playerAvailableFieldSlots;
+    public ActiveEffect activeEffect;
 
     public List<Card> playerField;
     public List<Transform> playerFieldSlots;

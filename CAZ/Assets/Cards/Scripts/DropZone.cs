@@ -37,7 +37,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 fromTakenParent = false;
             }
 
-            if (zoneType == ZoneType.Creature && (drag.GetComponent<CardDisplay>().card.type == Types.Creature || drag.GetComponent<CardDisplay>().card.type == Types.Boss))
+            if (zoneType == ZoneType.Creature && (drag.GetComponent<CardDisplay>().card.type == Types.Creature || drag.GetComponent<CardDisplay>().card.type == Types.Boss) && manager.state == BattleState.PLAYERTRUN)
             {
                 if (zoneOwner == drag.owner && !taken && !fromTakenParent)
                 { // check card and drop zone prereqs
@@ -52,7 +52,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                     drag.placed = true;
                 }
             }
-            else if (zoneType == ZoneType.Effect && drag.GetComponent<CardDisplay>().card.type == Types.Effect)
+            else if (zoneType == ZoneType.Effect && drag.GetComponent<CardDisplay>().card.type == Types.Effect && manager.state == BattleState.PLAYERTRUN)
             {
                 if (zoneOwner == drag.owner && !taken && !fromTakenParent)
                 { // check card and drop zone prereqs
@@ -61,7 +61,47 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                     manager.player.hand.Remove(drag.GetComponent<CardDisplay>().card); // remove card from player's hand
                     taken = true; // mark the dropzone as taken
                     drag.placed = true;
+
+                    //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor;
+                    //manager.cursorController.cursorState = CursorState.EFFECT;
+
+                    string effectName = drag.GetComponent<CardDisplay>().card.name;
+                    switch (effectName) {
+                        case "Healing Potion":
+                            manager.activeEffect = ActiveEffect.HEALING_POTION;
+                            manager.effects.HealingPotion("Player");
+                            break;
+                        case "Sleight of Hand":
+                            manager.activeEffect = ActiveEffect.SLEIGHT_OF_HAND;
+                            manager.effects.SleightOfHand("Player");
+                            break;
+                        case "Sacrifice":
+                            manager.activeEffect = ActiveEffect.SACRIFICE;
+                            manager.effects.Sacrifice("Player", 0);
+                            break;
+                        case "Shadow Strike":
+                            manager.activeEffect = ActiveEffect.SHADOW_STRIKE;
+                            manager.effects.ShadowStrike("Player", 0);
+                            break;
+                        case "Aggression":
+                            manager.activeEffect = ActiveEffect.AGGRESSION;
+                            manager.effects.Aggression("Player", 0);
+                            break;
+                        case "Shield":
+                            manager.activeEffect = ActiveEffect.SHIELD;
+                            manager.effects.Shield("Player", 0);
+                            break;
+                        case "Revive":
+                            manager.activeEffect = ActiveEffect.REVIVE;
+                            manager.effects.Revive("Player", 0);
+                            break;
+                    }
                 }
+                manager.player.EraseCard(drag.GetComponent<CardDisplay>().card);
+                taken = false;
+
+                manager.cursorController.cursorImage.sprite = manager.cursorController.normalCursor;
+                manager.cursorController.cursorState = CursorState.NORMAL;
             }
         }
     }
