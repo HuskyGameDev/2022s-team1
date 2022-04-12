@@ -38,6 +38,8 @@ public class EncounterManager : MonoBehaviour
     public CardEffects effects;
     public GameObject cardPrefab;
     public CursorController cursorController;
+    public DiscardController enemyDiscardController;
+    public DiscardController playerDiscardController;
 
     // Start is called before the first frame update
     void Start()

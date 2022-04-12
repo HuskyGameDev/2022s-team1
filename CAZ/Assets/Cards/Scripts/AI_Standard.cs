@@ -383,6 +383,7 @@ public class AI_Standard : MonoBehaviour
             EraseCard(receiver);
 
             manager.player.discarded.Add(receiver); // add to discard pile
+            manager.playerDiscardController.addCardToContent(receiver);
             Debug.Log(receiver.name + " is sent to the discard pile");
 
             int damageRemainder = aggressor.attack - receiver.defense;
@@ -396,6 +397,7 @@ public class AI_Standard : MonoBehaviour
             EraseCard(receiver);
 
             manager.player.discarded.Add(receiver); // add to discard pile
+            manager.playerDiscardController.addCardToContent(receiver);
             Debug.Log(receiver.name + " is sent to the discard pile");
 
             // Mark attacking card for destruction after attack phase
@@ -419,6 +421,7 @@ public class AI_Standard : MonoBehaviour
             manager.enemyFieldSlotAvailability[markedCards[i].fieldIndex] = 0;
             Debug.Log(markedCards[i].name + " fell to its wounds and was destroyed!");
             discarded.Add(markedCards[i]);
+            manager.enemyDiscardController.addCardToContent(markedCards[i]);
             Debug.Log(markedCards[i].name + " was sent to the discard pile");
         }
         markedCards.Clear();

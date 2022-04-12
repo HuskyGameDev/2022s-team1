@@ -73,6 +73,7 @@ public class PlayerUnit : MonoBehaviour
             manager.enemyAvailableFieldSlots++;
             manager.enemyFieldSlotAvailability[enemyCard.fieldIndex] = 0;
             manager.enemy.discarded.Add(enemyCard); // add to discard pile
+            manager.enemyDiscardController.addCardToContent(enemyCard);
             Debug.Log(enemyCard.name + " is sent to the discard pile");
 
             int damageRemainder = playerCard.attack - enemyCard.defense;
@@ -87,6 +88,7 @@ public class PlayerUnit : MonoBehaviour
             manager.enemyAvailableFieldSlots++;
             manager.enemyFieldSlotAvailability[enemyCard.fieldIndex] = 0;
             manager.enemy.discarded.Add(enemyCard); // add to discard pile
+            manager.enemyDiscardController.addCardToContent(enemyCard);
             Debug.Log(enemyCard.name + " is sent to the discard pile");
 
             // Mark attacking card for destruction after attack phase
@@ -111,6 +113,7 @@ public class PlayerUnit : MonoBehaviour
             EraseCard(markedCards[i]);
             Debug.Log(markedCards[i].name + " fell to its wounds and was destroyed!");
             discarded.Add(markedCards[i]);
+            manager.playerDiscardController.addCardToContent(markedCards[i]);
             Debug.Log(markedCards[i].name + " was sent to the discard pile");
         }
         markedCards.Clear();
