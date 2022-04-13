@@ -8,11 +8,26 @@ public class DialogueManager : MonoBehaviour
 
     public static DialogueManager instance;
 
+    public GameObject dialogueBox;
+
+    public Text dialogueName;
+    public Text dialogueText;
+    public float initialDelay = 0.001f;
+
+    public Queue<DialogueBase.Info> dialogueInfo = new Queue<DialogueBase.Info>();
+
+    private bool inDialogue;
+    private bool isTyping;
+    private float delay;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            inDialogue = false;
+            isTyping = false;
+            delay = initialDelay;
         }
         else
         {
@@ -20,24 +35,17 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public GameObject dialogueBox;
 
-    public Text dialogueName;
-    public Text dialogueText;
-    public float delay = 0.001f;
-
-    public Queue<DialogueBase.Info> dialogueInfo = new Queue<DialogueBase.Info>();
-
-    //private bool buffer;
-    private bool inDialogue;
 
     public void EnqueueDialogue(DialogueBase db)
     {
-        //buffer = true;
+        // If already in dialogue, don't enqueue more
+        if (inDialogue == true) return;
+
+        inDialogue = true;
         dialogueBox.SetActive(true);
         dialogueInfo.Clear();
-        inDialogue = true;
-        //StartCoroutine(BufferTimer());
+        
 
         foreach (DialogueBase.Info info in db.dialogueInfo)
         {
@@ -49,7 +57,6 @@ public class DialogueManager : MonoBehaviour
 
     public void DequeueDialogue()
     {
-       // if (buffer == true) return;
         if (dialogueInfo.Count == 0)
         {
             EndOfDialogue();
@@ -61,8 +68,9 @@ public class DialogueManager : MonoBehaviour
         dialogueName.text = info.name;
         dialogueText.text = info.text;
 
+        isTyping = true;
+        delay = initialDelay;
         StartCoroutine(TypeText(info));
-
     }
 
     IEnumerator TypeText(DialogueBase.Info info)
@@ -74,13 +82,8 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += c;
             yield return null;
         }
+        isTyping = false;
     }
-
-    /*IEnumerator BufferTimer()
-    {
-        yield return new WaitForSeconds(0.1f);
-        buffer = false;
-    }*/
 
     private void Update()
     {
@@ -88,14 +91,20 @@ public class DialogueManager : MonoBehaviour
         {
             if (inDialogue)
             {
-                DequeueDialogue();
+                if (isTyping)
+                {
+                    delay = 0;
+                }
+                else
+                {
+                    DequeueDialogue();
+                }                
             }
         }
     }
 
     public void EndOfDialogue()
     {
-        Debug.Log("EndOfDialogue");
         dialogueBox.SetActive(false);
         inDialogue = false;
     }
