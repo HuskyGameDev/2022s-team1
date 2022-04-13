@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardEffects : MonoBehaviour
 {
@@ -14,10 +15,12 @@ public class CardEffects : MonoBehaviour
         {
             case "Enemy":
                 manager.enemy.health = manager.enemy.health + healAmount;
+                manager.enemyHPText.text = manager.enemy.health.ToString();
                 Debug.Log("Enemy used a health potion!");
                 break;
             case "Player":
                 manager.player.health = manager.player.health + healAmount;
+                manager.playerHPText.text = manager.player.health.ToString();
                 Debug.Log("You used a health potion!");
                 break;
         }
@@ -78,7 +81,7 @@ public class CardEffects : MonoBehaviour
                 manager.enemy.DestroyMarkedCards();
                 break;
             case "Player":
-
+                manager.indicator.interactable = false; // player cannot end turn mid effect
                 break;
         }
     }
@@ -136,7 +139,7 @@ public class CardEffects : MonoBehaviour
                 }
                 break;
             case "Player":
-
+                manager.indicator.interactable = false; // player cannot end turn mid effect
                 break;
         }
     }
@@ -152,37 +155,43 @@ public class CardEffects : MonoBehaviour
                     case 1:
                         targetCard = GetRandomCardOnField(manager.enemyField);
                         targetCard.attack += aggressionAmount;
+                        targetCard.aggro = true;
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                     case 2:
                         targetCard = GetRandomCardOnField(manager.enemyField);
                         targetCard.attack += aggressionAmount;
+                        targetCard.aggro = true;
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                     case 3:
                         targetCard = GetHighestAttack(manager.enemyField);
                         targetCard.attack += aggressionAmount;
+                        targetCard.aggro = true;
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                     case 4:
                         targetCard = GetHighestAttack(manager.enemyField);
                         targetCard.attack += aggressionAmount;
+                        targetCard.aggro = true;
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                     case 5:
                         targetCard = GetLowestAttack(manager.enemyField);
                         targetCard.attack += aggressionAmount;
+                        targetCard.aggro = true;
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                     case 6:
                         targetCard = GetLowestAttack(manager.enemyField);
                         targetCard.attack += aggressionAmount;
+                        targetCard.aggro = true;
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                 }
                 break;
             case "Player":
-
+                manager.indicator.interactable = false; // player cannot end turn mid effect
                 break;
         }
     }
@@ -198,37 +207,44 @@ public class CardEffects : MonoBehaviour
                     case 1:
                         targetCard = GetRandomCardOnField(manager.enemyField);
                         targetCard.defense += shieldAmount;
+                        targetCard.shield = true;
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                     case 2:
                         targetCard = GetRandomCardOnField(manager.enemyField);
                         targetCard.defense += shieldAmount;
+                        targetCard.shield = true;
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                     case 3:
                         targetCard = GetLowestDefense(manager.enemyField);
                         targetCard.defense += shieldAmount;
+                        targetCard.shield = true;
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                     case 4:
                         targetCard = GetLowestDefense(manager.enemyField);
                         targetCard.defense += shieldAmount;
+                        targetCard.shield = true;
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                     case 5:
                         targetCard = GetHighestDefense(manager.enemyField);
                         targetCard.defense += shieldAmount;
+                        targetCard.shield = true;
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                     case 6:
                         targetCard = GetHighestDefense(manager.enemyField);
                         targetCard.defense += shieldAmount;
+                        targetCard.shield = true;
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                 }
                 break;
             case "Player":
-
+                manager.indicator.interactable = false; // player cannot end turn mid effect
+                // check ClickableFieldEffects for shadow strike implementation
                 break;
         }
     }

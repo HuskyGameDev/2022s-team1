@@ -382,6 +382,7 @@ public class AI_Standard : MonoBehaviour
             manager.playerFieldSlots[receiver.fieldIndex].GetComponent<DropZone>().taken = false;
             EraseCard(receiver);
 
+            manager.RemoveLingeringEffects(receiver);
             manager.player.discarded.Add(receiver); // add to discard pile
             manager.playerDiscardController.addCardToContent(receiver);
             Debug.Log(receiver.name + " is sent to the discard pile");
@@ -396,6 +397,7 @@ public class AI_Standard : MonoBehaviour
             manager.playerFieldSlots[receiver.fieldIndex].GetComponent<DropZone>().taken = false;
             EraseCard(receiver);
 
+            manager.RemoveLingeringEffects(receiver);
             manager.player.discarded.Add(receiver); // add to discard pile
             manager.playerDiscardController.addCardToContent(receiver);
             Debug.Log(receiver.name + " is sent to the discard pile");
@@ -416,6 +418,7 @@ public class AI_Standard : MonoBehaviour
 
         for (int i =0; i < markedCards.Count; i++) {
             manager.enemyField.Remove(markedCards[i]);
+            manager.RemoveLingeringEffects(markedCards[i]);
             EraseCard(markedCards[i]);
             manager.enemyAvailableFieldSlots++;
             manager.enemyFieldSlotAvailability[markedCards[i].fieldIndex] = 0;

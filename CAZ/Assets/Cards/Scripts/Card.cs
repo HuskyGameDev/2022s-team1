@@ -19,19 +19,8 @@ public enum TurnAction { NotUsed, Used }
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class Card : ScriptableObject
 {
-    public GameObject prefab;
-
-    public GameObject cardObject;
-
-    public int fieldIndex;
     
     public new string name;     // Name of the card
-
-    public Types type;
-
-    public SummonState summonState;
-
-    public TurnAction turnAction;
 
     public string description;  // Description of the card
 
@@ -40,4 +29,20 @@ public class Card : ScriptableObject
     public int attack;          // Attack score of the card
 
     public int defense;         // Defense score of the card
+
+    public GameObject prefab;
+
+    public GameObject cardObject;
+
+    public Types type;
+
+    public SummonState summonState;
+
+    public TurnAction turnAction;
+
+    public int fieldIndex;
+
+    public bool aggro;
+
+    public bool shield;
 }

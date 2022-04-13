@@ -26,6 +26,7 @@ public class EncounterManager : MonoBehaviour
     public List<Card> enemyField;
     public List<Transform> enemyFieldSlots;
     public List<int> enemyFieldSlotAvailability;
+
     //public Transform enemyFieldSlot1;
     //public Transform enemyFieldSlot2;
     //public Transform enemyFieldSlot3;
@@ -52,6 +53,11 @@ public class EncounterManager : MonoBehaviour
         StartCoroutine(StartBattle());
     }
 
+    /*private void Update()
+    {
+        
+    }*/
+
     IEnumerator StartBattle() {
         //Shuffle Decks
         //Flip Coin for first turn
@@ -63,11 +69,32 @@ public class EncounterManager : MonoBehaviour
 
         //Determine who goes first
         StartCoroutine(PlayerTurn());
+        //EnemyTurn();
     }
 
     public void EnemyTurn() {
         // call enemy turn script
         state = BattleState.ENEMYTURN;
+
+        // check if any cards are aggro in player field, and make them not aggro
+        foreach (Card c in playerField) {
+            if (c.aggro) {
+                c.attack -= effects.aggressionAmount;
+                c.aggro = false;
+                c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
+            }
+        }
+        // check if any cards are shielded in enemy field, and make them not shielded
+        foreach (Card c in enemyField)
+        {
+            if (c.shield)
+            {
+                c.defense -= effects.shieldAmount;
+                c.shield = false;
+                c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
+            }
+        }
+
         indicator.GetComponentInChildren<Text>().text = "Enemy Turn";
         StartCoroutine(enemy.PlayTurn());
     }
@@ -76,6 +103,28 @@ public class EncounterManager : MonoBehaviour
     {
         // call enemy turn script
         state = BattleState.PLAYERTRUN;
+
+        // check if any cards are aggro in enemy field, and make them not aggro
+        foreach (Card c in enemyField)
+        {
+            if (c.aggro)
+            {
+                c.attack -= effects.aggressionAmount;
+                c.aggro = false;
+                c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
+            }
+        }
+        // check if any cards are shielded in player field, and make them not shielded
+        foreach (Card c in playerField)
+        {
+            if (c.shield)
+            {
+                c.defense -= effects.shieldAmount;
+                c.shield = false;
+                c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
+            }
+        }
+
         indicator.GetComponentInChildren<Text>().text = "Your Turn";
 
         foreach (Card c in playerField) {
@@ -86,12 +135,21 @@ public class EncounterManager : MonoBehaviour
         StartCoroutine(player.PlayTurn());
     }
 
-    private void Update()
+    public void RemoveLingeringEffects(Card card)
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.L)) {
-            EnemyTurn();
+        //check if clicked card is aggro, if so deactivate aggro
+        if (card.aggro)
+        {
+            card.attack -= effects.aggressionAmount;
+            card.aggro = false;
         }
-        */
+        //check if clicked card is shielded, if so deactivate shield
+        if (card.shield)
+        {
+            card.attack -= effects.shieldAmount;
+            card.shield = false;
+        }
     }
+
+
 }

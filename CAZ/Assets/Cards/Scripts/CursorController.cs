@@ -8,6 +8,7 @@ public enum CursorState { NORMAL, GRAB, ATTACK, EFFECT }
 public class CursorController : MonoBehaviour
 {
 
+    public EncounterManager manager;
     //private SpriteRenderer rend;
     private Canvas canvas;
     public CursorState cursorState;
@@ -38,15 +39,25 @@ public class CursorController : MonoBehaviour
         Vector2 cursorPos = new Vector2(Input.mousePosition.x + xOffset, Input.mousePosition.y + yOffset);
         cursorImage.transform.position = cursorPos;
 
-        if (Input.GetMouseButtonDown(0)) {
-            cursorImage.sprite = grabCursor;
-            cursorState = CursorState.GRAB;
-        }
-        if (Input.GetMouseButtonUp(0))
+        if (manager.activeEffect == ActiveEffect.NONE)
         {
-            cursorImage.sprite = normalCursor;
-            cursorState = CursorState.NORMAL;
+            if (Input.GetMouseButtonDown(0))
+            {
+                cursorImage.sprite = grabCursor;
+                cursorState = CursorState.GRAB;
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                cursorImage.sprite = normalCursor;
+                cursorState = CursorState.NORMAL;
+            }
         }
+        else {
+            cursorImage.sprite = effectCursor;
+            cursorState = CursorState.EFFECT;
+        }
+
+       
 
         cursorImage.gameObject.transform.SetAsLastSibling();
         //rend.sprite = normalCursor;

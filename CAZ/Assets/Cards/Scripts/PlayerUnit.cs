@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerUnit : MonoBehaviour
 {
     public int health;
+    public int maxHealth;
     public List<Card> hand;
     public List<Card> deck;
     public List<Card> discarded;
@@ -14,6 +15,10 @@ public class PlayerUnit : MonoBehaviour
     public EncounterManager manager;
     public Transform handZone;
 
+    private void Start()
+    {
+        maxHealth = health;
+    }
 
     public IEnumerator PlayTurn() {
         //Draw cards from deck until hand is full - start of turn, automatic
@@ -69,7 +74,8 @@ public class PlayerUnit : MonoBehaviour
         { // double check attack/defense values
             manager.enemyField.Remove(enemyCard); // remove from field
             Debug.Log(playerCard.name + " destroys " + enemyCard.name);
-            
+
+            manager.RemoveLingeringEffects(enemyCard);
             manager.enemyAvailableFieldSlots++;
             manager.enemyFieldSlotAvailability[enemyCard.fieldIndex] = 0;
             manager.enemy.discarded.Add(enemyCard); // add to discard pile
@@ -86,6 +92,8 @@ public class PlayerUnit : MonoBehaviour
             manager.enemyField.Remove(enemyCard); // remove from field
             Debug.Log(playerCard.name + " destroys " + enemyCard.name);
             EraseCard(enemyCard);
+
+            manager.RemoveLingeringEffects(enemyCard);
             manager.enemyAvailableFieldSlots++;
             manager.enemyFieldSlotAvailability[enemyCard.fieldIndex] = 0;
             manager.enemy.discarded.Add(enemyCard); // add to discard pile
@@ -108,6 +116,7 @@ public class PlayerUnit : MonoBehaviour
         for (int i = 0; i < markedCards.Count; i++)
         {
             manager.playerField.Remove(markedCards[i]);
+            manager.RemoveLingeringEffects(markedCards[i]);
             //manager.enemyAvailableFieldSlots++;
             //manager.enemyFieldSlotAvailability[markedCards[i].fieldIndex] = 0;
             manager.playerFieldSlots[markedCards[i].fieldIndex].GetComponent<DropZone>().taken = false;

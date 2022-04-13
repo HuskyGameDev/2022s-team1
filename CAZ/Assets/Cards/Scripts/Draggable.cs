@@ -26,7 +26,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (owner == Owner.PLAYER && !placed)
+        if (owner == Owner.PLAYER && !placed && manager.activeEffect == ActiveEffect.NONE)
         {
             posOffset = eventData.position - (Vector2)this.transform.position;
 
@@ -37,7 +37,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
             //cursorController.cursorImage.sprite = cursorController.grabCursor;
         }
-        else if (owner == Owner.PLAYER && placed && this.gameObject.GetComponent<CardDisplay>().card.summonState == SummonState.BattleReady && this.gameObject.GetComponent<CardDisplay>().card.turnAction == TurnAction.NotUsed && manager.state == BattleState.PLAYERTRUN)
+        else if (owner == Owner.PLAYER && placed && this.gameObject.GetComponent<CardDisplay>().card.summonState == SummonState.BattleReady && this.gameObject.GetComponent<CardDisplay>().card.turnAction == TurnAction.NotUsed && manager.state == BattleState.PLAYERTRUN && manager.activeEffect == ActiveEffect.NONE)
         {
             //change cursor to attack
             cursorController.cursorImage.sprite = cursorController.attackCursor;
@@ -48,20 +48,20 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (owner == Owner.PLAYER && !placed)
+        if (owner == Owner.PLAYER && !placed && manager.activeEffect == ActiveEffect.NONE)
         {
             this.transform.position = eventData.position - posOffset;
         }
         else if (owner == Owner.PLAYER && placed)
         {
-            //upadte line
+            //dragging for attack
 
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (owner == Owner.PLAYER)
+        if (owner == Owner.PLAYER && manager.activeEffect == ActiveEffect.NONE)
         {
             this.transform.SetParent(parentToReturnTo);
             GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -79,7 +79,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (owner == Owner.PLAYER && placed && this.gameObject.GetComponent<CardDisplay>().card.summonState == SummonState.BattleReady && this.gameObject.GetComponent<CardDisplay>().card.turnAction == TurnAction.NotUsed && manager.state == BattleState.PLAYERTRUN)
+        if (owner == Owner.PLAYER && placed && this.gameObject.GetComponent<CardDisplay>().card.summonState == SummonState.BattleReady && this.gameObject.GetComponent<CardDisplay>().card.turnAction == TurnAction.NotUsed && manager.state == BattleState.PLAYERTRUN && manager.activeEffect == ActiveEffect.NONE)
         {
             this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(true);
         }

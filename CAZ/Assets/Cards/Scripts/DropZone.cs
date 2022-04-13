@@ -68,24 +68,60 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 string effectName = drag.GetComponent<CardDisplay>().card.name;
                 switch (effectName) {
                     case "Healing Potion":
-                        manager.activeEffect = ActiveEffect.HEALING_POTION;
-                        manager.effects.HealingPotion("Player");
+                        if (manager.player.health < manager.player.maxHealth)  // check if playing healing potion is valid
+                        {
+                            if (zoneOwner == drag.owner && !taken && !fromTakenParent) // check card drop prereqs
+                            {
+                                effectHelper(drag); // perform drag maintenence
+                                manager.activeEffect = ActiveEffect.HEALING_POTION; // set active effect
+                                manager.effects.HealingPotion("Player"); // perform healing potion
+                                manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase healing potion card
+                                taken = false; // free effect slot
+                            }
+                        }
                         break;
                     case "Sleight of Hand":
                         manager.activeEffect = ActiveEffect.SLEIGHT_OF_HAND;
                         manager.effects.SleightOfHand("Player");
                         break;
                     case "Sacrifice":
-                        manager.activeEffect = ActiveEffect.SACRIFICE;
-                        manager.effects.Sacrifice("Player", 0);
+                        if (manager.playerField.Count > 0)  // check if playing sacrifice is valid
+                        {
+                            if (zoneOwner == drag.owner && !taken && !fromTakenParent) // check card drop prereqs
+                            {
+                                effectHelper(drag); // perform drag maintenence
+                                manager.activeEffect = ActiveEffect.SACRIFICE; // set active effect
+                                manager.effects.Sacrifice("Player", 0); // perform sacrifice
+                                manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase sacrifice card
+                                taken = false; // free effect slot
+                            }
+                        }
                         break;
                     case "Shadow Strike":
-                        manager.activeEffect = ActiveEffect.SHADOW_STRIKE;
-                        manager.effects.ShadowStrike("Player", 0);
+                        if (manager.enemyField.Count > 0)  // check if playing shadow strike is valid
+                        {
+                            if (zoneOwner == drag.owner && !taken && !fromTakenParent) // check card drop prereqs
+                            {
+                                effectHelper(drag); // perform drag maintenence
+                                manager.activeEffect = ActiveEffect.SHADOW_STRIKE; // set active effect
+                                manager.effects.ShadowStrike("Player", 0); // perform shadow strike
+                                manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase shadow stirke card
+                                taken = false; // free effect slot
+                            }
+                        }
                         break;
                     case "Aggression":
-                        manager.activeEffect = ActiveEffect.AGGRESSION;
-                        manager.effects.Aggression("Player", 0);
+                        if (manager.playerField.Count > 0)  // check if playing aggression is valid
+                        {
+                            if (zoneOwner == drag.owner && !taken && !fromTakenParent) // check card drop prereqs
+                            {
+                                effectHelper(drag); // perform drag maintenence
+                                manager.activeEffect = ActiveEffect.AGGRESSION; // set active effect
+                                manager.effects.Aggression("Player", 0); // perform aggression
+                                manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase aggression card
+                                taken = false; // free effect slot
+                            }
+                        }
                         break;
                     case "Shield":
                         manager.activeEffect = ActiveEffect.SHIELD;

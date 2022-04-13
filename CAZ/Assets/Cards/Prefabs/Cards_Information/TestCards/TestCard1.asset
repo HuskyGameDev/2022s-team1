@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f447ad0947079d4d9394cfb3e8d1435, type: 3}
   m_Name: TestCard1
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2473742285920798735, guid: 62f7d36554090bb41822dacb39fb4950, type: 3}
-  cardObject: {fileID: 0}
   name: Test Card 1
-  type: 0
-  summonState: 1
   description: This is the Test Card 1
   art: {fileID: 21300000, guid: 28eda4515466aca44b1533a06136ec4b, type: 3}
   attack: 5
   defense: 5
+  prefab: {fileID: 2473742285920798735, guid: 62f7d36554090bb41822dacb39fb4950, type: 3}
+  cardObject: {fileID: 0}
+  type: 0
+  summonState: 0
+  turnAction: 0
+  fieldIndex: 0
+  aggro: 0
+  shield: 0
