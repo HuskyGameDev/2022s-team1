@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Hunstman
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Huntsman
+    text: So... ye've decided to come here, have ye?  Well, if you're sure 'bout
+      this, I've got some advice.
+  - name: Huntsman
+    text: "Don\u2019t let any o\u2019 these little things trick ya.  They\u2019re
+      all ready to kill nowadays."
+  - name: Huntsman
+    text: "Listen, the way through is up some stairs on the eastern side of this
+      forest, but I recommend lookin\u2019 around; you never know what yer gonna
+      find."

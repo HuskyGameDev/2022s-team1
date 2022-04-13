@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Butler
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Undead Butler
+    text: Welcome to the White Citadel, sir, I trust you had a pleasant journey.
+  - name: Undead Butler
+    text: Unfortunately, my master has been driven from this castle, and I am thus
+      unable to provide you with the hospitality required for a guest, my sincerest
+      apologies.
+  - name: Undead Butler
+    text: I believe the new master would like to see you, it is, however, quite difficult
+      to understand him.
+  - name: Undead Butler
+    text: I'd personally suggest looking around a bit before going in, sir.  Many
+      things have been misplaced out here that you may find useful.

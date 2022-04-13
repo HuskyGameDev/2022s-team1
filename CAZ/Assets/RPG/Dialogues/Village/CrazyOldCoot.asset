@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: CrazyOldCoot
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Crazy Old Coot
+    text: "Look, I ain\u2019t about to tell ya your business, but headin\u2019 out
+      that way ain\u2019t nothin\u2019 but trouble.  "
+  - name: Crazy Old Coot
+    text: "Last soul who went anywhere near that bligh\u2019ed cave came back half
+      mauled and more loony than before."
