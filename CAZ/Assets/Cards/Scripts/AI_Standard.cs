@@ -68,7 +68,7 @@ public class AI_Standard : MonoBehaviour
             manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
             Debug.Log("Enemy Draws " + drawnCard.name);
             deck.RemoveAt(deck.Count - 1);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
@@ -92,7 +92,7 @@ public class AI_Standard : MonoBehaviour
                     }
                 }
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             PlayCard(bestNextCard);
             creatureInHand = CreatureInHand();
             maxFS = int.MinValue; // reset maxFS
@@ -277,7 +277,7 @@ public class AI_Standard : MonoBehaviour
                         break;
                     case "Revive":
                         //check if revive is valuable
-                        if (discarded.Count > 0 && manager.enemyAvailableFieldSlots > 0)
+                        if (discarded.Count > 0 && hand.Count < 3 /*&& manager.enemyAvailableFieldSlots > 0*/)
                         {
                             hand.Remove(c);
                             manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;

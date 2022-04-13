@@ -162,7 +162,7 @@ public class AI_2_Standard_Maxmimize : AI_Standard
                         break;
                     case "Revive":
                         //check if revive is valuable
-                        if (discarded.Count > 0 && manager.enemyAvailableFieldSlots > 0)
+                        if (discarded.Count > 0 && hand.Count < 3)
                         {
                             hand.Remove(c);
                             RenderEffectCard(c);

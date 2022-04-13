@@ -244,67 +244,97 @@ public class CardEffects : MonoBehaviour
                     case 1:
                         targetCard = GetRandomCardOnField(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
-                        manager.enemyField.Add(targetCard);
-                        manager.enemyAvailableFieldSlots--;
+
+                        // -- Add revived card to field, battle ready --//
+                        //manager.enemyField.Add(targetCard);
+                        //manager.enemyAvailableFieldSlots--;
                         //render card
-                        manager.enemy.RenderCard(targetCard);
-                        targetCard.summonState = SummonState.BattleReady;
-                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+                        //manager.enemy.RenderCard(targetCard);
+                        //targetCard.summonState = SummonState.BattleReady;
+                        //targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+
+                        manager.enemy.hand.Add(targetCard);
+                        manager.handNum.text = manager.enemy.hand.Count.ToString(); // relay visual info on hands in card;
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 2:
                         targetCard = GetRandomCardOnField(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
-                        manager.enemyField.Add(targetCard);
-                        manager.enemyAvailableFieldSlots--;
+
+                        // -- Add revived card to field, battle ready --//
+                        //manager.enemyField.Add(targetCard);
+                        //manager.enemyAvailableFieldSlots--;
                         //render card
-                        manager.enemy.RenderCard(targetCard);
-                        targetCard.summonState = SummonState.BattleReady;
-                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+                        //manager.enemy.RenderCard(targetCard);
+                        //targetCard.summonState = SummonState.BattleReady;
+                        //targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+
+                        manager.enemy.hand.Add(targetCard);
+                        manager.handNum.text = manager.enemy.hand.Count.ToString(); // relay visual info on hands in card;
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 3:
                         targetCard = GetHighestAttack(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
-                        manager.enemyField.Add(targetCard);
-                        manager.enemyAvailableFieldSlots--;
+
+                        // -- Add revived card to field, battle ready --//
+                        //manager.enemyField.Add(targetCard);
+                        //manager.enemyAvailableFieldSlots--;
                         //render card
-                        manager.enemy.RenderCard(targetCard);
-                        targetCard.summonState = SummonState.BattleReady;
-                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+                        //manager.enemy.RenderCard(targetCard);
+                        //targetCard.summonState = SummonState.BattleReady;
+                        //targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+
+                        manager.enemy.hand.Add(targetCard);
+                        manager.handNum.text = manager.enemy.hand.Count.ToString(); // relay visual info on hands in card;
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 4:
                         targetCard = GetHighestAttack(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
-                        manager.enemyField.Add(targetCard);
-                        manager.enemyAvailableFieldSlots--;
+
+                        // -- Add revived card to field, battle ready --//
+                        //manager.enemyField.Add(targetCard);
+                        //manager.enemyAvailableFieldSlots--;
                         //render card
-                        manager.enemy.RenderCard(targetCard);
-                        targetCard.summonState = SummonState.BattleReady;
-                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+                        //manager.enemy.RenderCard(targetCard);
+                        //targetCard.summonState = SummonState.BattleReady;
+                        //targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+
+                        manager.enemy.hand.Add(targetCard);
+                        manager.handNum.text = manager.enemy.hand.Count.ToString(); // relay visual info on hands in card;
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 5:
                         targetCard = GetHighestDefense(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
-                        manager.enemyField.Add(targetCard);
-                        manager.enemyAvailableFieldSlots--;
+
+                        // -- Add revived card to field, battle ready --//
+                        //manager.enemyField.Add(targetCard);
+                        //manager.enemyAvailableFieldSlots--;
                         //render card
-                        manager.enemy.RenderCard(targetCard);
-                        targetCard.summonState = SummonState.BattleReady;
-                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+                        //manager.enemy.RenderCard(targetCard);
+                        //targetCard.summonState = SummonState.BattleReady;
+                        //targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+
+                        manager.enemy.hand.Add(targetCard);
+                        manager.handNum.text = manager.enemy.hand.Count.ToString(); // relay visual info on hands in card;
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 6:
                         targetCard = GetHighestDefense(manager.enemy.discarded);
                         manager.enemy.discarded.Remove(targetCard);
-                        manager.enemyField.Add(targetCard);
-                        manager.enemyAvailableFieldSlots--;
+
+                        // -- Add revived card to field, battle ready --//
+                        //manager.enemyField.Add(targetCard);
+                        //manager.enemyAvailableFieldSlots--;
                         //render card
-                        manager.enemy.RenderCard(targetCard);
-                        targetCard.summonState = SummonState.BattleReady;
-                        targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+                        //manager.enemy.RenderCard(targetCard);
+                        //targetCard.summonState = SummonState.BattleReady;
+                        //targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+
+                        manager.enemy.hand.Add(targetCard);
+                        manager.handNum.text = manager.enemy.hand.Count.ToString(); // relay visual info on hands in card;
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                 }

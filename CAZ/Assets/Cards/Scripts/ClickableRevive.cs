@@ -15,19 +15,19 @@ public class ClickableRevive : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        CardDisplay clickedCard = eventData.pointerClick.GetComponent<CardDisplay>();
+        CardDisplay clickedCard = eventData.pointerClick.GetComponent<CardDisplay>(); // get clicked object
         if (manager.activeEffect == ActiveEffect.REVIVE)
         {
-            Card revivedCard = Instantiate(clickedCard.card);
-            manager.player.hand.Add(revivedCard);
-            manager.player.RenderCard(revivedCard);
+            Card revivedCard = Instantiate(clickedCard.card); // create copy of clicked card
+            manager.player.hand.Add(revivedCard); // add revived card to hand
+            manager.player.RenderCard(revivedCard); // redner revived card in hand
+            Card cardInDiscarded = manager.player.discarded.Find((c) => c.name == revivedCard.name); // find revived card in discard pile list
+            manager.player.discarded.Remove(cardInDiscarded); // remove revived card from discard pile list
             Debug.Log("Player revives " + revivedCard.name);
 
-            manager.activeEffect = ActiveEffect.NONE;
-            //manager.cursorController.cursorImage.sprite = manager.cursorController.normalCursor;
-            //manager.cursorController.cursorState = CursorState.NORMAL;
-            Destroy(clickedCard);
-            manager.playerDiscardController.DisableDiscardView();
+            manager.activeEffect = ActiveEffect.NONE; // reset active effect
+            Destroy(clickedCard.gameObject); // destroy card object in discard view
+            manager.playerDiscardController.DisableDiscardView(); // disable discard view
 
         }
 
@@ -38,9 +38,10 @@ public class ClickableRevive : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
         if (manager.activeEffect == ActiveEffect.REVIVE)
         {
-            manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor;
-            manager.cursorController.cursorState = CursorState.EFFECT;
-            this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(true);
+            manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
+            manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
+
+            this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(true); // enable select card overlay
         }
 
     }
@@ -49,9 +50,10 @@ public class ClickableRevive : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         if (manager.activeEffect == ActiveEffect.REVIVE)
         {
-            manager.cursorController.cursorImage.sprite = manager.cursorController.normalCursor;
-            manager.cursorController.cursorState = CursorState.NORMAL;
-            this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false);
+            manager.cursorController.cursorImage.sprite = manager.cursorController.normalCursor; // reset cursor to normal sprite
+            manager.cursorController.cursorState = CursorState.NORMAL; // set cursor state
+
+            this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false); // disable select card overlay
         }
     }
 }
