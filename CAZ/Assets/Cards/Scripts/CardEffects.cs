@@ -48,32 +48,32 @@ public class CardEffects : MonoBehaviour
                 switch (AINum)
                 {
                     case 1:
-                        targetCard = GetRandomCardOnField(manager.enemyField);
+                        targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.NONE);
                         manager.enemy.markedCards.Add(targetCard);
                         Debug.Log("Enemy Sacrificed " + targetCard.name);
                         break;
                     case 2:
-                        targetCard = GetRandomCardOnField(manager.enemyField);
+                        targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.NONE);
                         manager.enemy.markedCards.Add(targetCard);
                         Debug.Log("Enemy Sacrificed " + targetCard.name);
                         break;
                     case 3:
-                        targetCard = GetLowestDefense(manager.enemyField);
+                        targetCard = GetLowestDefense(manager.enemyField, ActiveEffect.NONE);
                         manager.enemy.markedCards.Add(targetCard);
                         Debug.Log("Enemy Sacrificed " + targetCard.name);
                         break;
                     case 4:
-                        targetCard = GetLowestDefense(manager.enemyField);
+                        targetCard = GetLowestDefense(manager.enemyField, ActiveEffect.NONE);
                         manager.enemy.markedCards.Add(targetCard);
                         Debug.Log("Enemy Sacrificed " + targetCard.name);
                         break;
                     case 5:
-                        targetCard = GetLowestAttack(manager.enemyField);
+                        targetCard = GetLowestAttack(manager.enemyField, ActiveEffect.NONE);
                         manager.enemy.markedCards.Add(targetCard);
                         Debug.Log("Enemy Sacrificed " + targetCard.name);
                         break;
                     case 6:
-                        targetCard = GetLowestAttack(manager.enemyField);
+                        targetCard = GetLowestAttack(manager.enemyField, ActiveEffect.NONE);
                         manager.enemy.markedCards.Add(targetCard);
                         Debug.Log("Enemy Sacrificed " + targetCard.name);
                         break;
@@ -95,42 +95,42 @@ public class CardEffects : MonoBehaviour
                 switch (AINum)
                 {
                     case 1:
-                        targetCard = GetRandomCardOnField(manager.playerField);
+                        targetCard = GetRandomCardOnField(manager.playerField, ActiveEffect.NONE);
                         manager.playerField.Remove(targetCard); // remove from field
                         manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;
                     case 2:
-                        targetCard = GetRandomCardOnField(manager.playerField);
+                        targetCard = GetRandomCardOnField(manager.playerField, ActiveEffect.NONE);
                         manager.playerField.Remove(targetCard); // remove from field
                         manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;
                     case 3:
-                        targetCard = GetHighestDefense(manager.playerField);
+                        targetCard = GetHighestDefense(manager.playerField, ActiveEffect.NONE);
                         manager.playerField.Remove(targetCard); // remove from field
                         manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;
                     case 4:
-                        targetCard = GetHighestDefense(manager.playerField);
+                        targetCard = GetHighestDefense(manager.playerField, ActiveEffect.NONE);
                         manager.playerField.Remove(targetCard); // remove from field
                         manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;
                     case 5:
-                        targetCard = GetHighestAttack(manager.playerField);
+                        targetCard = GetHighestAttack(manager.playerField, ActiveEffect.NONE);
                         manager.playerField.Remove(targetCard); // remove from field
                         manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
                         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
                         break;
                     case 6:
-                        targetCard = GetHighestAttack(manager.playerField);
+                        targetCard = GetHighestAttack(manager.playerField, ActiveEffect.NONE);
                         manager.playerField.Remove(targetCard); // remove from field
                         manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
                         manager.enemy.EraseCard(targetCard);
@@ -153,39 +153,45 @@ public class CardEffects : MonoBehaviour
                 switch (AINum)
                 {
                     case 1:
-                        targetCard = GetRandomCardOnField(manager.enemyField);
+                        targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.AGGRESSION);
                         targetCard.attack += aggressionAmount;
                         targetCard.aggro = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                     case 2:
-                        targetCard = GetRandomCardOnField(manager.enemyField);
+                        targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.AGGRESSION);
                         targetCard.attack += aggressionAmount;
                         targetCard.aggro = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                     case 3:
-                        targetCard = GetHighestAttack(manager.enemyField);
+                        targetCard = GetHighestAttack(manager.enemyField, ActiveEffect.AGGRESSION);
                         targetCard.attack += aggressionAmount;
                         targetCard.aggro = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                     case 4:
-                        targetCard = GetHighestAttack(manager.enemyField);
+                        targetCard = GetHighestAttack(manager.enemyField, ActiveEffect.AGGRESSION);
                         targetCard.attack += aggressionAmount;
                         targetCard.aggro = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                     case 5:
-                        targetCard = GetLowestAttack(manager.enemyField);
+                        targetCard = GetLowestAttack(manager.enemyField, ActiveEffect.AGGRESSION);
                         targetCard.attack += aggressionAmount;
                         targetCard.aggro = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                     case 6:
-                        targetCard = GetLowestAttack(manager.enemyField);
+                        targetCard = GetLowestAttack(manager.enemyField, ActiveEffect.AGGRESSION);
                         targetCard.attack += aggressionAmount;
                         targetCard.aggro = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
                         break;
                 }
@@ -205,39 +211,45 @@ public class CardEffects : MonoBehaviour
                 switch (AINum)
                 {
                     case 1:
-                        targetCard = GetRandomCardOnField(manager.enemyField);
+                        targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.SHIELD);
                         targetCard.defense += shieldAmount;
                         targetCard.shield = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                     case 2:
-                        targetCard = GetRandomCardOnField(manager.enemyField);
+                        targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.SHIELD);
                         targetCard.defense += shieldAmount;
                         targetCard.shield = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                     case 3:
-                        targetCard = GetLowestDefense(manager.enemyField);
+                        targetCard = GetLowestDefense(manager.enemyField, ActiveEffect.SHIELD);
                         targetCard.defense += shieldAmount;
                         targetCard.shield = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                     case 4:
-                        targetCard = GetLowestDefense(manager.enemyField);
+                        targetCard = GetLowestDefense(manager.enemyField, ActiveEffect.SHIELD);
                         targetCard.defense += shieldAmount;
                         targetCard.shield = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                     case 5:
-                        targetCard = GetHighestDefense(manager.enemyField);
+                        targetCard = GetHighestDefense(manager.enemyField, ActiveEffect.SHIELD);
                         targetCard.defense += shieldAmount;
                         targetCard.shield = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                     case 6:
-                        targetCard = GetHighestDefense(manager.enemyField);
+                        targetCard = GetHighestDefense(manager.enemyField, ActiveEffect.SHIELD);
                         targetCard.defense += shieldAmount;
                         targetCard.shield = true;
+                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
                         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
                         break;
                 }
@@ -258,7 +270,7 @@ public class CardEffects : MonoBehaviour
                 switch (AINum)
                 {
                     case 1:
-                        targetCard = GetRandomCardOnField(manager.enemy.discarded);
+                        targetCard = GetRandomCardOnField(manager.enemy.discarded, ActiveEffect.NONE);
                         manager.enemy.discarded.Remove(targetCard);
 
                         // -- Add revived card to field, battle ready --//
@@ -274,7 +286,7 @@ public class CardEffects : MonoBehaviour
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 2:
-                        targetCard = GetRandomCardOnField(manager.enemy.discarded);
+                        targetCard = GetRandomCardOnField(manager.enemy.discarded, ActiveEffect.NONE);
                         manager.enemy.discarded.Remove(targetCard);
 
                         // -- Add revived card to field, battle ready --//
@@ -290,7 +302,7 @@ public class CardEffects : MonoBehaviour
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 3:
-                        targetCard = GetHighestAttack(manager.enemy.discarded);
+                        targetCard = GetHighestAttack(manager.enemy.discarded, ActiveEffect.NONE);
                         manager.enemy.discarded.Remove(targetCard);
 
                         // -- Add revived card to field, battle ready --//
@@ -306,7 +318,7 @@ public class CardEffects : MonoBehaviour
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 4:
-                        targetCard = GetHighestAttack(manager.enemy.discarded);
+                        targetCard = GetHighestAttack(manager.enemy.discarded, ActiveEffect.NONE);
                         manager.enemy.discarded.Remove(targetCard);
 
                         // -- Add revived card to field, battle ready --//
@@ -322,7 +334,7 @@ public class CardEffects : MonoBehaviour
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 5:
-                        targetCard = GetHighestDefense(manager.enemy.discarded);
+                        targetCard = GetHighestDefense(manager.enemy.discarded, ActiveEffect.NONE);
                         manager.enemy.discarded.Remove(targetCard);
 
                         // -- Add revived card to field, battle ready --//
@@ -338,7 +350,7 @@ public class CardEffects : MonoBehaviour
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                     case 6:
-                        targetCard = GetHighestDefense(manager.enemy.discarded);
+                        targetCard = GetHighestDefense(manager.enemy.discarded, ActiveEffect.NONE);
                         manager.enemy.discarded.Remove(targetCard);
 
                         // -- Add revived card to field, battle ready --//
@@ -365,66 +377,196 @@ public class CardEffects : MonoBehaviour
 
 
 
-    Card GetHighestAttack(List<Card> field) {
+    Card GetHighestAttack(List<Card> field, ActiveEffect effect) {
         int tempAttack = int.MinValue;
         Card targetCard = null;
-        foreach (Card c in field) {
-            if (c.attack > tempAttack) {
-                tempAttack = c.attack;
-                targetCard = c;
+
+        if (effect == ActiveEffect.AGGRESSION)
+        {
+            foreach (Card c in field)
+            {
+                if (c.attack > tempAttack && !c.aggro)
+                {
+                    tempAttack = c.attack;
+                    targetCard = c;
+                }
+            }
+        }
+        else if (effect == ActiveEffect.SHIELD)
+        {
+            foreach (Card c in field)
+            {
+                if (c.attack > tempAttack && !c.shield)
+                {
+                    tempAttack = c.attack;
+                    targetCard = c;
+                }
+            }
+        }
+        else {
+            foreach (Card c in field)
+            {
+                if (c.attack > tempAttack)
+                {
+                    tempAttack = c.attack;
+                    targetCard = c;
+                }
             }
         }
         return targetCard;
     }
 
-    Card GetLowestAttack(List<Card> field)
+    Card GetLowestAttack(List<Card> field, ActiveEffect effect)
     {
         int tempAttack = int.MaxValue;
         Card targetCard = null;
-        foreach (Card c in field)
+
+        if (effect == ActiveEffect.AGGRESSION)
         {
-            if (c.attack < tempAttack)
+            foreach (Card c in field)
             {
-                tempAttack = c.attack;
-                targetCard = c;
+                if (c.attack < tempAttack && !c.aggro)
+                {
+                    tempAttack = c.attack;
+                    targetCard = c;
+                }
+            }
+        }
+        else if (effect == ActiveEffect.SHIELD)
+        {
+            foreach (Card c in field)
+            {
+                if (c.attack < tempAttack && !c.shield)
+                {
+                    tempAttack = c.attack;
+                    targetCard = c;
+                }
+            }
+        }
+        else
+        {
+            foreach (Card c in field)
+            {
+                if (c.attack < tempAttack)
+                {
+                    tempAttack = c.attack;
+                    targetCard = c;
+                }
             }
         }
         return targetCard;
     }
 
-    Card GetHighestDefense(List<Card> field)
+    Card GetHighestDefense(List<Card> field, ActiveEffect effect)
     {
         int tempDefense = int.MinValue;
         Card targetCard = null;
-        foreach (Card c in field)
+
+        if (effect == ActiveEffect.AGGRESSION)
         {
-            if (c.defense > tempDefense)
+            foreach (Card c in field)
             {
-                tempDefense = c.defense;
-                targetCard = c;
+                if (c.defense > tempDefense && !c.aggro)
+                {
+                    tempDefense = c.defense;
+                    targetCard = c;
+                }
+            }
+        }
+        else if (effect == ActiveEffect.SHIELD)
+        {
+            foreach (Card c in field)
+            {
+                if (c.defense > tempDefense && !c.shield)
+                {
+                    tempDefense = c.defense;
+                    targetCard = c;
+                }
+            }
+        }
+        else {
+            foreach (Card c in field)
+            {
+                if (c.defense > tempDefense)
+                {
+                    tempDefense = c.defense;
+                    targetCard = c;
+                }
             }
         }
         return targetCard;
     }
 
 
-    Card GetLowestDefense(List<Card> field)
+    Card GetLowestDefense(List<Card> field, ActiveEffect effect)
     {
         int tempDefense = int.MaxValue;
         Card targetCard = null;
-        foreach (Card c in field)
+
+        if (effect == ActiveEffect.AGGRESSION)
         {
-            if (c.defense < tempDefense)
+            foreach (Card c in field)
             {
-                tempDefense = c.defense;
-                targetCard = c;
+                if (c.defense < tempDefense && !c.aggro)
+                {
+                    tempDefense = c.defense;
+                    targetCard = c;
+                }
+            }
+        }
+        else if (effect == ActiveEffect.SHIELD)
+        {
+            foreach (Card c in field)
+            {
+                if (c.defense < tempDefense && !c.shield)
+                {
+                    tempDefense = c.defense;
+                    targetCard = c;
+                }
+            }
+        }
+        else {
+            foreach (Card c in field)
+            {
+                if (c.defense < tempDefense)
+                {
+                    tempDefense = c.defense;
+                    targetCard = c;
+                }
             }
         }
         return targetCard;
     }
 
-    Card GetRandomCardOnField(List<Card> field) {
-        int index = Random.Range(0, field.Count);
+    Card GetRandomCardOnField(List<Card> field, ActiveEffect effect) {
+        bool found = false;
+        int index = 0;
+        if (effect == ActiveEffect.AGGRESSION)
+        {
+            while (!found)
+            {
+                index = Random.Range(0, field.Count);
+                if (!field[index].aggro)
+                {
+                    found = true;
+                }
+            }
+        }
+        else if (effect == ActiveEffect.SHIELD)
+        {
+            while (!found)
+            {
+                index = Random.Range(0, field.Count);
+                if (!field[index].shield)
+                {
+                    found = true;
+                }
+            }
+        }
+        else {
+            index = Random.Range(0, field.Count);
+        }
+
         return field[index];
     }
 }

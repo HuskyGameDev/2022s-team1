@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f447ad0947079d4d9394cfb3e8d1435, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2473742285920798735, guid: 62f7d36554090bb41822dacb39fb4950, type: 3}
-  cardObject: {fileID: 0}
   name: Shield
-  type: 1
   description: Raises the defense of a Friendly card by 10
-  art: {fileID: 0}
+  art: {fileID: 4353395032141339, guid: f9c020f8ae9197b4890abd4aa8602d1f, type: 3}
   attack: 0
   defense: 0
+  prefab: {fileID: 2473742285920798735, guid: 62f7d36554090bb41822dacb39fb4950, type: 3}
+  cardObject: {fileID: 0}
+  type: 1
+  summonState: 0
+  turnAction: 0
+  fieldIndex: 0
+  aggro: 0
+  shield: 0

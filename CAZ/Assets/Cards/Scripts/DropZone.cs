@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
 
-    public enum ZoneType { Creature, Effect };
+    public enum ZoneType { Creature, Effect, Discard };
 
     public ZoneType zoneType;
     public Draggable.Owner zoneOwner;
@@ -62,11 +62,12 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                     taken = true; // mark the dropzone as taken
                     drag.placed = true;*/
 
-                    //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor;
-                    //manager.cursorController.cursorState = CursorState.EFFECT;
+                //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor;
+                //manager.cursorController.cursorState = CursorState.EFFECT;
 
                 string effectName = drag.GetComponent<CardDisplay>().card.name;
-                switch (effectName) {
+                switch (effectName)
+                {
                     case "Healing Potion":
                         if (manager.player.health < manager.player.maxHealth)  // check if playing healing potion is valid
                         {
@@ -111,7 +112,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         }
                         break;
                     case "Aggression":
-                        if (manager.playerField.Count > 0)  // check if playing aggression is valid
+                        bool nonAggroCreatureOnField = NonAggroOnField();
+                        if (manager.playerField.Count > 0 && nonAggroCreatureOnField)  // check if playing aggression is valid
                         {
                             if (zoneOwner == drag.owner && !taken && !fromTakenParent) // check card drop prereqs
                             {
@@ -124,8 +126,18 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         }
                         break;
                     case "Shield":
-                        manager.activeEffect = ActiveEffect.SHIELD;
-                        manager.effects.Shield("Player", 0);
+                        bool nonShieldedCreatureOnField = NonShieldedOnField();
+                        if (manager.playerField.Count > 0 && nonShieldedCreatureOnField)  // check if playing aggression is valid
+                        {
+                            if (zoneOwner == drag.owner && !taken && !fromTakenParent) // check card drop prereqs
+                            {
+                                effectHelper(drag); // perform drag maintenence
+                                manager.activeEffect = ActiveEffect.SHIELD; // set active effect
+                                manager.effects.Shield("Player", 0); // perform shield
+                                manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase shield card
+                                taken = false; // free effect slot
+                            }
+                        }
                         break;
                     case "Revive":
                         if (manager.player.discarded.Count > 0)  // check if playing revive is valid (avoids soft-lock in revive screen)
@@ -148,6 +160,17 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 manager.cursorController.cursorImage.sprite = manager.cursorController.normalCursor;
                 manager.cursorController.cursorState = CursorState.NORMAL;
             }
+            else if (zoneType == ZoneType.Discard && manager.state == BattleState.PLAYERTRUN) {
+                // remove card from hand, if creature add to discard pile and view
+                Card discardedCard = drag.GetComponent<CardDisplay>().card;
+                manager.player.hand.Remove(discardedCard); // remove dsicarded card from hand
+                if (discardedCard.type == Types.Creature || discardedCard.type == Types.Boss) {
+                    manager.player.discarded.Add(discardedCard); // add discarded card to discard pile
+                    manager.playerDiscardController.addCardToContent(discardedCard); // add to discard view
+                }
+                manager.player.EraseCard(discardedCard); // erase discarded card
+                Debug.Log("Player discards " + discardedCard.name);
+            }
         }
     }
 
@@ -160,5 +183,28 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         taken = true; // mark the dropzone as taken
         drag.placed = true;
 
+    }
+
+    bool NonAggroOnField() {
+
+        bool exists = false;
+        foreach (Card c in manager.playerField) {
+            if (!c.aggro) {
+                exists = true;
+            }
+        }
+        return exists;
+    }
+
+    bool NonShieldedOnField() {
+        bool exists = false;
+        foreach (Card c in manager.playerField)
+        {
+            if (!c.shield)
+            {
+                exists = true;
+            }
+        }
+        return exists;
     }
 }

@@ -264,8 +264,9 @@ public class AI_Standard : MonoBehaviour
                     //check if shadow strike is valuable
                     case "Aggression":
                         //check if aggression is valuable
+                        bool nonAggroCreatureOnField = NonAggroOnField();
                         float aggroRand = Random.Range(1, 4);
-                        if (aggroRand == 3)
+                        if (aggroRand == 3 && nonAggroCreatureOnField)
                         {
                             hand.Remove(c);
                             manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
@@ -289,8 +290,9 @@ public class AI_Standard : MonoBehaviour
                         break;
                     case "Shield":
                         //check if shield is valuable
+                        bool nonShieldedCreatureOnField = NonShieldedOnField();
                         float shieldRand = Random.Range(1, 4);
-                        if (shieldRand == 3)
+                        if (shieldRand == 3 && nonShieldedCreatureOnField)
                         {
                             hand.Remove(c);
                             manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
@@ -309,6 +311,33 @@ public class AI_Standard : MonoBehaviour
         }
         //check if effect cards are valuable
         //play effect cards
+    }
+
+    public bool NonAggroOnField()
+    {
+
+        bool exists = false;
+        foreach (Card c in manager.enemyField)
+        {
+            if (!c.aggro)
+            {
+                exists = true;
+            }
+        }
+        return exists;
+    }
+
+    public bool NonShieldedOnField()
+    {
+        bool exists = false;
+        foreach (Card c in manager.enemyField)
+        {
+            if (!c.shield)
+            {
+                exists = true;
+            }
+        }
+        return exists;
     }
 
     public virtual IEnumerator Attacks() {

@@ -150,8 +150,9 @@ public class AI_1_Standard_Minimize : AI_Standard
                     //check if shadow strike is valuable
                     case "Aggression":
                         //check if aggression is valuable
+                        bool nonAggroCreatureOnField = NonAggroOnField();
                         float aggroRand = Random.Range(1, 4);
-                        if (aggroRand == 3)
+                        if (aggroRand == 3 && nonAggroCreatureOnField)
                         {
                             hand.Remove(c);
                             RenderEffectCard(c);
@@ -173,8 +174,9 @@ public class AI_1_Standard_Minimize : AI_Standard
                         break;
                     case "Shield":
                         //check if shield is valuable
+                        bool nonShieldedCreatureOnField = NonShieldedOnField();
                         float shieldRand = Random.Range(1, 4);
-                        if (shieldRand == 3)
+                        if (shieldRand == 3 && nonShieldedCreatureOnField)
                         {
                             hand.Remove(c);
                             RenderEffectCard(c);

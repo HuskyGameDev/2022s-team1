@@ -75,15 +75,36 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             manager.indicator.interactable = true; // set indicator button to active - player can now end turn
         }
         //Aggression
-        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed)
+        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.aggro)
         {
             Card aggroCard = Instantiate(clickedCard.card); // create copy of clicked card
-            Card cardInField = manager.playerField.Find((c) => c.name == aggroCard.name); // find struck card in player field list
+            Card cardInField = manager.playerField.Find((c) => c.name == aggroCard.name); // find aggro card in player field list
             cardInField.attack += manager.effects.aggressionAmount; // increase attack
             cardInField.cardObject.GetComponent<CardDisplay>().Display(); // update card visual on field
             cardInField.aggro = true; // mark as aggro
             Debug.Log("You taunted " + aggroCard.name + "! They are now angry!");
             Debug.Log(aggroCard.name + "'s attack has increased!");
+            manager.activeEffect = ActiveEffect.NONE; // reset active effect
+
+            // prevent overlay overlap
+            if (this.gameObject.GetComponent<CardDisplay>().card.summonState == SummonState.SummonSick)
+            {
+                this.gameObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(true);
+            }
+            this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false); // disable select card overlay
+
+            manager.indicator.interactable = true; // set indicator button to active - player can now end turn
+        }
+        //Shield
+        else if (manager.activeEffect == ActiveEffect.SHIELD && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.shield)
+        {
+            Card shieldCard = Instantiate(clickedCard.card); // create copy of clicked card
+            Card cardInField = manager.playerField.Find((c) => c.name == shieldCard.name); // find shielded card in player field list
+            cardInField.defense += manager.effects.shieldAmount; // increase defensde
+            cardInField.cardObject.GetComponent<CardDisplay>().Display(); // update card visual on field
+            cardInField.shield = true; // mark as shielded
+            Debug.Log("You shielded " + shieldCard.name + "! They are now more tough!");
+            Debug.Log(shieldCard.name + "'s defense has increased!");
             manager.activeEffect = ActiveEffect.NONE; // reset active effect
 
             // prevent overlay overlap
@@ -121,7 +142,20 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(true); // enable select card overlay
         }
         //Aggression
-        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed)
+        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.aggro)
+        {
+            //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
+            //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
+
+            // prevent overlay overlap
+            if (this.gameObject.GetComponent<CardDisplay>().card.summonState == SummonState.SummonSick)
+            {
+                this.gameObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+            }
+            this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(true); // enable select card overlay
+        }
+        //Shield
+        else if (manager.activeEffect == ActiveEffect.SHIELD && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.shield)
         {
             //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
@@ -160,7 +194,20 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false); // disable select card overlay
         }
         //Aggression
-        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed)
+        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.aggro)
+        {
+            //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
+            //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
+
+            // prevent overlay overlap
+            if (this.gameObject.GetComponent<CardDisplay>().card.summonState == SummonState.SummonSick)
+            {
+                this.gameObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(true);
+            }
+            this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false); // disable select card overlay
+        }
+        //Shield
+        else if (manager.activeEffect == ActiveEffect.SHIELD && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.shield)
         {
             //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
