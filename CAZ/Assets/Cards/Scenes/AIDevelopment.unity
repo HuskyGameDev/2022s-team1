@@ -2519,15 +2519,13 @@ MonoBehaviour:
   health: 10
   maxHealth: 0
   deck:
-  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
-  - {fileID: 11400000, guid: 72fef7a02007b6d48810f047032a9d5d, type: 2}
-  - {fileID: 11400000, guid: e8537db63504b5c4797a450b8c505003, type: 2}
-  - {fileID: 11400000, guid: 2f0d4347d94229944ae22ceb1898dc95, type: 2}
+  - {fileID: 11400000, guid: 98d7398f4f4a99944a94172d355506a1, type: 2}
+  - {fileID: 11400000, guid: 6075401738082d246a0bb3d856ad795d, type: 2}
   - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
   - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
   - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
-  - {fileID: 11400000, guid: 230ae1818f5f3554eadd3d3aa81fc734, type: 2}
-  - {fileID: 11400000, guid: 230ae1818f5f3554eadd3d3aa81fc734, type: 2}
+  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
+  - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
   hand: []
   discarded: []
   bestNextCard: {fileID: 0}
@@ -7259,13 +7257,14 @@ MonoBehaviour:
   deck:
   - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
   - {fileID: 11400000, guid: 010351fed8ef5ce429e2a1346751b76a, type: 2}
+  - {fileID: 11400000, guid: 2f0d4347d94229944ae22ceb1898dc95, type: 2}
+  - {fileID: 11400000, guid: 054d931086c778143ac364831421846c, type: 2}
   - {fileID: 11400000, guid: 44233fd2878e6634f9c63b3574c1b846, type: 2}
-  - {fileID: 11400000, guid: 6075401738082d246a0bb3d856ad795d, type: 2}
-  - {fileID: 11400000, guid: 6075401738082d246a0bb3d856ad795d, type: 2}
   - {fileID: 11400000, guid: 71954c81b2086304a9a8a83ef3f03983, type: 2}
-  - {fileID: 11400000, guid: b264eca4fe2b2fa478d995c25588e119, type: 2}
-  - {fileID: 11400000, guid: 6075401738082d246a0bb3d856ad795d, type: 2}
+  - {fileID: 11400000, guid: 230ae1818f5f3554eadd3d3aa81fc734, type: 2}
+  - {fileID: 11400000, guid: 230ae1818f5f3554eadd3d3aa81fc734, type: 2}
   - {fileID: 11400000, guid: ccbc990a77d5d1d4dbe7ab05ad419807, type: 2}
+  - {fileID: 11400000, guid: 6075401738082d246a0bb3d856ad795d, type: 2}
   discarded: []
   markedCards: []
   manager: {fileID: 1714119090}

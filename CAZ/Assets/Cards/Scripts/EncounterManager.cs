@@ -82,8 +82,12 @@ public class EncounterManager : MonoBehaviour
         Debug.Log("Starting Battle");
 
         Debug.Log("Shuffling Decks");
-        player.deck.Shuffle(10);
-        enemy.deck.Shuffle(10);
+        int playerShuffleNum = Random.Range(10, 100);
+        int enemyShuffleNum = Random.Range(10, 100);
+        Debug.Log("Player Shuffle Seed = " + playerShuffleNum);
+        Debug.Log("Enemy Shuffle Seed = " + enemyShuffleNum);
+        player.deck.Shuffle(playerShuffleNum);
+        enemy.deck.Shuffle(enemyShuffleNum);
 
         yield return new WaitForSeconds(2f);
 
