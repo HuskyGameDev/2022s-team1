@@ -19065,54 +19065,79 @@ MonoBehaviour:
   cardDex:
   - card: {fileID: 11400000, guid: 3b1b13e394cef574b90569eff670e7ca, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: e66a8d164102a1b45a90a34475680415, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: a53672d42a95c004aadc8f0884771ce3, type: 2}
-    isDiscovered: 1
+    isDiscovered: 0
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 53baadf45fbfbf246ae8f3a679ebeaaf, type: 2}
-    isDiscovered: 1
+    isDiscovered: 0
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 138766a288c5ea24ba18375f9b6d0918, type: 2}
-    isDiscovered: 1
+    isDiscovered: 0
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 4525ff5adf30f6f42a4c0ce67dba9428, type: 2}
-    isDiscovered: 1
+    isDiscovered: 0
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 7c1abafbf2ff47d479091f2a816d3e71, type: 2}
-    isDiscovered: 1
+    isDiscovered: 0
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 2891f033d0133824b9bfd1e0f948af6e, type: 2}
-    isDiscovered: 1
+    isDiscovered: 0
+    countInDeck: 0
   - card: {fileID: 11400000, guid: afe288c68342c0c4f9c3952479933b46, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 80ee1288fd37db3499a3b35e63b61a0c, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 11d2611a2bfde2e42a8e479d0916a90c, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: c4e31c59e8f4386439570e8e300b2a2c, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 62895cb85c112174eac00da8e7849995, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 219594eaf1007e34496bdd3e91114bf1, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 692664dc308edc245893023504a85dfb, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 4fa2234477416004db1650d8503f1ec0, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: fa2a997a2d863b343bbbf4f829a7c8de, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: c4981c4f92a3a8440bac371a032a093b, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 03ba06a2757057846b8aa5c80f293ac6, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 8d11841e56bc03949aeb03b150ffc310, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: ccbc990a77d5d1d4dbe7ab05ad419807, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 230ae1818f5f3554eadd3d3aa81fc734, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 98d7398f4f4a99944a94172d355506a1, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: 6075401738082d246a0bb3d856ad795d, type: 2}
     isDiscovered: 1
+    countInDeck: 0
   - card: {fileID: 11400000, guid: e8537db63504b5c4797a450b8c505003, type: 2}
     isDiscovered: 1
+    countInDeck: 0
 --- !u!4 &1335548241
 Transform:
   m_ObjectHideFlags: 0
@@ -25001,6 +25026,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckCapacity: 10
+  creatureCardMax: 5
+  effectCardMax: 3
+  bossCardMax: 1
   deckCapacityText: {fileID: 1436962445}
   cardInDeck: {fileID: 4747608108853021220, guid: def33af07d7ae9c4c83b015bb795ebfb, type: 3}
   deckScrollContent: {fileID: 1045058641}
@@ -29537,7 +29565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2063512425
 MonoBehaviour:
   m_ObjectHideFlags: 0

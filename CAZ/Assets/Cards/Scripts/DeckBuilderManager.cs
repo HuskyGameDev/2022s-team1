@@ -7,6 +7,9 @@ public class DeckBuilderManager : MonoBehaviour
 {
 
     public int deckCapacity;
+    public int creatureCardMax;
+    public int effectCardMax;
+    public int bossCardMax;
     public Text deckCapacityText;
 
     public GameObject cardInDeck;

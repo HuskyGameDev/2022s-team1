@@ -27,11 +27,30 @@ public class DeckBuilderButtons : MonoBehaviour
     public void AddCard() {
         Debug.Log("Attempted to Add");
         CardDex.CardEntry entry = deckBuilderManager.dex.cardDex.Find((x) => x.card.name == GetComponentInParent<CardDisplay>().card.name);
-        if (entry.isDiscovered && deck.deck.Count < deckBuilderManager.deckCapacity)
+        if (entry.card.type == Types.Creature && entry.isDiscovered && entry.countInDeck < deckBuilderManager.creatureCardMax && deck.deck.Count < deckBuilderManager.deckCapacity)
         {
             InstanceCard = GetComponentInParent<CardDisplay>().card; // set Instance Card - get card info to add to deck
             deck.deck.Add(InstanceCard); // Add card to deck list
             deckBuilderManager.setDeckCapText();
+            entry.countInDeck++;
+            AddCardToDeckList(InstanceCard); // Add card visually to deck builder
+            deckBuilderManager.deckScrollView.verticalNormalizedPosition = 1; // adjust scroll view to accomodate new entry
+        }
+        else if (entry.card.type == Types.Boss && entry.isDiscovered && entry.countInDeck < deckBuilderManager.bossCardMax && deck.deck.Count < deckBuilderManager.deckCapacity)
+        {
+            InstanceCard = GetComponentInParent<CardDisplay>().card; // set Instance Card - get card info to add to deck
+            deck.deck.Add(InstanceCard); // Add card to deck list
+            deckBuilderManager.setDeckCapText();
+            entry.countInDeck++;
+            AddCardToDeckList(InstanceCard); // Add card visually to deck builder
+            deckBuilderManager.deckScrollView.verticalNormalizedPosition = 1; // adjust scroll view to accomodate new entry
+        }
+        else if (entry.card.type == Types.Effect && entry.isDiscovered && entry.countInDeck < deckBuilderManager.effectCardMax && deck.deck.Count < deckBuilderManager.deckCapacity)
+        {
+            InstanceCard = GetComponentInParent<CardDisplay>().card; // set Instance Card - get card info to add to deck
+            deck.deck.Add(InstanceCard); // Add card to deck list
+            deckBuilderManager.setDeckCapText();
+            entry.countInDeck++;
             AddCardToDeckList(InstanceCard); // Add card visually to deck builder
             deckBuilderManager.deckScrollView.verticalNormalizedPosition = 1; // adjust scroll view to accomodate new entry
         }
@@ -57,7 +76,9 @@ public class DeckBuilderButtons : MonoBehaviour
      * Removes card from deck list, calls function to remove card visually to deck builder 
      */
     public void RemoveCard() {
+        CardDex.CardEntry entry = deckBuilderManager.dex.cardDex.Find((x) => x.card.name == InstanceCard.name);
         deck.deck.Remove(InstanceCard); // Remove card from deck list
+        entry.countInDeck--;
         deckBuilderManager.setDeckCapText();
         RemoveCardFromDeckList(InstanceCard); // Destroy CardInDeck from deck builder
     }

@@ -104,7 +104,7 @@ public class AI_Standard : MonoBehaviour
         while(manager.enemyAvailableFieldSlots > 0 && creatureInHand) { // while there are open field slots
 
             foreach (Card c in hand) { // Evaluate potential Field Score for each creature in the hand
-                if (c.type == Types.Creature) {
+                if (c.type == Types.Creature || c.type == Types.Boss) {
                     Debug.Log("Evaluating FS for " + c.name + "...");
                     tempFS = EvaluateFieldScore(c);
                     Debug.Log("FS for " + c.name + " = " + tempFS);
@@ -125,7 +125,7 @@ public class AI_Standard : MonoBehaviour
     bool CreatureInHand() {
         for (int i = 0; i < hand.Count; i++)
         {
-            if (hand[i].type == Types.Creature) {
+            if (hand[i].type == Types.Creature || hand[i].type == Types.Boss) {
                 return true;
             }
         }

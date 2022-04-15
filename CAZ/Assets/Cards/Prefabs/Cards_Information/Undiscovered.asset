@@ -14,6 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Undiscovered
   description: You have not discovered this card. Keep looking!
-  art: {fileID: 21300000, guid: f2b815dae09dd9845acf8640de4089e5, type: 3}
+  effect: 
+  art: {fileID: 21300000, guid: c50c11a106b31c749b01831242cc0103, type: 3}
   attack: 0
   defense: 0
+  prefab: {fileID: 0}
+  cardObject: {fileID: 0}
+  type: 0
+  summonState: 0
+  turnAction: 0
+  fieldIndex: 0
+  aggro: 0
+  shield: 0

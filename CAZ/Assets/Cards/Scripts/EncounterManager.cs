@@ -38,6 +38,12 @@ public class EncounterManager : MonoBehaviour
     //public Dictionary<Transform, int> enemyFieldSlots;
 
     public AI_Standard enemy;
+    public AI_1_Standard_Minimize AI1;
+    public AI_2_Standard_Maxmimize AI2;
+    public AI_3_Offensive_Minimize AI3;
+    public AI_4_Offensive_Maximize AI4;
+    public AI_5_Defensive_Minimize AI5;
+    public AI_6_Defensive_Maximize AI6;
     public PlayerUnit player;
     public Button indicator;
     public CardEffects effects;
@@ -56,6 +62,8 @@ public class EncounterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        selectEnemyType();
+
         state = BattleState.START;
 
         playerHPText.text = player.health.ToString();
@@ -67,6 +75,38 @@ public class EncounterManager : MonoBehaviour
         // set guide name
 
         StartCoroutine(StartBattle());
+    }
+
+    void selectEnemyType() {
+        Debug.Log("Selecting enemy...");
+        int enemySelect = Random.Range(1, 7);
+        switch (enemySelect)
+        {
+            case 1:
+                enemy = AI1;
+                Debug.Log("AI-1 Selected");
+                break;
+            case 2:
+                enemy = AI2;
+                Debug.Log("AI-2 Selected");
+                break;
+            case 3:
+                enemy = AI3;
+                Debug.Log("AI-3 Selected");
+                break;
+            case 4:
+                enemy = AI4;
+                Debug.Log("AI-4 Selected");
+                break;
+            case 5:
+                enemy = AI5;
+                Debug.Log("AI-5 Selected");
+                break;
+            case 6:
+                enemy = AI6;
+                Debug.Log("AI-6 Selected");
+                break;
+        }
     }
 
     /*private void Update()

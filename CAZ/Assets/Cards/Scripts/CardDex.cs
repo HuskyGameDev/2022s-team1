@@ -8,10 +8,12 @@ public class CardDex : MonoBehaviour
      public class CardEntry {
         public Card card;
         public bool isDiscovered;
+        public int countInDeck;
 
-        public CardEntry(Card card, bool isDiscovered) {
+        public CardEntry(Card card, bool isDiscovered, int countInDeck) {
             this.card = card;
             this.isDiscovered = isDiscovered;
+            this.countInDeck = countInDeck;
         }
     }
 
