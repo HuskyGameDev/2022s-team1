@@ -30,7 +30,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         eventData.pointerDrag.GetComponent<Draggable>();
 
         Draggable drag = eventData.pointerDrag.GetComponent<Draggable>();
-        if (drag != null && !drag.placed)
+        if (drag != null && !drag.placed && !drag.zoomed)
         {
             if (drag.parentToReturnTo.GetComponent<DropZone>() == null)
             { // check to see if the card is coming from the hand zone

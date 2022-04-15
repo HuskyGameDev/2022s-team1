@@ -45,6 +45,7 @@ public class EncounterManager : MonoBehaviour
     public CursorController cursorController;
     public DiscardController enemyDiscardController;
     public DiscardController playerDiscardController;
+    public CardZoom cardZoom;
 
     // Start is called before the first frame update
     void Start()

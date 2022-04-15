@@ -15,6 +15,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Transform parentToReturnTo = null;
     public bool placed = false;
 
+    public bool hovered;
+    public bool zoomed;
+
 
     private void Start()
     {
@@ -24,6 +27,19 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1) && hovered) {
+            manager.cardZoom.ActivateZoom(this.GetComponent<CardDisplay>().card);
+            zoomed = true;
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            manager.cardZoom.DeactivateZoom();
+            zoomed = false;
+        }
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (owner == Owner.PLAYER && !placed && manager.activeEffect == ActiveEffect.NONE)
@@ -31,13 +47,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             posOffset = eventData.position - (Vector2)this.transform.position;
 
             parentToReturnTo = this.transform.parent;
-            this.transform.SetParent(canvas.transform);
+            if (!zoomed)
+            {
+                this.transform.SetParent(canvas.transform);
+            }
 
             GetComponent<CanvasGroup>().blocksRaycasts = false;
 
             //cursorController.cursorImage.sprite = cursorController.grabCursor;
         }
-        else if (owner == Owner.PLAYER && placed && this.gameObject.GetComponent<CardDisplay>().card.summonState == SummonState.BattleReady && this.gameObject.GetComponent<CardDisplay>().card.turnAction == TurnAction.NotUsed && manager.state == BattleState.PLAYERTRUN && manager.activeEffect == ActiveEffect.NONE)
+        else if (owner == Owner.PLAYER && placed && this.gameObject.GetComponent<CardDisplay>().card.summonState == SummonState.BattleReady && this.gameObject.GetComponent<CardDisplay>().card.turnAction == TurnAction.NotUsed && manager.state == BattleState.PLAYERTRUN && manager.activeEffect == ActiveEffect.NONE && !zoomed)
         {
             //change cursor to attack
             cursorController.cursorImage.sprite = cursorController.attackCursor;
@@ -48,11 +67,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (owner == Owner.PLAYER && !placed && manager.activeEffect == ActiveEffect.NONE)
+        if (owner == Owner.PLAYER && !placed && manager.activeEffect == ActiveEffect.NONE && !zoomed)
         {
             this.transform.position = eventData.position - posOffset;
         }
-        else if (owner == Owner.PLAYER && placed)
+        else if (owner == Owner.PLAYER && placed && !zoomed)
         {
             //dragging for attack
 
@@ -89,6 +108,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(true);
         }
 
+        hovered = true;
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -103,6 +124,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false);
         }
 
+        hovered = false;
+
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -111,7 +134,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         Draggable drag = eventData.pointerDrag.GetComponent<Draggable>();
 
-        if (drag != null && drag.placed && drag.owner == Owner.PLAYER && this.owner == Owner.ENEMY && cursorController.cursorState == CursorState.ATTACK)
+        if (drag != null && drag.placed && drag.owner == Owner.PLAYER && this.owner == Owner.ENEMY && cursorController.cursorState == CursorState.ATTACK && !zoomed)
         {
             this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false);
             manager.player.attack(drag.GetComponent<CardDisplay>().card, this.gameObject.GetComponent<CardDisplay>().card);
