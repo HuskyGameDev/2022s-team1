@@ -34,9 +34,11 @@ public class AI_6_Defensive_Maximize : AI_Standard
         int attackScore = int.MinValue;
         for (int i = 0; i < manager.enemyField.Count; i++)
         { // all creatures can attack
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             if (manager.playerField.Count > 0 && manager.enemyField[i].summonState == SummonState.BattleReady)
             {
+                manager.enemyField[i].cardObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(true); // set select overlay
+                yield return new WaitForSeconds(1f);
                 for (int j = 0; j < manager.playerField.Count; j++)
                 { // check each creature in player field
                     Debug.Log("Checking if " + manager.enemyField[i].name + " can destroy " + manager.playerField[j].name);
@@ -47,27 +49,39 @@ public class AI_6_Defensive_Maximize : AI_Standard
                         if (tempAttackScore > attackScore)
                         { // check to see if it is optimal
                             attackScore = tempAttackScore;
+                            if (target != null)
+                            {
+                                manager.playerField[j].cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false); // set select overlay
+                            }
                             target = manager.playerField[j]; // select target
                             Debug.Log(manager.enemyField[i].name + " has targeted " + manager.playerField[j].name);
+                            yield return new WaitForSeconds(1f);
+                            manager.playerField[j].cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(true); // set select overlay
                         }
                         else
                         {
                             Debug.Log(manager.enemyField[i].name + " does not target " + manager.playerField[j].name);
+                            yield return new WaitForSeconds(1f);
+                            manager.playerField[j].cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false); // set select overlay
                         }
                     }
                 }
                 if (target != null)
                 {
                     Debug.Log(manager.enemyField[i].name + " is attacking " + target.name);
+                    yield return new WaitForSeconds(1f);
                     AttackAndDestroy(manager.enemyField[i], target); // destroy target card
                     target = null;
                     attackScore = int.MinValue; // reset attackScore for next card
+                    manager.enemyField[i].cardObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false); // set select overlay
                     continue;
                 }
                 else if (target == null)
                 {
                     Debug.Log(manager.enemyField[i].name + " cannot attack any player cards this turn");
+                    yield return new WaitForSeconds(1f);
                     attackScore = int.MinValue; // reset attackScore for next card
+                    manager.enemyField[i].cardObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false); // set select overlay
                     continue;
                 }
                 //attackScore = int.MaxValue; // reset attackScore for next card
@@ -76,6 +90,8 @@ public class AI_6_Defensive_Maximize : AI_Standard
             {
                 Debug.Log(manager.enemyField[i].name + " attacks directly!");
                 DamagePlayer(manager.enemyField[i].attack);
+                yield return new WaitForSeconds(1f);
+                manager.enemyField[i].cardObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false); // set select overlay
             }
             else
             {
@@ -83,7 +99,7 @@ public class AI_6_Defensive_Maximize : AI_Standard
                 //c.summonState = SummonState.BattleReady;
                 //summonSickCreatures.Add(manager.enemyField[i]);
                 //manager.enemyField[i].summonState = SummonState.BattleReady;
-                manager.enemyField[i].summonState = SummonState.BattleReady;
+                //manager.enemyField[i].summonState = SummonState.BattleReady;
             }
         }
         DestroyMarkedCards();
@@ -105,10 +121,12 @@ public class AI_6_Defensive_Maximize : AI_Standard
                         //check if healing potion is valuable
                         if (health < maxHealth - 5)
                         {
+                            yield return new WaitUntil(() => manager.activeEffect == ActiveEffect.NONE);
+                            yield return new WaitForSeconds(1f);
                             hand.Remove(c);
                             RenderEffectCard(c);
                             manager.effects.HealingPotion("Enemy");
-                            yield return new WaitForSeconds(3f);
+                            yield return new WaitForSeconds(2f);
                             EraseCard(c);
                         }
                         break;
@@ -116,10 +134,12 @@ public class AI_6_Defensive_Maximize : AI_Standard
                         //check if sleight of hand is valuable
                         if (deck.Count > 6 && hand.Count < 3)
                         {
+                            yield return new WaitUntil(() => manager.activeEffect == ActiveEffect.NONE);
+                            yield return new WaitForSeconds(1f);
                             hand.Remove(c);
                             RenderEffectCard(c);
                             manager.effects.SleightOfHand("Enemy");
-                            yield return new WaitForSeconds(3f);
+                            yield return new WaitForSeconds(2f);
                             EraseCard(c);
                         }
                         break;
@@ -127,20 +147,24 @@ public class AI_6_Defensive_Maximize : AI_Standard
                         //check if sacrifice is valuable
                         if (manager.enemyField.Count == 3 && manager.playerField.Count == 3)
                         {
+                            yield return new WaitUntil(() => manager.activeEffect == ActiveEffect.NONE);
+                            yield return new WaitForSeconds(1f);
                             hand.Remove(c);
                             RenderEffectCard(c);
-                            manager.effects.Sacrifice("Enemy", 6);
-                            yield return new WaitForSeconds(3f);
+                            yield return StartCoroutine(manager.effects.Sacrifice("Enemy", 6));
+                            yield return new WaitForSeconds(2f);
                             EraseCard(c);
                         }
                         break;
                     case "Shadow Strike":
                         if (manager.playerField.Count >= 1)
                         {
+                            yield return new WaitUntil(() => manager.activeEffect == ActiveEffect.NONE);
+                            yield return new WaitForSeconds(1f);
                             hand.Remove(c);
                             RenderEffectCard(c);
-                            manager.effects.ShadowStrike("Enemy", 6);
-                            yield return new WaitForSeconds(3f);
+                            yield return StartCoroutine(manager.effects.ShadowStrike("Enemy", 6));
+                            yield return new WaitForSeconds(2f);
                             EraseCard(c);
                         }
                         break;
@@ -151,10 +175,12 @@ public class AI_6_Defensive_Maximize : AI_Standard
                         float aggroRand = Random.Range(1, 4);
                         if (aggroRand == 3 && nonAggroCreatureOnField)
                         {
+                            yield return new WaitUntil(() => manager.activeEffect == ActiveEffect.NONE);
+                            yield return new WaitForSeconds(1f);
                             hand.Remove(c);
                             RenderEffectCard(c);
-                            manager.effects.Aggression("Enemy", 6);
-                            yield return new WaitForSeconds(3f);
+                            yield return StartCoroutine(manager.effects.Aggression("Enemy", 6));
+                            yield return new WaitForSeconds(2f);
                             EraseCard(c);
                         }
                         break;
@@ -162,10 +188,12 @@ public class AI_6_Defensive_Maximize : AI_Standard
                         //check if revive is valuable
                         if (discarded.Count > 0 && hand.Count < 3)
                         {
+                            yield return new WaitUntil(() => manager.activeEffect == ActiveEffect.NONE);
+                            yield return new WaitForSeconds(1f);
                             hand.Remove(c);
                             RenderEffectCard(c);
                             manager.effects.Revive("Enemy", 6);
-                            yield return new WaitForSeconds(3f);
+                            yield return new WaitForSeconds(2f);
                             EraseCard(c);
                         }
                         break;
@@ -175,10 +203,12 @@ public class AI_6_Defensive_Maximize : AI_Standard
                         float shieldRand = Random.Range(1, 4);
                         if (shieldRand == 3 && nonShieldedCreatureOnField)
                         {
+                            yield return new WaitUntil(() => manager.activeEffect == ActiveEffect.NONE);
+                            yield return new WaitForSeconds(1f);
                             hand.Remove(c);
                             RenderEffectCard(c);
-                            manager.effects.Shield("Enemy", 6);
-                            yield return new WaitForSeconds(3f);
+                            yield return StartCoroutine(manager.effects.Shield("Enemy", 6));
+                            yield return new WaitForSeconds(2f);
                             EraseCard(c);
                         }
                         break;

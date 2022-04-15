@@ -22,6 +22,7 @@ public class EncounterManager : MonoBehaviour
     //public Transform playerFieldSlot3;
     public Transform playerEffectSlot;
     public Text playerHPText;
+    public Text playerDeckText;
 
     public List<Card> enemyField;
     public List<Transform> enemyFieldSlots;
@@ -33,6 +34,7 @@ public class EncounterManager : MonoBehaviour
     public Transform enemyEffectSlot;
     public Text handNum;
     public Text enemyHPText;
+    public Text enemyDeckText;
     //public Dictionary<Transform, int> enemyFieldSlots;
 
     public AI_Standard enemy;
@@ -48,8 +50,13 @@ public class EncounterManager : MonoBehaviour
     void Start()
     {
         state = BattleState.START;
+
         playerHPText.text = player.health.ToString();
         enemyHPText.text = enemy.health.ToString();
+
+        playerDeckText.text = player.deck.Count.ToString();
+        enemyDeckText.text = enemy.deck.Count.ToString();
+
         StartCoroutine(StartBattle());
     }
 
@@ -64,6 +71,10 @@ public class EncounterManager : MonoBehaviour
         //Draw Cards for both player and enemy
 
         Debug.Log("Starting Battle");
+
+        Debug.Log("Shuffling Decks");
+        player.deck.Shuffle(10);
+        enemy.deck.Shuffle(10);
 
         yield return new WaitForSeconds(2f);
 
@@ -146,7 +157,7 @@ public class EncounterManager : MonoBehaviour
         //check if clicked card is shielded, if so deactivate shield
         if (card.shield)
         {
-            card.attack -= effects.shieldAmount;
+            card.defense -= effects.shieldAmount;
             card.shield = false;
         }
     }

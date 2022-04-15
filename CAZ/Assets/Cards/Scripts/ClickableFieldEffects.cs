@@ -17,7 +17,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
         CardDisplay clickedCard = eventData.pointerClick.GetComponent<CardDisplay>(); // get clicked object
 
         //Shadow Strike
-        if (manager.activeEffect == ActiveEffect.SHADOW_STRIKE && this.GetComponent<Draggable>().owner == Draggable.Owner.ENEMY)
+        if (manager.activeEffect == ActiveEffect.SHADOW_STRIKE && this.GetComponent<Draggable>().owner == Draggable.Owner.ENEMY && manager.state == BattleState.PLAYERTRUN)
         {
             Card struckCard = Instantiate(clickedCard.card); // create copy of clicked card
             Card cardInField = manager.enemyField.Find((c) => c.name == struckCard.name); // find struck card in enemy field list
@@ -47,7 +47,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             manager.indicator.interactable = true; // set indicator button to active - player can now end turn
         }
         //Sacrifice
-        else if (manager.activeEffect == ActiveEffect.SACRIFICE && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed)
+        else if (manager.activeEffect == ActiveEffect.SACRIFICE && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && manager.state == BattleState.PLAYERTRUN)
         {
             Card sacrificialCard = Instantiate(clickedCard.card); // create copy of clicked card
             Card cardInField = manager.playerField.Find((c) => c.name == sacrificialCard.name); // find sacrifical card in player field list
@@ -75,7 +75,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             manager.indicator.interactable = true; // set indicator button to active - player can now end turn
         }
         //Aggression
-        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.aggro)
+        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.aggro && manager.state == BattleState.PLAYERTRUN)
         {
             Card aggroCard = Instantiate(clickedCard.card); // create copy of clicked card
             Card cardInField = manager.playerField.Find((c) => c.name == aggroCard.name); // find aggro card in player field list
@@ -96,7 +96,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             manager.indicator.interactable = true; // set indicator button to active - player can now end turn
         }
         //Shield
-        else if (manager.activeEffect == ActiveEffect.SHIELD && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.shield)
+        else if (manager.activeEffect == ActiveEffect.SHIELD && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.shield && manager.state == BattleState.PLAYERTRUN)
         {
             Card shieldCard = Instantiate(clickedCard.card); // create copy of clicked card
             Card cardInField = manager.playerField.Find((c) => c.name == shieldCard.name); // find shielded card in player field list
@@ -122,7 +122,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
     public void OnPointerEnter(PointerEventData eventData)
     {
         //Shadow Strike
-        if (manager.activeEffect == ActiveEffect.SHADOW_STRIKE && this.GetComponent<Draggable>().owner == Draggable.Owner.ENEMY)
+        if (manager.activeEffect == ActiveEffect.SHADOW_STRIKE && this.GetComponent<Draggable>().owner == Draggable.Owner.ENEMY && manager.state == BattleState.PLAYERTRUN)
         {
             //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
@@ -130,7 +130,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(true); // enable select card overlay
         }
         //Sacrifice
-        else if (manager.activeEffect == ActiveEffect.SACRIFICE && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed)
+        else if (manager.activeEffect == ActiveEffect.SACRIFICE && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && manager.state == BattleState.PLAYERTRUN)
         {
             //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
@@ -142,7 +142,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(true); // enable select card overlay
         }
         //Aggression
-        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.aggro)
+        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.aggro && manager.state == BattleState.PLAYERTRUN)
         {
             //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
@@ -155,7 +155,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(true); // enable select card overlay
         }
         //Shield
-        else if (manager.activeEffect == ActiveEffect.SHIELD && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.shield)
+        else if (manager.activeEffect == ActiveEffect.SHIELD && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.shield && manager.state == BattleState.PLAYERTRUN)
         {
             //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
@@ -173,7 +173,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
     public void OnPointerExit(PointerEventData eventData)
     {
         //Shadow Strike
-        if (manager.activeEffect == ActiveEffect.SHADOW_STRIKE && this.GetComponent<Draggable>().owner == Draggable.Owner.ENEMY)
+        if (manager.activeEffect == ActiveEffect.SHADOW_STRIKE && this.GetComponent<Draggable>().owner == Draggable.Owner.ENEMY && manager.state == BattleState.PLAYERTRUN)
         {
             //manager.cursorController.cursorImage.sprite = manager.cursorController.normalCursor; // reset cursor to normal sprite
             //manager.cursorController.cursorState = CursorState.NORMAL; // set cursor state
@@ -181,7 +181,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false); // disable select card overlay
         }
         //Sacrifice
-        else if (manager.activeEffect == ActiveEffect.SACRIFICE && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed)
+        else if (manager.activeEffect == ActiveEffect.SACRIFICE && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && manager.state == BattleState.PLAYERTRUN)
         {
             //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
@@ -194,7 +194,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false); // disable select card overlay
         }
         //Aggression
-        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.aggro)
+        else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.aggro && manager.state == BattleState.PLAYERTRUN)
         {
             //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
@@ -207,7 +207,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
             this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false); // disable select card overlay
         }
         //Shield
-        else if (manager.activeEffect == ActiveEffect.SHIELD && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.shield)
+        else if (manager.activeEffect == ActiveEffect.SHIELD && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.shield && manager.state == BattleState.PLAYERTRUN)
         {
             //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             //manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state

@@ -16,7 +16,7 @@ public class ClickableRevive : MonoBehaviour, IPointerClickHandler, IPointerEnte
     public void OnPointerClick(PointerEventData eventData)
     {
         CardDisplay clickedCard = eventData.pointerClick.GetComponent<CardDisplay>(); // get clicked object
-        if (manager.activeEffect == ActiveEffect.REVIVE)
+        if (manager.activeEffect == ActiveEffect.REVIVE && manager.state == BattleState.PLAYERTRUN)
         {
             Card revivedCard = Instantiate(clickedCard.card); // create copy of clicked card
             manager.player.hand.Add(revivedCard); // add revived card to hand
@@ -36,7 +36,7 @@ public class ClickableRevive : MonoBehaviour, IPointerClickHandler, IPointerEnte
     public void OnPointerEnter(PointerEventData eventData)
     {
 
-        if (manager.activeEffect == ActiveEffect.REVIVE)
+        if (manager.activeEffect == ActiveEffect.REVIVE && manager.state == BattleState.PLAYERTRUN)
         {
             manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
@@ -48,7 +48,7 @@ public class ClickableRevive : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (manager.activeEffect == ActiveEffect.REVIVE)
+        if (manager.activeEffect == ActiveEffect.REVIVE && manager.state == BattleState.PLAYERTRUN)
         {
             manager.cursorController.cursorImage.sprite = manager.cursorController.normalCursor; // reset cursor to normal sprite
             manager.cursorController.cursorState = CursorState.NORMAL; // set cursor state

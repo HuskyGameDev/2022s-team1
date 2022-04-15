@@ -39,7 +39,7 @@ public class CursorController : MonoBehaviour
         Vector2 cursorPos = new Vector2(Input.mousePosition.x + xOffset, Input.mousePosition.y + yOffset);
         cursorImage.transform.position = cursorPos;
 
-        if (manager.activeEffect == ActiveEffect.NONE)
+        if (manager.activeEffect == ActiveEffect.NONE || manager.state == BattleState.ENEMYTURN)
         {
             if (Input.GetMouseButtonDown(0))
             {

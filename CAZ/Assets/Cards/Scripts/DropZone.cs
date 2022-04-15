@@ -82,8 +82,17 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                         }
                         break;
                     case "Sleight of Hand":
-                        manager.activeEffect = ActiveEffect.SLEIGHT_OF_HAND;
-                        manager.effects.SleightOfHand("Player");
+                        if (manager.player.hand.Count <= 3)  // check if playing sleioght of hand is valid
+                        {
+                            if (zoneOwner == drag.owner && !taken && !fromTakenParent) // check card drop prereqs
+                            {
+                                effectHelper(drag); // perform drag maintenence
+                                manager.activeEffect = ActiveEffect.SLEIGHT_OF_HAND; // set active effect
+                                manager.effects.SleightOfHand("Player"); // perform sleight of hand potion
+                                manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase sleight of hand card
+                                taken = false; // free effect slot
+                            }
+                        }
                         break;
                     case "Sacrifice":
                         if (manager.playerField.Count > 0)  // check if playing sacrifice is valid
@@ -92,7 +101,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 effectHelper(drag); // perform drag maintenence
                                 manager.activeEffect = ActiveEffect.SACRIFICE; // set active effect
-                                manager.effects.Sacrifice("Player", 0); // perform sacrifice
+                                StartCoroutine(manager.effects.Sacrifice("Player", 0)); // perform sacrifice
                                 manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase sacrifice card
                                 taken = false; // free effect slot
                             }
@@ -105,7 +114,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 effectHelper(drag); // perform drag maintenence
                                 manager.activeEffect = ActiveEffect.SHADOW_STRIKE; // set active effect
-                                manager.effects.ShadowStrike("Player", 0); // perform shadow strike
+                                StartCoroutine(manager.effects.ShadowStrike("Player", 0)); // perform shadow strike
                                 manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase shadow stirke card
                                 taken = false; // free effect slot
                             }
@@ -119,7 +128,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 effectHelper(drag); // perform drag maintenence
                                 manager.activeEffect = ActiveEffect.AGGRESSION; // set active effect
-                                manager.effects.Aggression("Player", 0); // perform aggression
+                                StartCoroutine(manager.effects.Aggression("Player", 0)); // perform aggression
                                 manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase aggression card
                                 taken = false; // free effect slot
                             }
@@ -133,7 +142,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 effectHelper(drag); // perform drag maintenence
                                 manager.activeEffect = ActiveEffect.SHIELD; // set active effect
-                                manager.effects.Shield("Player", 0); // perform shield
+                                StartCoroutine(manager.effects.Shield("Player", 0)); // perform shield
                                 manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase shield card
                                 taken = false; // free effect slot
                             }

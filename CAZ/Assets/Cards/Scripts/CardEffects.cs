@@ -14,13 +14,28 @@ public class CardEffects : MonoBehaviour
         switch (flag)
         {
             case "Enemy":
-                manager.enemy.health = manager.enemy.health + healAmount;
+                manager.activeEffect = ActiveEffect.HEALING_POTION;
+                manager.enemy.health = manager.enemy.health + healAmount; // heal
+
+                if (manager.enemy.health > manager.enemy.maxHealth) // check if overhealed
+                { 
+                    manager.enemy.health = manager.enemy.maxHealth; // set to max health
+                }
+
                 manager.enemyHPText.text = manager.enemy.health.ToString();
                 Debug.Log("Enemy used a health potion!");
+                manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 break;
             case "Player":
-                manager.player.health = manager.player.health + healAmount;
+                manager.player.health = manager.player.health + healAmount; // heal
+
+                if (manager.player.health > manager.player.maxHealth) // check if overhealed
+                {
+                    manager.player.health = manager.player.maxHealth; // set to max health
+                }
+
                 manager.playerHPText.text = manager.player.health.ToString();
+                manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 Debug.Log("You used a health potion!");
                 break;
         }
@@ -31,54 +46,66 @@ public class CardEffects : MonoBehaviour
         switch (flag)
         {
             case "Enemy":
+                manager.activeEffect = ActiveEffect.SLEIGHT_OF_HAND;
                 Debug.Log("Enemy used a sleight of hand!");
                 StartCoroutine(manager.enemy.DrawCards());
+                manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 break;
             case "Player":
-
+                Debug.Log("Player used sleight of hand!");
+                StartCoroutine(manager.player.DrawCards());
+                //manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 break;
         }
     }
 
-    public void Sacrifice(string flag, int AINum) {
+    public IEnumerator Sacrifice(string flag, int AINum) {
         switch (flag)
         {
             case "Enemy":
+                manager.activeEffect = ActiveEffect.SACRIFICE;
                 Card targetCard;
                 switch (AINum)
                 {
                     case 1:
                         targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.NONE);
-                        manager.enemy.markedCards.Add(targetCard);
-                        Debug.Log("Enemy Sacrificed " + targetCard.name);
+
+                        yield return StartCoroutine(SacrificeHelper(targetCard));
                         break;
+
                     case 2:
                         targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.NONE);
-                        manager.enemy.markedCards.Add(targetCard);
-                        Debug.Log("Enemy Sacrificed " + targetCard.name);
+
+                        yield return StartCoroutine(SacrificeHelper(targetCard));
                         break;
+
                     case 3:
                         targetCard = GetLowestDefense(manager.enemyField, ActiveEffect.NONE);
-                        manager.enemy.markedCards.Add(targetCard);
-                        Debug.Log("Enemy Sacrificed " + targetCard.name);
+
+                        yield return StartCoroutine(SacrificeHelper(targetCard));
                         break;
+
                     case 4:
                         targetCard = GetLowestDefense(manager.enemyField, ActiveEffect.NONE);
-                        manager.enemy.markedCards.Add(targetCard);
-                        Debug.Log("Enemy Sacrificed " + targetCard.name);
+
+                        yield return StartCoroutine(SacrificeHelper(targetCard));
                         break;
+
                     case 5:
                         targetCard = GetLowestAttack(manager.enemyField, ActiveEffect.NONE);
-                        manager.enemy.markedCards.Add(targetCard);
-                        Debug.Log("Enemy Sacrificed " + targetCard.name);
+
+                        yield return StartCoroutine(SacrificeHelper(targetCard));
                         break;
+
                     case 6:
                         targetCard = GetLowestAttack(manager.enemyField, ActiveEffect.NONE);
-                        manager.enemy.markedCards.Add(targetCard);
-                        Debug.Log("Enemy Sacrificed " + targetCard.name);
+
+                        yield return StartCoroutine(SacrificeHelper(targetCard));
                         break;
+
                 }
-                manager.enemy.DestroyMarkedCards();
+                //manager.enemy.DestroyMarkedCards();
+                manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 break;
             case "Player":
                 manager.indicator.interactable = false; // player cannot end turn mid effect
@@ -86,57 +113,81 @@ public class CardEffects : MonoBehaviour
         }
     }
 
-    public void ShadowStrike(string flag, int AINum)
+    IEnumerator SacrificeHelper(Card targetCard) {
+
+        if (targetCard.summonState == SummonState.SummonSick) {
+            targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(1f);
+        targetCard.cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        targetCard.cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false);
+
+        if (targetCard.summonState == SummonState.SummonSick)
+        {
+            targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(true);
+        }
+
+        manager.enemyField.Remove(targetCard);
+        manager.RemoveLingeringEffects(targetCard);
+        manager.enemy.EraseCard(targetCard);
+        manager.enemyAvailableFieldSlots++;
+        manager.enemyFieldSlotAvailability[targetCard.fieldIndex] = 0;
+        Debug.Log("Enemy Sacrificed " + targetCard.name);
+        manager.enemy.discarded.Add(targetCard);
+        manager.enemyDiscardController.addCardToContent(targetCard);
+        Debug.Log(targetCard.name + " was sent to the discard pile");
+
+    }
+
+    public IEnumerator ShadowStrike(string flag, int AINum)
     {
         switch (flag)
         {
             case "Enemy":
+                manager.activeEffect = ActiveEffect.SHADOW_STRIKE;
                 Card targetCard;
                 switch (AINum)
                 {
                     case 1:
                         targetCard = GetRandomCardOnField(manager.playerField, ActiveEffect.NONE);
-                        manager.playerField.Remove(targetCard); // remove from field
-                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
-                        manager.enemy.EraseCard(targetCard);
-                        Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
+
+                        yield return StartCoroutine(ShadowStrikeHelper(targetCard));
                         break;
+
                     case 2:
                         targetCard = GetRandomCardOnField(manager.playerField, ActiveEffect.NONE);
-                        manager.playerField.Remove(targetCard); // remove from field
-                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
-                        manager.enemy.EraseCard(targetCard);
-                        Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
+
+                        yield return StartCoroutine(ShadowStrikeHelper(targetCard));
                         break;
+
                     case 3:
                         targetCard = GetHighestDefense(manager.playerField, ActiveEffect.NONE);
-                        manager.playerField.Remove(targetCard); // remove from field
-                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
-                        manager.enemy.EraseCard(targetCard);
-                        Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
+
+                        yield return StartCoroutine(ShadowStrikeHelper(targetCard));
                         break;
+
                     case 4:
                         targetCard = GetHighestDefense(manager.playerField, ActiveEffect.NONE);
-                        manager.playerField.Remove(targetCard); // remove from field
-                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
-                        manager.enemy.EraseCard(targetCard);
-                        Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
+
+                        yield return StartCoroutine(ShadowStrikeHelper(targetCard));
                         break;
+
                     case 5:
                         targetCard = GetHighestAttack(manager.playerField, ActiveEffect.NONE);
-                        manager.playerField.Remove(targetCard); // remove from field
-                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
-                        manager.enemy.EraseCard(targetCard);
-                        Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
+
+                        yield return StartCoroutine(ShadowStrikeHelper(targetCard));
                         break;
+
                     case 6:
                         targetCard = GetHighestAttack(manager.playerField, ActiveEffect.NONE);
-                        manager.playerField.Remove(targetCard); // remove from field
-                        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
-                        manager.enemy.EraseCard(targetCard);
-                        Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
+
+                        yield return StartCoroutine(ShadowStrikeHelper(targetCard));
                         break;
+
                 }
+                manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 break;
             case "Player":
                 manager.indicator.interactable = false; // player cannot end turn mid effect
@@ -144,57 +195,80 @@ public class CardEffects : MonoBehaviour
         }
     }
 
-    public void Aggression(string flag, int AINum)
+    IEnumerator ShadowStrikeHelper(Card targetCard) {
+
+        if (targetCard.summonState == SummonState.SummonSick)
+        {
+            targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(1f);
+        targetCard.cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        targetCard.cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false);
+
+        if (targetCard.summonState == SummonState.SummonSick)
+        {
+            targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(true);
+        }
+
+        manager.playerField.Remove(targetCard); // remove from field
+        manager.RemoveLingeringEffects(targetCard);
+        manager.playerFieldSlots[targetCard.fieldIndex].GetComponent<DropZone>().taken = false;
+        manager.player.discarded.Add(targetCard);
+        manager.playerDiscardController.addCardToContent(targetCard);
+        manager.enemy.EraseCard(targetCard);
+        Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
+    }
+    
+
+    public IEnumerator Aggression(string flag, int AINum)
     {
         switch (flag)
         {
             case "Enemy":
+                manager.activeEffect = ActiveEffect.AGGRESSION;
                 Card targetCard;
                 switch (AINum)
                 {
                     case 1:
                         targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.AGGRESSION);
-                        targetCard.attack += aggressionAmount;
-                        targetCard.aggro = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
+
+                        yield return StartCoroutine(AggressionHelper(targetCard));
                         break;
+
                     case 2:
                         targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.AGGRESSION);
-                        targetCard.attack += aggressionAmount;
-                        targetCard.aggro = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
+
+                        yield return StartCoroutine(AggressionHelper(targetCard));
                         break;
+
                     case 3:
                         targetCard = GetHighestAttack(manager.enemyField, ActiveEffect.AGGRESSION);
-                        targetCard.attack += aggressionAmount;
-                        targetCard.aggro = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
+
+                        yield return StartCoroutine(AggressionHelper(targetCard));
                         break;
+
                     case 4:
                         targetCard = GetHighestAttack(manager.enemyField, ActiveEffect.AGGRESSION);
-                        targetCard.attack += aggressionAmount;
-                        targetCard.aggro = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
+
+                        yield return StartCoroutine(AggressionHelper(targetCard));
                         break;
+
                     case 5:
                         targetCard = GetLowestAttack(manager.enemyField, ActiveEffect.AGGRESSION);
-                        targetCard.attack += aggressionAmount;
-                        targetCard.aggro = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
+
+                        yield return StartCoroutine(AggressionHelper(targetCard));
                         break;
+
                     case 6:
                         targetCard = GetLowestAttack(manager.enemyField, ActiveEffect.AGGRESSION);
-                        targetCard.attack += aggressionAmount;
-                        targetCard.aggro = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
+
+                        yield return StartCoroutine(AggressionHelper(targetCard));
                         break;
+
                 }
+                manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 break;
             case "Player":
                 manager.indicator.interactable = false; // player cannot end turn mid effect
@@ -202,57 +276,76 @@ public class CardEffects : MonoBehaviour
         }
     }
 
-    public void Shield(string flag, int AINum)
+    IEnumerator AggressionHelper(Card targetCard) {
+
+        if (targetCard.summonState == SummonState.SummonSick)
+        {
+            targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(1f);
+        targetCard.cardObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        targetCard.cardObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false);
+
+        if (targetCard.summonState == SummonState.SummonSick)
+        {
+            targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(true);
+        }
+
+        targetCard.attack += aggressionAmount;
+        targetCard.aggro = true;
+        targetCard.cardObject.GetComponent<CardDisplay>().Display();
+        Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
+    }
+
+    public IEnumerator Shield(string flag, int AINum)
     {
         switch (flag)
         {
             case "Enemy":
+                manager.activeEffect = ActiveEffect.SHIELD;
                 Card targetCard;
                 switch (AINum)
                 {
                     case 1:
                         targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.SHIELD);
-                        targetCard.defense += shieldAmount;
-                        targetCard.shield = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
+
+                        yield return StartCoroutine(ShieldHelper(targetCard));
                         break;
+
                     case 2:
                         targetCard = GetRandomCardOnField(manager.enemyField, ActiveEffect.SHIELD);
-                        targetCard.defense += shieldAmount;
-                        targetCard.shield = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
+
+                        yield return StartCoroutine(ShieldHelper(targetCard));
                         break;
+
                     case 3:
                         targetCard = GetLowestDefense(manager.enemyField, ActiveEffect.SHIELD);
-                        targetCard.defense += shieldAmount;
-                        targetCard.shield = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
+
+                        yield return StartCoroutine(ShieldHelper(targetCard));
                         break;
+
                     case 4:
                         targetCard = GetLowestDefense(manager.enemyField, ActiveEffect.SHIELD);
-                        targetCard.defense += shieldAmount;
-                        targetCard.shield = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
+
+                        yield return StartCoroutine(ShieldHelper(targetCard));
                         break;
+
                     case 5:
                         targetCard = GetHighestDefense(manager.enemyField, ActiveEffect.SHIELD);
-                        targetCard.defense += shieldAmount;
-                        targetCard.shield = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
+
+                        yield return StartCoroutine(ShieldHelper(targetCard));
                         break;
+
                     case 6:
                         targetCard = GetHighestDefense(manager.enemyField, ActiveEffect.SHIELD);
-                        targetCard.defense += shieldAmount;
-                        targetCard.shield = true;
-                        targetCard.cardObject.GetComponent<CardDisplay>().Display();
-                        Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
+
+                        yield return StartCoroutine(ShieldHelper(targetCard));
                         break;
+
                 }
+                manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 break;
             case "Player":
                 manager.indicator.interactable = false; // player cannot end turn mid effect
@@ -261,11 +354,35 @@ public class CardEffects : MonoBehaviour
         }
     }
 
+    IEnumerator ShieldHelper(Card targetCard) {
+
+        if (targetCard.summonState == SummonState.SummonSick)
+        {
+            targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(1f);
+        targetCard.cardObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        targetCard.cardObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false);
+
+        if (targetCard.summonState == SummonState.SummonSick)
+        {
+            targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(true);
+        }
+
+        targetCard.defense += shieldAmount;
+        targetCard.shield = true;
+        targetCard.cardObject.GetComponent<CardDisplay>().Display();
+        Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
+    }
+
     public void Revive(string flag, int AINum)
     {
         switch (flag)
         {
             case "Enemy":
+                manager.activeEffect = ActiveEffect.REVIVE;
                 Card targetCard;
                 switch (AINum)
                 {
@@ -366,6 +483,7 @@ public class CardEffects : MonoBehaviour
                         Debug.Log("Enemy revived " + targetCard.name + "!");
                         break;
                 }
+                manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 break;
             case "Player":
                 Debug.Log("Opening discard pile for revive");

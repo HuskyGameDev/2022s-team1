@@ -34,16 +34,32 @@ public class PlayerUnit : MonoBehaviour
         var buttonColor = manager.indicator.colors;
         buttonColor.normalColor = Color.green;
         manager.indicator.GetComponentInChildren<Text>().text = "Drawing";
+
+        if (deck.Count == 0) // player has no cards to draw
+        {
+            //player loses battle
+            Debug.Log("Player loses! cannot draw cards!");
+        }
+
         //draw cards from deck, add to the hand until hand is full (max 3)
-        while (hand.Count < 3)
+        var handclone = new List<Card>(hand);
+        while (handclone.Count < 3)
         {
             Card drawnCard = Instantiate(deck[deck.Count - 1]);
             hand.Add(drawnCard);
+            handclone.Add(drawnCard);
             RenderCard(drawnCard);
             Debug.Log("Player Draws " + drawnCard.name);
             deck.RemoveAt(deck.Count - 1);
+            manager.playerDeckText.text = deck.Count.ToString();
             yield return new WaitForSeconds(0.5f);
-            
+
+            if (deck.Count == 0)
+            {
+                Debug.Log("Player is on their last turn!");
+                break;
+            }
+
         }
         manager.indicator.interactable = true;
         manager.indicator.GetComponentInChildren<Text>().text = "End Turn";
