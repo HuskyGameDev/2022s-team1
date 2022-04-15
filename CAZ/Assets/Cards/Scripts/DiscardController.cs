@@ -6,7 +6,9 @@ public class DiscardController : MonoBehaviour
 {
     public GameObject discardView;
     public GameObject discardContent;
-    public GameObject cardInDiscard_Prefab;
+    //public GameObject cardInDiscard_Prefab;
+    public GameObject discarded_creature_prefab;
+    public GameObject discarded_boss_prefab;
     public GameObject closeButton;
 
     //enables discard view for discard view button
@@ -31,8 +33,17 @@ public class DiscardController : MonoBehaviour
     }
 
     public void addCardToContent(Card card) {
-        GameObject destroyedCard = Instantiate(cardInDiscard_Prefab, discardContent.transform);
-        destroyedCard.GetComponent<CardDisplay>().card = card;
-        destroyedCard.GetComponent<CardDisplay>().Display();
+        if (card.type == Types.Creature)
+        {
+            GameObject destroyedCard = Instantiate(discarded_creature_prefab, discardContent.transform);
+            destroyedCard.GetComponent<CardDisplay>().card = card;
+            destroyedCard.GetComponent<CardDisplay>().Display();
+        }
+        else if (card.type == Types.Boss)
+        {
+            GameObject destroyedCard = Instantiate(discarded_boss_prefab, discardContent.transform);
+            destroyedCard.GetComponent<CardDisplay>().card = card;
+            destroyedCard.GetComponent<CardDisplay>().Display();
+        }
     }
 }

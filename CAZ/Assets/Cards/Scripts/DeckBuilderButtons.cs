@@ -27,15 +27,16 @@ public class DeckBuilderButtons : MonoBehaviour
     public void AddCard() {
         Debug.Log("Attempted to Add");
         CardDex.CardEntry entry = deckBuilderManager.dex.cardDex.Find((x) => x.card.name == GetComponentInParent<CardDisplay>().card.name);
-        if (entry.isDiscovered)
+        if (entry.isDiscovered && deck.deck.Count < deckBuilderManager.deckCapacity)
         {
             InstanceCard = GetComponentInParent<CardDisplay>().card; // set Instance Card - get card info to add to deck
             deck.deck.Add(InstanceCard); // Add card to deck list
+            deckBuilderManager.setDeckCapText();
             AddCardToDeckList(InstanceCard); // Add card visually to deck builder
             deckBuilderManager.deckScrollView.verticalNormalizedPosition = 1; // adjust scroll view to accomodate new entry
         }
         else {
-            Debug.Log("Failed to add, card not discovered");
+            Debug.Log("Failed to add, card not discovered or deck at cap");
         }
     }
 
@@ -57,6 +58,7 @@ public class DeckBuilderButtons : MonoBehaviour
      */
     public void RemoveCard() {
         deck.deck.Remove(InstanceCard); // Remove card from deck list
+        deckBuilderManager.setDeckCapText();
         RemoveCardFromDeckList(InstanceCard); // Destroy CardInDeck from deck builder
     }
 

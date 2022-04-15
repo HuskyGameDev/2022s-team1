@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f447ad0947079d4d9394cfb3e8d1435, type: 3}
+  m_Name: Sacachi
+  m_EditorClassIdentifier: 
+  name: Sacachi
+  description: A 200+ year old demon who has somehow found himself trapped within
+    the castle of a world he is not familiar with.  Despite his confusion, he feels
+    very connected to the creatures of this world, and he often finds himself attempting
+    to play with the creatures in the castle.  He barely speaks, and loves to look
+    out the window of the castle, hoping to one day figure out why he was brought
+    here and perhaps see the rest of the world.  Yet, as he hears of a certain human
+    approaching the castle, he starts feeling anxious as they start to tame all of
+    his critter friends.  Afraid that he will be left alone in the castle forever
+    without anyone by his side to keep him company.  Thus, the seal on his body breaks
+    in his agitation, causing Sacachi to realize the kind of power he holds, and
+    why the creatures of this world had been so wary of his presence in the first
+    place.
+  effect: N/A
+  art: {fileID: 21300000, guid: 000b6f1f99676ba478f5535641a5b514, type: 3}
+  attack: 40
+  defense: 40
+  prefab: {fileID: 2473742285920798735, guid: c7cbc3b585063f04a80444622c4a5011, type: 3}
+  cardObject: {fileID: 0}
+  type: 2
+  summonState: 0
+  turnAction: 0
+  fieldIndex: 0
+  aggro: 0
+  shield: 0

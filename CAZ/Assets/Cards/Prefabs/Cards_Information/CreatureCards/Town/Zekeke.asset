@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f447ad0947079d4d9394cfb3e8d1435, type: 3}
+  m_Name: Zekeke
+  m_EditorClassIdentifier: 
+  name: Zekeke
+  description: A greenish colored critter that enjoys dark crannies and chilling
+    in buckets of water.  It often comes out at night to run about the town with
+    the ends of its antenna and tails glowing a bright yellow.  Originally its glowing
+    tail orbs were used to scare off other creatures, but people of the town often
+    use them to help find thier way back into town if it is dark outside.  Usually
+    curious, it is very common for one to be watching from afar, following a person's
+    movements as it attempts to learn something new.
+  effect: N/A
+  art: {fileID: 21300000, guid: 295b0381c15d7ef4480f62b7ab73610a, type: 3}
+  attack: 5
+  defense: 4
+  prefab: {fileID: 2473742285920798735, guid: c7cbc3b585063f04a80444622c4a5011, type: 3}
+  cardObject: {fileID: 0}
+  type: 2
+  summonState: 0
+  turnAction: 0
+  fieldIndex: 0
+  aggro: 0
+  shield: 0

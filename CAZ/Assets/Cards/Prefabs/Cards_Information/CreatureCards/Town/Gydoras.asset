@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f447ad0947079d4d9394cfb3e8d1435, type: 3}
+  m_Name: Gydoras
+  m_EditorClassIdentifier: 
+  name: Gydoras
+  description: A purple and gray bird-like creature that has sharp claws at the end
+    of its wings.  Often lands upon people's rooftops during the early morning, early
+    afternoon, and late night to chirp and twitter in order to tease them or to signify
+    the time.  It can be a picky creature, and is often rebellious towards anyone
+    who tries to tame it.  Although it is also a very loyal companion once its trust
+    is earned.
+  effect: None
+  art: {fileID: 21300000, guid: b851c92130b3a8445974df48f34e79ef, type: 3}
+  attack: 5
+  defense: 2
+  prefab: {fileID: 2473742285920798735, guid: 5c1d779799ea2cd46869302ed24c1304, type: 3}
+  cardObject: {fileID: 0}
+  type: 0
+  summonState: 0
+  turnAction: 0
+  fieldIndex: 0
+  aggro: 0
+  shield: 0

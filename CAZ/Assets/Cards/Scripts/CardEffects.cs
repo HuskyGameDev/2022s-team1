@@ -54,7 +54,7 @@ public class CardEffects : MonoBehaviour
             case "Player":
                 Debug.Log("Player used sleight of hand!");
                 StartCoroutine(manager.player.DrawCards());
-                //manager.activeEffect = ActiveEffect.NONE; // reset active effect
+                manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 break;
         }
     }

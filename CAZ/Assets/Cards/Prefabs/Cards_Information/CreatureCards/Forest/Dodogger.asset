@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f447ad0947079d4d9394cfb3e8d1435, type: 3}
+  m_Name: Dodogger
+  m_EditorClassIdentifier: 
+  name: Dodogger
+  description: Dog-like plant creature that is known to be able to grow small carrots
+    on its back.  Quite friendly towards other fellow creatures, it is usually found
+    socializing with those creatures of the forest and tending to them by sharing
+    a carrot from its back.  Although it can be very territorial and skeptical towards
+    human passerby.  Before attacking, it will bellow a loud howl that will echo
+    across the forest, once this sound is heard it is best to be prepared for a fight.
+  effect: None
+  art: {fileID: 21300000, guid: 775fb1ad235eb114ca72a094bc6312d7, type: 3}
+  attack: 8
+  defense: 3
+  prefab: {fileID: 2473742285920798735, guid: 5c1d779799ea2cd46869302ed24c1304, type: 3}
+  cardObject: {fileID: 0}
+  type: 0
+  summonState: 0
+  turnAction: 0
+  fieldIndex: 0
+  aggro: 0
+  shield: 0

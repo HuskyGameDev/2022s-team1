@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f447ad0947079d4d9394cfb3e8d1435, type: 3}
+  m_Name: Nocto
+  m_EditorClassIdentifier: 
+  name: Nocto
+  description: A firey armadillo-dragon that will proudly swoop down from the top
+    floors of the castle in order to challenge any newcomers.  Secretly it likes
+    cuddles and head pats, but it is too proud of a creature to fully admit it. 
+    It often sunbathes by sitting on the window sills of the castle, and tries to
+    imitate the sun's heat in battle by spreading its flames near the floor to warm
+    the room to a terrifying degree.  Recently it has taken extra effort to train
+    and come off as a threat, mainly by curling up in a ball and bouncing around
+    the castle, causing dents in the walls.
+  effect: None
+  art: {fileID: 21300000, guid: 22e095fb8bcfb65488143d1515198741, type: 3}
+  attack: 20
+  defense: 18
+  prefab: {fileID: 2473742285920798735, guid: 5c1d779799ea2cd46869302ed24c1304, type: 3}
+  cardObject: {fileID: 0}
+  type: 0
+  summonState: 0
+  turnAction: 0
+  fieldIndex: 0
+  aggro: 0
+  shield: 0

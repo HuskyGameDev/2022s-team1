@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class DeckBuilderManager : MonoBehaviour
 {
 
+    public int deckCapacity;
+    public Text deckCapacityText;
+
     public GameObject cardInDeck;
     public GameObject deckScrollContent;
     public ScrollRect deckScrollView;
@@ -15,6 +18,8 @@ public class DeckBuilderManager : MonoBehaviour
     public List<GameObject> cardsInView;
     public Card undiscoveredInfo;
 
+    public CardZoom cardZoom;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +27,8 @@ public class DeckBuilderManager : MonoBehaviour
         dex = FindObjectOfType<CardDex>();
         LoadDeck();
         LoadCards();
+        setDeckCapText();
+        
     }
 
     /*
@@ -55,6 +62,10 @@ public class DeckBuilderManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void setDeckCapText() {
+        deckCapacityText.text = deck.deck.Count + "/" + deckCapacity;
     }
 
     // Update is called once per frame

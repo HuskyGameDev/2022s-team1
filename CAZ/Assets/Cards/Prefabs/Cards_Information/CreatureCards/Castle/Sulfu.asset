@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f447ad0947079d4d9394cfb3e8d1435, type: 3}
+  m_Name: Sulfu
+  m_EditorClassIdentifier: 
+  name: Sulfu
+  description: A ghost looking critter that is often said to float away from the
+    castle to hang around graves and respectfully tidy up the area around them. 
+    Usually found in clusters with other Sulfu, frantically whispering to each other
+    in a language no human can understand.  It has a friendly disposition, although
+    it is insistant on getting in the way, trying to distract people with picked
+    flowers and an assortment of other random gifts it has found.  If its gift is
+    disrespected it will lose its patience and angrily circle around the person until
+    they decide to do something about it.
+  effect: None
+  art: {fileID: 21300000, guid: 2cf898da1b8ddbb4d8efe14260d58b1a, type: 3}
+  attack: 18
+  defense: 18
+  prefab: {fileID: 2473742285920798735, guid: 5c1d779799ea2cd46869302ed24c1304, type: 3}
+  cardObject: {fileID: 0}
+  type: 0
+  summonState: 0
+  turnAction: 0
+  fieldIndex: 0
+  aggro: 0
+  shield: 0

@@ -9,6 +9,7 @@ public class CardDisplay : MonoBehaviour
 
     public Text nameText;
     public Text descriptionText;
+    public Text effectText;
     public Image artwork;
     public Text attackNumText;
     public Text defenseNumText;
@@ -22,19 +23,57 @@ public class CardDisplay : MonoBehaviour
      */
     public void Display()
     {
-        nameText.text = card.name;
-        descriptionText.text = card.description;
-        artwork.sprite = card.art;
-        attackNumText.text = card.attack.ToString();
-        defenseNumText.text = card.defense.ToString();
+        if (card.type == Types.Creature)
+        {
+            nameText.text = card.name;
+            descriptionText.text = card.description;
+            artwork.sprite = card.art;
+            attackNumText.text = card.attack.ToString();
+            defenseNumText.text = card.defense.ToString();
+        }
+        else if (card.type == Types.Boss)
+        {
+            nameText.text = card.name;
+            descriptionText.text = card.description;
+            effectText.text = card.effect;
+            artwork.sprite = card.art;
+            attackNumText.text = card.attack.ToString();
+            defenseNumText.text = card.defense.ToString();
+        }
+        else if (card.type == Types.Effect)
+        {
+            nameText.text = card.name;
+            descriptionText.text = card.description;
+            effectText.text = card.effect;
+            artwork.sprite = card.art;
+        }
     }
 
     public void Project(Card c) {
-        nameText.text = c.name;
-        descriptionText.text = c.description;
-        artwork.sprite = c.art;
-        attackNumText.text = c.attack.ToString();
-        defenseNumText.text = c.defense.ToString();
+        if (card.type == Types.Creature)
+        {
+            nameText.text = c.name;
+            descriptionText.text = c.description;
+            artwork.sprite = c.art;
+            attackNumText.text = c.attack.ToString();
+            defenseNumText.text = c.defense.ToString();
+        }
+        else if (card.type == Types.Boss)
+        {
+            nameText.text = c.name;
+            descriptionText.text = c.description;
+            effectText.text = c.effect;
+            artwork.sprite = c.art;
+            attackNumText.text = c.attack.ToString();
+            defenseNumText.text = c.defense.ToString();
+        }
+        else if (card.type == Types.Effect)
+        {
+            nameText.text = c.name;
+            descriptionText.text = c.description;
+            effectText.text = c.effect;
+            artwork.sprite = c.art;
+        }
     }
 
     // Start is called before the first frame update

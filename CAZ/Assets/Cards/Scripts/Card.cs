@@ -24,6 +24,8 @@ public class Card : ScriptableObject
 
     public string description;  // Description of the card
 
+    public string effect;
+
     public Sprite art;          // Artwork for the card
 
     public int attack;          // Attack score of the card

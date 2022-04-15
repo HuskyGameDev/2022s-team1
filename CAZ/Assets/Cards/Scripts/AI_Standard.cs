@@ -153,9 +153,16 @@ public class AI_Standard : MonoBehaviour
             if (manager.enemyFieldSlotAvailability[i] == 0)
                 freeIndex = i;
         }
-        
-        GameObject newCard = Instantiate(card.prefab, manager.enemyFieldSlots[freeIndex]);
-        newCard.transform.localScale = new Vector3(51, 40, 1);
+
+        //GameObject newCard = Instantiate(card.prefab, manager.enemyFieldSlots[freeIndex]);
+        //newCard.transform.localScale = new Vector3(75, 75, 1);
+
+        GameObject newCard = Instantiate(card.prefab);
+        newCard.transform.SetParent(manager.enemyFieldSlots[freeIndex]);
+        GameObject FieldSlot = newCard.transform.parent.gameObject;
+        newCard.transform.position = new Vector3(FieldSlot.transform.position.x, FieldSlot.transform.position.y + 9, FieldSlot.transform.position.z);
+        newCard.transform.rotation = FieldSlot.transform.rotation;
+
         newCard.GetComponent<Draggable>().owner = Draggable.Owner.ENEMY;
         newCard.GetComponent<Draggable>().placed = true;
         manager.enemyFieldSlotAvailability[freeIndex] = 1;
@@ -171,8 +178,15 @@ public class AI_Standard : MonoBehaviour
     }
 
     public void RenderEffectCard(Card card) {
-        GameObject newCard = Instantiate(card.prefab, manager.enemyEffectSlot);
-        newCard.transform.localScale = new Vector3(51, 40, 1);
+        //GameObject newCard = Instantiate(card.prefab, manager.enemyEffectSlot);
+        //newCard.transform.localScale = new Vector3(75, 75, 1);
+
+        GameObject newCard = Instantiate(card.prefab);
+        newCard.transform.SetParent(manager.enemyEffectSlot);
+        GameObject FieldSlot = newCard.transform.parent.gameObject;
+        newCard.transform.position = new Vector3(FieldSlot.transform.position.x, FieldSlot.transform.position.y + 9, FieldSlot.transform.position.z);
+        newCard.transform.rotation = FieldSlot.transform.rotation;
+
         card.cardObject = newCard;
         card.cardObject.GetComponent<CardDisplay>().card = card;
         card.cardObject.GetComponent<CardDisplay>().Display();
