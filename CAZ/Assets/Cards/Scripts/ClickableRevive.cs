@@ -7,16 +7,32 @@ using UnityEngine.UI;
 public class ClickableRevive : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     EncounterManager manager;
+    bool hovered;
+    bool zoomed;
 
     private void Start()
     {
         manager = FindObjectOfType<EncounterManager>();
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1) && hovered)
+        {
+            manager.cardZoom.ActivateZoom(this.GetComponent<CardDisplay>().card);
+            zoomed = true;
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            manager.cardZoom.DeactivateZoom();
+            zoomed = false;
+        }
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         CardDisplay clickedCard = eventData.pointerClick.GetComponent<CardDisplay>(); // get clicked object
-        if (manager.activeEffect == ActiveEffect.REVIVE && manager.state == BattleState.PLAYERTRUN)
+        if (manager.activeEffect == ActiveEffect.REVIVE && manager.state == BattleState.PLAYERTRUN && !zoomed)
         {
             Card revivedCard = Instantiate(clickedCard.card); // create copy of clicked card
             manager.player.hand.Add(revivedCard); // add revived card to hand
@@ -36,13 +52,15 @@ public class ClickableRevive : MonoBehaviour, IPointerClickHandler, IPointerEnte
     public void OnPointerEnter(PointerEventData eventData)
     {
 
-        if (manager.activeEffect == ActiveEffect.REVIVE && manager.state == BattleState.PLAYERTRUN)
+        if (manager.activeEffect == ActiveEffect.REVIVE && manager.state == BattleState.PLAYERTRUN && !zoomed)
         {
             manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor; // set cursor to effect sprite
             manager.cursorController.cursorState = CursorState.EFFECT; // set cursor state
 
             this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(true); // enable select card overlay
         }
+
+        hovered = true;
 
     }
 
@@ -55,5 +73,7 @@ public class ClickableRevive : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
             this.gameObject.GetComponent<CardDisplay>().playerSelectOverlay.SetActive(false); // disable select card overlay
         }
+
+        hovered = false;
     }
 }

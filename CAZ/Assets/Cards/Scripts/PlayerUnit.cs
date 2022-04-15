@@ -22,7 +22,11 @@ public class PlayerUnit : MonoBehaviour
 
     public IEnumerator PlayTurn() {
         //Draw cards from deck until hand is full - start of turn, automatic
-        StartCoroutine(DrawCards());
+        yield return StartCoroutine(DrawCards());
+        if (manager.state == BattleState.LOST) // check if player lost from decking out
+        {
+            yield break;
+        }
         //player functions - summon, effects, attacks
         //end turn - button
         yield return new WaitForSeconds(1f);
@@ -39,6 +43,8 @@ public class PlayerUnit : MonoBehaviour
         {
             //player loses battle
             Debug.Log("Player loses! cannot draw cards!");
+            manager.PlayerLose();
+            yield break;
         }
 
         //draw cards from deck, add to the hand until hand is full (max 3)
@@ -148,6 +154,12 @@ public class PlayerUnit : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+
+        if (health <= 0) {
+            health = 0;
+            manager.PlayerLose();
+        }
+
         manager.playerHPText.text = health.ToString();
         Debug.Log("Player takes " + damage + " points of Damage! | Player's HP: " + health);
     }

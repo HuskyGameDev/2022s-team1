@@ -46,6 +46,12 @@ public class EncounterManager : MonoBehaviour
     public DiscardController enemyDiscardController;
     public DiscardController playerDiscardController;
     public CardZoom cardZoom;
+    public GameObject winView;
+    public GameObject loseView;
+    public Text loseDesc;
+
+    //add location enum
+    public string guideName = "Your guide";
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +63,8 @@ public class EncounterManager : MonoBehaviour
 
         playerDeckText.text = player.deck.Count.ToString();
         enemyDeckText.text = enemy.deck.Count.ToString();
+
+        // set guide name
 
         StartCoroutine(StartBattle());
     }
@@ -163,5 +171,26 @@ public class EncounterManager : MonoBehaviour
         }
     }
 
+    public void PlayerWin() {
+        state = BattleState.WON;
+        winView.SetActive(true);
+    }
+
+    public void PlayerWinButton() {
+        // load scene where player left off
+        Debug.Log("Win Button Pressed");
+    }
+
+    public void PlayerLose() {
+        state = BattleState.LOST;
+        loseDesc.text = "You feinted!\n" + guideName + "\nrescued you"; // change location guide depending on location
+        loseView.SetActive(true);
+    }
+
+    public void PlayerLoseButton()
+    {
+        // load scene where player left off
+        Debug.Log("Lose Button Pressed");
+    }
 
 }

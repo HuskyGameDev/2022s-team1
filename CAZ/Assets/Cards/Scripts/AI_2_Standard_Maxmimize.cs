@@ -54,7 +54,7 @@ public class AI_2_Standard_Maxmimize : AI_Standard
                             attackScore = tempAttackScore;
                             if (target != null)
                             {
-                                manager.playerField[j].cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false); // set select overlay
+                                target.cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false); // set select overlay
                             }
                             target = manager.playerField[j]; // select target
                             Debug.Log(manager.enemyField[i].name + " has targeted " + manager.playerField[j].name);

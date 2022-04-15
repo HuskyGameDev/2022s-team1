@@ -41,7 +41,11 @@ public class AI_Standard : MonoBehaviour
     public IEnumerator PlayTurn() {
         PrintDeck();
         yield return new WaitForSeconds(2f);
-        StartCoroutine(DrawCards()); // Draw Cards
+        yield return StartCoroutine(DrawCards()); // Draw Cards
+        if (manager.state == BattleState.WON) // check if player won from enemy decking out
+        {
+            yield break;
+        }
         PrintHand();
         yield return new WaitForSeconds(2f);
         PrintDeck();
@@ -52,6 +56,10 @@ public class AI_Standard : MonoBehaviour
         player.PrintField();
         yield return new WaitForSeconds(2f);
         yield return StartCoroutine(PerformFieldTasks());
+        if (manager.state == BattleState.LOST) // check if player lost from enemy attacking
+        {
+            yield break;
+        }
         yield return new WaitForSeconds(2f);
         PrintField();
         player.PrintField();
@@ -66,6 +74,8 @@ public class AI_Standard : MonoBehaviour
         {
             //enemy loses battle
             Debug.Log("Enemy loses! cannot draw cards!");
+            manager.PlayerWin();
+            yield break;
         }
 
         //draw cards from deck, add to the hand until hand is full (max 3)
@@ -395,9 +405,12 @@ public class AI_Standard : MonoBehaviour
 
     void RandomDiscard() {
         int randy = Random.Range(1, 4); // get random number 1-3
+        //int randy = 3;
+        Debug.Log("Randy = " + randy);
         bool isCreature; // just in case we get here somehow and there's a creature in the hand
         for(int i = 0; i < randy; i++) {
-            if (hand[i].type == Types.Creature || hand[i].type == Types.Boss)
+            Debug.Log("i = " + i);
+            if (hand[0].type == Types.Creature || hand[0].type == Types.Boss)
             {
                 isCreature = true;
             }
@@ -406,9 +419,9 @@ public class AI_Standard : MonoBehaviour
             }
 
             if (isCreature) {
-                manager.enemyDiscardController.addCardToContent(hand[i]); // add creature to discard view
+                manager.enemyDiscardController.addCardToContent(hand[0]); // add creature to discard view
             }
-            hand.RemoveAt(i); // remove card from hand
+            hand.RemoveAt(0); // remove card from hand
             manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
             
         }
@@ -435,7 +448,7 @@ public class AI_Standard : MonoBehaviour
                         { // check to see if it is optimal
                             attackScore = tempAttackScore;
                             if (target != null) {
-                                manager.playerField[j].cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false); // set select overlay
+                                target.cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false); // set select overlay
                             }
                             target = manager.playerField[j]; // select target
                             Debug.Log(manager.enemyField[i].name + " has targeted " + manager.playerField[j].name);
@@ -563,6 +576,12 @@ public class AI_Standard : MonoBehaviour
 
     public void TakeDamage(int damage) {
         health -= damage;
+
+        if (health <= 0) {
+            health = 0;
+            manager.PlayerWin();
+        }
+
         manager.enemyHPText.text = health.ToString();
         Debug.Log("Enemy takes " + damage + " points of Damage! | Enemy's HP: " + health);
     }
