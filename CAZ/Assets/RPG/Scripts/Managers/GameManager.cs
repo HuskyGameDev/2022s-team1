@@ -26,8 +26,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetKeyDown(KeyCode.E)) {
+            foreach (Transform child in transform) {
+                child.gameObject.SetActive(false);
+            }
             SceneManager.LoadScene("DeckBuilder");
-        }*/
+        }
     }
 }

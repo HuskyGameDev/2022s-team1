@@ -92,6 +92,10 @@ public class DeckBuilderButtons : MonoBehaviour
     }
 
     public void DoneButton() {
-        SceneManager.LoadScene("CardScriptableObject");
+        foreach (Transform child in GameManager.instance.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+        SceneManager.LoadScene("Village");
     }
 }
