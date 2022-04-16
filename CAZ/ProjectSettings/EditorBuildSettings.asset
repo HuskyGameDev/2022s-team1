@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RPG/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Cards/Scenes/DeckBuilder.unity
+    guid: 6904576f8fdb0cb4981274c8923792e8
+  - enabled: 1
+    path: Assets/Cards/Scenes/AIDevelopment.unity
+    guid: e2a00724986227842b091b4f2b8b3ef5
+  - enabled: 1
+    path: Assets/RPG/Scenes/Village/Village.unity
+    guid: 4b933bf6eb8465e4a805d11c9cbedaa7
   m_configObjects: {}

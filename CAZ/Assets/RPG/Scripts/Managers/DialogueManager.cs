@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
 
     public Queue<DialogueBase.Info> dialogueInfo = new Queue<DialogueBase.Info>();
 
-    private bool inDialogue;
+    public bool inDialogue;
     private bool isTyping;
     private float delay;
 

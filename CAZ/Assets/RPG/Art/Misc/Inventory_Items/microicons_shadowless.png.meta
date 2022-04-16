@@ -1,0 +1,2892 @@
+fileFormatVersion: 2
+guid: ad6f2973145e02e45b9c5cb88818f8c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3563945338016205076
+    second: microicons_shadowless_0
+  - first:
+      213: 7472183770945426561
+    second: microicons_shadowless_1
+  - first:
+      213: 6603544004809394692
+    second: microicons_shadowless_2
+  - first:
+      213: 9163580451426777344
+    second: microicons_shadowless_3
+  - first:
+      213: -2158930015810849015
+    second: microicons_shadowless_4
+  - first:
+      213: 55745690789503231
+    second: microicons_shadowless_5
+  - first:
+      213: 6139730756089665841
+    second: microicons_shadowless_6
+  - first:
+      213: 298810574959548399
+    second: microicons_shadowless_7
+  - first:
+      213: -4365526962642294533
+    second: microicons_shadowless_8
+  - first:
+      213: -9190781399862531741
+    second: microicons_shadowless_9
+  - first:
+      213: -7461647063060020673
+    second: microicons_shadowless_10
+  - first:
+      213: 3702768228698400417
+    second: microicons_shadowless_11
+  - first:
+      213: -8464213902543544757
+    second: microicons_shadowless_12
+  - first:
+      213: -7558509824238844582
+    second: microicons_shadowless_13
+  - first:
+      213: 559275209539565475
+    second: microicons_shadowless_14
+  - first:
+      213: 7153763797019786188
+    second: microicons_shadowless_15
+  - first:
+      213: -6560211634722058617
+    second: microicons_shadowless_16
+  - first:
+      213: -6111668432283096313
+    second: microicons_shadowless_17
+  - first:
+      213: 5672411433685517667
+    second: microicons_shadowless_18
+  - first:
+      213: -1249297463848097158
+    second: microicons_shadowless_19
+  - first:
+      213: -7125069000813677110
+    second: microicons_shadowless_20
+  - first:
+      213: 5689944893252566381
+    second: microicons_shadowless_21
+  - first:
+      213: -3724551947349214625
+    second: microicons_shadowless_22
+  - first:
+      213: 793012887317672982
+    second: microicons_shadowless_23
+  - first:
+      213: 8508683496438337357
+    second: microicons_shadowless_24
+  - first:
+      213: 4060699952190409384
+    second: microicons_shadowless_25
+  - first:
+      213: -4425826238326088897
+    second: microicons_shadowless_26
+  - first:
+      213: -3673999180324831485
+    second: microicons_shadowless_27
+  - first:
+      213: -3367213869868960951
+    second: microicons_shadowless_28
+  - first:
+      213: -1723463797463538711
+    second: microicons_shadowless_29
+  - first:
+      213: 8737524967739574368
+    second: microicons_shadowless_30
+  - first:
+      213: -637636290554197126
+    second: microicons_shadowless_31
+  - first:
+      213: -764206961751890676
+    second: microicons_shadowless_32
+  - first:
+      213: -6461551715961400407
+    second: microicons_shadowless_33
+  - first:
+      213: -8858650656825199117
+    second: microicons_shadowless_34
+  - first:
+      213: -6796665937025078357
+    second: microicons_shadowless_35
+  - first:
+      213: -2914135844940357134
+    second: microicons_shadowless_36
+  - first:
+      213: -3175632969060535188
+    second: microicons_shadowless_37
+  - first:
+      213: -2800337907790217414
+    second: microicons_shadowless_38
+  - first:
+      213: 9119425346887809496
+    second: microicons_shadowless_39
+  - first:
+      213: -4954848727162353078
+    second: microicons_shadowless_40
+  - first:
+      213: 5334860565557379232
+    second: microicons_shadowless_41
+  - first:
+      213: -665090673167730877
+    second: microicons_shadowless_42
+  - first:
+      213: 264705128834299751
+    second: microicons_shadowless_43
+  - first:
+      213: 2006873614999765771
+    second: microicons_shadowless_44
+  - first:
+      213: 1083978182756499333
+    second: microicons_shadowless_45
+  - first:
+      213: 8229679920913769681
+    second: microicons_shadowless_46
+  - first:
+      213: 6346342447518161590
+    second: microicons_shadowless_47
+  - first:
+      213: 1535416994782383239
+    second: microicons_shadowless_48
+  - first:
+      213: 3004201497127963373
+    second: microicons_shadowless_49
+  - first:
+      213: 1044399407041529739
+    second: microicons_shadowless_50
+  - first:
+      213: 2062742740748291695
+    second: microicons_shadowless_51
+  - first:
+      213: -4335656318993916953
+    second: microicons_shadowless_52
+  - first:
+      213: -7244938696711519413
+    second: microicons_shadowless_53
+  - first:
+      213: -853048752265769300
+    second: microicons_shadowless_54
+  - first:
+      213: -5184548879536251971
+    second: microicons_shadowless_55
+  - first:
+      213: 2483574236994380329
+    second: microicons_shadowless_56
+  - first:
+      213: 83460732838520760
+    second: microicons_shadowless_57
+  - first:
+      213: 8402310736648601304
+    second: microicons_shadowless_58
+  - first:
+      213: 8222144946281121608
+    second: microicons_shadowless_59
+  - first:
+      213: 1182988598643099976
+    second: microicons_shadowless_60
+  - first:
+      213: 6336379458836670307
+    second: microicons_shadowless_61
+  - first:
+      213: 3140089782628290279
+    second: microicons_shadowless_62
+  - first:
+      213: 5674308292290708264
+    second: microicons_shadowless_63
+  - first:
+      213: 2801896417938511225
+    second: microicons_shadowless_64
+  - first:
+      213: 3378964423118524440
+    second: microicons_shadowless_65
+  - first:
+      213: 5508258975228871150
+    second: microicons_shadowless_66
+  - first:
+      213: 5052591618182585454
+    second: microicons_shadowless_67
+  - first:
+      213: -2322569855895387319
+    second: microicons_shadowless_68
+  - first:
+      213: -144282805244548003
+    second: microicons_shadowless_69
+  - first:
+      213: 5167359813745414867
+    second: microicons_shadowless_70
+  - first:
+      213: 4053252001943666324
+    second: microicons_shadowless_71
+  - first:
+      213: -6222792158863987670
+    second: microicons_shadowless_72
+  - first:
+      213: -2895715183831467186
+    second: microicons_shadowless_73
+  - first:
+      213: -7330958905344781555
+    second: microicons_shadowless_74
+  - first:
+      213: -8742957511267220270
+    second: microicons_shadowless_75
+  - first:
+      213: -6284138018582567060
+    second: microicons_shadowless_76
+  - first:
+      213: -3748684196609133692
+    second: microicons_shadowless_77
+  - first:
+      213: -8172878754812296100
+    second: microicons_shadowless_78
+  - first:
+      213: 7688626139236751589
+    second: microicons_shadowless_79
+  - first:
+      213: -8526220774907159404
+    second: microicons_shadowless_80
+  - first:
+      213: -8390646472974567391
+    second: microicons_shadowless_81
+  - first:
+      213: 7014942195719884204
+    second: microicons_shadowless_82
+  - first:
+      213: -1356013783834220494
+    second: microicons_shadowless_83
+  - first:
+      213: -4475022788642053036
+    second: microicons_shadowless_84
+  - first:
+      213: 6993113202179532522
+    second: microicons_shadowless_85
+  - first:
+      213: -4664098828069683951
+    second: microicons_shadowless_86
+  - first:
+      213: -3997637986115329266
+    second: microicons_shadowless_87
+  - first:
+      213: 7548047965983157192
+    second: microicons_shadowless_88
+  - first:
+      213: 2940695135301838634
+    second: microicons_shadowless_89
+  - first:
+      213: -7502398888230399052
+    second: microicons_shadowless_90
+  - first:
+      213: -5135732310213600025
+    second: microicons_shadowless_91
+  - first:
+      213: 6744543605849123127
+    second: microicons_shadowless_92
+  - first:
+      213: -8375516443238535996
+    second: microicons_shadowless_93
+  - first:
+      213: -7764417458699727320
+    second: microicons_shadowless_94
+  - first:
+      213: -3657671883944612637
+    second: microicons_shadowless_95
+  - first:
+      213: 1509086836925838923
+    second: microicons_shadowless_96
+  - first:
+      213: -2854452265586660853
+    second: microicons_shadowless_97
+  - first:
+      213: 1161250667074329298
+    second: microicons_shadowless_98
+  - first:
+      213: -3561179544855458569
+    second: microicons_shadowless_99
+  - first:
+      213: -4060313093232771268
+    second: microicons_shadowless_100
+  - first:
+      213: -8125129197532893533
+    second: microicons_shadowless_101
+  - first:
+      213: 4893967679289809972
+    second: microicons_shadowless_102
+  - first:
+      213: 9065026082455960486
+    second: microicons_shadowless_103
+  - first:
+      213: -3642288871450811260
+    second: microicons_shadowless_104
+  - first:
+      213: 5203870187568511588
+    second: microicons_shadowless_105
+  - first:
+      213: 8622674337304687898
+    second: microicons_shadowless_106
+  - first:
+      213: -8356142680654765458
+    second: microicons_shadowless_107
+  - first:
+      213: 6217796946994533940
+    second: microicons_shadowless_108
+  - first:
+      213: 9048299543764122300
+    second: microicons_shadowless_109
+  - first:
+      213: 2285098466837486002
+    second: microicons_shadowless_110
+  - first:
+      213: -5571442247573946908
+    second: microicons_shadowless_111
+  - first:
+      213: -2807568814612715426
+    second: microicons_shadowless_112
+  - first:
+      213: 4730443658078861189
+    second: microicons_shadowless_113
+  - first:
+      213: -8417394465220001614
+    second: microicons_shadowless_114
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: microicons_shadowless_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 212
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce672a009925a8ec0800000000000000
+      internalID: -3563945338016205076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 212
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18414a3ec8782b760800000000000000
+      internalID: 7472183770945426561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_2
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 212
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a0359094084ab50800000000000000
+      internalID: 6603544004809394692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_3
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 212
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009b10eaed39b2f70800000000000000
+      internalID: 9163580451426777344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 212
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9077aa0d690f902e0800000000000000
+      internalID: -2158930015810849015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_5
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 212
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff06441196c06c000800000000000000
+      internalID: 55745690789503231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_6
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 212
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139d34dc794b43550800000000000000
+      internalID: 6139730756089665841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_7
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 199
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7189f72a6952400800000000000000
+      internalID: 298810574959548399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 199
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8e0566b588a63c0800000000000000
+      internalID: -4365526962642294533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_9
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 199
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3692decf209c37080800000000000000
+      internalID: -9190781399862531741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_10
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 199
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3288f69787e27890800000000000000
+      internalID: -7461647063060020673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_11
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 199
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6ab2df510e26330800000000000000
+      internalID: 3702768228698400417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 199
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e18fb0d42198a80800000000000000
+      internalID: -8464213902543544757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_13
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 199
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5581fe8c57ca1790800000000000000
+      internalID: -7558509824238844582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_14
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 186
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7b94407d1f2c700800000000000000
+      internalID: 559275209539565475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_15
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 186
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccbf9686546474360800000000000000
+      internalID: 7153763797019786188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_16
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 186
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ec105964275f4a0800000000000000
+      internalID: -6560211634722058617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_17
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 186
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b2ccc11fdfe2ba0800000000000000
+      internalID: -6111668432283096313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_18
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 186
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36580bc252478be40800000000000000
+      internalID: 5672411433685517667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_19
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 186
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7aa980639a99aee0800000000000000
+      internalID: -1249297463848097158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_20
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 186
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac57a567e7bae1d90800000000000000
+      internalID: -7125069000813677110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_21
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 173
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6dfdd9dbbeb6fe40800000000000000
+      internalID: 5689944893252566381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_22
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 173
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ab2c6ccbbbf4cc0800000000000000
+      internalID: -3724551947349214625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_23
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 173
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61470eaf409510b00800000000000000
+      internalID: 793012887317672982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_24
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 173
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f8f6f1f8ae41670800000000000000
+      internalID: 8508683496438337357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_25
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 173
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa41cd87118a5830800000000000000
+      internalID: 4060699952190409384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_26
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 173
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b58fa3c7e4492c0800000000000000
+      internalID: -4425826238326088897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_27
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 173
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f79af0635530dc0800000000000000
+      internalID: -3673999180324831485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_28
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 160
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94331bb53d04541d0800000000000000
+      internalID: -3367213869868960951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_29
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 160
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3a0f8bec60518e0800000000000000
+      internalID: -1723463797463538711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_30
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 147
+        width: 5
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 068493e2aace14970800000000000000
+      internalID: 8737524967739574368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_31
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 147
+        width: 5
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b8e9d0c29a627f0800000000000000
+      internalID: -637636290554197126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_32
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 147
+        width: 5
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c05e5e531ddf465f0800000000000000
+      internalID: -764206961751890676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_33
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 160
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a31e48f2f4f356a0800000000000000
+      internalID: -6461551715961400407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_34
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 160
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f537aaa920cf0580800000000000000
+      internalID: -8858650656825199117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_35
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 147
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab6f9e27546da1a0800000000000000
+      internalID: -6796665937025078357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_36
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 134
+        width: 5
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1e81783e8ee87d0800000000000000
+      internalID: -2914135844940357134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_37
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 147
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64b02ec3a2ede3d0800000000000000
+      internalID: -3175632969060535188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_38
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 147
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f7a1b72833329d0800000000000000
+      internalID: -2800337907790217414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_39
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 134
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9f0f44905be8e70800000000000000
+      internalID: 9119425346887809496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_40
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 134
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a01b5a557dc3bb0800000000000000
+      internalID: -4954848727162353078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_41
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 134
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a089484b6b390a40800000000000000
+      internalID: 5334860565557379232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_42
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 134
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347796a7e8f15c6f0800000000000000
+      internalID: -665090673167730877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_43
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 134
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767746689eb6ca300800000000000000
+      internalID: 264705128834299751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_44
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 134
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b034a238be8d9db10800000000000000
+      internalID: 2006873614999765771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_45
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 121
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f797ff9601b0f00800000000000000
+      internalID: 1083978182756499333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_46
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 121
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4ea3d0942b53270800000000000000
+      internalID: 8229679920913769681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_47
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 121
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba9d47e4dcb21850800000000000000
+      internalID: 6346342447518161590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_48
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 121
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c0a1c2f95ee4510800000000000000
+      internalID: 1535416994782383239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_49
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 121
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea420e385111b920800000000000000
+      internalID: 3004201497127963373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_50
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 121
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87c65c2ab37e7e00800000000000000
+      internalID: 1044399407041529739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_51
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 121
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e4155089550ac10800000000000000
+      internalID: 2062742740748291695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_52
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 108
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb90369c87a4d3c0800000000000000
+      internalID: -4335656318993916953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_53
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 108
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43470304aec47b90800000000000000
+      internalID: -7244938696711519413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_54
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 108
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caecb11fdac5924f0800000000000000
+      internalID: -853048752265769300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_55
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 108
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb97925348cc08b0800000000000000
+      internalID: -5184548879536251971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_56
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 108
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922ac592c9d677220800000000000000
+      internalID: 2483574236994380329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_57
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 108
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7a8852813882100800000000000000
+      internalID: 83460732838520760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_58
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 108
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8def36ef8110b9470800000000000000
+      internalID: 8402310736648601304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_59
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 95
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8470cde044dea1270800000000000000
+      internalID: 8222144946281121608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_60
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 95
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 849857bdcd1da6010800000000000000
+      internalID: 1182988598643099976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_61
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 95
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367aa06db875fe750800000000000000
+      internalID: 6336379458836670307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_62
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 95
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee84683507d39b20800000000000000
+      internalID: 3140089782628290279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_63
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 95
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8238a0cf3513fbe40800000000000000
+      internalID: 5674308292290708264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_64
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 95
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9751aa072f552e620800000000000000
+      internalID: 2801896417938511225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_65
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 95
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81099a48d3e74ee20800000000000000
+      internalID: 3378964423118524440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_66
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 82
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1cf5d9a54417c40800000000000000
+      internalID: 5508258975228871150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_67
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 82
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c93e49e496e1640800000000000000
+      internalID: 5052591618182585454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_68
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 82
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9434355850394cfd0800000000000000
+      internalID: -2322569855895387319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_69
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 82
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ca3369d876ffdf0800000000000000
+      internalID: -144282805244548003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_70
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 82
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d29cec6f5626b740800000000000000
+      internalID: 5167359813745414867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_71
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 82
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e3ef0883b004830800000000000000
+      internalID: 4053252001943666324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_72
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 82
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c63d3508334a9a0800000000000000
+      internalID: -6222792158863987670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_73
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 69
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b3509e16a50d7d0800000000000000
+      internalID: -2895715183831467186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_74
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 69
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0310f777b3334a90800000000000000
+      internalID: -7330958905344781555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_75
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 69
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d485963776caa680800000000000000
+      internalID: -8742957511267220270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_76
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 69
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67ebd254c14ac8a0800000000000000
+      internalID: -6284138018582567060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_77
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 69
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483fdf5a59ff9fbc0800000000000000
+      internalID: -3748684196609133692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_78
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 69
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c548313031a149e80800000000000000
+      internalID: -8172878754812296100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_79
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 69
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e85dffccbc73ba60800000000000000
+      internalID: 7688626139236751589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_80
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 56
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c5a1b0167cca980800000000000000
+      internalID: -8526220774907159404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_81
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 56
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12877760d7f6e8b80800000000000000
+      internalID: -8390646472974567391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_82
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 56
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad48cf92c41a5160800000000000000
+      internalID: 7014942195719884204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_83
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 56
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2382708e5a87e2de0800000000000000
+      internalID: -1356013783834220494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_84
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 56
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4546631cb7685e1c0800000000000000
+      internalID: -4475022788642053036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_85
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 56
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6610208678c0160800000000000000
+      internalID: 6993113202179532522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_86
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 56
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d379bc3dac54fb0800000000000000
+      internalID: -4664098828069683951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_87
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 43
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03ecf89e698588c0800000000000000
+      internalID: -3997637986115329266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_88
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 43
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb290042ad00c860800000000000000
+      internalID: 7548047965983157192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_89
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 43
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27a26425a27fc820800000000000000
+      internalID: 2940695135301838634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_90
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 43
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3ddb7e5ff12e790800000000000000
+      internalID: -7502398888230399052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_91
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 43
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ecd8349ca63ab8b0800000000000000
+      internalID: -5135732310213600025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_92
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 43
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739e4c6ecae699d50800000000000000
+      internalID: 6744543605849123127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_93
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 43
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cce2569b2034cb80800000000000000
+      internalID: -8375516443238535996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_94
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 30
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e8c5e757f3f3490800000000000000
+      internalID: -7764417458699727320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_95
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 30
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec2c8cfcc65d3dc0800000000000000
+      internalID: -3657671883944612637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_96
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 30
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b46be229b7a51f410800000000000000
+      internalID: 1509086836925838923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_97
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 30
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ae569b9c2f268d0800000000000000
+      internalID: -2854452265586660853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_98
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 30
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da962244579d1010800000000000000
+      internalID: 1161250667074329298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_99
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 30
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fcc0876216249ec0800000000000000
+      internalID: -3561179544855458569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_100
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 30
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f3ef011ced6a7c0800000000000000
+      internalID: -4060313093232771268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_101
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 17
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aea5ea2b0ebd3f80800000000000000
+      internalID: -8125129197532893533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_102
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 17
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43cdf4accaddae340800000000000000
+      internalID: 4893967679289809972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_103
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 17
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab307481317dcd70800000000000000
+      internalID: 9065026082455960486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_104
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 17
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484e0dfa19df37dc0800000000000000
+      internalID: -3642288871450811260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_105
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 17
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a34434d5cd73840800000000000000
+      internalID: 5203870187568511588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_106
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 17
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a153ce8ff94e9a770800000000000000
+      internalID: 8622674337304687898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_107
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 17
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e62a7133184090c80800000000000000
+      internalID: -8356142680654765458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_108
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4361e17416d0a4650800000000000000
+      internalID: 6217796946994533940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_109
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 4
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbab36fbe74029d70800000000000000
+      internalID: 9048299543764122300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_110
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 4
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b953a8d2fc46bf10800000000000000
+      internalID: 2285098466837486002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_111
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 4
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed30ca6bc24ea2b0800000000000000
+      internalID: -5571442247573946908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_112
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 4
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e586b8ac9038909d0800000000000000
+      internalID: -2807568814612715426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_113
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 4
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5873acda179e5a140800000000000000
+      internalID: 4730443658078861189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: microicons_shadowless_114
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 4
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b00936c4586f2b80800000000000000
+      internalID: -8417394465220001614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

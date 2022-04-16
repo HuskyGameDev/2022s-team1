@@ -1,17 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public GameObject InventoryUI;
+    public Image holdingImage;
+    public Transform player;
+    public string holding;
 
     private void Awake()
     {
-        if (instance == null) {
+        DontDestroyOnLoad(this);
+        if (instance == null)
+        {
             instance = this;
+        }
+        else {
+            Destroy(this.gameObject);
         }
     }
 
-    public Transform player;
+    private void Update()
+    {
+        /*if (Input.GetKeyDown(KeyCode.E)) {
+            SceneManager.LoadScene("DeckBuilder");
+        }*/
+    }
 }
