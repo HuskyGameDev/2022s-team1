@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public bool bossBattle;
     public int deckMax;
     public List<GameObject> respawnPositions;
+    public List<GameObject> startPositions;
 
     private void Awake()
     {
@@ -32,12 +33,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) {
-            foreach (Transform child in transform) {
-                child.gameObject.SetActive(false);
-            }
-            SceneManager.LoadScene("DeckBuilder");
-        }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -47,5 +42,9 @@ public class GameManager : MonoBehaviour
             }
             SceneManager.LoadScene("AIDevelopment");
         }
+    }
+
+    public void loadDeckBuilder() {
+        SceneManager.LoadScene("DeckBuilder");
     }
 }

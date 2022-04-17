@@ -136,23 +136,23 @@ public class EncounterManager : MonoBehaviour
             {
                 case GameManager.Level.VILLAGE:
                     enemy.deck = new List<Card>(enemyDecks.townDecks[deckSelect].deck);
-                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect + " selected");
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect+1 + " selected");
                     break;
                 case GameManager.Level.FOREST:
                     enemy.deck = new List<Card>(enemyDecks.forestDecks[deckSelect].deck);
-                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect + " selected");
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect+1 + " selected");
                     break;
                 case GameManager.Level.CAVE:
                     enemy.deck = new List<Card>(enemyDecks.caveDecks[deckSelect].deck);
-                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect + " selected");
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect+1 + " selected");
                     break;
                 case GameManager.Level.CASTLE_EXT:
                     enemy.deck = new List<Card>(enemyDecks.castleDecks[deckSelect].deck);
-                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect + " selected");
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect+1 + " selected");
                     break;
                 case GameManager.Level.CASTLE_INT:
                     enemy.deck = new List<Card>(enemyDecks.castleDecks[deckSelect].deck);
-                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect + " selected");
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect+1 + " selected");
                     break;
             }
         }

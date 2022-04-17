@@ -50571,7 +50571,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c441308bc0d088c4baa324cae25336a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InventoryUI: {fileID: 0}
+  holdingImage: {fileID: 0}
   player: {fileID: 1203475454}
+  holding: 
+  currentLevel: 0
+  bossBattle: 0
+  deckMax: 0
+  respawnPositions: []
+  startPositions: []
 --- !u!114 &85789732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50588,6 +50596,7 @@ MonoBehaviour:
   dialogueName: {fileID: 1444488371}
   dialogueText: {fileID: 1542997502}
   initialDelay: 0.001
+  inDialogue: 0
 --- !u!4 &85789733
 Transform:
   m_ObjectHideFlags: 0
