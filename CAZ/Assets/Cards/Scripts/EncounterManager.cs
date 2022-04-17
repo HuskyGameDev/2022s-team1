@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTRUN, ENEMYTURN, WON, LOST}
 
 public enum ActiveEffect { NONE, HEALING_POTION, SACRIFICE, SHADOW_STRIKE, SLEIGHT_OF_HAND, AGGRESSION, SHIELD, REVIVE }
 public class EncounterManager : MonoBehaviour
 {
+    public GameManager gameManager;
 
     public BattleState state;
+    public EnemyDecks enemyDecks;
     public int turnNum;
     public int enemyAvailableFieldSlots;
     public int playerAvailableFieldSlots;
@@ -55,6 +58,12 @@ public class EncounterManager : MonoBehaviour
     public GameObject winView;
     public GameObject loseView;
     public Text loseDesc;
+    public Image background;
+    public Sprite VillageSprite;
+    public Sprite ForestSprite;
+    public Sprite CaveSprite;
+    public Sprite CastleExtSprite;
+    public Sprite CastleIntSprite;
 
     //add location enum
     public string guideName = "Your guide";
@@ -62,7 +71,16 @@ public class EncounterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        selectEnemyType();
+        gameManager = FindObjectOfType<GameManager>();
+
+        SelectEnemyType();
+        SelectEnemyDeck();
+        SetPlayerDeck();
+        SceneSetUp();
+
+        if (player.deck.Count == 0) {
+            PlayerLose();
+        }
 
         state = BattleState.START;
 
@@ -77,7 +95,7 @@ public class EncounterManager : MonoBehaviour
         StartCoroutine(StartBattle());
     }
 
-    void selectEnemyType() {
+    void SelectEnemyType() {
         Debug.Log("Selecting enemy...");
         int enemySelect = Random.Range(1, 7);
         switch (enemySelect)
@@ -107,6 +125,67 @@ public class EncounterManager : MonoBehaviour
                 Debug.Log("AI-6 Selected");
                 break;
         }
+    }
+
+    void SelectEnemyDeck() {
+        Debug.Log("Selecting deck");
+        int deckSelect = Random.Range(0, 3);
+        if (!gameManager.bossBattle) // if not boss battles, select random deck from list of decks based on area
+        {
+            switch (gameManager.currentLevel)
+            {
+                case GameManager.Level.VILLAGE:
+                    enemy.deck = new List<Card>(enemyDecks.townDecks[deckSelect].deck);
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect + " selected");
+                    break;
+                case GameManager.Level.FOREST:
+                    enemy.deck = new List<Card>(enemyDecks.forestDecks[deckSelect].deck);
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect + " selected");
+                    break;
+                case GameManager.Level.CAVE:
+                    enemy.deck = new List<Card>(enemyDecks.caveDecks[deckSelect].deck);
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect + " selected");
+                    break;
+                case GameManager.Level.CASTLE_EXT:
+                    enemy.deck = new List<Card>(enemyDecks.castleDecks[deckSelect].deck);
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect + " selected");
+                    break;
+                case GameManager.Level.CASTLE_INT:
+                    enemy.deck = new List<Card>(enemyDecks.castleDecks[deckSelect].deck);
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " deck " + deckSelect + " selected");
+                    break;
+            }
+        }
+        else // else, battle is boss fight, choose boss deck form list based on area
+        {
+            switch (gameManager.currentLevel)
+            {
+                case GameManager.Level.VILLAGE:
+                    enemy.deck = new List<Card>(enemyDecks.townBossDeck.deck);
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " boss deck selected");
+                    break;
+                case GameManager.Level.FOREST:
+                    enemy.deck = new List<Card>(enemyDecks.forestBossDeck.deck);
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " boss deck selected");
+                    break;
+                case GameManager.Level.CAVE:
+                    enemy.deck = new List<Card>(enemyDecks.caveBossDeck.deck);
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " boss deck selected");
+                    break;
+                case GameManager.Level.CASTLE_EXT:
+                    enemy.deck = new List<Card>(enemyDecks.castleBossDeck.deck);
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " boss deck selected");
+                    break;
+                case GameManager.Level.CASTLE_INT:
+                    enemy.deck = new List<Card>(enemyDecks.castleBossDeck.deck);
+                    Debug.Log("Current Level: " + gameManager.currentLevel + " boss deck selected");
+                    break;
+            }
+        }
+    }
+
+    void SetPlayerDeck() {
+        player.deck = new List<Card>(gameManager.GetComponent<Deck>().deck);
     }
 
     /*private void Update()
@@ -223,6 +302,32 @@ public class EncounterManager : MonoBehaviour
     public void PlayerWinButton() {
         // load scene where player left off
         Debug.Log("Win Button Pressed");
+
+
+        switch (gameManager.currentLevel)
+        {
+            case GameManager.Level.VILLAGE:
+                SetGameManagerChildrenVisibility();
+                SceneManager.LoadScene("Village");
+                break;
+            case GameManager.Level.FOREST:
+                SetGameManagerChildrenVisibility();
+                SceneManager.LoadScene("Forest");
+                break;
+            case GameManager.Level.CAVE:
+                SetGameManagerChildrenVisibility();
+                SceneManager.LoadScene("Cave");
+                break;
+            case GameManager.Level.CASTLE_EXT:
+                SetGameManagerChildrenVisibility();
+                SceneManager.LoadScene("Castle Exterior");
+                break;
+            case GameManager.Level.CASTLE_INT:
+                SetGameManagerChildrenVisibility();
+                SceneManager.LoadScene("Castle Interior");
+                break;
+        }
+
     }
 
     public void PlayerLose() {
@@ -235,6 +340,95 @@ public class EncounterManager : MonoBehaviour
     {
         // load scene where player left off
         Debug.Log("Lose Button Pressed");
+
+        switch (gameManager.currentLevel)
+        {
+            case GameManager.Level.VILLAGE:
+                Debug.Log("Setting player position...");
+                SetPlayerPosition(GameManager.Level.VILLAGE);
+                SetGameManagerChildrenVisibility();
+                SceneManager.LoadScene("Village");
+                break;
+            case GameManager.Level.FOREST:
+                SetPlayerPosition(GameManager.Level.FOREST);
+                SetGameManagerChildrenVisibility();
+                SceneManager.LoadScene("Forest");
+                break;
+            case GameManager.Level.CAVE:
+                SetPlayerPosition(GameManager.Level.CAVE);
+                SetGameManagerChildrenVisibility();
+                SceneManager.LoadScene("Cave");
+                break;
+            case GameManager.Level.CASTLE_EXT:
+                SetPlayerPosition(GameManager.Level.CASTLE_EXT);
+                SetGameManagerChildrenVisibility();
+                SceneManager.LoadScene("Castle Exterior");
+                break;
+            case GameManager.Level.CASTLE_INT:
+                SetPlayerPosition(GameManager.Level.CASTLE_INT);
+                SetGameManagerChildrenVisibility();
+                SceneManager.LoadScene("Castle Interior");
+                break;
+        }
+    }
+
+    public void SetPlayerPosition(GameManager.Level level)
+    {
+        switch (level)
+        {
+            case GameManager.Level.VILLAGE:
+                Debug.Log("Current level is village");
+                Transform villageRespawnTransform = gameManager.respawnPositions[0].transform;
+                Debug.Log("Position Data Gathered");
+                gameManager.player.position = new Vector3(villageRespawnTransform.position.x, villageRespawnTransform.position.y, villageRespawnTransform.position.z);
+                Debug.Log("Player position set");
+                break;
+            case GameManager.Level.FOREST:
+                Transform forestRespawnTransform = gameManager.respawnPositions[1].transform;
+                gameManager.player.position = new Vector3(forestRespawnTransform.position.x, forestRespawnTransform.position.y, forestRespawnTransform.position.z);
+                break;
+            case GameManager.Level.CAVE:
+                Transform caveRespawnTransform = gameManager.respawnPositions[2].transform;
+                gameManager.player.position = new Vector3(caveRespawnTransform.position.x, caveRespawnTransform.position.y, caveRespawnTransform.position.z);
+                break;
+            case GameManager.Level.CASTLE_EXT:
+                Transform castleExtRespawnTransform = gameManager.respawnPositions[3].transform;
+                gameManager.player.position = new Vector3(castleExtRespawnTransform.position.x, castleExtRespawnTransform.position.y, castleExtRespawnTransform.position.z);
+                break;
+            case GameManager.Level.CASTLE_INT:
+                Transform castleIntRespawnTransform = gameManager.respawnPositions[4].transform;
+                gameManager.player.position = new Vector3(castleIntRespawnTransform.position.x, castleIntRespawnTransform.position.y, castleIntRespawnTransform.position.z);
+                break;
+        }
+    }
+
+    public void SetGameManagerChildrenVisibility() {
+        foreach (Transform child in GameManager.instance.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+    }
+
+    public void SceneSetUp() {
+        if (gameManager.currentLevel == GameManager.Level.VILLAGE) {
+            guideName = "Villager?";
+        }
+        else if (gameManager.currentLevel == GameManager.Level.FOREST)
+        {
+            guideName = "The Huntsman";
+        }
+        else if (gameManager.currentLevel == GameManager.Level.CAVE)
+        {
+            guideName = "The Scared Merchant";
+        }
+        else if (gameManager.currentLevel == GameManager.Level.CASTLE_INT)
+        {
+            guideName = "The Undead Butler";
+        }
+        else if (gameManager.currentLevel == GameManager.Level.CASTLE_EXT)
+        {
+            guideName = "A Lost Zoologist";
+        }
     }
 
 }

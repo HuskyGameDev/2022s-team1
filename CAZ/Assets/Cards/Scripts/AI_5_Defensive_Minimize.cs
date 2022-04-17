@@ -172,8 +172,9 @@ public class AI_5_Defensive_Minimize : AI_Standard
                     case "Aggression":
                         //check if aggression is valuable
                         bool nonAggroCreatureOnField = NonAggroOnField();
+                        bool battleReadyOnField = BattleReadyOnField();
                         float aggroRand = Random.Range(1, 4);
-                        if (aggroRand == 3 && nonAggroCreatureOnField)
+                        if (aggroRand == 3 && nonAggroCreatureOnField && battleReadyOnField)
                         {
                             yield return new WaitUntil(() => manager.activeEffect == ActiveEffect.NONE);
                             yield return new WaitForSeconds(1f);

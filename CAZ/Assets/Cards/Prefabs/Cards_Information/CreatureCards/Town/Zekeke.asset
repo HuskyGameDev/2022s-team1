@@ -23,7 +23,7 @@ MonoBehaviour:
   effect: N/A
   art: {fileID: 21300000, guid: 295b0381c15d7ef4480f62b7ab73610a, type: 3}
   attack: 5
-  defense: 4
+  defense: 5
   prefab: {fileID: 2473742285920798735, guid: c7cbc3b585063f04a80444622c4a5011, type: 3}
   cardObject: {fileID: 0}
   type: 2

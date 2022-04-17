@@ -9,6 +9,7 @@ public class EnemyZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
 
     public EncounterManager manager;
     CursorController cursorController;
+    Color zoneColor;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class EnemyZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
         if (manager.state == BattleState.PLAYERTRUN && cursorController.cursorState == CursorState.ATTACK && manager.enemyField.Count == 0)
         {
             //this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(true);
+            zoneColor = this.gameObject.GetComponent<Image>().color;
             this.gameObject.GetComponent<Image>().color = Color.red;
         }
     }
@@ -30,7 +32,7 @@ public class EnemyZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
         if (manager.state == BattleState.PLAYERTRUN && cursorController.cursorState == CursorState.ATTACK && manager.enemyField.Count == 0)
         {
             //this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false);
-            this.gameObject.GetComponent<Image>().color = Color.white;
+            this.gameObject.GetComponent<Image>().color = zoneColor;
         }
     }
 
@@ -43,7 +45,7 @@ public class EnemyZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
         if (drag != null && drag.placed && drag.owner == Draggable.Owner.PLAYER && manager.state == BattleState.PLAYERTRUN && cursorController.cursorState == CursorState.ATTACK && manager.enemyField.Count == 0)
         {
             //this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false);
-            this.gameObject.GetComponent<Image>().color = Color.white;
+            this.gameObject.GetComponent<Image>().color = zoneColor;
             manager.enemy.TakeDamage(drag.gameObject.GetComponent<CardDisplay>().card.attack);
             drag.GetComponent<CardDisplay>().card.turnAction = TurnAction.Used;
         }

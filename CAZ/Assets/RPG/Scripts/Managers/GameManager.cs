@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public enum Level { VILLAGE, FOREST, CAVE, CASTLE_EXT, CASTLE_INT }
+
     public static GameManager instance;
     public GameObject InventoryUI;
     public Image holdingImage;
     public Transform player;
     public string holding;
+    public Level currentLevel = Level.VILLAGE;
+    public bool bossBattle;
+    public int deckMax;
+    public List<GameObject> respawnPositions;
 
     private void Awake()
     {
@@ -31,6 +37,15 @@ public class GameManager : MonoBehaviour
                 child.gameObject.SetActive(false);
             }
             SceneManager.LoadScene("DeckBuilder");
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+            SceneManager.LoadScene("AIDevelopment");
         }
     }
 }

@@ -503,7 +503,7 @@ public class CardEffects : MonoBehaviour
         {
             foreach (Card c in field)
             {
-                if (c.attack > tempAttack && !c.aggro)
+                if (c.attack > tempAttack && !c.aggro && c.summonState != SummonState.SummonSick)
                 {
                     tempAttack = c.attack;
                     targetCard = c;
@@ -543,7 +543,7 @@ public class CardEffects : MonoBehaviour
         {
             foreach (Card c in field)
             {
-                if (c.attack < tempAttack && !c.aggro)
+                if (c.attack < tempAttack && !c.aggro && c.summonState != SummonState.SummonSick)
                 {
                     tempAttack = c.attack;
                     targetCard = c;
@@ -584,7 +584,7 @@ public class CardEffects : MonoBehaviour
         {
             foreach (Card c in field)
             {
-                if (c.defense > tempDefense && !c.aggro)
+                if (c.defense > tempDefense && !c.aggro && c.summonState != SummonState.SummonSick)
                 {
                     tempDefense = c.defense;
                     targetCard = c;
@@ -625,7 +625,7 @@ public class CardEffects : MonoBehaviour
         {
             foreach (Card c in field)
             {
-                if (c.defense < tempDefense && !c.aggro)
+                if (c.defense < tempDefense && !c.aggro && c.summonState != SummonState.SummonSick)
                 {
                     tempDefense = c.defense;
                     targetCard = c;
@@ -664,7 +664,7 @@ public class CardEffects : MonoBehaviour
             while (!found)
             {
                 index = Random.Range(0, field.Count);
-                if (!field[index].aggro)
+                if (!field[index].aggro && field[index].summonState != SummonState.SummonSick)
                 {
                     found = true;
                 }

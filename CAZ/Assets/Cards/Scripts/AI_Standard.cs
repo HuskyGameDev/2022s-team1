@@ -312,8 +312,9 @@ public class AI_Standard : MonoBehaviour
                     case "Aggression":
                         //check if aggression is valuable
                         bool nonAggroCreatureOnField = NonAggroOnField();
+                        bool battleReadyOnField = BattleReadyOnField();
                         float aggroRand = Random.Range(1, 4);
-                        if (aggroRand == 3 && nonAggroCreatureOnField)
+                        if (aggroRand == 3 && nonAggroCreatureOnField && battleReadyOnField)
                         {
                             yield return new WaitUntil(() => manager.activeEffect == ActiveEffect.NONE);
                             yield return new WaitForSeconds(1f);
@@ -364,6 +365,20 @@ public class AI_Standard : MonoBehaviour
         }
         //check if effect cards are valuable
         //play effect cards
+    }
+
+    public bool BattleReadyOnField()
+    {
+
+        bool exists = false;
+        foreach (Card c in manager.enemyField)
+        {
+            if (c.summonState == SummonState.BattleReady)
+            {
+                exists = true;
+            }
+        }
+        return exists;
     }
 
     public bool NonAggroOnField()

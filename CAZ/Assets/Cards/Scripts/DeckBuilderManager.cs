@@ -27,6 +27,7 @@ public class DeckBuilderManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        deckCapacity = GameManager.instance.deckMax;
         deck = FindObjectOfType<Deck>();
         dex = FindObjectOfType<CardDex>();
         LoadDeck();
