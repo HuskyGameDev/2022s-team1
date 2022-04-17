@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
     public int deckMax;
     public List<GameObject> respawnPositions;
     public List<GameObject> startPositions;
+    public GameObject discoveredUI;
+    public Text discoveredText;
+    public GameObject discoveredCreature;
+    public GameObject discoveredBoss;
+    public GameObject discoveredEffect;
 
     private void Awake()
     {

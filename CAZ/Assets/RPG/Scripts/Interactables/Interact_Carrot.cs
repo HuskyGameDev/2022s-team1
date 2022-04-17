@@ -22,5 +22,7 @@ public class Interact_Carrot : Interactable
         kid.DB = kidConvoCarrotFound;
         manager.holdingImage.sprite = carrotSprite;
         manager.InventoryUI.SetActive(true);
+        manager.player.gameObject.GetComponent<PlayerController>().interactIcon.SetActive(false);
+        gameObject.GetComponent<Interact_Carrot>().enabled = false;
     }
 }
