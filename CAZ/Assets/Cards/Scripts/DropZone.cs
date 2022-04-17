@@ -41,6 +41,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             {
                 if (zoneOwner == drag.owner && !taken && !fromTakenParent)
                 { // check card and drop zone prereqs
+                    AudioManager.instance.Play("Card_Select");
                     drag.parentToReturnTo = this.transform; // set parent to return to to this dropzone
                     drag.GetComponent<CardDisplay>().card.fieldIndex = index; // set field index for reference when destroying cards
                     manager.player.hand.Remove(drag.GetComponent<CardDisplay>().card); // remove card from player's hand
@@ -65,6 +66,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 //manager.cursorController.cursorImage.sprite = manager.cursorController.effectCursor;
                 //manager.cursorController.cursorState = CursorState.EFFECT;
 
+                AudioManager.instance.Play("Card_Effect");
                 string effectName = drag.GetComponent<CardDisplay>().card.name;
                 switch (effectName)
                 {
@@ -171,6 +173,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             }
             else if (zoneType == ZoneType.Discard && manager.state == BattleState.PLAYERTRUN) {
                 // remove card from hand, if creature add to discard pile and view
+                AudioManager.instance.Play("Card_Place");
                 Card discardedCard = drag.GetComponent<CardDisplay>().card;
                 manager.player.hand.Remove(discardedCard); // remove dsicarded card from hand
                 if (discardedCard.type == Types.Creature || discardedCard.type == Types.Boss) {

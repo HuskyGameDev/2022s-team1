@@ -16,6 +16,7 @@ public class DiscardController : MonoBehaviour
     {
         if (withButton)
         {
+            AudioManager.instance.Play("NPC_Interact");
             closeButton.SetActive(true);
             discardView.SetActive(true);
         }
@@ -28,6 +29,7 @@ public class DiscardController : MonoBehaviour
     //disables discard view for discard view button
     public void DisableDiscardView()
     {
+        AudioManager.instance.Play("NPC_Interact");
         closeButton.SetActive(true);
         discardView.SetActive(false);
     }

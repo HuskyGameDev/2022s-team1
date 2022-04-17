@@ -59,11 +59,11 @@ public class EncounterManager : MonoBehaviour
     public GameObject loseView;
     public Text loseDesc;
     public Image background;
-    public Sprite VillageSprite;
-    public Sprite ForestSprite;
-    public Sprite CaveSprite;
-    public Sprite CastleExtSprite;
-    public Sprite CastleIntSprite;
+    public Image VillageBackground;
+    public Image ForestBackground;
+    public Image CaveBackground;
+    public Image CastleExtBackground;
+    public Image CastleIntBackground;
 
     //add location enum
     public string guideName = "Your guide";
@@ -296,42 +296,219 @@ public class EncounterManager : MonoBehaviour
 
     public void PlayerWin() {
         state = BattleState.WON;
+
+        if (!gameManager.bossBattle) // if not boss battle
+        {
+            switch (gameManager.currentLevel)
+            {
+                case GameManager.Level.VILLAGE:
+                    AudioManager.instance.Stop("Town_Battle");
+                    AudioManager.instance.Play("Player_Win");
+                    break;
+                case GameManager.Level.FOREST:
+                    AudioManager.instance.Stop("Forest_Battle");
+                    AudioManager.instance.Play("Player_Win");
+                    break;
+                case GameManager.Level.CAVE:
+                    AudioManager.instance.Stop("Cave_Battle");
+                    AudioManager.instance.Play("Player_Win");
+                    break;
+                case GameManager.Level.CASTLE_EXT:
+                    AudioManager.instance.Stop("CastleInt_Battle");
+                    AudioManager.instance.Play("Player_Win");
+                    break;
+                case GameManager.Level.CASTLE_INT:
+                    AudioManager.instance.Stop("CastleExt_Battle");
+                    AudioManager.instance.Play("Player_Win");
+                    break;
+            }
+        }
+        else
+        { // is boss battle
+            switch (gameManager.currentLevel)
+            {
+                case GameManager.Level.VILLAGE:
+                    AudioManager.instance.Stop("Town_Boss");
+                    AudioManager.instance.Play("Player_Win");
+                    break;
+                case GameManager.Level.FOREST:
+                    AudioManager.instance.Stop("Forest_Boss");
+                    AudioManager.instance.Play("Player_Win");
+                    break;
+                case GameManager.Level.CAVE:
+                    AudioManager.instance.Stop("Cave_Boss");
+                    AudioManager.instance.Play("Player_Win");
+                    break;
+                case GameManager.Level.CASTLE_EXT:
+                    AudioManager.instance.Stop("Castle_INT_Boss");
+                    AudioManager.instance.Play("Player_Win");
+                    break;
+                case GameManager.Level.CASTLE_INT:
+                    AudioManager.instance.Stop("Castle_EXT_Boss");
+                    AudioManager.instance.Play("Player_Win");
+                    break;
+            }
+        }
+
         winView.SetActive(true);
     }
 
     public void PlayerWinButton() {
         // load scene where player left off
         Debug.Log("Win Button Pressed");
+        Cursor.visible = true;
 
-
-        switch (gameManager.currentLevel)
+        if (!gameManager.bossBattle) // if not boss battle, load current level
         {
-            case GameManager.Level.VILLAGE:
-                SetGameManagerChildrenVisibility();
-                SceneManager.LoadScene("Village");
-                break;
-            case GameManager.Level.FOREST:
-                SetGameManagerChildrenVisibility();
-                SceneManager.LoadScene("Forest");
-                break;
-            case GameManager.Level.CAVE:
-                SetGameManagerChildrenVisibility();
-                SceneManager.LoadScene("Cave");
-                break;
-            case GameManager.Level.CASTLE_EXT:
-                SetGameManagerChildrenVisibility();
-                SceneManager.LoadScene("Castle Exterior");
-                break;
-            case GameManager.Level.CASTLE_INT:
-                SetGameManagerChildrenVisibility();
-                SceneManager.LoadScene("Castle Interior");
-                break;
+            switch (gameManager.currentLevel)
+            {
+                case GameManager.Level.VILLAGE:
+                    AudioManager.instance.Stop("Player_Win");
+                    AudioManager.instance.UnPause(AudioManager.instance.overworldSong);
+                    SetGameManagerChildrenVisibility();
+                    SceneManager.LoadScene("Village");
+                    break;
+                case GameManager.Level.FOREST:
+                    AudioManager.instance.Stop("Player_Win");
+                    AudioManager.instance.UnPause(AudioManager.instance.overworldSong);
+                    SetGameManagerChildrenVisibility();
+                    SceneManager.LoadScene("Forest");
+                    break;
+                case GameManager.Level.CAVE:
+                    AudioManager.instance.Stop("Player_Win");
+                    AudioManager.instance.UnPause(AudioManager.instance.overworldSong);
+                    SetGameManagerChildrenVisibility();
+                    SceneManager.LoadScene("Cave");
+                    break;
+                case GameManager.Level.CASTLE_EXT:
+                    AudioManager.instance.Stop("Player_Win");
+                    AudioManager.instance.UnPause(AudioManager.instance.overworldSong);
+                    SetGameManagerChildrenVisibility();
+                    SceneManager.LoadScene("CastleExterior");
+                    break;
+                case GameManager.Level.CASTLE_INT:
+                    AudioManager.instance.Stop("Player_Win");
+                    AudioManager.instance.UnPause(AudioManager.instance.overworldSong);
+                    SetGameManagerChildrenVisibility();
+                    SceneManager.LoadScene("CastleInterior");
+                    break;
+            }
+        }
+        else { // is boss battle, set player location, set current scene, load next level
+            switch (gameManager.currentLevel)
+            {
+                case GameManager.Level.VILLAGE:
+                    SetPlayerStartPosition(GameManager.Level.VILLAGE);
+
+                    AudioManager.instance.Stop("Player_Win");
+                    AudioManager.instance.Play("Forest_Overworld");
+                    AudioManager.instance.overworldSong = "Forest_Overworld";
+
+                    SetGameManagerChildrenVisibility();
+                    GameManager.instance.currentLevel = GameManager.Level.FOREST;
+                    SceneManager.LoadScene("Forest");
+                    break;
+                case GameManager.Level.FOREST:
+                    SetPlayerStartPosition(GameManager.Level.FOREST);
+
+                    AudioManager.instance.Stop("Player_Win");
+                    AudioManager.instance.Play("Cave_Overworld");
+                    AudioManager.instance.overworldSong = "Cave_Overworld";
+
+                    SetGameManagerChildrenVisibility();
+                    GameManager.instance.currentLevel = GameManager.Level.CAVE;
+                    SceneManager.LoadScene("Cave");
+                    break;
+                case GameManager.Level.CAVE:
+                    SetPlayerStartPosition(GameManager.Level.CAVE);
+
+                    AudioManager.instance.Stop("Player_Win");
+                    AudioManager.instance.Play("Castle_EXT_Overworld");
+                    AudioManager.instance.overworldSong = "Castle_EXT_Overworld";
+
+                    SetGameManagerChildrenVisibility();
+                    GameManager.instance.currentLevel = GameManager.Level.CASTLE_EXT;
+                    SceneManager.LoadScene("CastleExterior");
+                    break;
+                case GameManager.Level.CASTLE_EXT:
+                    SetPlayerStartPosition(GameManager.Level.CASTLE_EXT);
+
+                    AudioManager.instance.Stop("Player_Win");
+                    AudioManager.instance.Play("Castle_INT_Overworld");
+                    AudioManager.instance.overworldSong = "Castle_INT_Overworld";
+
+                    SetGameManagerChildrenVisibility();
+                    GameManager.instance.currentLevel = GameManager.Level.CASTLE_INT;
+                    SceneManager.LoadScene("CastleInterior");
+                    break;
+                case GameManager.Level.CASTLE_INT:
+
+                    AudioManager.instance.Stop("Player_Win");
+                    AudioManager.instance.Play("Castle_INT_Overworld");
+                    AudioManager.instance.overworldSong = "Castle_INT_Overworld";
+
+                    SetGameManagerChildrenVisibility();
+                    SceneManager.LoadScene("Credits");
+                    break;
+            }
         }
 
     }
 
     public void PlayerLose() {
         state = BattleState.LOST;
+
+        if (!gameManager.bossBattle) // if not boss battle
+        {
+            switch (gameManager.currentLevel)
+            {
+                case GameManager.Level.VILLAGE:
+                    AudioManager.instance.Stop("Town_Battle");
+                    AudioManager.instance.Play("Player_Lose");
+                    break;
+                case GameManager.Level.FOREST:
+                    AudioManager.instance.Stop("Forest_Battle");
+                    AudioManager.instance.Play("Player_Lose");
+                    break;
+                case GameManager.Level.CAVE:
+                    AudioManager.instance.Stop("Cave_Battle");
+                    AudioManager.instance.Play("Player_Lose");
+                    break;
+                case GameManager.Level.CASTLE_EXT:
+                    AudioManager.instance.Stop("CastleInt_Battle");
+                    AudioManager.instance.Play("Player_Lose");
+                    break;
+                case GameManager.Level.CASTLE_INT:
+                    AudioManager.instance.Stop("CastleExt_Battle");
+                    AudioManager.instance.Play("Player_Lose");
+                    break;
+            }
+        }
+        else { // is boss battle
+            switch (gameManager.currentLevel)
+            {
+                case GameManager.Level.VILLAGE:
+                    AudioManager.instance.Stop("Town_Boss");
+                    AudioManager.instance.Play("Player_Lose");
+                    break;
+                case GameManager.Level.FOREST:
+                    AudioManager.instance.Stop("Forest_Boss");
+                    AudioManager.instance.Play("Player_Lose");
+                    break;
+                case GameManager.Level.CAVE:
+                    AudioManager.instance.Stop("Cave_Boss");
+                    AudioManager.instance.Play("Player_Lose");
+                    break;
+                case GameManager.Level.CASTLE_EXT:
+                    AudioManager.instance.Stop("Castle_INT_Boss");
+                    AudioManager.instance.Play("Player_Lose");
+                    break;
+                case GameManager.Level.CASTLE_INT:
+                    AudioManager.instance.Stop("Castle_EXT_Boss");
+                    AudioManager.instance.Play("Player_Lose");
+                    break;
+            }
+        }
         loseDesc.text = "You feinted!\n" + guideName + "\nrescued you"; // change location guide depending on location
         loseView.SetActive(true);
     }
@@ -340,39 +517,46 @@ public class EncounterManager : MonoBehaviour
     {
         // load scene where player left off
         Debug.Log("Lose Button Pressed");
+        Cursor.visible = true;
+        AudioManager.instance.Stop("Player_Lose");
+        AudioManager.instance.UnPause(AudioManager.instance.overworldSong);
+
+        if (gameManager.bossBattle) {
+            gameManager.bossBattle = false;
+        }
 
         switch (gameManager.currentLevel)
         {
             case GameManager.Level.VILLAGE:
                 Debug.Log("Setting player position...");
-                SetPlayerPosition(GameManager.Level.VILLAGE);
+                SetPlayerRespawnPosition(GameManager.Level.VILLAGE);
                 SetGameManagerChildrenVisibility();
                 SceneManager.LoadScene("Village");
                 break;
             case GameManager.Level.FOREST:
-                SetPlayerPosition(GameManager.Level.FOREST);
+                SetPlayerRespawnPosition(GameManager.Level.FOREST);
                 SetGameManagerChildrenVisibility();
                 SceneManager.LoadScene("Forest");
                 break;
             case GameManager.Level.CAVE:
-                SetPlayerPosition(GameManager.Level.CAVE);
+                SetPlayerRespawnPosition(GameManager.Level.CAVE);
                 SetGameManagerChildrenVisibility();
                 SceneManager.LoadScene("Cave");
                 break;
             case GameManager.Level.CASTLE_EXT:
-                SetPlayerPosition(GameManager.Level.CASTLE_EXT);
+                SetPlayerRespawnPosition(GameManager.Level.CASTLE_EXT);
                 SetGameManagerChildrenVisibility();
                 SceneManager.LoadScene("Castle Exterior");
                 break;
             case GameManager.Level.CASTLE_INT:
-                SetPlayerPosition(GameManager.Level.CASTLE_INT);
+                SetPlayerRespawnPosition(GameManager.Level.CASTLE_INT);
                 SetGameManagerChildrenVisibility();
                 SceneManager.LoadScene("Castle Interior");
                 break;
         }
     }
 
-    public void SetPlayerPosition(GameManager.Level level)
+    public void SetPlayerRespawnPosition(GameManager.Level level)
     {
         switch (level)
         {
@@ -380,24 +564,50 @@ public class EncounterManager : MonoBehaviour
                 Debug.Log("Current level is village");
                 Transform villageRespawnTransform = gameManager.respawnPositions[0].transform;
                 Debug.Log("Position Data Gathered");
-                gameManager.player.position = new Vector3(villageRespawnTransform.position.x, villageRespawnTransform.position.y, villageRespawnTransform.position.z);
+                gameManager.player.position = new Vector3(villageRespawnTransform.position.x, villageRespawnTransform.position.y, 0);
                 Debug.Log("Player position set");
                 break;
             case GameManager.Level.FOREST:
                 Transform forestRespawnTransform = gameManager.respawnPositions[1].transform;
-                gameManager.player.position = new Vector3(forestRespawnTransform.position.x, forestRespawnTransform.position.y, forestRespawnTransform.position.z);
+                gameManager.player.position = new Vector3(forestRespawnTransform.position.x, forestRespawnTransform.position.y, 0);
                 break;
             case GameManager.Level.CAVE:
                 Transform caveRespawnTransform = gameManager.respawnPositions[2].transform;
-                gameManager.player.position = new Vector3(caveRespawnTransform.position.x, caveRespawnTransform.position.y, caveRespawnTransform.position.z);
+                gameManager.player.position = new Vector3(caveRespawnTransform.position.x, caveRespawnTransform.position.y, 0);
                 break;
             case GameManager.Level.CASTLE_EXT:
                 Transform castleExtRespawnTransform = gameManager.respawnPositions[3].transform;
-                gameManager.player.position = new Vector3(castleExtRespawnTransform.position.x, castleExtRespawnTransform.position.y, castleExtRespawnTransform.position.z);
+                gameManager.player.position = new Vector3(castleExtRespawnTransform.position.x, castleExtRespawnTransform.position.y, 0);
                 break;
             case GameManager.Level.CASTLE_INT:
                 Transform castleIntRespawnTransform = gameManager.respawnPositions[4].transform;
-                gameManager.player.position = new Vector3(castleIntRespawnTransform.position.x, castleIntRespawnTransform.position.y, castleIntRespawnTransform.position.z);
+                gameManager.player.position = new Vector3(castleIntRespawnTransform.position.x, castleIntRespawnTransform.position.y, 0);
+                break;
+        }
+    }
+
+    public void SetPlayerStartPosition(GameManager.Level level)
+    {
+        switch (level)
+        {
+            case GameManager.Level.VILLAGE:
+                Debug.Log("Current level is village");
+                Transform ForestStartTransform = gameManager.startPositions[1].transform;
+                Debug.Log("Position Data Gathered");
+                gameManager.player.position = new Vector3(ForestStartTransform.position.x, ForestStartTransform.position.y, 0);
+                Debug.Log("Player position set");
+                break;
+            case GameManager.Level.FOREST:
+                Transform caveStartTransform = gameManager.respawnPositions[2].transform;
+                gameManager.player.position = new Vector3(caveStartTransform.position.x, caveStartTransform.position.y, 0);
+                break;
+            case GameManager.Level.CAVE:
+                Transform castleExtStartTransform = gameManager.respawnPositions[3].transform;
+                gameManager.player.position = new Vector3(castleExtStartTransform.position.x, castleExtStartTransform.position.y, 0);
+                break;
+            case GameManager.Level.CASTLE_EXT:
+                Transform castleIxtStartTransform = gameManager.respawnPositions[4].transform;
+                gameManager.player.position = new Vector3(castleIxtStartTransform.position.x, castleIxtStartTransform.position.y, 0);
                 break;
         }
     }
@@ -410,24 +620,78 @@ public class EncounterManager : MonoBehaviour
     }
 
     public void SceneSetUp() {
-        if (gameManager.currentLevel == GameManager.Level.VILLAGE) {
+
+        AudioManager.instance.Pause(AudioManager.instance.overworldSong);
+
+        if (gameManager.currentLevel == GameManager.Level.VILLAGE)
+        {
             guideName = "Villager?";
+            VillageBackground.gameObject.SetActive(true);
+
+            if (!gameManager.bossBattle)
+            {
+                AudioManager.instance.Play("Town_Battle");
+            }
+            else {
+                AudioManager.instance.Play("Town_Boss");
+            }
+
         }
         else if (gameManager.currentLevel == GameManager.Level.FOREST)
         {
             guideName = "The Huntsman";
+            ForestBackground.gameObject.SetActive(true);
+
+            if (!gameManager.bossBattle)
+            {
+                AudioManager.instance.Play("Forest_Battle");
+            }
+            else
+            {
+                AudioManager.instance.Play("Forest_Boss");
+            }
         }
         else if (gameManager.currentLevel == GameManager.Level.CAVE)
         {
             guideName = "The Scared Merchant";
-        }
-        else if (gameManager.currentLevel == GameManager.Level.CASTLE_INT)
-        {
-            guideName = "The Undead Butler";
+            CaveBackground.gameObject.SetActive(true);
+
+            if (!gameManager.bossBattle)
+            {
+                AudioManager.instance.Play("Cave_Battle");
+            }
+            else
+            {
+                AudioManager.instance.Play("Cave_Boss");
+            }
         }
         else if (gameManager.currentLevel == GameManager.Level.CASTLE_EXT)
         {
+            guideName = "The Undead Butler";
+            CastleIntBackground.gameObject.SetActive(true);
+
+            if (!gameManager.bossBattle)
+            {
+                AudioManager.instance.Play("Castle_EXT_Battle");
+            }
+            else
+            {
+                AudioManager.instance.Play("Caslte_INT_Boss");
+            }
+        }
+        else if (gameManager.currentLevel == GameManager.Level.CASTLE_INT)
+        {
             guideName = "A Lost Zoologist";
+            CastleExtBackground.gameObject.SetActive(true);
+
+            if (!gameManager.bossBattle)
+            {
+                AudioManager.instance.Play("Castle_INT_Battle");
+            }
+            else
+            {
+                AudioManager.instance.Play("Castle_INT_Boss");
+            }
         }
     }
 

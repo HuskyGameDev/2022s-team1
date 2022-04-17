@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RPG/Scenes/Village/Village.unity
     guid: 4b933bf6eb8465e4a805d11c9cbedaa7
+  - enabled: 1
+    path: Assets/RPG/Scenes/Forest/Forest.unity
+    guid: a5b0de2483eef20439da9218c438941e
+  - enabled: 1
+    path: Assets/RPG/Scenes/Cave/Cave.unity
+    guid: 3b566fbd221d13d4ab901e085896d652
+  - enabled: 1
+    path: Assets/RPG/Scenes/Castle/CastleExterior.unity
+    guid: 66a2579038e0ea54983f4e07ad3901a1
+  - enabled: 1
+    path: Assets/RPG/Scenes/Castle/CastleInterior.unity
+    guid: 2d94bb3385f87e0499c279085181d82c
   m_configObjects: {}

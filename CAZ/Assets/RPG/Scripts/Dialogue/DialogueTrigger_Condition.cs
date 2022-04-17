@@ -28,6 +28,7 @@ public class DialogueTrigger_Condition : Interactable
             GameManager.instance.discoveredText.text = "Discovered: Aggression!";
             GameObject discoveredCardUI = selectDiscoveredImage(entry);
 
+            AudioManager.instance.Play("Ding");
             discoveredCardUI.SetActive(true);
             GameManager.instance.discoveredUI.SetActive(true);
             GameManager.instance.InventoryUI.SetActive(false);

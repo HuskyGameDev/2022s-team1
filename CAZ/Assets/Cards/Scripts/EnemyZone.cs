@@ -44,6 +44,7 @@ public class EnemyZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
 
         if (drag != null && drag.placed && drag.owner == Draggable.Owner.PLAYER && manager.state == BattleState.PLAYERTRUN && cursorController.cursorState == CursorState.ATTACK && manager.enemyField.Count == 0)
         {
+            AudioManager.instance.Play("Card_Attack");
             //this.gameObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false);
             this.gameObject.GetComponent<Image>().color = zoneColor;
             manager.enemy.TakeDamage(drag.gameObject.GetComponent<CardDisplay>().card.attack);

@@ -58,6 +58,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
         else if (owner == Owner.PLAYER && placed && this.gameObject.GetComponent<CardDisplay>().card.summonState == SummonState.BattleReady && this.gameObject.GetComponent<CardDisplay>().card.turnAction == TurnAction.NotUsed && manager.state == BattleState.PLAYERTRUN && manager.activeEffect == ActiveEffect.NONE && !zoomed)
         {
+            AudioManager.instance.Play("Card_Sword");
             //change cursor to attack
             cursorController.cursorImage.sprite = cursorController.attackCursor;
             cursorController.cursorState = CursorState.ATTACK;

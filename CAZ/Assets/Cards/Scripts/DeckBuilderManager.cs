@@ -27,6 +27,7 @@ public class DeckBuilderManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.instance.Play("Pause_Theme");
         deckCapacity = GameManager.instance.deckMax;
         deck = FindObjectOfType<Deck>();
         dex = FindObjectOfType<CardDex>();

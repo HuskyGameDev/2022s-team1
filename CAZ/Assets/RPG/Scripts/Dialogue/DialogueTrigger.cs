@@ -8,6 +8,7 @@ public class DialogueTrigger : Interactable
 
     public override void Interact()
     {
+        AudioManager.instance.Play("NPC_Interact");
         DialogueManager.instance.EnqueueDialogue(DB);
     }
 }

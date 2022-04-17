@@ -29,6 +29,7 @@ public class DeckBuilderButtons : MonoBehaviour
         CardDex.CardEntry entry = deckBuilderManager.dex.cardDex.Find((x) => x.card.name == GetComponentInParent<CardDisplay>().card.name);
         if (entry.card.type == Types.Creature && entry.isDiscovered && entry.countInDeck < deckBuilderManager.creatureCardMax && deck.deck.Count < deckBuilderManager.deckCapacity)
         {
+            AudioManager.instance.Play("Card_Select");
             InstanceCard = GetComponentInParent<CardDisplay>().card; // set Instance Card - get card info to add to deck
             deck.deck.Add(InstanceCard); // Add card to deck list
             deckBuilderManager.setDeckCapText();
@@ -38,6 +39,7 @@ public class DeckBuilderButtons : MonoBehaviour
         }
         else if (entry.card.type == Types.Boss && entry.isDiscovered && entry.countInDeck < deckBuilderManager.bossCardMax && deck.deck.Count < deckBuilderManager.deckCapacity)
         {
+            AudioManager.instance.Play("Card_Select");
             InstanceCard = GetComponentInParent<CardDisplay>().card; // set Instance Card - get card info to add to deck
             deck.deck.Add(InstanceCard); // Add card to deck list
             deckBuilderManager.setDeckCapText();
@@ -47,6 +49,7 @@ public class DeckBuilderButtons : MonoBehaviour
         }
         else if (entry.card.type == Types.Effect && entry.isDiscovered && entry.countInDeck < deckBuilderManager.effectCardMax && deck.deck.Count < deckBuilderManager.deckCapacity)
         {
+            AudioManager.instance.Play("Card_Select");
             InstanceCard = GetComponentInParent<CardDisplay>().card; // set Instance Card - get card info to add to deck
             deck.deck.Add(InstanceCard); // Add card to deck list
             deckBuilderManager.setDeckCapText();
@@ -55,6 +58,7 @@ public class DeckBuilderButtons : MonoBehaviour
             deckBuilderManager.deckScrollView.verticalNormalizedPosition = 1; // adjust scroll view to accomodate new entry
         }
         else {
+            AudioManager.instance.Play("Card_Add_Fail");
             Debug.Log("Failed to add, card not discovered or deck at cap");
         }
     }
@@ -76,6 +80,7 @@ public class DeckBuilderButtons : MonoBehaviour
      * Removes card from deck list, calls function to remove card visually to deck builder 
      */
     public void RemoveCard() {
+        AudioManager.instance.Play("Card_Select");
         CardDex.CardEntry entry = deckBuilderManager.dex.cardDex.Find((x) => x.card.name == InstanceCard.name);
         deck.deck.Remove(InstanceCard); // Remove card from deck list
         entry.countInDeck--;
@@ -92,10 +97,31 @@ public class DeckBuilderButtons : MonoBehaviour
     }
 
     public void DoneButton() {
+        AudioManager.instance.Play("NPC_Interact");
         foreach (Transform child in GameManager.instance.transform)
         {
             child.gameObject.SetActive(true);
         }
-        SceneManager.LoadScene("Village");
+        AudioManager.instance.Stop("Pause_Theme");
+        AudioManager.instance.UnPause(AudioManager.instance.overworldSong);
+        GameManager.instance.discoveredUI.SetActive(false);
+
+        switch (GameManager.instance.currentLevel) {
+            case GameManager.Level.VILLAGE:
+                SceneManager.LoadScene("Village");
+                break;
+            case GameManager.Level.FOREST:
+                SceneManager.LoadScene("Forest");
+                break;
+            case GameManager.Level.CAVE:
+                SceneManager.LoadScene("Cave");
+                break;
+            case GameManager.Level.CASTLE_EXT:
+                SceneManager.LoadScene("CastleExterior");
+                break;
+            case GameManager.Level.CASTLE_INT:
+                SceneManager.LoadScene("CastleInterior");
+                break;
+        }
     }
 }

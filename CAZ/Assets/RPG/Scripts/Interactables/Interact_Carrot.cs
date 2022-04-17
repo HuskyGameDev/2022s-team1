@@ -19,6 +19,7 @@ public class Interact_Carrot : Interactable
     public override void Interact()
     {
         manager.holding = "Carrot";
+        AudioManager.instance.Play("Item_Interact");
         kid.DB = kidConvoCarrotFound;
         manager.holdingImage.sprite = carrotSprite;
         manager.InventoryUI.SetActive(true);

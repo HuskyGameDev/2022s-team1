@@ -76,9 +76,13 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeText(DialogueBase.Info info)
     {
         dialogueText.text = "";
+        int audioBuff = 0;
         foreach (char c in info.text.ToCharArray())
         {
+            audioBuff++;
             yield return new WaitForSeconds(delay);
+            if (audioBuff % 2 == 0 && c != ' ')
+                AudioManager.instance.Play("NPC_Dialogue");
             dialogueText.text += c;
             yield return null;
         }

@@ -82,6 +82,7 @@ public class AI_Standard : MonoBehaviour
         while(hand.Count < 3) {
             Card drawnCard = Instantiate(deck[deck.Count - 1]);
             hand.Add(drawnCard);
+            AudioManager.instance.Play("Card_Select");
             manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
             Debug.Log("Enemy Draws " + drawnCard.name);
             deck.RemoveAt(deck.Count - 1);
@@ -134,6 +135,7 @@ public class AI_Standard : MonoBehaviour
 
     void PlayCard(Card card) {
         Debug.Log("Playing " + card.name + " onto the field.");
+        AudioManager.instance.Play("Card_Select");
         hand.Remove(card);
         manager.handNum.text = hand.Count.ToString(); // relay visual info on hands in card;
         manager.enemyField.Add(card);
@@ -537,6 +539,7 @@ public class AI_Standard : MonoBehaviour
 
         if (aggressor.attack > receiver.defense)
         { // double check attack/defense values
+            AudioManager.instance.Play("Card_Attack");
             manager.playerField.Remove(receiver); // remove from field
             receiver.cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false);
             Debug.Log(aggressor.name + " destroys " + receiver.name);
@@ -553,6 +556,7 @@ public class AI_Standard : MonoBehaviour
         }
         else if (aggressor.attack == receiver.defense) {
             // Destroy defending card
+            AudioManager.instance.Play("Card_Attack");
             manager.playerField.Remove(receiver); // remove from field
             receiver.cardObject.GetComponent<CardDisplay>().attackSelectOverlay.SetActive(false);
             Debug.Log(aggressor.name + " destroys " + receiver.name);
@@ -577,7 +581,10 @@ public class AI_Standard : MonoBehaviour
     }
 
     public void DestroyMarkedCards() {
-
+        if (markedCards.Count > 0) {
+            AudioManager.instance.Play("Card_Attack");
+        }
+        
         for (int i =0; i < markedCards.Count; i++) {
             manager.enemyField.Remove(markedCards[i]);
             manager.RemoveLingeringEffects(markedCards[i]);

@@ -54,6 +54,7 @@ public class PlayerUnit : MonoBehaviour
             Card drawnCard = Instantiate(deck[deck.Count - 1]);
             hand.Add(drawnCard);
             handclone.Add(drawnCard);
+            AudioManager.instance.Play("Card_Select");
             RenderCard(drawnCard);
             Debug.Log("Player Draws " + drawnCard.name);
             deck.RemoveAt(deck.Count - 1);
@@ -96,6 +97,7 @@ public class PlayerUnit : MonoBehaviour
         { // double check attack/defense values
             manager.enemyField.Remove(enemyCard); // remove from field
             Debug.Log(playerCard.name + " destroys " + enemyCard.name);
+            AudioManager.instance.Play("Card_Attack");
 
             manager.RemoveLingeringEffects(enemyCard);
             manager.enemyAvailableFieldSlots++;
@@ -114,6 +116,7 @@ public class PlayerUnit : MonoBehaviour
             manager.enemyField.Remove(enemyCard); // remove from field
             Debug.Log(playerCard.name + " destroys " + enemyCard.name);
             EraseCard(enemyCard);
+            AudioManager.instance.Play("Card_Attack");
 
             manager.RemoveLingeringEffects(enemyCard);
             manager.enemyAvailableFieldSlots++;
@@ -128,13 +131,17 @@ public class PlayerUnit : MonoBehaviour
             Debug.Log(playerCard.name + " was wounded in the attack!");
         }
         else if (playerCard.attack < enemyCard.defense) {
+            AudioManager.instance.Play("Card_Miss");
             Debug.Log(playerCard.name + " attacked and missed " + enemyCard.name);
         }
     }
 
     public void DestroyMarkedCards()
     {
-
+        if (markedCards.Count > 0)
+        {
+            AudioManager.instance.Play("Card_Attack");
+        }
         for (int i = 0; i < markedCards.Count; i++)
         {
             manager.playerField.Remove(markedCards[i]);
@@ -165,6 +172,7 @@ public class PlayerUnit : MonoBehaviour
     }
 
     public void EndTurn() {
+        AudioManager.instance.Play("NPC_Interact");
         manager.indicator.GetComponentInChildren<Text>().text = "Ending Turn";
         manager.indicator.interactable = false;
 

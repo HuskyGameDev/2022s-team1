@@ -36,6 +36,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        //AudioManager.instance.Play("Main_Theme");
+        Debug.Log("Playing theme");
+        AudioManager.instance.Play("Main_Theme");
+        AudioManager.instance.overworldSong = "Main_Theme";
+    }
+
     private void Update()
     {
 
@@ -50,6 +58,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void loadDeckBuilder() {
+        AudioManager.instance.Play("NPC_Interact");
+        AudioManager.instance.Pause(AudioManager.instance.overworldSong);
         SceneManager.LoadScene("DeckBuilder");
     }
 }
