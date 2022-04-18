@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Soldier
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Soldier
+    text: Hey! You! Thank the gods! I haven't seen another person in ages!
+  - name: Soldier
+    text: I ventured into the forest and got turned around. Everything looks the
+      same out here.
+  - name: Soldier
+    text: I even lost my sword...
+  - name: Soldier
+    text: How I'd love to slash through the brush to get back to town.
+  - name: Soldier
+    text: Hey! I've got an idea!
+  - name: Soldier
+    text: If you can find my sword, I'll trade you my shield.
+  - name: Soldier
+    text: This armor protects me well enough. Please bring me back my sword if you
+      find it.

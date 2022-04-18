@@ -16,3 +16,9 @@ MonoBehaviour:
   - name: Merchant
     text: "Excuse me, but my trade partner decided to venture out to the wilds. 
       If you see him, could you make sure he\u2019s okay?"
+  - name: Merchant
+    text: Oh!
+  - name: Merchant
+    text: And be sure to give him one of these...
+  - name: Merchant
+    text: Gods know he probably need it.

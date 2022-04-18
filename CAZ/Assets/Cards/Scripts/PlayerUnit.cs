@@ -20,6 +20,11 @@ public class PlayerUnit : MonoBehaviour
         maxHealth = health;
     }
 
+    public void SetHealth(int hp) {
+        health = hp;
+        maxHealth = hp;
+    }
+
     public IEnumerator PlayTurn() {
         //Draw cards from deck until hand is full - start of turn, automatic
         yield return StartCoroutine(DrawCards());

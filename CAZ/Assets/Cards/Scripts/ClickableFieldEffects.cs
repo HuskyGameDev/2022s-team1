@@ -78,7 +78,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
         else if (manager.activeEffect == ActiveEffect.AGGRESSION && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.aggro && manager.state == BattleState.PLAYERTRUN)
         {
             Card aggroCard = Instantiate(clickedCard.card); // create copy of clicked card
-            Card cardInField = manager.playerField.Find((c) => c.name == aggroCard.name); // find aggro card in player field list
+            Card cardInField = manager.playerField.Find((c) => c.name == aggroCard.name && c.fieldIndex == aggroCard.fieldIndex); // find aggro card in player field list
             cardInField.attack += manager.effects.aggressionAmount; // increase attack
             cardInField.cardObject.GetComponent<CardDisplay>().Display(); // update card visual on field
             cardInField.aggro = true; // mark as aggro
@@ -99,7 +99,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
         else if (manager.activeEffect == ActiveEffect.SHIELD && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && !this.GetComponent<CardDisplay>().card.shield && manager.state == BattleState.PLAYERTRUN)
         {
             Card shieldCard = Instantiate(clickedCard.card); // create copy of clicked card
-            Card cardInField = manager.playerField.Find((c) => c.name == shieldCard.name); // find shielded card in player field list
+            Card cardInField = manager.playerField.Find((c) => c.name == shieldCard.name && c.fieldIndex == shieldCard.fieldIndex); // find shielded card in player field list
             cardInField.defense += manager.effects.shieldAmount; // increase defensde
             cardInField.cardObject.GetComponent<CardDisplay>().Display(); // update card visual on field
             cardInField.shield = true; // mark as shielded

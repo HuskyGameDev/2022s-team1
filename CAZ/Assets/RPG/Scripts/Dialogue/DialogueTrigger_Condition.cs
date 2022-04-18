@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueTrigger_Condition : Interactable
 {
@@ -18,42 +19,29 @@ public class DialogueTrigger_Condition : Interactable
         StartCoroutine(CheckCondition());
     }
 
-    public IEnumerator CheckCondition() {
-        if (GameManager.instance.holding == "Carrot") {
+    public virtual IEnumerator CheckCondition() {
+        yield return new WaitForEndOfFrame();
+        /*
+        if (GameManager.instance.holding == "Carrot")
+        {
             Debug.Log("Completed Carrot Dioalogue");
-
-            CardDex.CardEntry entry = GameManager.instance.GetComponent<CardDex>().cardDex.Find((x) => x.card.name == "Aggression");
-            entry.isDiscovered = true;
-
-            GameManager.instance.discoveredText.text = "Discovered: Aggression!";
-            GameObject discoveredCardUI = selectDiscoveredImage(entry);
-
-            AudioManager.instance.Play("Ding");
-            discoveredCardUI.SetActive(true);
-            GameManager.instance.discoveredUI.SetActive(true);
             GameManager.instance.InventoryUI.SetActive(false);
             GameManager.instance.holding = null;
+            StartCoroutine(GameManager.instance.DiscoverCard("Aggression"));
+        }
+        else if (GameManager.instance.holding == "DogTreat") {
+            Debug.Log("Completed Dodogger Dioalogue");
+            GameManager.instance.InventoryUI.SetActive(false);
+            GameManager.instance.holding = null;
+            StartCoroutine(GameManager.instance.DiscoverCard("Dodogger"));
+        }
 
-            yield return new WaitForSeconds(3f);
-
-            discoveredCardUI.SetActive(false);
-            GameManager.instance.discoveredUI.SetActive(false);
+        if (this.gameObject.tag == "DogTreat") {
+            AudioManager.instance.Play("Item_Interact");
+            GameManager.instance.holding = "DogTreat";
+            GameManager.instance.holdingImage.sprite = this.gameObject.GetComponent<Image>().sprite;
+            GameManager.instance.InventoryUI.SetActive(true);
         }
-    }
-
-    public GameObject selectDiscoveredImage(CardDex.CardEntry entry) {
-        if (entry.card.type == Types.Creature)
-        {
-            return GameManager.instance.discoveredCreature;
-        }
-        else if (entry.card.type == Types.Boss)
-        {
-            return GameManager.instance.discoveredBoss;
-        }
-        else if (entry.card.type == Types.Effect)
-        {
-            return GameManager.instance.discoveredEffect;
-        }
-        return GameManager.instance.discoveredCreature;
+        */
     }
 }

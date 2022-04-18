@@ -14,6 +14,7 @@ public class CardEffects : MonoBehaviour
         switch (flag)
         {
             case "Enemy":
+                AudioManager.instance.Play("Card_Effect");
                 manager.activeEffect = ActiveEffect.HEALING_POTION;
                 manager.enemy.health = manager.enemy.health + healAmount; // heal
 
@@ -46,6 +47,7 @@ public class CardEffects : MonoBehaviour
         switch (flag)
         {
             case "Enemy":
+                AudioManager.instance.Play("Card_Effect");
                 manager.activeEffect = ActiveEffect.SLEIGHT_OF_HAND;
                 Debug.Log("Enemy used a sleight of hand!");
                 StartCoroutine(manager.enemy.DrawCards());
@@ -63,6 +65,7 @@ public class CardEffects : MonoBehaviour
         switch (flag)
         {
             case "Enemy":
+                AudioManager.instance.Play("Card_Effect");
                 manager.activeEffect = ActiveEffect.SACRIFICE;
                 Card targetCard;
                 switch (AINum)
@@ -146,6 +149,7 @@ public class CardEffects : MonoBehaviour
         switch (flag)
         {
             case "Enemy":
+                AudioManager.instance.Play("Card_Effect");
                 manager.activeEffect = ActiveEffect.SHADOW_STRIKE;
                 Card targetCard;
                 switch (AINum)
@@ -227,6 +231,7 @@ public class CardEffects : MonoBehaviour
         switch (flag)
         {
             case "Enemy":
+                AudioManager.instance.Play("Card_Effect");
                 manager.activeEffect = ActiveEffect.AGGRESSION;
                 Card targetCard;
                 switch (AINum)
@@ -304,6 +309,7 @@ public class CardEffects : MonoBehaviour
         switch (flag)
         {
             case "Enemy":
+                AudioManager.instance.Play("Card_Effect");
                 manager.activeEffect = ActiveEffect.SHIELD;
                 Card targetCard;
                 switch (AINum)
@@ -382,6 +388,7 @@ public class CardEffects : MonoBehaviour
         switch (flag)
         {
             case "Enemy":
+                AudioManager.instance.Play("Card_Effect");
                 manager.activeEffect = ActiveEffect.REVIVE;
                 Card targetCard;
                 switch (AINum)

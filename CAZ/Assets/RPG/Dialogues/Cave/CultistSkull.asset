@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: CultistSkull
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Cultist
+    text: heeyyy you...
+  - name: Cultist
+    text: looks like you got a niceee skuulll there
+  - name: 
+    text: The Cultist lunges forward, taking the skull from your hands.
+  - name: Cultist
+    text: thaaankssss
+  - name: 
+    text: In the skulls place, there's a small knife...

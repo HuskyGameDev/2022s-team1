@@ -23,7 +23,7 @@ MonoBehaviour:
     who wander in of a great disturbance. '
   effect: None
   art: {fileID: 21300000, guid: 8d0e156e68c301e4b8be551a73e9b4d7, type: 3}
-  attack: 12
+  attack: 13
   defense: 10
   prefab: {fileID: 2473742285920798735, guid: 5c1d779799ea2cd46869302ed24c1304, type: 3}
   cardObject: {fileID: 0}

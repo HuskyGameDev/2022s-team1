@@ -37,6 +37,11 @@ public class AI_Standard : MonoBehaviour
     {
         maxHealth = health;
     }
+    public void SetHealth(int hp)
+    {
+        health = hp;
+        maxHealth = hp;
+    }
 
     public IEnumerator PlayTurn() {
         PrintDeck();

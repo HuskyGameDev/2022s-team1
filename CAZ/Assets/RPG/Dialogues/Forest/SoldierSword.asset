@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: SoldierSword
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Solider
+    text: Yes! You found my sword!
+  - name: Solider
+    text: I'll trade you my shield for it!
+  - name: Solider
+    text: Hahaaaa! Yes! Now I'll try to find my way back to town.
+  - name: Solider
+    text: Thank you!

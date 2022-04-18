@@ -13,17 +13,21 @@ MonoBehaviour:
   m_Name: Zekeke
   m_EditorClassIdentifier: 
   name: Zekeke
-  description: A greenish colored critter that enjoys dark crannies and chilling
-    in buckets of water.  It often comes out at night to run about the town with
-    the ends of its antenna and tails glowing a bright yellow.  Originally its glowing
-    tail orbs were used to scare off other creatures, but people of the town often
-    use them to help find thier way back into town if it is dark outside.  Usually
+  description: Enjoys dark crannies and chilling in buckets of water, coming out
+    at night to run about the town with the ends of its tail orbs glowing a bright
+    yellow.  Originally the glow was used to scare off other creatures, but people
+    from town often use them to help find thier way back into town at night.  Usually
     curious, it is very common for one to be watching from afar, following a person's
-    movements as it attempts to learn something new.
+    movements as it attempts to learn something new.Enjoys dark crannies and chilling
+    in buckets of water, coming out at night to run about the town with the ends
+    of its tail orbs glowing a bright yellow.  Originally the glow was used to scare
+    off other creatures, but people from town often use them to help find thier way
+    back into town at night.  Usually curious, it is very common for one to be watching
+    from afar, following a person's movements as it attempts to learn something new.
   effect: N/A
   art: {fileID: 21300000, guid: 295b0381c15d7ef4480f62b7ab73610a, type: 3}
-  attack: 5
-  defense: 5
+  attack: 10
+  defense: 10
   prefab: {fileID: 2473742285920798735, guid: c7cbc3b585063f04a80444622c4a5011, type: 3}
   cardObject: {fileID: 0}
   type: 2

@@ -401,11 +401,11 @@ public class EncounterManager : MonoBehaviour
                     SetPlayerStartPosition(GameManager.Level.VILLAGE);
 
                     AudioManager.instance.Stop("Player_Win");
-                    AudioManager.instance.Play("Forest_Overworld");
-                    AudioManager.instance.overworldSong = "Forest_Overworld";
 
                     SetGameManagerChildrenVisibility();
+
                     GameManager.instance.currentLevel = GameManager.Level.FOREST;
+
                     SceneManager.LoadScene("Forest");
                     break;
                 case GameManager.Level.FOREST:
@@ -416,7 +416,9 @@ public class EncounterManager : MonoBehaviour
                     AudioManager.instance.overworldSong = "Cave_Overworld";
 
                     SetGameManagerChildrenVisibility();
+
                     GameManager.instance.currentLevel = GameManager.Level.CAVE;
+
                     SceneManager.LoadScene("Cave");
                     break;
                 case GameManager.Level.CAVE:
@@ -627,6 +629,8 @@ public class EncounterManager : MonoBehaviour
         {
             guideName = "Villager?";
             VillageBackground.gameObject.SetActive(true);
+            player.SetHealth(GameManager.instance.battleHp);
+            enemy.SetHealth(GameManager.instance.battleHp);
 
             if (!gameManager.bossBattle)
             {
@@ -641,6 +645,8 @@ public class EncounterManager : MonoBehaviour
         {
             guideName = "The Huntsman";
             ForestBackground.gameObject.SetActive(true);
+            player.SetHealth(GameManager.instance.battleHp);
+            enemy.SetHealth(GameManager.instance.battleHp);
 
             if (!gameManager.bossBattle)
             {
@@ -655,6 +661,8 @@ public class EncounterManager : MonoBehaviour
         {
             guideName = "The Scared Merchant";
             CaveBackground.gameObject.SetActive(true);
+            player.SetHealth(GameManager.instance.battleHp);
+            enemy.SetHealth(GameManager.instance.battleHp);
 
             if (!gameManager.bossBattle)
             {
@@ -669,6 +677,8 @@ public class EncounterManager : MonoBehaviour
         {
             guideName = "The Undead Butler";
             CastleIntBackground.gameObject.SetActive(true);
+            player.SetHealth(GameManager.instance.battleHp);
+            enemy.SetHealth(GameManager.instance.battleHp);
 
             if (!gameManager.bossBattle)
             {
@@ -683,6 +693,8 @@ public class EncounterManager : MonoBehaviour
         {
             guideName = "A Lost Zoologist";
             CastleExtBackground.gameObject.SetActive(true);
+            player.SetHealth(GameManager.instance.battleHp);
+            enemy.SetHealth(GameManager.instance.battleHp);
 
             if (!gameManager.bossBattle)
             {

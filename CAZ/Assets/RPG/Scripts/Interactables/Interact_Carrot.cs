@@ -7,7 +7,7 @@ public class Interact_Carrot : Interactable
 {
     public GameManager manager;
     public DialogueBase kidConvoCarrotFound;
-    public DialogueTrigger_Condition kid;
+    public Reward_Aggression kid;
     public Sprite carrotSprite;
 
     private void Start()
