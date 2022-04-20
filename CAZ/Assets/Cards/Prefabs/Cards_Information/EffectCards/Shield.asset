@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Shield
   description: Not today! Do a quick caring act towards your monster, its appreciation
-    for you growing and becomes braver within the moment.
-  effect: Raises the defense of a Friendly card by 10
+    for you is growing and becomes braver!
+  effect: Raises the defense of a Friendly card by 10, or a Friendly Boss by 15 until
+    the end of next turn
   art: {fileID: 21300000, guid: 6ef62bda20974ab458bacd396a5bae3b, type: 3}
   attack: 0
   defense: 0

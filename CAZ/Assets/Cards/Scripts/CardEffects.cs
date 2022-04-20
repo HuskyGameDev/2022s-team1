@@ -7,8 +7,11 @@ public class CardEffects : MonoBehaviour
 {
     public EncounterManager manager;
     public int  healAmount = 5;
+    public int healAmountBoss = 10;
     public int aggressionAmount = 10;
     public int shieldAmount = 10;
+    public int aggressionAmountBoss = 15;
+    public int shieldAmountBoss = 15;
 
     public void HealingPotion(string flag) {
         switch (flag)
@@ -16,7 +19,15 @@ public class CardEffects : MonoBehaviour
             case "Enemy":
                 AudioManager.instance.Play("Card_Effect");
                 manager.activeEffect = ActiveEffect.HEALING_POTION;
-                manager.enemy.health = manager.enemy.health + healAmount; // heal
+
+                if (manager.BossOnField(manager.enemyField))
+                {
+                    manager.enemy.health = manager.enemy.health + healAmountBoss; // heal - boss on field
+                }
+                else
+                {
+                    manager.enemy.health = manager.enemy.health + healAmount; // heal
+                }
 
                 if (manager.enemy.health > manager.enemy.maxHealth) // check if overhealed
                 { 
@@ -28,7 +39,14 @@ public class CardEffects : MonoBehaviour
                 manager.activeEffect = ActiveEffect.NONE; // reset active effect
                 break;
             case "Player":
-                manager.player.health = manager.player.health + healAmount; // heal
+
+                if (manager.BossOnField(manager.playerField))
+                {
+                    manager.player.health = manager.player.health + healAmountBoss; // heal
+                }
+                else {
+                    manager.player.health = manager.player.health + healAmount; // heal
+                }
 
                 if (manager.player.health > manager.player.maxHealth) // check if overhealed
                 {
@@ -141,6 +159,7 @@ public class CardEffects : MonoBehaviour
         manager.enemy.discarded.Add(targetCard);
         manager.enemyDiscardController.addCardToContent(targetCard);
         Debug.Log(targetCard.name + " was sent to the discard pile");
+        AudioManager.instance.Play("Card_Attack");
 
     }
 
@@ -223,6 +242,7 @@ public class CardEffects : MonoBehaviour
         manager.playerDiscardController.addCardToContent(targetCard);
         manager.enemy.EraseCard(targetCard);
         Debug.Log("Enemy Struck " + targetCard.name + " from the shadows!");
+        AudioManager.instance.Play("Card_Attack");
     }
     
 
@@ -298,7 +318,15 @@ public class CardEffects : MonoBehaviour
             targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(true);
         }
 
-        targetCard.attack += aggressionAmount;
+        bool isBoss = IsBoss(targetCard);
+
+        if (!isBoss)
+        {
+            targetCard.attack += aggressionAmount;
+        }
+        else if (isBoss) {
+            targetCard.attack += aggressionAmountBoss;
+        }
         targetCard.aggro = true;
         targetCard.cardObject.GetComponent<CardDisplay>().Display();
         Debug.Log("Enemy's " + targetCard.name + " becomes aggressive!");
@@ -377,7 +405,14 @@ public class CardEffects : MonoBehaviour
             targetCard.cardObject.GetComponent<CardDisplay>().summonSickOverlay.SetActive(true);
         }
 
-        targetCard.defense += shieldAmount;
+        bool isBoss = IsBoss(targetCard);
+        if (!isBoss)
+        {
+            targetCard.defense += shieldAmount;
+        }
+        else if (isBoss) {
+            targetCard.defense += shieldAmountBoss;
+        }
         targetCard.shield = true;
         targetCard.cardObject.GetComponent<CardDisplay>().Display();
         Debug.Log("Enemy's " + targetCard.name + " gets shielded!");
@@ -693,5 +728,12 @@ public class CardEffects : MonoBehaviour
         }
 
         return field[index];
+    }
+
+    public bool IsBoss(Card card) {
+        if (card.type == Types.Boss) {
+            return true;
+        }
+        return false;
     }
 }

@@ -79,7 +79,15 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
         {
             Card aggroCard = Instantiate(clickedCard.card); // create copy of clicked card
             Card cardInField = manager.playerField.Find((c) => c.name == aggroCard.name && c.fieldIndex == aggroCard.fieldIndex); // find aggro card in player field list
-            cardInField.attack += manager.effects.aggressionAmount; // increase attack
+
+            if (cardInField.type == Types.Creature) {
+                cardInField.attack += manager.effects.aggressionAmount; // increase attack
+            }
+            else if (cardInField.type == Types.Boss)
+            {
+                cardInField.attack += manager.effects.aggressionAmountBoss; // increase attack
+            }
+
             cardInField.cardObject.GetComponent<CardDisplay>().Display(); // update card visual on field
             cardInField.aggro = true; // mark as aggro
             Debug.Log("You taunted " + aggroCard.name + "! They are now angry!");
@@ -100,7 +108,16 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
         {
             Card shieldCard = Instantiate(clickedCard.card); // create copy of clicked card
             Card cardInField = manager.playerField.Find((c) => c.name == shieldCard.name && c.fieldIndex == shieldCard.fieldIndex); // find shielded card in player field list
-            cardInField.defense += manager.effects.shieldAmount; // increase defensde
+
+            if (cardInField.type == Types.Creature)
+            {
+                cardInField.defense += manager.effects.shieldAmount; // increase defense
+            }
+            else if (cardInField.type == Types.Boss)
+            {
+                cardInField.defense += manager.effects.shieldAmountBoss; // increase defense
+            }
+
             cardInField.cardObject.GetComponent<CardDisplay>().Display(); // update card visual on field
             cardInField.shield = true; // mark as shielded
             Debug.Log("You shielded " + shieldCard.name + "! They are now more tough!");

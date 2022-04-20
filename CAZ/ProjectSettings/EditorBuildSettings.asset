@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/RPG/Jenna/Scenes/Menu.unity
+    guid: 31224453a3db92c4ab03156b34a8c175
+  - enabled: 1
     path: Assets/RPG/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -29,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RPG/Scenes/Castle/CastleInterior.unity
     guid: 2d94bb3385f87e0499c279085181d82c
+  - enabled: 1
+    path: Assets/RPG/Jenna/Scenes/Puzzle.unity
+    guid: fd9215a950c185545beec7a4ca7bbab9
+  - enabled: 1
+    path: Assets/RPG/Scenes/Credits.unity
+    guid: b62fbf95e58a83541ad3d7b11162dad0
   m_configObjects: {}

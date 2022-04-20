@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Reward_Dodogger : DialogueTrigger_Condition
 {
+
+    public DialogueBase dodoggerTreat;
+
+    private void Start()
+    {
+        if (GameManager.instance.holding == "DogTreat")
+        {
+            DB = dodoggerTreat;
+        }
+    }
+
     public override IEnumerator CheckCondition()
     {
         if (GameManager.instance.holding == "DogTreat")

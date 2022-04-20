@@ -16,7 +16,7 @@ MonoBehaviour:
   description: You went a little insane and decided to purge one of your cute critters,
     you monster
   effect: Destroy 1 friendly card
-  art: {fileID: 21300000, guid: 370cd4a7028930842bda8fafb3e657c0, type: 3}
+  art: {fileID: 21300000, guid: ec167a09712b7fb4f86de9cadc87bfa8, type: 3}
   attack: 0
   defense: 0
   prefab: {fileID: 2473742285920798735, guid: 417133c70acbbc54eb1136709c3f7526, type: 3}

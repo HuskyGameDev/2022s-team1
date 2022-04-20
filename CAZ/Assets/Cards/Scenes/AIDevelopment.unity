@@ -1499,8 +1499,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 0}
-  m_SizeDelta: {x: 101.43, y: 88.6}
+  m_AnchoredPosition: {x: 0.1425, y: 0}
+  m_SizeDelta: {x: 99.715, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &424449185
 MonoBehaviour:
@@ -1523,12 +1523,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1000e0c32add16548976425a23451fee, type: 3}
-    m_FontSize: 34
+    m_Font: {fileID: 12800000, guid: 38424850aa97c64438d9ef4556f605aa, type: 3}
+    m_FontSize: 56
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 49
+    m_MaxSize: 56
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2310,12 +2310,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1000e0c32add16548976425a23451fee, type: 3}
-    m_FontSize: 22
+    m_Font: {fileID: 12800000, guid: 38424850aa97c64438d9ef4556f605aa, type: 3}
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 42
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3138,7 +3138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 178.8, y: 2.6}
+  m_AnchoredPosition: {x: 187, y: 2.6}
   m_SizeDelta: {x: 172.95, y: 69.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711124987
@@ -3162,12 +3162,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1000e0c32add16548976425a23451fee, type: 3}
-    m_FontSize: 27
+    m_Font: {fileID: 12800000, guid: 38424850aa97c64438d9ef4556f605aa, type: 3}
+    m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 50
+    m_MaxSize: 54
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
@@ -3805,9 +3805,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c4e31c59e8f4386439570e8e300b2a2c, type: 2}
   - {fileID: 11400000, guid: c4e31c59e8f4386439570e8e300b2a2c, type: 2}
   - {fileID: 11400000, guid: c4e31c59e8f4386439570e8e300b2a2c, type: 2}
-  - {fileID: 11400000, guid: fa2a997a2d863b343bbbf4f829a7c8de, type: 2}
-  - {fileID: 11400000, guid: fa2a997a2d863b343bbbf4f829a7c8de, type: 2}
-  - {fileID: 11400000, guid: 219594eaf1007e34496bdd3e91114bf1, type: 2}
+  - {fileID: 11400000, guid: 692664dc308edc245893023504a85dfb, type: 2}
+  - {fileID: 11400000, guid: 692664dc308edc245893023504a85dfb, type: 2}
+  - {fileID: 11400000, guid: 4fa2234477416004db1650d8503f1ec0, type: 2}
   - {fileID: 11400000, guid: 230ae1818f5f3554eadd3d3aa81fc734, type: 2}
   - {fileID: 11400000, guid: 230ae1818f5f3554eadd3d3aa81fc734, type: 2}
   - {fileID: 11400000, guid: 230ae1818f5f3554eadd3d3aa81fc734, type: 2}
@@ -5982,8 +5982,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1000e0c32add16548976425a23451fee, type: 3}
-    m_FontSize: 22
+    m_Font: {fileID: 12800000, guid: 38424850aa97c64438d9ef4556f605aa, type: 3}
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -6424,8 +6424,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 0}
-  m_SizeDelta: {x: 101.43, y: 88.6}
+  m_AnchoredPosition: {x: 0.14251, y: 0}
+  m_SizeDelta: {x: 99.715, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1387153681
 MonoBehaviour:
@@ -6448,12 +6448,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1000e0c32add16548976425a23451fee, type: 3}
-    m_FontSize: 34
+    m_Font: {fileID: 12800000, guid: 38424850aa97c64438d9ef4556f605aa, type: 3}
+    m_FontSize: 56
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 54
+    m_MaxSize: 58
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -8192,9 +8192,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1714119090}
-  healAmount: 10
+  healAmount: 5
+  healAmountBoss: 10
   aggressionAmount: 10
   shieldAmount: 10
+  aggressionAmountBoss: 15
+  shieldAmountBoss: 15
 --- !u!1 &1723740273
 GameObject:
   m_ObjectHideFlags: 0

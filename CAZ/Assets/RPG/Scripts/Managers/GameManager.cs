@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public enum Level { VILLAGE, FOREST, CAVE, CASTLE_EXT, CASTLE_INT }
 
     public static GameManager instance;
+    public CardDex dex;
+    public Deck deck;
     public GameObject InventoryUI;
     public Image holdingImage;
     public Transform player;
@@ -22,12 +24,14 @@ public class GameManager : MonoBehaviour
     public int battleHp = 15;
     public List<GameObject> respawnPositions;
     public List<GameObject> startPositions;
+    public List<GameObject> endPositions;
     public Button DeckbuilderButton;
     public GameObject discoveredUI;
     public Text discoveredText;
     public GameObject discoveredCreature;
     public GameObject discoveredBoss;
     public GameObject discoveredEffect;
+    public GameObject pauseMenu;
 
     private void Awake()
     {
@@ -45,22 +49,36 @@ public class GameManager : MonoBehaviour
     {
         //AudioManager.instance.Play("Main_Theme");
         Debug.Log("Playing theme");
-        AudioManager.instance.Play("Main_Theme");
-        AudioManager.instance.overworldSong = "Main_Theme";
+        //AudioManager.instance.Play("Main_Theme");
+        //AudioManager.instance.overworldSong = "Main_Theme";
     }
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            foreach (Transform child in transform)
-            {
-                child.gameObject.SetActive(false);
-            }
-            SceneManager.LoadScene("AIDevelopment");
+            if(pauseMenu.activeInHierarchy)
+                pauseMenu.SetActive(false);
+            else if (!pauseMenu.activeInHierarchy)
+                pauseMenu.SetActive(true);
         }
-    }
+            /*if (Input.GetKeyDown(KeyCode.F))
+            {
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(false);
+                }
+                SceneManager.LoadScene("AIDevelopment");
+            }
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(false);
+                }
+                SceneManager.LoadScene("Puzzle");
+            }*/
+        }
 
     public void loadDeckBuilder() {
         AudioManager.instance.Play("NPC_Interact");
@@ -70,6 +88,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator DiscoverCard(string cardName)
     {
+        GameManager.instance.DeckbuilderButton.interactable = false;
         CardDex.CardEntry entry = GameManager.instance.GetComponent<CardDex>().cardDex.Find((x) => x.card.name == cardName);
         entry.isDiscovered = true;
 
@@ -87,6 +106,7 @@ public class GameManager : MonoBehaviour
 
         discoveredCardUI.SetActive(false);
         GameManager.instance.discoveredUI.SetActive(false);
+        GameManager.instance.DeckbuilderButton.interactable = true;
     }
 
     public GameObject selectDiscoveredImage(CardDex.CardEntry entry)
@@ -104,5 +124,56 @@ public class GameManager : MonoBehaviour
             return GameManager.instance.discoveredEffect;
         }
         return GameManager.instance.discoveredCreature;
+    }
+
+    /*
+    public void SaveGame()
+    {
+
+        SaveSystem.SaveGameData(GameManager.instance);
+    }
+
+    public void LoadGame()
+    {
+        SaveGameData data = SaveSystem.LoadGameData();
+
+        GameManager.instance.dex = data.dex;
+        GameManager.instance.deck = data.deck;
+        GameManager.instance.currentLevel = data.level;
+        GameManager.instance.deckMax = data.deckMax;
+        GameManager.instance.battleHp = data.battleHP;
+        GameManager.instance.discovered_forest = data.discovered_forest;
+        GameManager.instance.discovered_cave = data.discovered_cave;
+        GameManager.instance.discovered_castle = data.discovered_castle;
+
+        if (discovered_forest) {
+            SceneManager.LoadScene("Forest");
+        }
+        else if (discovered_cave)
+        {
+            SceneManager.LoadScene("Cave");
+        }
+        else if (discovered_castle)
+        {
+            SceneManager.LoadScene("CastleExterior");
+        }
+    }
+    */
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
+    }
+
+    public void MainMenu()
+    {
+        Debug.Log("Returning to main menu");
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
     }
 }

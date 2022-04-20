@@ -43,23 +43,23 @@ MonoBehaviour:
     text: And Boss.
   - name: Card Master
     text: Creature cards have an attack and defense score. You can summon them in
-      the right three slots on the field.
+      the right three zones on the field.
   - name: Card Master
     text: Once a creature is summoned, they become summon sick for the rest of the
       turn and cannot attack.
   - name: Card Master
-    text: A Creature can destroy another creature if it's attack score is greater
+    text: A creature can destroy an opponent's creature if it's attack score is greater
       than the other's defense score.
   - name: Card Master
     text: If they're equal, the attacking creature becomes wounded, and both are
       destoryed. The wounded creature is destroyed at the end of the turn.
   - name: Card Master
-    text: You can deal damage to your opponent by attacking a Creature zone directly.
+    text: You can deal damage to your opponent by attacking a Creature Zone directly.
   - name: Card Master
     text: Although, do keep in mind that you can only attack directly if your opponent
       has no creatures on the field.
   - name: Card Master
-    text: Effect cards are played in the leftmost field slot and immediatley trigger
+    text: Effect cards are played in the leftmost field zone and immediatley trigger
       their effect.
   - name: Card Master
     text: Effect cards are powerful, so I'd recommend finding as many as you can.
@@ -75,11 +75,11 @@ MonoBehaviour:
     text: But if you come across a Boss card, be sure to keep a copy of it in your
       deck.
   - name: Card Master
-    text: Oh, and you can also discard cards by dragging them into the discard slot
+    text: Oh, and you can also discard cards by dragging them into the Discard Zone
       to the left of the field.
   - name: Card Master
     text: Additionally, you can see the creatures that have been destroyed by clicking
-      either discard pile button around the discard slot.
+      either discard pile button around the Discard Zone.
   - name: Card Master
     text: You are allowed 5 copies of each Creature card, 3 copies of each Effect
       card, and 1 copy of each Boss card in your deck.
@@ -88,6 +88,9 @@ MonoBehaviour:
       their enemy run out of cards in their deck.
   - name: Card Master
     text: If you have no cards to draw on the start of your turn, it's game over.
+  - name: Card Master
+    text: Oh, and you need a deck of at least 3 cards. If you have a deck with less
+      than 3 cards when a battle starts, you lose.
   - name: Card Master
     text: Also, the closer you get to that ancient castle, the more powerful the
       cards become...

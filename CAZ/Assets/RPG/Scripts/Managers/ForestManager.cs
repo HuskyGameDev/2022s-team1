@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class ForestManager : MonoBehaviour
 {
+    public GameObject backwardsOverworldController;
+    public GameObject bossTrigger;
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.instance.bossBattle = false;
+
+        if (GameManager.instance.discovered_cave)
+        {
+            bossTrigger.SetActive(false);
+        }
+
         Debug.Log("Forest Loaded");
+        AudioManager.instance.Play("Forest_Overworld");
+        AudioManager.instance.overworldSong = "Forest_Overworld";
         if (!GameManager.instance.discovered_forest) {
             GameManager.instance.discovered_forest = true;
             GameManager.instance.deckMax = 20;
             GameManager.instance.battleHp = 25;
-            AudioManager.instance.Play("Forest_Overworld");
-            AudioManager.instance.overworldSong = "Forest_Overworld";
             StartCoroutine(DiscoverForestCards());
         }
+
     }
 
     IEnumerator DiscoverForestCards() {
+        backwardsOverworldController.SetActive(false);
 
         GameManager.instance.DeckbuilderButton.interactable = false;
         yield return StartCoroutine(GameManager.instance.DiscoverCard("Zekeke"));
@@ -27,7 +38,7 @@ public class ForestManager : MonoBehaviour
         yield return StartCoroutine(GameManager.instance.DiscoverCard("Sleight of Hand"));
         GameManager.instance.DeckbuilderButton.interactable = true;
 
-
+        backwardsOverworldController.SetActive(true);
     }
 
 }

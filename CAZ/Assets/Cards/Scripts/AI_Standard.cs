@@ -582,6 +582,7 @@ public class AI_Standard : MonoBehaviour
     }
 
     public void DamagePlayer(int damage) {
+        AudioManager.instance.Play("Card_Attack");
         manager.player.TakeDamage(damage);
     }
 

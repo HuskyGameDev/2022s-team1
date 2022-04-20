@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class CaveManager : MonoBehaviour
 {
+    public GameObject backwardsOverworldController;
+    public GameObject bossTrigger;
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.instance.bossBattle = false;
+
+        if (GameManager.instance.discovered_castle)
+        {
+            bossTrigger.SetActive(false);
+        }
+
         Debug.Log("Cave Loaded");
+        AudioManager.instance.Play("Cave_Overworld");
+        AudioManager.instance.overworldSong = "Cave_Overworld";
         if (!GameManager.instance.discovered_cave) {
             GameManager.instance.discovered_cave = true;
             GameManager.instance.deckMax = 30;
             GameManager.instance.battleHp = 30;
-            AudioManager.instance.Play("Cave_Overworld");
-            AudioManager.instance.overworldSong = "Cave_Overworld";
             StartCoroutine(DiscoverCaveCards());
         }
+
     }
 
     IEnumerator DiscoverCaveCards() {
+        backwardsOverworldController.SetActive(false);
 
         GameManager.instance.DeckbuilderButton.interactable = false;
         yield return StartCoroutine(GameManager.instance.DiscoverCard("Loomus"));
@@ -26,7 +37,7 @@ public class CaveManager : MonoBehaviour
         yield return StartCoroutine(GameManager.instance.DiscoverCard("Rorikz"));
         GameManager.instance.DeckbuilderButton.interactable = true;
 
-
+        backwardsOverworldController.SetActive(true);
     }
 
 }

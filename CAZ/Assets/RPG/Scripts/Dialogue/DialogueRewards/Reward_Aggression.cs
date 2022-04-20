@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Reward_Aggression : DialogueTrigger_Condition
 {
+
+    public DialogueBase kidConvoCarrotFound;
+
+    private void Start()
+    {
+        if (GameManager.instance.holding == "Carrot") {
+            DB = kidConvoCarrotFound;
+        }
+    }
+
     public override IEnumerator CheckCondition()
     {
         if (GameManager.instance.holding == "Carrot")

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Shadow
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Living Shadow
+    text: Howdy.
+  - name: Living Shadow
+    text: I know you must be suprised...
+  - name: Living Shadow
+    text: A shadow talkin' to you.
+  - name: Living Shadow
+    text: It's either magic, or you're going insane.
+  - name: Living Shadow
+    text: Both are more likely than you'd think.
+  - name: Living Shadow
+    text: Anyhoo...
+  - name: Living Shadow
+    text: Hey, I'm parched.
+  - name: Living Shadow
+    text: Could you get me some water?
+  - name: Living Shadow
+    text: I'd do it myself...
+  - name: Living Shadow
+    text: but I'm a shadow.
+  - name: Living Shadow
+    text: I can't really interact with anything in this place.
+  - name: Living Shadow
+    text: If you get me some water, I'll teach you something super cool...
+  - name: Living Shadow
+    text: ... something only known to those who walk in the shadows.

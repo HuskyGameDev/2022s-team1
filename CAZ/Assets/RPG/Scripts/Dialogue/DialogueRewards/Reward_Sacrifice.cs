@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Reward_Sacrifice : DialogueTrigger_Condition
 {
+
+    public DialogueBase cultistSkull;
+
+    private void Start()
+    {
+        if (GameManager.instance.holding == "Skull")
+        {
+            DB = cultistSkull;
+        }
+    }
+
     public override IEnumerator CheckCondition()
     {
         if (GameManager.instance.holding == "Skull")

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: ShadowWater
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Living Shadow
+    text: Hey! you got me some water!
+  - name: Living Shadow
+    text: Amazing!
+  - name: 
+    text: The Living Shadow attempts to drink the water.
+  - name: 
+    text: But it passes through him and splashes onto the floor.
+  - name: Living Shadow
+    text: '****! *****  ****! ********* ***** ***! *** ********!!!'
+  - name: Living Shadow
+    text: ... sorry you had to hear that.
+  - name: Living Shadow
+    text: Anyhoo, a promise is a promise.
+  - name: Living Shadow
+    text: C'mere.
+  - name: 
+    text: The Living Shadow gestures for you to look over the edge of the cliff.
+  - name: 
+    text: You look down and see nothing but darkness.
+  - name: Living Shadow
+    text: Concentrate...
+  - name: 
+    text: You focus on the darkness...
+  - name: 
+    text: ...
+  - name: 
+    text: A feeling of calmness, stillness rushes over you.
+  - name: Living Shadow
+    text: There is nothing to fear here.
+  - name: Living Shadow
+    text: Exit Light.
+  - name: Living Shadow
+    text: Enter Night.

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Ghosts
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Clyde
+    text: OooOOoOoh drats, Inky!
+  - name: Inky
+    text: What is it Clyde?
+  - name: Clyde
+    text: Hey! WhoooOoooOO's that?
+  - name: Inky
+    text: Huh? looooOoOOoks like one of them humans to me, Clyde.
+  - name: Clyde
+    text: Maybe they can help us!
+  - name: Clyde
+    text: Hey, human! We've been stuck here ever since our King got replaced by this
+      other guy!
+  - name: Inky
+    text: Yea!
+  - name: Inky
+    text: A real scary guy tooOOooOo!
+  - name: Clyde
+    text: We were goooOooOo stay with our friend, Pac. But we seemed to have lost
+      our map!
+  - name: Inky
+    text: Yea! if yoooOoooou can help us find it, we'll teach you a cool trick!

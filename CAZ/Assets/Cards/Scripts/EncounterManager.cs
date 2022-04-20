@@ -78,7 +78,7 @@ public class EncounterManager : MonoBehaviour
         SetPlayerDeck();
         SceneSetUp();
 
-        if (player.deck.Count == 0) {
+        if (player.deck.Count < 3) {
             PlayerLose();
         }
 
@@ -211,8 +211,16 @@ public class EncounterManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         //Determine who goes first
-        StartCoroutine(PlayerTurn());
-        //EnemyTurn();
+        int coinFlip = Random.Range(0, 4);
+        Debug.Log("Coin Flip = " + coinFlip);
+        if (coinFlip == 0)
+        {
+            EnemyTurn();
+        }
+        else {
+            StartCoroutine(PlayerTurn());
+        }
+
     }
 
     public void EnemyTurn() {
@@ -221,8 +229,14 @@ public class EncounterManager : MonoBehaviour
 
         // check if any cards are aggro in player field, and make them not aggro
         foreach (Card c in playerField) {
-            if (c.aggro) {
+            if (c.aggro && c.type == Types.Creature) {
                 c.attack -= effects.aggressionAmount;
+                c.aggro = false;
+                c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
+            }
+            else if (c.aggro && c.type == Types.Boss)
+            {
+                c.attack -= effects.aggressionAmountBoss;
                 c.aggro = false;
                 c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
             }
@@ -230,9 +244,15 @@ public class EncounterManager : MonoBehaviour
         // check if any cards are shielded in enemy field, and make them not shielded
         foreach (Card c in enemyField)
         {
-            if (c.shield)
+            if (c.shield && c.type == Types.Creature)
             {
                 c.defense -= effects.shieldAmount;
+                c.shield = false;
+                c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
+            }
+            else if (c.shield && c.type == Types.Boss)
+            {
+                c.defense -= effects.shieldAmountBoss;
                 c.shield = false;
                 c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
             }
@@ -250,9 +270,15 @@ public class EncounterManager : MonoBehaviour
         // check if any cards are aggro in enemy field, and make them not aggro
         foreach (Card c in enemyField)
         {
-            if (c.aggro)
+            if (c.aggro && c.type == Types.Creature)
             {
                 c.attack -= effects.aggressionAmount;
+                c.aggro = false;
+                c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
+            }
+            else if (c.aggro && c.type == Types.Boss)
+            {
+                c.attack -= effects.aggressionAmountBoss;
                 c.aggro = false;
                 c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
             }
@@ -260,9 +286,15 @@ public class EncounterManager : MonoBehaviour
         // check if any cards are shielded in player field, and make them not shielded
         foreach (Card c in playerField)
         {
-            if (c.shield)
+            if (c.shield && c.type == Types.Creature)
             {
                 c.defense -= effects.shieldAmount;
+                c.shield = false;
+                c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
+            }
+            else if (c.shield && c.type == Types.Boss)
+            {
+                c.defense -= effects.shieldAmountBoss;
                 c.shield = false;
                 c.cardObject.GetComponent<CardDisplay>().Display(); // visual update
             }
@@ -281,17 +313,39 @@ public class EncounterManager : MonoBehaviour
     public void RemoveLingeringEffects(Card card)
     {
         //check if clicked card is aggro, if so deactivate aggro
-        if (card.aggro)
+        if (card.aggro && card.type == Types.Creature)
         {
             card.attack -= effects.aggressionAmount;
             card.aggro = false;
         }
+        else if (card.aggro && card.type == Types.Boss)
+        {
+            card.attack -= effects.aggressionAmountBoss;
+            card.aggro = false;
+        }
         //check if clicked card is shielded, if so deactivate shield
-        if (card.shield)
+        if (card.shield && card.type == Types.Creature)
         {
             card.defense -= effects.shieldAmount;
             card.shield = false;
         }
+        else if (card.shield && card.type == Types.Boss)
+        {
+            card.defense -= effects.shieldAmountBoss;
+            card.shield = false;
+        }
+    }
+
+    public bool BossOnField(List<Card> field)
+    {
+        foreach (Card c in field)
+        {
+            if (c.type == Types.Boss)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void PlayerWin() {
@@ -412,8 +466,7 @@ public class EncounterManager : MonoBehaviour
                     SetPlayerStartPosition(GameManager.Level.FOREST);
 
                     AudioManager.instance.Stop("Player_Win");
-                    AudioManager.instance.Play("Cave_Overworld");
-                    AudioManager.instance.overworldSong = "Cave_Overworld";
+
 
                     SetGameManagerChildrenVisibility();
 
@@ -425,8 +478,7 @@ public class EncounterManager : MonoBehaviour
                     SetPlayerStartPosition(GameManager.Level.CAVE);
 
                     AudioManager.instance.Stop("Player_Win");
-                    AudioManager.instance.Play("Castle_EXT_Overworld");
-                    AudioManager.instance.overworldSong = "Castle_EXT_Overworld";
+
 
                     SetGameManagerChildrenVisibility();
                     GameManager.instance.currentLevel = GameManager.Level.CASTLE_EXT;
@@ -436,8 +488,7 @@ public class EncounterManager : MonoBehaviour
                     SetPlayerStartPosition(GameManager.Level.CASTLE_EXT);
 
                     AudioManager.instance.Stop("Player_Win");
-                    AudioManager.instance.Play("Castle_INT_Overworld");
-                    AudioManager.instance.overworldSong = "Castle_INT_Overworld";
+
 
                     SetGameManagerChildrenVisibility();
                     GameManager.instance.currentLevel = GameManager.Level.CASTLE_INT;
@@ -446,8 +497,7 @@ public class EncounterManager : MonoBehaviour
                 case GameManager.Level.CASTLE_INT:
 
                     AudioManager.instance.Stop("Player_Win");
-                    AudioManager.instance.Play("Castle_INT_Overworld");
-                    AudioManager.instance.overworldSong = "Castle_INT_Overworld";
+
 
                     SetGameManagerChildrenVisibility();
                     SceneManager.LoadScene("Credits");
@@ -548,12 +598,12 @@ public class EncounterManager : MonoBehaviour
             case GameManager.Level.CASTLE_EXT:
                 SetPlayerRespawnPosition(GameManager.Level.CASTLE_EXT);
                 SetGameManagerChildrenVisibility();
-                SceneManager.LoadScene("Castle Exterior");
+                SceneManager.LoadScene("CastleExterior");
                 break;
             case GameManager.Level.CASTLE_INT:
                 SetPlayerRespawnPosition(GameManager.Level.CASTLE_INT);
                 SetGameManagerChildrenVisibility();
-                SceneManager.LoadScene("Castle Interior");
+                SceneManager.LoadScene("CastleInterior");
                 break;
         }
     }
@@ -600,15 +650,15 @@ public class EncounterManager : MonoBehaviour
                 Debug.Log("Player position set");
                 break;
             case GameManager.Level.FOREST:
-                Transform caveStartTransform = gameManager.respawnPositions[2].transform;
+                Transform caveStartTransform = gameManager.startPositions[2].transform;
                 gameManager.player.position = new Vector3(caveStartTransform.position.x, caveStartTransform.position.y, 0);
                 break;
             case GameManager.Level.CAVE:
-                Transform castleExtStartTransform = gameManager.respawnPositions[3].transform;
+                Transform castleExtStartTransform = gameManager.startPositions[3].transform;
                 gameManager.player.position = new Vector3(castleExtStartTransform.position.x, castleExtStartTransform.position.y, 0);
                 break;
             case GameManager.Level.CASTLE_EXT:
-                Transform castleIxtStartTransform = gameManager.respawnPositions[4].transform;
+                Transform castleIxtStartTransform = gameManager.startPositions[4].transform;
                 gameManager.player.position = new Vector3(castleIxtStartTransform.position.x, castleIxtStartTransform.position.y, 0);
                 break;
         }

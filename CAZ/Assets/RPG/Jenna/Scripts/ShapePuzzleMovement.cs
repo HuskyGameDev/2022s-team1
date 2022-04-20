@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ShapePuzzleMovement : MonoBehaviour
 {
 
@@ -32,13 +33,10 @@ public class ShapePuzzleMovement : MonoBehaviour
                 this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosy, this.transform.localPosition.z);
             }
         }
-      
-      
-      
         
     }
 
-    private void onMouseDown(){
+    private void OnMouseDown(){
 
         if(Input.GetMouseButtonDown(0)){
             Vector3 mousePos;
@@ -52,12 +50,12 @@ public class ShapePuzzleMovement : MonoBehaviour
         }
 
     }
-    private void onMouseUp(){
+    private void OnMouseUp(){
         
         moving = false;
 
-        if(Mathf.Abs(this.transform.localPosition.x - correctForm.transform.localPosition.x) <= 0.5f && 
-        Mathf.Abs(this.transform.localPosition.y - correctForm.transform.localPosition.y) <= 0.5f){
+        if(Mathf.Abs(this.transform.position.x - correctForm.transform.position.x) <= 5.0f && 
+        Mathf.Abs(this.transform.position.y - correctForm.transform.position.y) <= 5.0f){
 
             this.transform.position = new Vector3(correctForm.transform.position.x, correctForm.transform.position.y, correctForm.transform.position.z);
 

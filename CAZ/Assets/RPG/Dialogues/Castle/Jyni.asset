@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Jyni
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: You found what looks like a blue cat in the hedge maze!
+  - name: 
+    text: However, as you get closer you see that this blue fluff has two wing-like
+      appendages on its back.
+  - name: 
+    text: You are then pushed back by a burst of energy, as if repelled by a magnetic
+      force!
+  - name: 
+    text: You immediatley get a headache...
+  - name: 
+    text: That's one cat you do not want to mess with.

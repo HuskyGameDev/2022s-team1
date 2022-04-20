@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Reward_Shield : DialogueTrigger_Condition
 {
+    public DialogueBase shieldSword;
+
+    private void Start()
+    {
+        if (GameManager.instance.holding == "Sword")
+        {
+            DB = shieldSword;
+        }
+    }
+
     public override IEnumerator CheckCondition()
     {
         if (GameManager.instance.holding == "Sword")

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Journal
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: This seems to be an old journal...
+  - name: 
+    text: Most of the journal has been damaged, but there are a few passages that
+      you are able to make out.
+  - name: Unknown Author
+    text: '"I have finally arrived... The White Citadel - the infamous ancient castle.'
+  - name: Unknown Author
+    text: If the stories are true, then one of these old towers must have been the
+      ancient zoo.."
+  - name: 
+    text: Some pages later
+  - name: Unknown Author
+    text: '"I can''t believe what I''ve found! Amazing creatures -- Phoenixes! Dire
+      Wolves! Drakes! Basilisks! and several cute little creatures!'
+  - name: Unknown Author
+    text: I must start documenting the existence of the magnificent beings!"
+  - name: 
+    text: Near the end of the book
+  - name: Unknown Author
+    text: '"Not good.'
+  - name: Unknown Author
+    text: There is some kind of shift in the magical energy around the White Citadel;
+      All of the creatures are are getting antsy.
+  - name: Unknown Author
+    text: I am not sure what to expect, but I do know that I must leave...
+  - name: Unknown Author
+    text: Before something happens.
+  - name: Unknown Author
+    text: I've made several copies of my creature catalog cards to take with me wherever
+      I go next.
+  - name: Unknown Author
+    text: Although I do hate to be leaving such a wonderful place.
+  - name: Unknown Author
+    text: At least my research in the Tower of the Ancient Zoo will not be for nothing...
+  - name: Unknown Author
+    text: Kept alive in the...
+  - name: Unknown Author
+    text: Cards of the Ancient Zoo."
+  - name: 
+    text: The rest of the pages are either too damaged to read, or are blank.

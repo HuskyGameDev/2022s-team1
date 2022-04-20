@@ -22,7 +22,7 @@ MonoBehaviour:
     Lately it has come off as very agitated, causing the other creatures living within
     the forest to be on alert.
   effect: N/A
-  art: {fileID: 21300000, guid: 09808a6fac96b5f419238dfcd1dc2005, type: 3}
+  art: {fileID: 21300000, guid: 44b04fb3608c7684cade1ef117ede4e8, type: 3}
   attack: 10
   defense: 16
   prefab: {fileID: 2473742285920798735, guid: c7cbc3b585063f04a80444622c4a5011, type: 3}

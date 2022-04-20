@@ -6,14 +6,18 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
    
-public void PlayGame(){
-    Debug.Log("Play Game");
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-}
+    public void PlayGame(){
+        Debug.Log("Play Game");
+        SceneManager.LoadScene("Village");
+    }
 
-public void QuitGame(){
-    Debug.Log("Quit Game");
-    Application.Quit();
-}
+    public void QuitGame(){
+        Debug.Log("Quit Game");
+        Application.Quit();
+    }
+
+    public void Credits() {
+        SceneManager.LoadScene("Credits");
+    }
 
 }
