@@ -11,8 +11,8 @@ public class CastleManager : MonoBehaviour
     {
         GameManager.instance.bossBattle = false;
         Debug.Log("Castle Loaded");
-        AudioManager.instance.Play("Castle_ETX_Overworld");
-        AudioManager.instance.overworldSong = "Castle_ETX_Overworld";
+        AudioManager.instance.Play("Castle_EXT_Overworld");
+        AudioManager.instance.overworldSong = "Castle_EXT_Overworld";
         if (!GameManager.instance.discovered_castle) {
             GameManager.instance.discovered_castle = true;
             GameManager.instance.deckMax = 30;
