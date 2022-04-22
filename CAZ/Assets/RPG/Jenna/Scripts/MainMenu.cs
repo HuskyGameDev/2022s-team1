@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-   
+
+    public void Start(){
+        
+    
+    }
+
     public void PlayGame(){
         Debug.Log("Play Game");
 
@@ -42,8 +48,9 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    public void LoadGame(){
-        GameManager.instance.LoadGame();
+    public void NewGame(){
+        SaveSystem.RemoveGameData(); //Remove the game's data before going to the village. IMPORTANT.
+        SceneManager.LoadScene("Village");
     }
 
     public void QuitGame(){
@@ -54,5 +61,7 @@ public class MainMenu : MonoBehaviour
     public void Credits() {
         SceneManager.LoadScene("Credits");
     }
+
+
 
 }

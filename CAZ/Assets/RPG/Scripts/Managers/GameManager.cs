@@ -14,9 +14,7 @@ public class GameManager : MonoBehaviour
     public Deck deck;
     public GameObject InventoryUI;
     public Image holdingImage;
-
     public Image LoadBlackness;
-
     public Transform player;
     public string holding;
     public Level currentLevel = Level.VILLAGE;

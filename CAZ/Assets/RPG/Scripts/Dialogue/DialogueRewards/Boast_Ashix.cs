@@ -11,6 +11,7 @@ public class Boast_Ashix : DialogueTrigger_Condition
     {
         if (GameManager.instance.dex.cardDex[12].isDiscovered) {
             DB = kidShowOffAshix;
+            Debug.Log("Sexy.");
         }
     }
 
