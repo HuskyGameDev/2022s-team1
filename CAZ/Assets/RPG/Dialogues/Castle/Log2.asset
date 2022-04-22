@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Log2
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Kazi's Voice
+    text: Alright, everyone is asleep, lets get this over with.
+  - name: Mysterious Voice 1
+    text: Hmmm. . .
+  - name: Kazi's Voice
+    text: Iki? Are we doing this or not?
+  - name: Iki's Voice
+    text: The magic levels. . .perhaps. . .hopefully it'll work. . . I don't know,
+      I feel like I'm missing something. . .
+  - name: Iki's Voice
+    text: Oh well! It should be fine if my calculations are correct! Either way,
+      I'm sure he will love it here.
+  - name: Kazi's Voice
+    text: That is NOT reassuring.
+  - name: Iki's Voice
+    text: It's fine! It's fine! Again, my calculations should be correct anyways.
+      Have my ideas ever failed us?
+  - name: Kazi's Voice
+    text: Failed? Not quite. Have exploded and set me on fire? Yes. You are lucky
+      I'm immortal brother.
+  - name: Iki's Voice
+    text: You ever wonder if true immortality exists? How can one prove a thing that
+      lasts for infinity?
+  - name: Iki's Voice
+    text: Perhaps an 'end' never existed, and is just a concept where everything
+      is theorectically immortal.
+  - name: Kazi's Voice
+    text: ...Iki...? What in the world are you talking about?
+  - name: Iki's Voice
+    text: Anyways! Let's get to the dimensional banishing shall we?
+  - name: Kazi's Voice
+    text: You know what? I'm too tired to continue to question your babble. Finally,
+      let's go.
+  - name: 
+    text: The recording abruptly ends.

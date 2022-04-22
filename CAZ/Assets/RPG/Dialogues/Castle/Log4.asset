@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Log4
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: The recording starts with a voice that is low and whispering.
+  - name: Iki's Voice
+    text: It's done. We were able to sucessfully banish and seal him here. He is
+      unconscious, but it seems he will be fine.
+  - name: Iki's Voice
+    text: I hope he is able to find another life to live here. I'm sure he will love
+      it. It'll be a better place than where he was before...
+  - name: Iki's Voice
+    text: Dear friend, if you happen to hear this, just know that we did it for your
+      own sake.
+  - name: Iki's Voice
+    text: 'Your powers will be limited...but that is always something you wished
+      for...wasn''t it? '
+  - name: Iki's Voice
+    text: 'There are creatures here, and books...you always loved books...at least
+      the version of you I know. So you won''t feel lonely. '
+  - name: Iki's Voice
+    text: With this, I wish you farwell. End of recording.

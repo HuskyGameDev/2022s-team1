@@ -17,17 +17,17 @@ MonoBehaviour:
     text: As you approach the door, two blood-red eyes peek at you from beyond the
       darkness...
   - name: Unknown Being
-    text: .. . .. ..?
+    text: ...! ...?
   - name: 
     text: The eyes reflect shock and wariness!
   - name: 
     text: Suddenly, a giant claw swipes out from the darkness!
   - name: 
     text: It comes to rest in front of you, decorated with odd, magical markings
-      that appear float above its surface...
+      that appear to float above its surface...
   - name: 
-    text: Red flames ignite from the being's large palm, and flames gently start
-      to spread along its hand.
+    text: Red flames ignite from the being's large palm, and gently start to spread
+      along its hand.
   - name: Unknown Being
     text: .. .. ..aabcr? Bbcda?
   - name: 
@@ -54,9 +54,9 @@ MonoBehaviour:
   - name: Your Thoughts
     text: Never know which direction this "conversation" will turn...
   - name: Uknown Being
-    text: Abbr... En-glish! ... H-Human ... you .. are!
+    text: Abbr... En-glish! ... H-Human ... you ... are!
   - name: Uknown Being
-    text: I Sacachi... T-Trapped ... . Read B-Book?
+    text: I... Sacachi... T-Trapped ... . Read B-Book?
   - name: 
     text: The being looms closer to you.
   - name: 
@@ -75,14 +75,13 @@ MonoBehaviour:
   - name: Sacachi
     text: RRIEEIRACCC... PROTECT SMALL FRIENDS!!!
   - name: 
-    text: Suddendly, the air becomes dense!
-  - name: 
-    text: You hear the flapping of books coming from the room behind you.
+    text: Suddenly, the air becomes dense! You hear the flapping of books coming
+      from the room behind you!
   - name: 
     text: The dense air seems to burst into flames as Sacachi summons forth a circle
       of flame...
   - name: 
-    text: Around both of you.
+    text: Surrounding the both of you.
   - name: 
     text: Trapped together.
   - name: Sacachi

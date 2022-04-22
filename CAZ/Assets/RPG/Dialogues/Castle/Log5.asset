@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Log5
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: Kazi's Voice
+    text: I checked the place, the magic resonates differently than before, but everything
+      looks like it will be okay...
+  - name: Kazi's Voice
+    text: What happens afterwards is none of our business...we have done what we
+      can.
+  - name: Kazi's Voice
+    text: Wait, why are you dumping your recordings here? Aren't we taking them with
+      us?
+  - name: Iki's Voice
+    text: It's alright, I made copies. Besides, what's a world without a bit of inter-dimensional
+      lore involved?
+  - name: Kazi's Voice
+    text: I have absolutely no idea what you are going on about.
+  - name: Iki's Voice
+    text: Eh, I guess what I'm trying to say is I'd feel bad leaving this place without
+      giving a little in return.
+  - name: Iki's Voice
+    text: Perhaps some brave soul will find them interesting.
