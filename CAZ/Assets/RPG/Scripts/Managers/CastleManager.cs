@@ -11,6 +11,7 @@ public class CastleManager : MonoBehaviour
     {
         GameManager.instance.bossBattle = false;
         Debug.Log("Castle Loaded");
+        AudioManager.instance.Stop("Main_Theme");
         AudioManager.instance.Play("Castle_EXT_Overworld");
         AudioManager.instance.overworldSong = "Castle_EXT_Overworld";
         if (!GameManager.instance.discovered_castle) {

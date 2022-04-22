@@ -10,6 +10,7 @@ public class VillageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.instance.Stop(AudioManager.instance.overworldSong);
         GameManager.instance.bossBattle = false;
         AudioManager.instance.Play("Main_Theme");
         AudioManager.instance.overworldSong = "Main_Theme";

@@ -28,8 +28,8 @@ public class SaveManager : MonoBehaviour
     public void LoadGame() {
         SaveGameData data = SaveSystem.LoadGameData();
 
-        GameManager.instance.dex = data.dex;
-        GameManager.instance.deck = data.deck;
+        data.dex.GetDiscoveredCards(GameManager.instance.dex);
+        //GameManager.instance.deck = data.deck;
         GameManager.instance.currentLevel = data.level;
         GameManager.instance.deckMax = data.deckMax;
         GameManager.instance.battleHp = data.battleHP;

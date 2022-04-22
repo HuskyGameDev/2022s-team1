@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour
     public Deck deck;
     public GameObject InventoryUI;
     public Image holdingImage;
+
+    public Image LoadBlackness;
+
     public Transform player;
     public string holding;
     public Level currentLevel = Level.VILLAGE;
@@ -43,6 +47,9 @@ public class GameManager : MonoBehaviour
         else {
             Destroy(this.gameObject);
         }
+
+        //Load the game everytime we enter in.
+
     }
 
     private void Start()
@@ -51,6 +58,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Playing theme");
         //AudioManager.instance.Play("Main_Theme");
         //AudioManager.instance.overworldSong = "Main_Theme";
+        GameManager.instance.doLoad();
     }
 
     private void Update()
@@ -126,19 +134,18 @@ public class GameManager : MonoBehaviour
         return GameManager.instance.discoveredCreature;
     }
 
-    /*
+    
     public void SaveGame()
     {
-
         SaveSystem.SaveGameData(GameManager.instance);
+        pauseMenu.SetActive(false);
     }
 
     public void LoadGame()
     {
         SaveGameData data = SaveSystem.LoadGameData();
 
-        GameManager.instance.dex = data.dex;
-        GameManager.instance.deck = data.deck;
+        data.dex.GetDiscoveredCards(GameManager.instance.dex);
         GameManager.instance.currentLevel = data.level;
         GameManager.instance.deckMax = data.deckMax;
         GameManager.instance.battleHp = data.battleHP;
@@ -146,19 +153,42 @@ public class GameManager : MonoBehaviour
         GameManager.instance.discovered_cave = data.discovered_cave;
         GameManager.instance.discovered_castle = data.discovered_castle;
 
+        //We actually want to ensure the player is at the latest stage of the game.
+        //If you use else-ifs, it's gonna start them at the forest.
+        //Also copying your code for player transform starts Sawyer, hope that's cool
         if (discovered_forest) {
+            Transform ForestStartTransform = startPositions[1].transform;
+            player.position = new Vector3(ForestStartTransform.position.x, ForestStartTransform.position.y, 0);
             SceneManager.LoadScene("Forest");
+            currentLevel = Level.FOREST;
         }
-        else if (discovered_cave)
+        
+        if (discovered_cave)
         {
+            Transform caveStartTransform = startPositions[2].transform;
+            player.position = new Vector3(caveStartTransform.position.x, caveStartTransform.position.y, 0);
             SceneManager.LoadScene("Cave");
+            currentLevel = Level.CAVE;
         }
-        else if (discovered_castle)
+        
+        if (discovered_castle)
         {
+            Transform castleExtStartTransform = startPositions[3].transform;
+            player.position = new Vector3(castleExtStartTransform.position.x, castleExtStartTransform.position.y, 0);
             SceneManager.LoadScene("CastleExterior");
+            currentLevel = Level.CASTLE_EXT;
         }
     }
-    */
+
+    public void doLoad(){
+        
+        string path = Application.persistentDataPath + "/savefile.caz";
+        if (File.Exists(path)) {        
+            this.LoadGame();
+        }
+
+    }
+    
 
     public void QuitGame()
     {
@@ -169,6 +199,8 @@ public class GameManager : MonoBehaviour
     public void MainMenu()
     {
         Debug.Log("Returning to main menu");
+        AudioManager.instance.Stop(AudioManager.instance.overworldSong);
+        pauseMenu.SetActive(false);
         SceneManager.LoadScene("Menu");
     }
 

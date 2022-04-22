@@ -17,6 +17,7 @@ public class CaveManager : MonoBehaviour
         }
 
         Debug.Log("Cave Loaded");
+        AudioManager.instance.Stop("Main_Theme");
         AudioManager.instance.Play("Cave_Overworld");
         AudioManager.instance.overworldSong = "Cave_Overworld";
         if (!GameManager.instance.discovered_cave) {

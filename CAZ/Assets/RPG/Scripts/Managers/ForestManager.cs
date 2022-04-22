@@ -17,6 +17,7 @@ public class ForestManager : MonoBehaviour
         }
 
         Debug.Log("Forest Loaded");
+        AudioManager.instance.Stop("Main_Theme");
         AudioManager.instance.Play("Forest_Overworld");
         AudioManager.instance.overworldSong = "Forest_Overworld";
         if (!GameManager.instance.discovered_forest) {
