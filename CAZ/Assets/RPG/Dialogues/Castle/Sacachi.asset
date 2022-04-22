@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Sacachi
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: As you approach the door, two blood-red eyes peek at you from beyond the
+      darkness...
+  - name: Unknown Being
+    text: .. . .. ..?
+  - name: 
+    text: The eyes reflect shock and wariness!
+  - name: 
+    text: Suddenly, a giant claw swipes out from the darkness!
+  - name: 
+    text: It comes to rest in front of you, decorated with odd, magical markings
+      that appear float above its surface...
+  - name: 
+    text: Red flames ignite from the being's large palm, and flames gently start
+      to spread along its hand.
+  - name: Unknown Being
+    text: .. .. ..aabcr? Bbcda?
+  - name: 
+    text: You back away, shaking your head. It's voice sounds like a creature's,
+      but oddly soft and harmonious. Like a million voices speaking at once.
+  - name: Unknown Being
+    text: . .. ..nrradavacala?
+  - name: 
+    text: You shake your head again.
+  - name: Your Thoughts
+    text: Is it trying to talk to me?
+  - name: Unknown Being
+    text: Yyerrrahaaa? .. ..GGrrrikkkkkkra? .. H-
+  - name: Unknown Being
+    text: H-
+  - name: Unknown Being
+    text: Hello?
+  - name: Your Thoughts
+    text: Woah! I know that word!
+  - name: 
+    text: You wave back at this being...
+  - name: 
+    text: With your other hand, you secretly reach for your cards.
+  - name: Your Thoughts
+    text: Never know which direction this "conversation" will turn...
+  - name: Uknown Being
+    text: Abbr... En-glish! ... H-Human ... you .. are!
+  - name: Uknown Being
+    text: I Sacachi... T-Trapped ... . Read B-Book?
+  - name: 
+    text: The being looms closer to you.
+  - name: 
+    text: His eyes seem to be observing your every move with a supernatural speed.
+  - name: 
+    text: Then, swinging into view from the darkness, you notice two massive horns!
+      A wing! And a tail!
+  - name: Your Thoughts
+    text: This is definatley a creature I don't want to upset...
+  - name: Sacachi
+    text: But why... rrieeeracccc... hurt .. my friends...?
+  - name: 
+    text: You notice him catch a glance at you reaching for your cards...
+  - name: Sacachi
+    text: YOU!
+  - name: Sacachi
+    text: RRIEEIRACCC... PROTECT SMALL FRIENDS!!!
+  - name: 
+    text: Suddendly, the air becomes dense!
+  - name: 
+    text: You hear the flapping of books coming from the room behind you.
+  - name: 
+    text: The dense air seems to burst into flames as Sacachi summons forth a circle
+      of flame...
+  - name: 
+    text: Around both of you.
+  - name: 
+    text: Trapped together.
+  - name: Sacachi
+    text: RRIIIGAGGGRRG.... SCARED!!!
+  - name: Sacachi
+    text: GO AWAY!!!!
+  - name: 
+    text: The flames contained within his palm glow as bright as the sun!
+  - name: 
+    text: The markings decorating his body flash with light!
+  - name: 
+    text: As the light subsides, you notice the color of the markings have changed...
+  - name: 
+    text: Now glowing a dangerous silver and black...
+  - name: 
+    text: His voice seems to soften.
+  - name: Sacachi
+    text: ...
+  - name: Sacachi
+    text: Destruction... can't control.... angry.
+  - name: Sacachi
+    text: No!
+  - name: Sacachi
+    text: Happening again!
+  - name: Sacachi
+    text: Rrrrr....
+  - name: Sacachi
+    text: Rrrrrrrrrrrrrrr.....
+  - name: Sacachi
+    text: RRRRRRRRRRRRRRRRRRRRRRRRR.....
+  - name: Sacachi
+    text: RRRRRRRRRRRRRRRRRRIIIIIIIIIIIIIIIIIEEEEEEEEEEEEAAAAAAAAAAARRRRRRRRRRRRGGGGGGGGGGGGHHHHHHHHHHHHAAAAAAAAAAAAAAAAAAA!!!

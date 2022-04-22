@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Journal_4
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: You find what looks like an old journal...
+  - name: 
+    text: But most of the pages are damaged and unreadable.
+  - name: 
+    text: However, you can make out one passage.
+  - name: Unknown Author
+    text: '"I was too late...'
+  - name: Unknown Author
+    text: I made it to town, but one of the creatures beat me to it.
+  - name: Unknown Author
+    text: It hurt one of them.
+  - name: Unknown Author
+    text: And none of the townsfolk will believe me.
+  - name: Unknown Author
+    text: They're calling me crazy, loony, a wizard that brought all of this upon
+      them...
+  - name: Unknown Author
+    text: I must go back to the White Citadel...
+  - name: Unknown Author
+    text: And figure out what really happened.
+  - name: Unknown Author
+    text: Even if I am never to return."

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Journal_3
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: You find an old book resting by an abandoned campsite.
+  - name: 
+    text: Most of the pages are damaged...
+  - name: 
+    text: But you can make out a passage.
+  - name: Unknown Author
+    text: '"Ahh, feels good to be back in the forsest.'
+  - name: Unknown Author
+    text: That cave nearly made me go insane.
+  - name: Unknown Author
+    text: Anyway, I believe I am far enough away from the White Citadel for the effects
+      of the incident on myself to be... insignificant.
+  - name: Unknown Author
+    text: The creatures are a different story though...
+  - name: Unknown Author
+    text: They're restless and getting aggressive.
+  - name: Unknown Author
+    text: I must make it back to town to warn the townsfolk...
+  - name: Unknown Author
+    text: Before a creature gets a little too scared and acts out on one of them."

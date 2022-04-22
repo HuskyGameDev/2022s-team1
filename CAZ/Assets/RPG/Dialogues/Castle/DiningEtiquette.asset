@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: DiningEtiquette
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: You find a large table set for one...
+  - name: 
+    text: The title of the book next to the dinnerware reads "Royal Dining Etiquette"
+  - name: Royal Dining Etiquette
+    text: Eat slowly and cut only a few small bites of yor meal at a time.
+  - name: Royal Dining Etiquette
+    text: Chew with your mouth closed and do not talk wih food in your mouth.
+  - name: 
+    text: The book continues.
+  - name: 
+    text: However, you do notice that the table is messy with scraps of food.
+  - name: Your Thoughts
+    text: Haha, looks like the King was a messy eater...
+  - name: 
+    text: A chill runs down your spine...
+  - name: Your Thoughts
+    text: Or.. whatever replaced him is...

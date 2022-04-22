@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Journal_2
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: You find an old book resting along the shore of this underground pond.
+  - name: 
+    text: Most of the pages are damaged and hard to read...
+  - name: 
+    text: But you can make out a passage.
+  - name: Unknown Author
+    text: '"Phew! I''ve made it into this cave just before the incident.'
+  - name: Unknown Author
+    text: Looks like it has protected me for now.
+  - name: Unknown Author
+    text: However, I did lose some of my catalog cards when the whole cave shook.
+  - name: Unknown Author
+    text: I suppose it's good that I made spares.
+  - name: Unknown Author
+    text: I've got to keep moving."

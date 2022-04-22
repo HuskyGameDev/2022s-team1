@@ -552,11 +552,11 @@ public class EncounterManager : MonoBehaviour
                     AudioManager.instance.Play("Player_Lose");
                     break;
                 case GameManager.Level.CASTLE_EXT:
-                    AudioManager.instance.Stop("Castle_INT_Boss");
+                    AudioManager.instance.Stop("Castle_EXT_Boss");
                     AudioManager.instance.Play("Player_Lose");
                     break;
                 case GameManager.Level.CASTLE_INT:
-                    AudioManager.instance.Stop("Castle_EXT_Boss");
+                    AudioManager.instance.Stop("Castle_INT_Boss");
                     AudioManager.instance.Play("Player_Lose");
                     break;
             }
