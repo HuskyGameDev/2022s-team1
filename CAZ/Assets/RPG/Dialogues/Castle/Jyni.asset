@@ -22,6 +22,6 @@ MonoBehaviour:
     text: You are then pushed back by a burst of energy, as if repelled by a magnetic
       force!
   - name: 
-    text: You immediatley get a headache...
+    text: You immediately get a headache...
   - name: 
     text: That's one cat you do not want to mess with.

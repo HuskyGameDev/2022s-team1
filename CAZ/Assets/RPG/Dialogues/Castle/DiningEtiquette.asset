@@ -16,7 +16,7 @@ MonoBehaviour:
   - name: 
     text: You find a large table set for one...
   - name: 
-    text: The title of the book next to the dinnerware reads "Royal Dining Etiquette"
+    text: The title of the book next to the dinnerware reads "Royal Dining Etiquette".
   - name: Royal Dining Etiquette
     text: Eat slowly and cut only a few small bites of yor meal at a time.
   - name: Royal Dining Etiquette

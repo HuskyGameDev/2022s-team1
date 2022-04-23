@@ -16,12 +16,12 @@ MonoBehaviour:
   - name: Kazi's Voice
     text: Alright, everyone is asleep, lets get this over with.
   - name: Mysterious Voice 1
-    text: Hmmm. . .
+    text: Hmmm...
   - name: Kazi's Voice
     text: Iki? Are we doing this or not?
   - name: Iki's Voice
-    text: The magic levels. . .perhaps. . .hopefully it'll work. . . I don't know,
-      I feel like I'm missing something. . .
+    text: The magic levels ... perhaps ... hopefully it'll work ... I don't know,
+      I feel like I'm missing something...
   - name: Iki's Voice
     text: Oh well! It should be fine if my calculations are correct! Either way,
       I'm sure he will love it here.
@@ -40,7 +40,7 @@ MonoBehaviour:
     text: Perhaps an 'end' never existed, and is just a concept where everything
       is theorectically immortal.
   - name: Kazi's Voice
-    text: ...Iki...? What in the world are you talking about?
+    text: ... Iki ...? What in the world are you talking about?
   - name: Iki's Voice
     text: Anyways! Let's get to the dimensional banishing shall we?
   - name: Kazi's Voice

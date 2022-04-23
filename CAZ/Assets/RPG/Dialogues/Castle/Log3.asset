@@ -21,7 +21,7 @@ MonoBehaviour:
   - name: Iki's Voice
     text: I'm not doing anything! Something is wrong!
   - name: 
-    text: More destructive noises ensue, including a large 'boom'.
+    text: More destructive noises ensue, including a large "boom".
   - name: Kazi's Voice
     text: OBVIOUSLY! The world is warping! Humans are dying!
   - name: Kazi's Voice
@@ -32,7 +32,7 @@ MonoBehaviour:
   - name: Kazi's Voice
     text: '****! *****! **********! ******!'
   - name: Iki's Voice
-    text: KAZI!?
+    text: KAZI?!
   - name: Kazi's Voice
     text: When we are done, you are responsible for CLEANING THIS UP! BRICKS, BOOKS,
       EVERYTHING!

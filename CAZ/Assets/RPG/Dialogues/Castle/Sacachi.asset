@@ -29,18 +29,18 @@ MonoBehaviour:
     text: Red flames ignite from the being's large palm, and gently start to spread
       along its hand.
   - name: Unknown Being
-    text: .. .. ..aabcr? Bbcda?
+    text: ... Aabcr? Bbcda?
   - name: 
     text: You back away, shaking your head. It's voice sounds like a creature's,
       but oddly soft and harmonious. Like a million voices speaking at once.
   - name: Unknown Being
-    text: . .. ..nrradavacala?
+    text: ... Nrradavacala?
   - name: 
     text: You shake your head again.
   - name: Your Thoughts
     text: Is it trying to talk to me?
   - name: Unknown Being
-    text: Yyerrrahaaa? .. ..GGrrrikkkkkkra? .. H-
+    text: Yyerrrahaaa? ... GGrrrikkkkkkra? ... H-
   - name: Unknown Being
     text: H-
   - name: Unknown Being
@@ -56,7 +56,7 @@ MonoBehaviour:
   - name: Uknown Being
     text: Abbr... En-glish! ... H-Human ... you ... are!
   - name: Uknown Being
-    text: I... Sacachi... T-Trapped ... . Read B-Book?
+    text: I... Sacachi... T-Trapped ... Read b-book?
   - name: 
     text: The being looms closer to you.
   - name: 
@@ -65,9 +65,9 @@ MonoBehaviour:
     text: Then, swinging into view from the darkness, you notice two massive horns!
       A wing! And a tail!
   - name: Your Thoughts
-    text: This is definatley a creature I don't want to upset...
+    text: This is definitely a creature I don't want to upset...
   - name: Sacachi
-    text: But why... rrieeeracccc... hurt .. my friends...?
+    text: But why... Rrieeeracccc... hurt ... my friends...?
   - name: 
     text: You notice him catch a glance at you reaching for your cards...
   - name: Sacachi
@@ -85,7 +85,7 @@ MonoBehaviour:
   - name: 
     text: Trapped together.
   - name: Sacachi
-    text: RRIIIGAGGGRRG.... SCARED!!!
+    text: RRIIIGAGGGRRG... SCARED!!!
   - name: Sacachi
     text: GO AWAY!!!!
   - name: 
@@ -101,16 +101,16 @@ MonoBehaviour:
   - name: Sacachi
     text: ...
   - name: Sacachi
-    text: Destruction... can't control.... angry.
+    text: Destruction... can't control ... angry.
   - name: Sacachi
     text: No!
   - name: Sacachi
     text: Happening again!
   - name: Sacachi
-    text: Rrrrr....
+    text: Rrrrr...
   - name: Sacachi
-    text: Rrrrrrrrrrrrrrr.....
+    text: Rrrrrrrrrrrrrrr...
   - name: Sacachi
-    text: RRRRRRRRRRRRRRRRRRRRRRRRR.....
+    text: RRRRRRRRRRRRRRRRRRRRRRRRR...
   - name: Sacachi
     text: RRRRRRRRRRRRRRRRRRIIIIIIIIIIIIIIIIIEEEEEEEEEEEEAAAAAAAAAAARRRRRRRRRRRRGGGGGGGGGGGGHHHHHHHHHHHHAAAAAAAAAAAAAAAAAAA!!!
