@@ -68,11 +68,11 @@ public class GameManager : MonoBehaviour
             else if (!pauseMenu.activeInHierarchy)
                 pauseMenu.SetActive(true);
         }
-            if (Input.GetKeyDown(KeyCode.F))
+            /*if (Input.GetKeyDown(KeyCode.F))
             {
                 AudioManager.instance.Stop(AudioManager.instance.overworldSong);
                 SceneManager.LoadScene("Credits");
-            }
+            }*/
             /*if (Input.GetKeyDown(KeyCode.G))
             {
                 foreach (Transform child in transform)
