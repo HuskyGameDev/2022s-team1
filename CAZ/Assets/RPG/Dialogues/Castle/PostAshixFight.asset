@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: PostAshixFight
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: Ashix's flame became a blue hue the moment you showed him who was boss.
+      The hollowed eyes staring down, looking no different than before, but clearly
+      expressing greif.
+  - name: Ashix
+    text: You bested me at this fight... though, I suppose that's to be expected.
+  - name: Ashix
+    text: It hasn't been the kindest of times for me stranger. My friend in the castle
+      hasn't come to speak in me in many a while.
+  - name: Ashix
+    text: Since you're going to the castle anyway, I hope you don't mind if I tag
+      alongside.

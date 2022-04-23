@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: Sussy
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: Looking at the object in particular, you notice something... a little suspicious
+      about it.
+  - name: 
+    text: You get a closer look to see... nothing really wrong with it.
+  - name: 
+    text: But that pattern... it reminds you of something... leaving you.... suspicious.

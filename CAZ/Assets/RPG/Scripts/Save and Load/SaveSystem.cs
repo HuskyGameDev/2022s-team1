@@ -4,6 +4,19 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
+
+    public static bool SaveGameExists(){
+
+        string path = Application.persistentDataPath + "/savefile.caz";
+        if (File.Exists(path)){
+            return true;
+        }
+
+        Debug.LogError("Save File not found in " + path);
+        return false;
+
+    }
+
     public static void SaveGameData(GameManager gm)
     {
         BinaryFormatter formatter = new BinaryFormatter();

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CreditsTime : MonoBehaviour
 {
-    int time = 120;
+    int time = 138;
     float count = 0;
 
     private void Update()

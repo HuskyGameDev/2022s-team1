@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public bool isMoving;
 
     [SerializeField]
-    private float speed; // Movement speed of player ~250 seems well paced
+    public float speed; // Movement speed of player ~250 seems well paced
 
     public LayerMask BattleLayer;
 

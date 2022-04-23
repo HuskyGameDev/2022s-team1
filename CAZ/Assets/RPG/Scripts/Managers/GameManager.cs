@@ -68,15 +68,12 @@ public class GameManager : MonoBehaviour
             else if (!pauseMenu.activeInHierarchy)
                 pauseMenu.SetActive(true);
         }
-            /*if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.SetActive(false);
-                }
-                SceneManager.LoadScene("AIDevelopment");
+                AudioManager.instance.Stop(AudioManager.instance.overworldSong);
+                SceneManager.LoadScene("Credits");
             }
-            if (Input.GetKeyDown(KeyCode.G))
+            /*if (Input.GetKeyDown(KeyCode.G))
             {
                 foreach (Transform child in transform)
                 {
@@ -154,27 +151,30 @@ public class GameManager : MonoBehaviour
         //We actually want to ensure the player is at the latest stage of the game.
         //If you use else-ifs, it's gonna start them at the forest.
         //Also copying your code for player transform starts Sawyer, hope that's cool
-        if (discovered_forest) {
+        if (GameManager.instance.currentLevel == Level.FOREST) {
             Transform ForestStartTransform = startPositions[1].transform;
             player.position = new Vector3(ForestStartTransform.position.x, ForestStartTransform.position.y, 0);
             SceneManager.LoadScene("Forest");
-            currentLevel = Level.FOREST;
         }
         
-        if (discovered_cave)
-        {
+        else if (GameManager.instance.currentLevel == Level.CAVE) {
             Transform caveStartTransform = startPositions[2].transform;
             player.position = new Vector3(caveStartTransform.position.x, caveStartTransform.position.y, 0);
             SceneManager.LoadScene("Cave");
-            currentLevel = Level.CAVE;
         }
         
-        if (discovered_castle)
+        else if (GameManager.instance.currentLevel == Level.CASTLE_EXT)
         {
             Transform castleExtStartTransform = startPositions[3].transform;
             player.position = new Vector3(castleExtStartTransform.position.x, castleExtStartTransform.position.y, 0);
             SceneManager.LoadScene("CastleExterior");
-            currentLevel = Level.CASTLE_EXT;
+        }
+
+        else if (GameManager.instance.currentLevel == Level.CASTLE_INT)
+        {
+            Transform castleExtStartTransform = startPositions[4].transform;
+            player.position = new Vector3(castleExtStartTransform.position.x, castleExtStartTransform.position.y, 0);
+            SceneManager.LoadScene("CastleInterior");
         }
     }
 

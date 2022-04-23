@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: AshixSpeak
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: You make your way towards the exit... the sun finally in sight as you start
+      walking under that stone arch...
+  - name: 
+    text: You notice something in the corner of your eye though, something just to
+      the side of you... Emitting a bright, nearly blinding light...
+  - name: 
+    text: You turn to see a bipedal lizard, one that has a detatched skull that is
+      lit aflame. A red flame to be exact. It stares right at you with those hollowed
+      out eye sockets.
+  - name: Ashix
+    text: HALT! You seek to cross this path, through MY cave?! UNAUTHORIZED?!
+  - name: You
+    text: Well... I-
+  - name: Ashix
+    text: ENOUGH!
+  - name: 
+    text: The creature pulls out his own set of cards, now knowing what you were
+      getting into, you follow suite. The battle with Ashix has begun.
+  - name: Ashix
+    text: I SHALL SHOW YOU JUST HOW RUTHLESS AND BRUTAL I CAN BE AGAINST TRESPASSERS
+      SUCH AS YOURSELF!!!
