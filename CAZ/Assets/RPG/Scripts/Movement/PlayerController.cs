@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask BattleLayer;
 
+    public float battleCooldownTimer;
+    public bool battlePrimed;
+    public float battleCooldownTime = 3.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +30,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (battleCooldownTimer > 0)
+        {
+            battleCooldownTimer -= Time.deltaTime;
+            Debug.Log("Cooldow - " + battleCooldownTimer);
+        }
+        else {
+            battlePrimed = true;
+            battleCooldownTimer = 0;
+        }
     }
 
     private void FixedUpdate()
@@ -57,11 +69,13 @@ public class PlayerController : MonoBehaviour
     }
 
     private void CheckForRandomEncounter() {
-        if (Physics2D.OverlapCircle(transform.position, 0.2f, BattleLayer) != null && isMoving)
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, BattleLayer) != null && isMoving && battlePrimed)
         {
-            if (Random.Range(1, 901) <= 10)
+            if (Random.Range(1, 901) <= 6) // WAS 10 - changed to lower encounter rate. With 10 ~ 55% chance/sec. With 6 ~33% chance/sec
             {
                 Debug.Log("Random Encounter");
+                isMoving = false;
+                battlePrimed = false;
                 LoadRandomEncounter();
             }
         }

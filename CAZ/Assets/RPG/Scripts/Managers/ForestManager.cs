@@ -27,6 +27,10 @@ public class ForestManager : MonoBehaviour
             StartCoroutine(DiscoverForestCards());
         }
 
+        PlayerController player = GameManager.instance.player.GetComponent<PlayerController>();
+        if (!player.battlePrimed)
+            player.battleCooldownTimer = player.battleCooldownTime;
+
     }
 
     IEnumerator DiscoverForestCards() {

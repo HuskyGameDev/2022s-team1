@@ -68,10 +68,13 @@ public class EncounterManager : MonoBehaviour
     //add location enum
     public string guideName = "Your guide";
 
+    private float fixedDeltaTime; // copy fixed delta time to restore when battle ends
+
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        fixedDeltaTime = Time.fixedDeltaTime;
 
         SelectEnemyType();
         SelectEnemyDeck();
@@ -92,7 +95,19 @@ public class EncounterManager : MonoBehaviour
 
         // set guide name
 
+        //PlayerWin();
         StartCoroutine(StartBattle());
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Z))
+        {
+            Time.timeScale = 5.0f;
+        }
+        else {
+            Time.timeScale = 1.0f;
+        }
     }
 
     void SelectEnemyType() {
@@ -188,11 +203,6 @@ public class EncounterManager : MonoBehaviour
         player.deck = new List<Card>(gameManager.GetComponent<Deck>().deck);
     }
 
-    /*private void Update()
-    {
-        
-    }*/
-
     IEnumerator StartBattle() {
         //Shuffle Decks
         //Flip Coin for first turn
@@ -211,7 +221,7 @@ public class EncounterManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         //Determine who goes first
-        int coinFlip = Random.Range(0, 4);
+        int coinFlip = Random.Range(0, 6);
         Debug.Log("Coin Flip = " + coinFlip);
         if (coinFlip == 0)
         {

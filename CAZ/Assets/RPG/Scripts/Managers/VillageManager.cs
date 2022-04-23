@@ -18,6 +18,9 @@ public class VillageManager : MonoBehaviour
             bossTrigger.SetActive(false);
         }
 
+        PlayerController player = GameManager.instance.player.GetComponent<PlayerController>();
+        if (!player.battlePrimed)
+            player.battleCooldownTimer = player.battleCooldownTime;
     }
 
 }

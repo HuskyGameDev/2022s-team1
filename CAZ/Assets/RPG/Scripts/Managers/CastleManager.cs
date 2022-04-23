@@ -21,6 +21,10 @@ public class CastleManager : MonoBehaviour
             StartCoroutine(DiscoverCaveCards());
         }
 
+        PlayerController player = GameManager.instance.player.GetComponent<PlayerController>();
+        if (!player.battlePrimed)
+            player.battleCooldownTimer = player.battleCooldownTime;
+
     }
 
     IEnumerator DiscoverCaveCards() {

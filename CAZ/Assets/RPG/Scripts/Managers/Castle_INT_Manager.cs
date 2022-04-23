@@ -14,6 +14,10 @@ public class Castle_INT_Manager : MonoBehaviour
         AudioManager.instance.Play("Castle_INT_Overworld");
         AudioManager.instance.overworldSong = "Castle_INT_Overworld";
 
+        PlayerController player = GameManager.instance.player.GetComponent<PlayerController>();
+        if (!player.battlePrimed)
+            player.battleCooldownTimer = player.battleCooldownTime;
+
     }
 
     IEnumerator DiscoverCaveCards() {
