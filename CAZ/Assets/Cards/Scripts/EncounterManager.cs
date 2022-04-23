@@ -368,11 +368,11 @@ public class EncounterManager : MonoBehaviour
                     AudioManager.instance.Play("Player_Win");
                     break;
                 case GameManager.Level.CASTLE_EXT:
-                    AudioManager.instance.Stop("CastleInt_Battle");
+                    AudioManager.instance.Stop("Castle_EXT_Battle");
                     AudioManager.instance.Play("Player_Win");
                     break;
                 case GameManager.Level.CASTLE_INT:
-                    AudioManager.instance.Stop("CastleExt_Battle");
+                    AudioManager.instance.Stop("Castle_INT_Battle");
                     AudioManager.instance.Play("Player_Win");
                     break;
             }
@@ -527,11 +527,11 @@ public class EncounterManager : MonoBehaviour
                     AudioManager.instance.Play("Player_Lose");
                     break;
                 case GameManager.Level.CASTLE_EXT:
-                    AudioManager.instance.Stop("CastleInt_Battle");
+                    AudioManager.instance.Stop("Castle_EXT_Battle");
                     AudioManager.instance.Play("Player_Lose");
                     break;
                 case GameManager.Level.CASTLE_INT:
-                    AudioManager.instance.Stop("CastleExt_Battle");
+                    AudioManager.instance.Stop("Castle_INT_Battle");
                     AudioManager.instance.Play("Player_Lose");
                     break;
             }
