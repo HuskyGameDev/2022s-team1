@@ -92,6 +92,9 @@ MonoBehaviour:
     text: Oh, and you need a deck of at least 3 cards. If you have a deck with less
       than 3 cards when a battle starts, you lose.
   - name: Card Master
+    text: By the way, if your opponent is taking too long on their turn, you can
+      hold 'Z' on your keyboard to speed up combat.
+  - name: Card Master
     text: Also, the closer you get to that ancient castle, the more powerful the
       cards become...
   - name: Card Master
