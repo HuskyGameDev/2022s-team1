@@ -74,7 +74,7 @@ public class MainMenu : MonoBehaviour
             Transform ForestStartTransform = gm.startPositions[0].transform;
             gm.player.position = new Vector3(ForestStartTransform.position.x, ForestStartTransform.position.y, 0);
 
-            for (int i = 0; i < gm.dex.cardDex.Count; i++){
+            for (int i = 2; i < gm.dex.cardDex.Count; i++){
                 gm.dex.cardDex[i].isDiscovered = false;
             }
 
