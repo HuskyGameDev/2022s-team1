@@ -1,0 +1,265 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7257998156140708118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7257998156140708116}
+  - component: {fileID: 7257998156140708117}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7257998156140708116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7257998156140708118}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -33.36, y: -6.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7257998156140708117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7257998156140708118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bba8c9a019d2664486107483c4fbee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Card_Attack
+    clip: {fileID: 8300000, guid: 202e83fff27891f48916da1b40ac938f, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Card_Miss
+    clip: {fileID: 8300000, guid: bbcd6812a052a8442afea141321c8f2e, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Card_Draw
+    clip: {fileID: 8300000, guid: 319e562cce75ada439206fdab40c7482, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Card_Place
+    clip: {fileID: 8300000, guid: 8f64dda9c3afe7443803bd445d4cc44b, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Card_Select
+    clip: {fileID: 8300000, guid: df11f968f0d2e744eb6c72db9eb389b0, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Select_Hover
+    clip: {fileID: 8300000, guid: 542379a95c13b6f408cdf9e071556496, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Card_Sword
+    clip: {fileID: 8300000, guid: ece7aa080f28ff847ae0cfcd5aca91b2, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Card_Effect
+    clip: {fileID: 8300000, guid: ec77864b40e9c6649a20a1e606258de7, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Card_Add_Fail
+    clip: {fileID: 8300000, guid: 769c1b0fb5fc6ff4580fab4a27c343a4, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1.4
+    loop: 0
+    source: {fileID: 0}
+  - name: NPC_Dialogue
+    clip: {fileID: 8300000, guid: b0a87f740c50411418e06e3f690d5f43, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: NPC_Interact
+    clip: {fileID: 8300000, guid: d0e7f7c450139e6448303c21385db317, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Item_Interact
+    clip: {fileID: 8300000, guid: 06e99ea1b2bf13543baa1699489aed02, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Ding
+    clip: {fileID: 8300000, guid: 4b3bd054d3bb2c3409dab34467633e97, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Main_Theme
+    clip: {fileID: 8300000, guid: b7ceca2cf13cbd34f8faf8ef4f6c4089, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Pause_Theme
+    clip: {fileID: 8300000, guid: 1d201240b50f0934287b6697ca43e507, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Town_Battle
+    clip: {fileID: 8300000, guid: f7fda51f0c504dc4692e51acec15ecbe, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Town_Boss
+    clip: {fileID: 8300000, guid: de1dd1416f27e4f48bbdc20233beba13, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Forest_Overworld
+    clip: {fileID: 8300000, guid: 6a11f6b1bc043f54fa0c29995a9a6373, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Forest_Battle
+    clip: {fileID: 8300000, guid: adadd597677b36e4fa5759e2e1b70ddb, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Forest_Boss
+    clip: {fileID: 8300000, guid: fb70f8b66d8b0ab4fae78b751770a142, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Cave_Overworld
+    clip: {fileID: 8300000, guid: da70c493f1fd8334daebe910cf57b202, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Cave_Battle
+    clip: {fileID: 8300000, guid: 473985e8e22ec074ebf218fa829105ee, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Cave_Boss
+    clip: {fileID: 8300000, guid: 3b38c6d3d3c3a2b45932d10a3006bdb2, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Castle_EXT_Overworld
+    clip: {fileID: 8300000, guid: b5efe23b3c44b4144bc7bd1e02adc985, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Castle_EXT_Battle
+    clip: {fileID: 8300000, guid: 2dce089cddb84084cab46c8c7b44aa82, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Castle_INT_Overworld
+    clip: {fileID: 8300000, guid: bf0bd47603a3bbe429af9f123b9aa2cc, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Castle_INT_Battle
+    clip: {fileID: 8300000, guid: 54680a802f2b70b41a9cade5ca7c61a9, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Castle_INT_Boss
+    clip: {fileID: 8300000, guid: eb6b7f74f4de6bd49ac47511e6000cf5, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Player_Lose
+    clip: {fileID: 8300000, guid: 05a41b5a0a27a4e4dbcdf43087ac38ac, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Player_Win
+    clip: {fileID: 8300000, guid: 48189c77b5b75b34390ff7c156429554, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Credits
+    clip: {fileID: 8300000, guid: 0125b8c91271934438ca13abf2a6a3fa, type: 3}
+    mixerGroup: {fileID: 24300002, guid: fa7f56a5837ff964b9e55bf80c60f584, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  overworldSong: 
+  mixer: {fileID: 0}

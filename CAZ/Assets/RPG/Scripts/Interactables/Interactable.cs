@@ -8,6 +8,8 @@ public class Interactable : MonoBehaviour
 
     private bool buffer;
 
+    public bool canInteract = true;
+
     //Draw interact range
     private void OnDrawGizmosSelected()
     {
@@ -17,28 +19,30 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
-        // If player is within range
-        if (Vector2.Distance(gameObject.transform.position, GameManager.instance.player.position) < interactRange)
-        {
-            buffer = true;
-
-            // Make interact icon visible
-            GameManager.instance.player.gameObject.GetComponent<PlayerController>().interactIcon.SetActive(true);
-
-            // Detect if the player presses Spacebar (interact key)
-            if (Input.GetKeyDown(KeyCode.Space))
+        if (canInteract){
+            // If player is within range
+            if (Vector2.Distance(gameObject.transform.position, GameManager.instance.player.position) < interactRange)
             {
-                Interact();
+                buffer = true;
+
+                // Make interact icon visible
+                GameManager.instance.player.gameObject.GetComponent<PlayerController>().interactIcon.SetActive(true);
+
+                // Detect if the player presses Spacebar (interact key)
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Interact();
+                }
             }
-        }
-        else
-        {
-            // Wait for player to exit any other interact range
-            while (buffer == true)
+            else
             {
-                StartCoroutine(BufferTimer());
+                // Wait for player to exit any other interact range
+                while (buffer == true)
+                {
+                    StartCoroutine(BufferTimer());
+                }
+                
             }
-            
         }
     }
 

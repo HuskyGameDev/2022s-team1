@@ -15,7 +15,8 @@ public class BossTrigger_Ashix : DialogueTrigger_OnTouchCondition
 
     private void LoadBossEncounter()
     {
-        GameManager.instance.player.GetComponent<PlayerController>().speed = 250; //I would unforce them eventually though.
+        GameManager.instance.player.GetComponent<PlayerController>().speed = 250;
+        GameManager.instance.player.GetComponent<PlayerController>().canMove = true; //I would unforce them eventually though.
         GameManager.instance.player.GetComponent<PlayerController>().interactIcon.SetActive(false);
         foreach (Transform child in GameManager.instance.transform)
         {

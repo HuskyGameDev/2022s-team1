@@ -12,6 +12,8 @@ public class VillageManager : MonoBehaviour
     {
         AudioManager.instance.Stop(AudioManager.instance.overworldSong);
         GameManager.instance.bossBattle = false;
+        GameObject _gameObj = GameObject.Find("AudioManager");
+        _gameObj.GetComponent<AudioManager>().Stop("Menu_Theme");
         AudioManager.instance.Play("Main_Theme");
         AudioManager.instance.overworldSong = "Main_Theme";
         if (GameManager.instance.discovered_forest) {

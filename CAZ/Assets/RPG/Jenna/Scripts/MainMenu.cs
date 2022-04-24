@@ -13,6 +13,9 @@ public class MainMenu : MonoBehaviour
             GameObject.Find("Continue Button").GetComponent<Button>().interactable = false;
         }
 
+        GameObject _gameObj = GameObject.Find("AudioManager");
+        _gameObj.GetComponent<AudioManager>().Play("Menu_Theme");
+
     }
 
     public void PlayGame(){
@@ -20,6 +23,9 @@ public class MainMenu : MonoBehaviour
 
         //We get the game object of the game manager, determine if it exists.
         //And then based on the level we're supposed to be on, load said level.
+
+        GameObject _audManager = GameObject.Find("AudioManager");
+        _audManager.GetComponent<AudioManager>().Stop("Menu_Theme");
 
         GameObject _gameObj = GameObject.Find("GameManager");
 
@@ -52,7 +58,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void PromptNewGameOpen(){
-        if (!(SaveSystem.SaveGameExists())){
+        if (!(SaveSystem.SaveGameExists())){    
             NewGame();
         }
     }
@@ -80,6 +86,9 @@ public class MainMenu : MonoBehaviour
 
         }
 
+        //GameObject _gameObj = GameObject.Find("AudioManager");
+        //_gameObj.GetComponent<AudioManager>().Stop("Menu_Theme");
+
         SceneManager.LoadScene("Village");
     }
 
@@ -89,6 +98,8 @@ public class MainMenu : MonoBehaviour
     }
 
     public void Credits() {
+        GameObject _gameObj = GameObject.Find("AudioManager");
+        _gameObj.GetComponent<AudioManager>().Stop("Menu_Theme");
         SceneManager.LoadScene("Credits");
     }
 

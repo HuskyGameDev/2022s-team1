@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public float initialDelay = 0.001f;
 
+    public PlayerController Player;
+
     public Queue<DialogueBase.Info> dialogueInfo = new Queue<DialogueBase.Info>();
 
     public bool inDialogue;
@@ -45,6 +47,7 @@ public class DialogueManager : MonoBehaviour
         inDialogue = true;
         dialogueBox.SetActive(true);
         dialogueInfo.Clear();
+        Player.speed = 0;
         
 
         foreach (DialogueBase.Info info in db.dialogueInfo)
@@ -105,11 +108,29 @@ public class DialogueManager : MonoBehaviour
                 }                
             }
         }
+
+        if (Input.GetKey(KeyCode.LeftShift)){
+
+            if (inDialogue) {
+                if (isTyping){
+                    delay = 0.008f;
+                }
+            }
+
+        } else {
+            if (inDialogue) {
+                if (isTyping){
+                    delay = initialDelay;
+                }
+            }
+        }
+
     }
 
     public void EndOfDialogue()
     {
         dialogueBox.SetActive(false);
         inDialogue = false;
+        Player.speed = 250;
     }
 }

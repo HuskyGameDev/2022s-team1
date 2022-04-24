@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public enum Level { VILLAGE, FOREST, CAVE, CASTLE_EXT, CASTLE_INT }
 
     public static GameManager instance;
+
+    public const string VERSION = "1.0.4"; //Version check to ensure they're on the right main build version. 
+                                            //First number never changes, second changes when save system needs an update. 3rd is never checked.
+
     public CardDex dex;
     public Deck deck;
     public GameObject InventoryUI;
@@ -21,6 +25,8 @@ public class GameManager : MonoBehaviour
     public bool discovered_forest;
     public bool discovered_cave;
     public bool discovered_castle;
+    public bool ashix_defeated;
+    public bool sacachi_defeated;
     public bool bossBattle;
     public int deckMax = 10;
     public int battleHp = 15;
@@ -56,6 +62,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Playing theme");
         //AudioManager.instance.Play("Main_Theme");
         //AudioManager.instance.overworldSong = "Main_Theme";
+        pauseMenu.SetActive(false);
         GameManager.instance.doLoad();
     }
 
@@ -154,27 +161,23 @@ public class GameManager : MonoBehaviour
         if (GameManager.instance.currentLevel == Level.FOREST) {
             Transform ForestStartTransform = startPositions[1].transform;
             player.position = new Vector3(ForestStartTransform.position.x, ForestStartTransform.position.y, 0);
-            SceneManager.LoadScene("Forest");
         }
         
         else if (GameManager.instance.currentLevel == Level.CAVE) {
             Transform caveStartTransform = startPositions[2].transform;
             player.position = new Vector3(caveStartTransform.position.x, caveStartTransform.position.y, 0);
-            SceneManager.LoadScene("Cave");
         }
         
         else if (GameManager.instance.currentLevel == Level.CASTLE_EXT)
         {
             Transform castleExtStartTransform = startPositions[3].transform;
             player.position = new Vector3(castleExtStartTransform.position.x, castleExtStartTransform.position.y, 0);
-            SceneManager.LoadScene("CastleExterior");
         }
 
         else if (GameManager.instance.currentLevel == Level.CASTLE_INT)
         {
             Transform castleExtStartTransform = startPositions[4].transform;
             player.position = new Vector3(castleExtStartTransform.position.x, castleExtStartTransform.position.y, 0);
-            SceneManager.LoadScene("CastleInterior");
         }
     }
 

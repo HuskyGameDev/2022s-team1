@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public float speed; // Movement speed of player ~250 seems well paced
 
+    public bool canMove = true;
+
     public LayerMask BattleLayer;
 
     public float battleCooldownTimer;
@@ -39,32 +41,48 @@ public class PlayerController : MonoBehaviour
             battlePrimed = true;
             battleCooldownTimer = 0;
         }
+
+        if (canMove){
+            if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.LeftShift))
+            {
+                speed = 520;
+            }
+            else {
+                speed = 250;
+            }
+        } else {
+            speed = 0;
+        }
+
     }
 
     private void FixedUpdate()
     {
+
+        //if (canMove){
         
-        // Get input and move player
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed * Time.deltaTime;
+            // Get input and move player
+            rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed * Time.deltaTime;
 
-        //check if moving
-        if (rb.velocity.x != 0 || rb.velocity.y != 0)
-            isMoving = true;
-        else
-            isMoving = false;
+            //check if moving
+            if (rb.velocity.x != 0 || rb.velocity.y != 0)
+                isMoving = true;
+            else
+                isMoving = false;
 
-        // Set animations for player's direction
-        anim.SetFloat("moveX", rb.velocity.x);
-        anim.SetFloat("moveY", rb.velocity.y);
+            // Set animations for player's direction
+            anim.SetFloat("moveX", rb.velocity.x);
+            anim.SetFloat("moveY", rb.velocity.y);
 
-        // Control idle animation direction
-        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
-        {
-            anim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-            anim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
-        }
+            // Control idle animation direction
+            if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+            {
+                anim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+                anim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            }
 
-        CheckForRandomEncounter();
+            CheckForRandomEncounter();
+       // }
         
     }
 

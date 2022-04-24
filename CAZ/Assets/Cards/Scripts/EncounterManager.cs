@@ -101,11 +101,15 @@ public class EncounterManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Z))
-        {
-            Time.timeScale = 5.0f;
-        }
-        else {
+        if (!(state == BattleState.WON || state == BattleState.LOST)){
+            if (Input.GetKey(KeyCode.Z))
+            {
+                Time.timeScale = 5.0f;
+            }
+            else {
+                Time.timeScale = 1.0f;
+            }
+        } else {
             Time.timeScale = 1.0f;
         }
     }
@@ -361,6 +365,8 @@ public class EncounterManager : MonoBehaviour
     public void PlayerWin() {
         state = BattleState.WON;
 
+        Time.timeScale = 1.0f;
+
         if (!gameManager.bossBattle) // if not boss battle
         {
             switch (gameManager.currentLevel)
@@ -404,11 +410,11 @@ public class EncounterManager : MonoBehaviour
                     AudioManager.instance.Play("Player_Win");
                     break;
                 case GameManager.Level.CASTLE_EXT:
-                    AudioManager.instance.Stop("Castle_INT_Boss");
+                    AudioManager.instance.Stop("Castle_EXT_Boss");
                     AudioManager.instance.Play("Player_Win");
                     break;
                 case GameManager.Level.CASTLE_INT:
-                    AudioManager.instance.Stop("Castle_EXT_Boss");
+                    AudioManager.instance.Stop("Castle_INT_Boss");
                     AudioManager.instance.Play("Player_Win");
                     break;
             }
@@ -508,7 +514,9 @@ public class EncounterManager : MonoBehaviour
 
                     AudioManager.instance.Stop("Player_Win");
 
-
+                    SetPlayerStartPosition(GameManager.Level.VILLAGE); //Their quest is done, we outta send them home. :)
+                    GameManager.instance.currentLevel = GameManager.Level.VILLAGE;
+                    GameManager.instance.SaveGame();
                     SetGameManagerChildrenVisibility();
                     SceneManager.LoadScene("Credits");
                     break;
@@ -519,6 +527,8 @@ public class EncounterManager : MonoBehaviour
 
     public void PlayerLose() {
         state = BattleState.LOST;
+
+        Time.timeScale = 1.0f;
 
         if (!gameManager.bossBattle) // if not boss battle
         {
