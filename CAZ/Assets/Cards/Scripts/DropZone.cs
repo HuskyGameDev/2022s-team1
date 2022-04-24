@@ -103,6 +103,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 effectHelper(drag); // perform drag maintenence
                                 manager.activeEffect = ActiveEffect.SACRIFICE; // set active effect
+
                                 StartCoroutine(manager.effects.Sacrifice("Player", 0)); // perform sacrifice
                                 manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase sacrifice card
                                 taken = false; // free effect slot
@@ -116,6 +117,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                             {
                                 effectHelper(drag); // perform drag maintenence
                                 manager.activeEffect = ActiveEffect.SHADOW_STRIKE; // set active effect
+                                manager.player.markedCards.Remove(drag.GetComponent<CardDisplay>().card); //Remove from the marked cards, this causes issues otherwise.
                                 StartCoroutine(manager.effects.ShadowStrike("Player", 0)); // perform shadow strike
                                 manager.player.EraseCard(drag.GetComponent<CardDisplay>().card); // erase shadow stirke card
                                 taken = false; // free effect slot

@@ -122,7 +122,6 @@ public class PlayerUnit : MonoBehaviour
             // Destroy defending card
             manager.enemyField.Remove(enemyCard); // remove from field
             Debug.Log(playerCard.name + " destroys " + enemyCard.name);
-            EraseCard(enemyCard);
             AudioManager.instance.Play("Card_Attack");
 
             manager.RemoveLingeringEffects(enemyCard);
@@ -130,6 +129,7 @@ public class PlayerUnit : MonoBehaviour
             manager.enemyFieldSlotAvailability[enemyCard.fieldIndex] = 0;
             manager.enemy.discarded.Add(enemyCard); // add to discard pile
             manager.enemyDiscardController.addCardToContent(enemyCard);
+            EraseCard(enemyCard);
             Debug.Log(enemyCard.name + " is sent to the discard pile");
 
             // Mark attacking card for destruction after attack phase
