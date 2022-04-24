@@ -515,6 +515,9 @@ public class EncounterManager : MonoBehaviour
 
                     AudioManager.instance.Stop("Player_Win");
 
+                    CardDex.CardEntry entry = GameManager.instance.GetComponent<CardDex>().cardDex.Find((x) => x.card.name == "Sacachi"); //Unlock Sacachi
+                    entry.isDiscovered = true;
+
                     SetPlayerStartPosition(GameManager.Level.VILLAGE); //Their quest is done, we outta send them home. :)
                     GameManager.instance.currentLevel = GameManager.Level.VILLAGE;
                     GameManager.instance.SaveGame();
