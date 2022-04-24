@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         if (battleCooldownTimer > 0)
         {
             battleCooldownTimer -= Time.deltaTime;
-            Debug.Log("Cooldow - " + battleCooldownTimer);
+            Debug.Log("Cooldown: " + (int)battleCooldownTimer);
         }
         else {
             battlePrimed = true;
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         if (canMove){
             if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.LeftShift))
             {
-                speed = 520;
+                speed = 400;
             }
             else {
                 speed = 250;
@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
+        GameManager.instance.DisablePlayerMovement();
         SceneManager.LoadScene("AIDevelopment");
     }
 }

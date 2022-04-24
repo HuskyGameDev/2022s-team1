@@ -19,6 +19,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
         //Shadow Strike
         if (manager.activeEffect == ActiveEffect.SHADOW_STRIKE && this.GetComponent<Draggable>().owner == Draggable.Owner.ENEMY && manager.state == BattleState.PLAYERTRUN)
         {
+            AudioManager.instance.Play("Card_Attack");
             Card struckCard = Instantiate(clickedCard.card); // create copy of clicked card
             Card cardInField = manager.enemyField.Find((c) => c.name == struckCard.name); // find struck card in enemy field list
             manager.enemyField.Remove(cardInField); // remove card from enemy field
@@ -49,6 +50,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
         //Sacrifice
         else if (manager.activeEffect == ActiveEffect.SACRIFICE && this.GetComponent<Draggable>().owner == Draggable.Owner.PLAYER && this.GetComponent<Draggable>().placed && manager.state == BattleState.PLAYERTRUN)
         {
+            AudioManager.instance.Play("Card_Attack");
             Card sacrificialCard = Instantiate(clickedCard.card); // create copy of clicked card
             Card cardInField = manager.playerField.Find((c) => c.name == sacrificialCard.name); // find sacrifical card in player field list
             manager.playerField.Remove(cardInField); // remove card from player field

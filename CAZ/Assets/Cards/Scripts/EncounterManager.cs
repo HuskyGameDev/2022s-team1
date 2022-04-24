@@ -428,6 +428,7 @@ public class EncounterManager : MonoBehaviour
         Debug.Log("Win Button Pressed");
         Cursor.visible = true;
 
+        GameManager.instance.EnablePlayerMovement();
         if (!gameManager.bossBattle) // if not boss battle, load current level
         {
             switch (gameManager.currentLevel)
@@ -592,6 +593,8 @@ public class EncounterManager : MonoBehaviour
         Cursor.visible = true;
         AudioManager.instance.Stop("Player_Lose");
         AudioManager.instance.UnPause(AudioManager.instance.overworldSong);
+
+        GameManager.instance.EnablePlayerMovement();
 
         if (gameManager.bossBattle) {
             gameManager.bossBattle = false;

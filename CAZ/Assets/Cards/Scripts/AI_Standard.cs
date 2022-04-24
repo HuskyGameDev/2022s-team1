@@ -199,15 +199,6 @@ public class AI_Standard : MonoBehaviour
         card.cardObject.GetComponent<CardDisplay>().Display();
     }
 
-    /**
-     * FOR VISUALS OF CARD GAME:
-     * NEED TO CHANGE: implementation of enemyField - change to List<GameObject> and reference Card2.0's card variable
-     * This will allow you to instantiate and destroy the correct card game object while still having access to card information.
-     * Might have to change other List<Card>'s to List<GameObject>'s as well.
-     * Big OOF but needs to be done
-     * 
-     * OR change card scriptable object to include card 2.0 prefab and draw from itself ???
-     */
     public void EraseCard(Card card) {
         Destroy(card.cardObject);
     }

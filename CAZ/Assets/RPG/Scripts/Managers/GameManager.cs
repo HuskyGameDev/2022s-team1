@@ -93,7 +93,19 @@ public class GameManager : MonoBehaviour
     public void loadDeckBuilder() {
         AudioManager.instance.Play("NPC_Interact");
         AudioManager.instance.Pause(AudioManager.instance.overworldSong);
+        DisablePlayerMovement();
         SceneManager.LoadScene("DeckBuilder");
+    }
+
+    public void DisablePlayerMovement() {
+        player.gameObject.GetComponent<PlayerController>().speed = 0; //default = 250
+        player.gameObject.GetComponent<PlayerController>().canMove = false;
+    }
+
+    public void EnablePlayerMovement()
+    {
+        player.gameObject.GetComponent<PlayerController>().speed = 250; //default = 250
+        player.gameObject.GetComponent<PlayerController>().canMove = true;
     }
 
     public IEnumerator DiscoverCard(string cardName)

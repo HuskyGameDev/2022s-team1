@@ -98,6 +98,7 @@ public class DeckBuilderButtons : MonoBehaviour
 
     public void DoneButton() {
         AudioManager.instance.Play("NPC_Interact");
+        GameManager.instance.EnablePlayerMovement();
         foreach (Transform child in GameManager.instance.transform)
         {
             child.gameObject.SetActive(true);
