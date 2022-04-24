@@ -47,7 +47,7 @@ public class DialogueManager : MonoBehaviour
         inDialogue = true;
         dialogueBox.SetActive(true);
         dialogueInfo.Clear();
-        Player.speed = 0;
+        Player.canMove = false;
         
 
         foreach (DialogueBase.Info info in db.dialogueInfo)
@@ -131,6 +131,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         inDialogue = false;
-        Player.speed = 250;
+        Player.canMove = true;
     }
 }

@@ -50571,6 +50571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRange: 2.26
+  canInteract: 1
   DB: {fileID: 11400000, guid: 2d4beac2683bf60439631407efc1627b, type: 2}
 --- !u!4 &67097143
 Transform:
@@ -50627,6 +50628,8 @@ MonoBehaviour:
   discovered_forest: 0
   discovered_cave: 0
   discovered_castle: 0
+  ashix_defeated: 0
+  sacachi_defeated: 0
   bossBattle: 0
   deckMax: 0
   battleHp: 15
@@ -50656,6 +50659,7 @@ MonoBehaviour:
   dialogueName: {fileID: 1444488371}
   dialogueText: {fileID: 1542997502}
   initialDelay: 0.001
+  Player: {fileID: 0}
   inDialogue: 0
 --- !u!4 &85789733
 Transform:
@@ -50701,6 +50705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRange: 1.77
+  canInteract: 1
   DB: {fileID: 11400000, guid: 2155dac3c0a280640af7628f3c5803bb, type: 2}
 --- !u!4 &106433536
 Transform:
@@ -84882,6 +84887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRange: 2.18
+  canInteract: 1
   DB: {fileID: 11400000, guid: cdb643cb8e5556d4cb79998cc317df32, type: 2}
 --- !u!4 &1166565555
 Transform:
@@ -85329,6 +85335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRange: 3
+  canInteract: 1
   DB: {fileID: 11400000, guid: 1eca220797feb2148a86a3314fdf9784, type: 2}
 --- !u!4 &1570733412
 Transform:
@@ -87892,6 +87899,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1917314761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917314763}
+  - component: {fileID: 1917314762}
+  m_Layer: 0
+  m_Name: Sus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1917314762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917314761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad04bb210ec96b94bae1f05ec79ac6af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: 0.8
+  canInteract: 1
+  DB: {fileID: 11400000, guid: aa87b7545edf99c4f8b688417ae38116, type: 2}
+--- !u!4 &1917314763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917314761}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.49, y: 41.43, z: -3.0901895}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919846045
 GameObject:
   m_ObjectHideFlags: 0
@@ -88895,6 +88948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRange: 1.8
+  canInteract: 1
   DB: {fileID: 11400000, guid: 5a0f1bbb4ab5d5248a99d822c99c363c, type: 2}
 --- !u!19719996 &636665989073449924
 TilemapCollider2D:
