@@ -89,6 +89,13 @@ public class OverworldController: MonoBehaviour
                     SceneManager.LoadScene("Cave");
                 }
                 break;
+            case GameManager.Level.CASTLE_INT:
+                Transform castleExtEndTransform = GameManager.instance.endPositions[3].transform;
+                GameManager.instance.player.position = new Vector3(castleExtEndTransform.position.x, castleExtEndTransform.position.y, 0);
+                GameManager.instance.currentLevel = GameManager.Level.CASTLE_EXT;
+                AudioManager.instance.Stop(AudioManager.instance.overworldSong);
+                SceneManager.LoadScene("CastleExterior");
+                break;
         }
     }
 

@@ -76,6 +76,8 @@ public class PlayerUnit : MonoBehaviour
         manager.indicator.interactable = true;
         manager.indicator.GetComponentInChildren<Text>().text = "End Turn";
         buttonColor.normalColor = Color.blue;
+        
+        manager.state = BattleState.PLAYERTRUN;
     }
     public void RenderCard(Card card)
     {

@@ -29,11 +29,11 @@ public class Reward_Castle_Cards : DialogueTrigger_OnTouchCondition
 
         GameManager.instance.discovered_castle = true;
         GameManager.instance.DeckbuilderButton.interactable = false;
+        canInteract = false;
         yield return StartCoroutine(GameManager.instance.DiscoverCard("Ashix"));
         yield return StartCoroutine(GameManager.instance.DiscoverCard("Nocto"));
         yield return StartCoroutine(GameManager.instance.DiscoverCard("Sulfu"));
         GameManager.instance.DeckbuilderButton.interactable = true;
-
         GameObject.Find("CastleManager").GetComponent<CastleManager>().backwardsOverworldController.SetActive(true);
     }
 

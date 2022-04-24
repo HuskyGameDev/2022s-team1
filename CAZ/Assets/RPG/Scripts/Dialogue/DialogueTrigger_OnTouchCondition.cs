@@ -9,13 +9,15 @@ public class DialogueTrigger_OnTouchCondition : Interactable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player") {
-            other.gameObject.GetComponent<PlayerController>().speed = 0;
-            other.gameObject.GetComponent<PlayerController>().canMove = false; //If I could do this another way, I would.
-                                                                        //But since there is no way to stop a player from just walking past the dialouge, I forced them to stay.
-                                                                        //Please ensure to set player canmove back to true in checkcondition.
-            DialogueManager.instance.EnqueueDialogue(DB);
-            StartCoroutine(WaitForDialogueFinish());
+        if (canInteract){
+            if (other.gameObject.tag == "Player") {
+                other.gameObject.GetComponent<PlayerController>().speed = 0;
+                other.gameObject.GetComponent<PlayerController>().canMove = false; //If I could do this another way, I would.
+                                                                            //But since there is no way to stop a player from just walking past the dialouge, I forced them to stay.
+                                                                            //Please ensure to set player canmove back to true in checkcondition.
+                DialogueManager.instance.EnqueueDialogue(DB);
+                StartCoroutine(WaitForDialogueFinish());
+            }
         }
     }
 

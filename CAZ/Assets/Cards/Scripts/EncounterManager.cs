@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum BattleState { START, PLAYERTRUN, ENEMYTURN, WON, LOST}
+public enum BattleState { START, PLAYERDRAW, PLAYERTRUN, ENEMYTURN, WON, LOST}
 
 public enum ActiveEffect { NONE, HEALING_POTION, SACRIFICE, SHADOW_STRIKE, SLEIGHT_OF_HAND, AGGRESSION, SHIELD, REVIVE }
 public class EncounterManager : MonoBehaviour
@@ -279,7 +279,7 @@ public class EncounterManager : MonoBehaviour
     public IEnumerator PlayerTurn()
     {
         // call enemy turn script
-        state = BattleState.PLAYERTRUN;
+        state = BattleState.PLAYERDRAW;
 
         // check if any cards are aggro in enemy field, and make them not aggro
         foreach (Card c in enemyField)
