@@ -46,9 +46,11 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.LeftShift))
             {
                 speed = 400;
+                GetComponent<Animator>().speed = 1.5f;
             }
             else {
                 speed = 250;
+                GetComponent<Animator>().speed = 1.0f;
             }
         } else {
             speed = 0;
