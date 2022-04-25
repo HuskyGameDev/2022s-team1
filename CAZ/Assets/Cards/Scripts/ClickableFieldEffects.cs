@@ -21,7 +21,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
         {
             AudioManager.instance.Play("Card_Attack");
             Card struckCard = Instantiate(clickedCard.card); // create copy of clicked card
-            Card cardInField = manager.enemyField.Find((c) => c.name == struckCard.name); // find struck card in enemy field list
+            Card cardInField = manager.enemyField.Find((c) => c.name == struckCard.name && c.fieldIndex == struckCard.fieldIndex); // find struck card in enemy field list
             manager.enemyField.Remove(cardInField); // remove card from enemy field
 
             //check if clicked card is aggro, if so deactivate aggro
@@ -52,7 +52,7 @@ public class ClickableFieldEffects : MonoBehaviour, IPointerClickHandler, IPoint
         {
             AudioManager.instance.Play("Card_Attack");
             Card sacrificialCard = Instantiate(clickedCard.card); // create copy of clicked card
-            Card cardInField = manager.playerField.Find((c) => c.name == sacrificialCard.name); // find sacrifical card in player field list
+            Card cardInField = manager.playerField.Find((c) => c.name == sacrificialCard.name && c.fieldIndex == sacrificialCard.fieldIndex); // find sacrifical card in player field list
             manager.playerField.Remove(cardInField); // remove card from player field
 
             //check if clicked card is aggro, if so deactivate aggro
