@@ -111,18 +111,12 @@ public class DialogueManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift)){
 
-            if (inDialogue) {
-                if (isTyping){
-                    delay = 0.008f;
-                }
-            }
+            delay = 0.008f;
 
         } else {
-            if (inDialogue) {
-                if (isTyping){
-                    delay = initialDelay;
-                }
-            }
+           
+            delay = initialDelay;
+            
         }
 
     }
