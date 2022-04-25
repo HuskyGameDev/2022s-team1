@@ -421,6 +421,11 @@ public class EncounterManager : MonoBehaviour
         }
 
         winView.SetActive(true);
+
+        if ((gameManager.bossBattle == true) && (gameManager.currentLevel == GameManager.Level.CASTLE_INT)){
+            GameObject.Find("WinDesc").GetComponent<Text>().text = "Your adventure\nconcludes";
+        }
+
     }
 
     public void PlayerWinButton() {

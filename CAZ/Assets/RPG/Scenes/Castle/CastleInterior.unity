@@ -87928,7 +87928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad04bb210ec96b94bae1f05ec79ac6af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRange: 0.8
+  interactRange: 1.12
   canInteract: 1
   DB: {fileID: 11400000, guid: aa87b7545edf99c4f8b688417ae38116, type: 2}
 --- !u!4 &1917314763

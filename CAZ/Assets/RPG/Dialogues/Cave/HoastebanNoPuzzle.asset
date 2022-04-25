@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueInfo:
   - name: 
-    text: Up on one of those pillars you see a pair of glowing red eyes piercing
+    text: Up on one of those pillars, you see a pair of glowing, red eyes piercing
       through the darkness.
   - name: 
     text: They seem to be following your movements...

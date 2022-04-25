@@ -21,5 +21,9 @@ MonoBehaviour:
     text: "See?  Works like a charm, just keep on pressing that until we run out
       of things to say and we\u2019re forced to loop again."
   - name: Villager?
-    text: Whoop, one last thing real quick.  This works on signs as well.  Alright,
-      see ya later!
+    text: This works on signs as well.
+  - name: Villager?
+    text: 'Whoop, one last thing real quick.  You can hold ''Left Shift'' or ''Z''
+      to move faster in the world. '
+  - name: Villager?
+    text: Alright, see ya later!

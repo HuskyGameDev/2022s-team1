@@ -23,8 +23,10 @@ MonoBehaviour:
     text: You turn to see a bipedal lizard, one that has a detatched skull that is
       lit aflame. A red flame to be exact. It stares right at you with those hollowed
       out eye sockets.
+  - name: ???
+    text: HALT! You walk the path of the legendary Ashix!!
   - name: Ashix
-    text: HALT! You seek to cross this path, through MY cave?! UNAUTHORIZED?!
+    text: 'You DARE seek to cross through MY CAVE? UNAUTHORIZED?! '
   - name: You
     text: Well... I-
   - name: Ashix

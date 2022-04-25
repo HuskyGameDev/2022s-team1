@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    public const string VERSION = "1.0.5"; //Version check to ensure they're on the right main build version. 
+    public const string VERSION = "1.0.6"; //Version check to ensure they're on the right main build version. 
                                             //First number never changes, second changes when save system needs an update. 3rd is never checked.
                                             //Should note, this will be used to check saves per update. If there's a difference in the first two numbers, we will delete the save.
 

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: BonusAshixLog
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: You find what appears to be a rock, but this is no ordinary rock. You swear
+      it wasn't here before, but you get a close look.
+  - name: 
+    text: There's clearly some kind of writing here. Though clearly not one done
+      by a human like yourself.
+  - name: 
+    text: Safe to assume it's the Journal of Ashix. Judging by it's location to the
+      castle gate. The one the Flamzar guarded. You investigate his awful writing.
+  - name: Ashix
+    text: '"The removal of the monarch holding rule over the castle was a good change
+      for myself, and the others living in the cave.'
+  - name: Ashix
+    text: 'Humans like him brought misery to others like myself the moment we made
+      ourselves known to them. '
+  - name: Ashix
+    text: But I can't help but remain concerned for the one in the castle that took
+      his place.
+  - name: Ashix
+    text: Concerned not so much about him, but what he plans to do with his newfound
+      control over it. And the tower.
+  - name: Ashix
+    text: I don't even know what he says half the time, nevermind if he's spouting
+      plans of destruction upon me and my fellow kin in the cave.
+  - name: Ashix
+    text: I guess I'm just concerned is all. I saw him only once and I listened to
+      his request. Keep humans away, he says...
+  - name: Ashix
+    text: And who am I to deny his request upon keeping those that nearly wiped my
+      own race clean from existence thanks to that rotten monarch from before?
+  - name: Ashix
+    text: I would check on him, see if there's something wrong in the castle. Since
+      he said he would be back more than a day ago, and yet-
+  - name: 
+    text: There appears to be scribbles, indicating a sudden stop to his writing
+      before it abruptly continues.
+  - name: Ashix
+    text: That was a human alright, but he was coming from the castle. I dunno if
+      that counts, but I chased them off regardless.
+  - name: 
+    text: It seems to end there, with the rock just looping the same text again.
+      Perhaps more of his rocks can be found around here?

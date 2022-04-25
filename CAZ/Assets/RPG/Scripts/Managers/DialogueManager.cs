@@ -22,6 +22,8 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping;
     private float delay;
 
+    private float nextLine;
+
     private void Awake()
     {
         if (instance == null)
@@ -83,10 +85,11 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in info.text.ToCharArray())
         {
             audioBuff++;
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(delay * Time.deltaTime);
             if (audioBuff % 2 == 0 && c != ' ')
                 AudioManager.instance.Play("NPC_Dialogue");
             dialogueText.text += c;
+            nextLine = Time.time + delay;
             yield return null;
         }
         isTyping = false;

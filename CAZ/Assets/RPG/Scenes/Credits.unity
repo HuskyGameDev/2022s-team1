@@ -236,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 145, y: -1943}
+  m_AnchoredPosition: {x: 268, y: -1843}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19189789
@@ -691,7 +691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1232, y: -1831}
+  m_AnchoredPosition: {x: 1232, y: -2185}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400962195
@@ -1984,7 +1984,7 @@ MonoBehaviour:
   m_Text: "Sawyer Knowles\n\n\nSawyer Knowles\nAdam Johnson \n  (GeneralofCats)\nJenna
     Robben\nEric Belt \n  (ResRaptor)\n\n\nFoenix Szot\n  (fszot18)\n\n\nJonah Rady\nAce
     Hobbs\n\n\n\nAurtur Pilatovs\n\n\n\n\nKomiku\nRolemusic\nOrigamiRepetika\nDarren
-    Curtis\nDefrini\nVisager\nJim Hall\nRoccoW\n\n\n\n\nArMM1998\n\n\n\n\n\n\n\nBrakeys\nCheerful\nFilthy\nHabble"
+    Curtis\nDefrini\nVisager\nJim Hall\nRoccoW\n\n\n\n\nArMM1998\n\n\n\n\n\n\n\nBrakeys\nCheerful\nFilthy\nHabble\nHiddenSoundTest"
 --- !u!222 &1639902812
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2473,7 +2473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 641, y: -2594}
+  m_AnchoredPosition: {x: 495, y: -2475}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003930046

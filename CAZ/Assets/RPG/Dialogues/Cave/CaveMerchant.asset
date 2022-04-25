@@ -17,6 +17,6 @@ MonoBehaviour:
     text: "Finally another human... you are human aren\u2019t you?  Oh gods, my cart\u2019s
       been stuck here for so long, I don\u2019t dare try to move."
   - name: Scared Merchant
-    text: There are things in this cave, things that make you question your own senses.
+    text: There are things in this cave, things that make you question your own senses-
   - name: Scared Merchant
-    text: What was that?!  Did you see that eye, tell me you saw it!
+    text: Wait... What was that?!  Did you see that eye?! Tell me you saw it!!

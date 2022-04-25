@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueInfo:
   - name: 
-    text: A pair of glowing red eyes stare at you from the darkness.
+    text: A pair of glowing, red eyes stare at you from the darkness.
   - name: 
     text: Suddenly, a large, grey furred dragon-bat-like creature enters your view!
   - name: 
-    text: It makes no sound as it maneuvers around your legs like a large cat.
+    text: It makes not a sound as it maneuvers around your legs like a large cat.
   - name: 
     text: It takes the toy from your hand.
   - name: 
