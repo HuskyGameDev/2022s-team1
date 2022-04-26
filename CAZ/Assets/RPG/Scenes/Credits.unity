@@ -236,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 268, y: -1843}
+  m_AnchoredPosition: {x: 331, y: -1596}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19189789
@@ -537,7 +537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 142, y: -3272}
+  m_AnchoredPosition: {x: 317, y: -3153}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191651858
@@ -691,7 +691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1232, y: -2185}
+  m_AnchoredPosition: {x: 1197, y: -2504}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400962195
@@ -766,7 +766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1040, y: -588}
+  m_AnchoredPosition: {x: 1259, y: -366}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &421618068
@@ -841,7 +841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 191, y: -586}
+  m_AnchoredPosition: {x: 252, y: -827}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &425471918
@@ -916,8 +916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -264, y: -1290.5789}
-  m_SizeDelta: {x: 791.6444, y: 3532.7888}
+  m_AnchoredPosition: {x: -264, y: -1556.8584}
+  m_SizeDelta: {x: 791.6444, y: 4149.533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481615536
 MonoBehaviour:
@@ -965,19 +965,25 @@ MonoBehaviour:
 
 
 
+
+    Linux Port
+
+
+
+
     Artist
 
 
 
 
-    Sound Designers
+    Sound
+    Designers
 
 
 
 
 
-    Management
-    Member
+    Management Member
 
 
 
@@ -996,7 +1002,8 @@ MonoBehaviour:
 
 
 
-    Additional Sprites
+    Additional
+    Sprites
 
 
 
@@ -1005,8 +1012,7 @@ MonoBehaviour:
 
 
 
-    Special
-    Thanks'
+    Special Thanks'
 --- !u!222 &481615537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1187,7 +1193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 525, y: -4490}
+  m_AnchoredPosition: {x: 681, y: -4506}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &762962342
@@ -1262,7 +1268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1187, y: -1141}
+  m_AnchoredPosition: {x: 1206, y: -999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &978589519
@@ -1469,7 +1475,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 939, y: -4113}
+  m_AnchoredPosition: {x: 1070, y: -4060}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185451357
@@ -1645,7 +1651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 906, y: -3321}
+  m_AnchoredPosition: {x: 1018, y: -3142}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1242233037
@@ -1795,7 +1801,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 316, y: -1290}
+  m_AnchoredPosition: {x: 1135, y: -1749}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1452823717
@@ -1982,8 +1988,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Sawyer Knowles\n\n\nSawyer Knowles\nAdam Johnson \n  (GeneralofCats)\nJenna
-    Robben\nEric Belt \n  (ResRaptor)\n\n\nFoenix Szot\n  (fszot18)\n\n\nJonah Rady\nAce
-    Hobbs\n\n\n\nAurtur Pilatovs\n\n\n\n\nKomiku\nRolemusic\nOrigamiRepetika\nDarren
+    Robben\nEric Belt \n  (ResRaptor)\n\n\n\nEric Belt \n  (ResRaptor)\n\n\nFoenix
+    Szot\n  (fszot18)\n\n\nJonah Rady\nAce Hobbs\n\n\n\nAurtur Pilatovs\n\n\n\n\nKomiku\nRolemusic\nOrigamiRepetika\nDarren
     Curtis\nDefrini\nVisager\nJim Hall\nRoccoW\n\n\n\n\nArMM1998\n\n\n\n\n\n\n\nBrakeys\nCheerful\nFilthy\nHabble\nHiddenSoundTest"
 --- !u!222 &1639902812
 CanvasRenderer:
@@ -2027,7 +2033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: -3864}
+  m_AnchoredPosition: {x: 639, y: -3664}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1640592555
@@ -2183,7 +2189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: -4092}
+  m_AnchoredPosition: {x: 269, y: -4076}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1697675337
@@ -2473,7 +2479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 495, y: -2475}
+  m_AnchoredPosition: {x: 366, y: -2505}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003930046
