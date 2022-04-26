@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: PostLoomusFight
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: After proving yourself to Loomus, she bows low towards you in respect,
+      the gem on her head shimmering in the sunlight. The vines covering the stone
+      arch slowly pull away.
+  - name: Loomus
+    text: I judged and underestimated you... I greatly apologize... It's not safe,
+      I can feel it... Within leaves of nature herself. He seems more disturbed...
+      I refused to let anyone past.
+  - name: Loomus
+    text: You...
+  - name: Loomus
+    text: I shall make exception...
+  - name: Loomus
+    text: My powers, I shall grant to you. You want to protect as well... Correct?
+      Then we shall go. To the source... To him. Together. We can protect one another.
+  - name: 
+    text: You walk with Loomus past the stone arch into the cave. The field of blooming
+      flowers left in the wake of your battle lingering and shimmering in farewell.

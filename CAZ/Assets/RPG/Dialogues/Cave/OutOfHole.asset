@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueInfo:
   - name: 
-    text: Looked like a large dragon-bat-like creature flew you out of the hole!
+    text: Looks like a large dragon-bat-like creature flew you out of the hole!
   - name: 
     text: It then flew East!
   - name: Your Thoughts

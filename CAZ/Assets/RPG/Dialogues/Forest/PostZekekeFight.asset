@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: PostZekekeFight
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: To assert dominance, you end the battle with a flourish and a pose. Leaving
+      Zekeke to stand in front of you with admiration in its eyes. The glow from
+      its tails and antenna slowly dimming.
+  - name: Zekeke
+    text: Zee zee zee! Youz pretty cool, for a human. Uzzually no one wantz to dance
+      with me. Theyz uzzually keep distance insteadz. My movez prove too powerfulz.
+  - name: Zekeke
+    text: Butz I shouldn't let you inz the forest... My friendz there getz mad at
+      me. Sayz don't take stuffz seriouz enough... I doez though! Thatz why use force!
+      So nonz get pazt me!
+  - name: Zekeke
+    text: I wannaz help! Youz strong... and I wanna prove I strong tooz! I don't
+      uzzually leave this place... Too scared of magicz... butz youz inspired me.
+  - name: 
+    text: You are slightly startled as Zekeke then leaps up and onto your shoulder,
+      but as Zekeke reaches over for a fist bump, you smile and oblige.

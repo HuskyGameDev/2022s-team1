@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: SacachiJournal2
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: A leather covered book that is carefully taken cared for. It seems to have
+      been alphabetically organized with the others on the shelf.
+  - name: 
+    text: You decide that it wouldn't hurt to take a closer look at it.
+  - name: Unknown Writer
+    text: '"There are creatures here. Many of them speak a different tongue than
+      They seem confused... even sometimes aggressive towards my presence. Perhaps
+      they are unsure of how to treat me.'
+  - name: Unknown Writer
+    text: I harbor no ill towards them for that. I also do not know how I should
+      be treated... My form is peculiar compared to them, my speech is different...
+      Whenever these markings on my body glow they run away...
+  - name: Unknown Writer
+    text: A wake of broken cities crumbling behind me... that is what I saw today
+      within my foggy memories as those markings glowed. It filled me with despair...
+      I don't want that to happen to this place...
+  - name: Unknown Writer
+    text: It was a small act that does nothing but try to reassure myself... but
+      I wrapped a purple hoodie around my shoulders that the creatures helped me
+      find. My friends.
+  - name: Unknown Writer
+    text: Perhaps someday I can do something for them in return...
+  - name: Unknown Writer
+    text: As well as regain my memories...
+  - name: 
+    text: The long passage ends, with other squiggles and potential words written
+      below... But you can't read or understand them.

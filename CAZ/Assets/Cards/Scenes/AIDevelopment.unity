@@ -4504,7 +4504,7 @@ MonoBehaviour:
     m_LineSpacing: 0.93
   m_Text: 'You continue
 
-    your adventure'
+    your adventure.'
 --- !u!222 &1011643252
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7279,11 +7279,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.89
-  m_Text: 'You feinted!
+  m_Text: 'You fainted!
 
     *The guide*
 
-    rescued you'
+    rescued you.'
 --- !u!222 &1568291967
 CanvasRenderer:
   m_ObjectHideFlags: 0

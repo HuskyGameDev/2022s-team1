@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: SacachiJournal1
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: It's a book held with a leather cover, placed carefully upon the shelf.
+      It looks so new and clean compared to the others, so you decide to take a closer
+      look...
+  - name: 
+    text: The words written on the pages look organized and formed in neat cursive.
+      The whole thing feels really fancy.
+  - name: Your Thoughts
+    text: Perhaps this was a journal one of the poeple living in the castle wrote
+      in?
+  - name: Unknown Writer
+    text: '"When I awoke, all I could see was an abyss, detached from the world.
+      I wandered within it, confused, anxious, and lonely. My memories foggy and
+      lost.'
+  - name: Unknown Writer
+    text: Eventually I found a door, just as misplaced as I felt, and I opened it
+      to see a throne room almost just as dark as the abyss I walked around in. Empty
+      and lifeless.
+  - name: Unknown Writer
+    text: I had shuddered then, for an instinctual fear had come over me. One I still
+      can not fully comprehend or understand... Yet when I close my eyes, the dancing
+      memory of screams and utter destruction envelope me...
+  - name: Unknown Writer
+    text: That image, that fear... Made me shelter myself a little longer into the
+      abyss.
+  - name: Unknown Writer
+    text: When I finally did leave, my whole body shook and I looked around desparately
+      until I found a table. It held a singular plate, as if it was placed there
+      just for me...
+  - name: Unknown Writer
+    text: Am I... supposed to be here?
+  - name: Unknown Writer
+    text: The curious part of me yearns to see, to explore. Yet the rational, more
+      ingrained part of me knows I should lock myself away.
+  - name: Unknown Writer
+    text: 'Thus, all I was able to accomplish afterwards was to find this blank book
+      and a pen. Placed right near the entryway to this throne room... Yet again
+      seemingly another action to suggest I should belong here. '
+  - name: Unknown Writer
+    text: Nothing else reflects that though... The walls buzz, as if struggling to
+      hold themselves. The lights flicker unhappily if I go near them... And there
+      are odd chitters and sounds outside of the throne room.
+  - name: Unknown Writer
+    text: I am not sure what to do...
+  - name: Unknown Writer
+    text: But perhaps writing about it will help me piece it together.
+  - name: Unknown Writer
+    text: To remember."
+  - name: 
+    text: The long passage ends, and you shiver. Something about this writing feels
+      off. Causing you to have doubts...
+  - name: Your Thoughts
+    text: Did another human even write this?

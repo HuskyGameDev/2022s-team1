@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueInfo:
   - name: 
     text: You find what appears to be a rock, but this is no ordinary rock. You swear
-      it wasn't here before, but you get a close look.
+      it wasn't here before, but you take a closer look...
   - name: 
     text: There's clearly some kind of writing here. Though clearly not one done
       by a human like yourself.

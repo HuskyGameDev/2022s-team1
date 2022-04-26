@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueInfo:
   - name: Boy
-    text: Aww darn! you won again...
+    text: Aww darn! You won again...
   - name: Girl
     text: Haha! I am good at this game!
   - name: Girl

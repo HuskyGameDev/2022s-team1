@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: ZekekeSpeak
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: As you approach the edge of a forest, growths of moss decorating the stone
+      arch, you take a second to pause. Looking at a large puddle hiding under the
+      shade of a great tree.
+  - name: 
+    text: Suddenly, bubbles start raising from the water!
+  - name: Unknown Creature
+    text: '*Whoosh!*'
+  - name: 
+    text: An odd blue critter has jumped out of the puddle and landed right in front
+      of you!
+  - name: Zekeke
+    text: Zee zee zeeee!
+  - name: Your Thoughts
+    text: What the- !
+  - name: 
+    text: Startled, you back away, reaching unsurely for your cards. The critter
+      watches you closely, imitating your unsure stance as if in mockery.
+  - name: Zekeke
+    text: Ze sneakyz human! Never get pazzt me zee zee! Show me your movezzzzz!
+  - name: 
+    text: The ends of its tails and antenna then glow a bright yellow as it starts
+      to break out into a dance. Slapping a deck of cards onto the ground.
+  - name: Your Thoughts
+    text: Oh dear... What have I gotten myself into?

@@ -27,6 +27,6 @@ MonoBehaviour:
     text: It calms, although is still cautious.
   - name: 
     text: After several minutes, it begins burrowing into the ground with uncanny
-      speed
+      speed.
   - name: Your Thoughts
     text: This cave has been full of suprises.

@@ -19,12 +19,11 @@ MonoBehaviour:
   - name: Unknown Being
     text: ...! ...?
   - name: 
-    text: The eyes reflect shock and wariness!
+    text: The eyes reflect shock and wariness.
   - name: 
-    text: Suddenly, a giant claw swipes out from the darkness!
-  - name: 
-    text: It comes to rest in front of you, decorated with odd, magical markings
-      that appear to float above its surface...
+    text: Suddenly, a giant claw swipes out from the darkness! It comes to rest in
+      front of you, decorated with odd, magical markings that appear to float above
+      its surface...
   - name: 
     text: Red flames ignite from the being's large palm, and gently start to spread
       along its hand.
@@ -50,7 +49,7 @@ MonoBehaviour:
   - name: 
     text: You wave back at this being...
   - name: 
-    text: With your other hand, you secretly reach for your cards.
+    text: While with your other hand, you secretly reach for your cards.
   - name: Your Thoughts
     text: Never know which direction this "conversation" will turn...
   - name: Uknown Being
@@ -58,28 +57,28 @@ MonoBehaviour:
   - name: Uknown Being
     text: I... Sacachi... T-Trapped ... Read b-book?
   - name: 
-    text: The being looms closer to you.
+    text: The being looms closer to you. His eyes seem to be observing your every
+      move with supernatural speed.
   - name: 
-    text: His eyes seem to be observing your every move with a supernatural speed.
-  - name: 
-    text: Then, swinging into view from the darkness, you notice two massive horns!
-      A wing! And a tail!
+    text: Then, as he crawls into view from the darkness, you notice two massive
+      horns, an outstretched wing, and a tail decorated with spines!
   - name: Your Thoughts
     text: This is definitely a creature I don't want to upset...
   - name: Sacachi
     text: But why... Rrieeeracccc... hurt ... my friends...?
   - name: 
-    text: You notice him catch a glance at you reaching for your cards...
+    text: You notice him catch a glance at you reaching for your cards... His expression
+      twists into one full of distress, as if he was betrayed.
   - name: Sacachi
     text: YOU!
   - name: Sacachi
     text: RRIEEIRACCC... PROTECT SMALL FRIENDS!!!
   - name: 
-    text: Suddenly, the air becomes dense! You hear the flapping of books coming
+    text: Suddenly, the air becomes dense and you hear the flapping of books coming
       from the room behind you!
   - name: 
     text: The dense air seems to burst into flames as Sacachi summons forth a circle
-      of flame...
+      of dancing red fire...
   - name: 
     text: Surrounding the both of you.
   - name: 
@@ -87,11 +86,10 @@ MonoBehaviour:
   - name: Sacachi
     text: RRIIIGAGGGRRG... SCARED!!!
   - name: Sacachi
-    text: GO AWAY!!!!
+    text: GO AWAY!!!! ... PLEASE!!! ... NOW!!!
   - name: 
-    text: The flames contained within his palm glow as bright as the sun!
-  - name: 
-    text: The markings decorating his body flash with light!
+    text: The flames contained within his palm glow as bright as the sun, and the
+      markings decorating his body flash with light!
   - name: 
     text: As the light subsides, you notice the color of the markings have changed...
   - name: 
@@ -99,13 +97,13 @@ MonoBehaviour:
   - name: 
     text: His voice seems to soften.
   - name: Sacachi
-    text: ...
+    text: ... ... ...
   - name: Sacachi
-    text: Destruction... can't control ... angry.
+    text: Destruction... can't control ... angry...
   - name: Sacachi
-    text: No!
+    text: ... No...!
   - name: Sacachi
-    text: Happening again!
+    text: ... Happening again! ... Why?!
   - name: Sacachi
     text: Rrrrr...
   - name: Sacachi
@@ -113,4 +111,4 @@ MonoBehaviour:
   - name: Sacachi
     text: RRRRRRRRRRRRRRRRRRRRRRRRR...
   - name: Sacachi
-    text: RRRRRRRRRRRRRRRRRRIIIIIIIIIIIIIIIIIEEEEEEEEEEEEAAAAAAAAAAARRRRRRRRRRRRGGGGGGGGGGGGHHHHHHHHHHHHAAAAAAAAAAAAAAAAAAA!!!
+    text: RRRRRRRRRRRRRRRRRRRRRIIIIIIIIIIIIIIIIIIIIIIIIIIIIEEEEEeEEEEEEEEEEEAAAAAAAAAAARRRRRRRRRRRRGGGGGGGGGGGGHHHHHHHHHHHHAAAAAAAAAAAAAAAAAAAaaaaaAAAAAAaaaaaaAAAAA!!!

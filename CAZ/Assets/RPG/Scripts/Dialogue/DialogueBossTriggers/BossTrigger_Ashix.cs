@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class BossTrigger_Ashix : DialogueTrigger_OnTouchCondition
 {
+    private void Start()
+    {
+        if (GameManager.instance.discovered_castle)
+        {
+            canInteract = false;
+        }
+    }
 
     public override IEnumerator CheckCondition()
     {

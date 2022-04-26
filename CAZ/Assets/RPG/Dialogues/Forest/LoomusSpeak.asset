@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
+  m_Name: LoomusSpeak
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - name: 
+    text: As you finally approach the end of the forest, the soft ground beneath
+      your feet becomes uneven and rocky. The stone arch appears to tower before
+      you eerily.
+  - name: 
+    text: The mouth of a harsh-looking cave decorated with some vegetation surrounds
+      the arch, and you take one uneasy look into the pitch blackness.
+  - name: Your Thoughts
+    text: I can't tell which is worse... A twisty forest of trees, or a jagged lightless
+      cave.
+  - name: Your Thoughts
+    text: Oh well, I have gotten this far, I can't stop now.
+  - name: Unknown Creature
+    text: Llloooooooooooooohhhhhh!
+  - name: 
+    text: A melodic voice pierces through the trees behind you, and you turn around
+      just in time to shield your face from a blast of harsh wind!
+  - name: 
+    text: As the wind dies down, you witness a creature emerging from the trees,
+      full of elegance and grace. It's leaf-like arms swaying above the ground as
+      if to care for the small vegetation growing there.
+  - name: Loomus
+    text: Name is Loomus. Guardian of this forest... Human... I can not let you pass.
+      You have treaded upon these grounds long enough.
+  - name: 
+    text: You see the anger within the creature's expression and decide to just sprint
+      towards the cave, but as you turn around you realize large vines have grown
+      to block your way!
+  - name: 
+    text: In the next instant, you find yourself surrounded by a field of blooming
+      flowers of various sizes and colors. Speckles of color dance through the air
+      as the creature walks towards you.
+  - name: Loomus
+    text: Disrespect. Danger. You humans never learn. No matter how my companions
+      try to warn. Fine. Then I shall do it myself. Be prepared to face consequences
+      human!
+  - name: 
+    text: You grab your deck of cards. Loomus' voice echoes through the air, and
+      suddenly you are surrounded by various creatures! It is time to battle!
