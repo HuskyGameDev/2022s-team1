@@ -12,4 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51748b50f0f118c4da237aaab4ef6859, type: 3}
   m_Name: SacachiJournal3
   m_EditorClassIdentifier: 
-  dialogueInfo: []
+  dialogueInfo:
+  - name: 
+    text: There is a leather book here sitting on this shelf, it has a singular claw
+      mark on it, but is otherwise in pristine condition.
+  - name: 
+    text: Curious, you glance through it, noticing most of the writing in it is undistiguishable
+      or difficult to read. Only some passages in messy cursive is all you can discern.
+  - name: Unknown Writer
+    text: '"... Now I am certain... I must not leave this castle. Something is welling
+      up inside me, something dangerous. My friends notice it too... I was even visited
+      by three who called themselves ''guardians''.'
+  - name: Unknown Writer
+    text: I was thankful for their presence and I wish to see them again... But that
+      may never happen. I had tried to explain myself to them, yet it feels they
+      may have struggled to understand.
+  - name: Unknown Writer
+    text: During my short time here, my form has been changing, along with my speech.
+      It's becoming harder to voice words when I need to, and it has become difficult
+      to hold a pen.
+  - name: Unknown Writer
+    text: Am I losing myself? Despite these changes I still feel the same as I have
+      before."
+  - name: 
+    text: Flipping through the journal, you manage to find another passage that you
+      are able to read. Although the writing has seem to have gotten even worse.
+  - name: Unknown Writer
+    text: '"Dreams... Full of chaos and destruction... ... I can not let that happen...
+      My friends... this world... ... I have found myself now sitting on a throne...'
+  - name: Unknown Writer
+    text: ... The words of my friends swirl in my head... Of how humans hurt them...
+      How much both sides have to fight... I want to change that... Yet how... When
+      I struggle to speak... And no personal experience within the world they live
+      in?
+  - name: Unknown Writer
+    text: I must find a way... ... These markings stop me... But not for long...
+      I can feel them struggle... I should lock myself away... Until I can control
+      myself... Yet despite my wishes...
+  - name: Unknown Writer
+    text: Destruction is ingrained within my soul."
